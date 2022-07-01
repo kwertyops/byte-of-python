@@ -121,7 +121,6 @@ The code below shows some examples of lines and basic shapes that are affected b
     # Angles are measured as typical in mathematics, counter-clockwise starting at the positive x-axis
     dudraw.set_pen_color(dudraw.PINK)
     dudraw.elliptical_arc(475, 150, 50, 100, 200, 340)
-    dudraw.save("basic_shapes.png")
     dudraw.show()
 
 ![basic shapes](basic_shapes.png)
@@ -171,7 +170,6 @@ There are also `dudraw` primitives that produce filled regions rather than outli
     # Angles are measured as typical in mathematics, counter-clockwise starting at the positive x-axis
     dudraw.set_pen_color(dudraw.PINK)
     dudraw.filled_elliptical_sector(475, 150, 50, 100, 200, 340)
-    dudraw.save("filled_basic_shapes.png")
     dudraw.show()
 
 ![filled basic shapes](filled_basic_shapes.png)
@@ -185,10 +183,9 @@ By default, the scale in a dudraw canvas is [0, 1] x [0, 1], even if the size of
     dudraw.set_canvas_size(600,400)
     dudraw.clear(dudraw.LIGHT_GRAY)
     dudraw.set_pen_color(dudraw.DARK_GREEN)
-    dudraw.filled_triangle(0, 0, 1, 0, 0.5, 0.7)
+    dudraw.filled_triangle(0, 0, 1, 0, 0.5, 0.7) # green triangle mountain
     dudraw.set_pen_color(dudraw.YELLOW)
-    dudraw.filled_circle(0.8, 0.75, 0.1)
-    dudraw.save("stretched_simple.png")
+    dudraw.filled_circle(0.8, 0.75, 0.1)         # yellow circle sun
     dudraw.show()
 
 <img src="stretched_simple.png" alt="annotated simple drawing default scale" width="400"/>
@@ -200,10 +197,10 @@ But sometimes you might prefer to set the scale to match the pixels, or some oth
     dudraw.set_x_scale(0, 600)
     dudraw.set_y_scale(0, 400)
     dudraw.clear(dudraw.LIGHT_GRAY)
-    dudraw.set_pen_color(dudraw.DARK_GREEN) # draw a mountain
-    dudraw.filled_triangle(0, 0, 600, 0, 300, 280)
+    dudraw.set_pen_color(dudraw.DARK_GREEN)
+    dudraw.filled_triangle(0, 0, 600, 0, 300, 280)  # green triangle mountain
     dudraw.set_pen_color(dudraw.YELLOW)    
-    dudraw.filled_circle(480, 300, 40)    # draw a sun
+    dudraw.filled_circle(480, 300, 40)              # yellow circle sun
     dudraw.show()
 
 <img src="scaled_annotated_simple.png" alt="annotated simple drawing pixel scale" width="400"/>
@@ -230,7 +227,6 @@ The size is in points. The default font family is Helvetica, and the default siz
     dudraw.set_font_family("Arial")
     dudraw.set_font_size(6)
     dudraw.text(0.5, 0.8, "Arial 6 point")
-    dudraw.save("text_demo.png")
     dudraw.show()
 
 
@@ -304,6 +300,24 @@ Polling for a key click typically happens within an animation loop. You must fir
         dudraw.show(50)
         if dudraw.has_next_key_typed() and dudraw.next_key_typed()=='q':
             done = True;
+
+## How do I save my image in a file
+
+   Use the `dudraw.save()` function. You can output either .png files or .jpg files. The extension you use in the file name determines what file type is output.
+   Here's an example of a program that draws a very simple picture, and saves the output to two files, one .png and one .jpg:
+
+    #-----------------------------------
+    # demo of saving to a file in dudraw
+    #-----------------------------------
+    import dudraw
+    # draw a red circle on a field of white
+    dudraw.set_canvas_size(300,300)
+    dudraw.set_pen_color(dudraw.RED)
+    dudraw.filled_circle(0.5, 0.5, 0.25)
+    dudraw.save("red_circle.jpg")
+    dudraw.save("red_circle.png")
+
+Notice that this program does not have a call to `dudraw.show()`. This means that, although the image is saved to both files, a window displaying the image is never opened, and the image is not displayed to the screen.
 
 ## How do I use an image as a background?
 
