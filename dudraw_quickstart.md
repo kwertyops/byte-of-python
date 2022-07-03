@@ -26,17 +26,24 @@ Begin by creating a canvas of a specified size (in pixels), then issue graphics 
 
 ```python
 import dudraw
+
 # open a square window, parameters are width and height, in pixels
 dudraw.set_canvas_size(200,200)
+
 # fill the canvas with the given color
 dudraw.clear(dudraw.LIGHT_GRAY)
+
 # once the pen color is set, that is the color used until it is changed again
 dudraw.set_pen_color(dudraw.DARK_GREEN)
+
 # draw a triangle with vertices (0, 0), (1, 0) and (0.5, 0.7)
 dudraw.filled_triangle(0, 0, 1, 0, 0.5, 0.7)
 dudraw.set_pen_color(dudraw.YELLOW)
+
 # Draw a circle with center at (0.8, 0.75), with a radius of 0.1
 dudraw.filled_circle(0.8, 0.75, 0.1)
+
+# Display the canvas
 dudraw.show()
 ```
 
@@ -210,6 +217,7 @@ By default, the scale in a dudraw canvas is [0, 1] x [0, 1], even if the size of
 
 ```python
 import dudraw
+
 dudraw.set_canvas_size(600,400)
 dudraw.clear(dudraw.LIGHT_GRAY)
 dudraw.set_pen_color(dudraw.DARK_GREEN)
@@ -225,6 +233,7 @@ But sometimes you might prefer to set the scale to match the pixels, or some oth
 
 ```python
 import dudraw
+
 dudraw.set_canvas_size(600, 400)
 dudraw.set_x_scale(0, 600)
 dudraw.set_y_scale(0, 400)
@@ -283,6 +292,7 @@ Here is sample code that animates a circle appearing to move from the lower left
 # Simple demo program of animation
 # Animate a circle moving diagonally across the canvas
 import dudraw
+
 # (x, y) is the position of the center of the circle
 x = 0 
 y = 0 
@@ -311,6 +321,7 @@ You can find out the position of the mouse (regardless of whether the mouse is p
 # demo of mouse presses in dudraw
 #--------------------------------
 import dudraw
+
 dudraw.set_canvas_size(500,500)
 
 # animation loop
@@ -331,6 +342,7 @@ Polling for a key click typically happens within an animation loop. You must fir
 # demo of mouse presses and key presses in dudraw
 #-------------------------------------------------
 import dudraw
+
 dudraw.set_canvas_size(500,500)
 done = False
 
@@ -355,6 +367,7 @@ while not done:
 # demo of saving to a file in dudraw
 #-----------------------------------
 import dudraw
+
 # draw a red circle on a field of white
 dudraw.set_canvas_size(300,300)
 dudraw.set_pen_color(dudraw.RED)
