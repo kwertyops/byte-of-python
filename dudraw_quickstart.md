@@ -47,7 +47,7 @@ dudraw.filled_circle(0.8, 0.75, 0.1)
 dudraw.show()
 ```
 
-![Simple Drawing of mountain and sun](mountain.png)
+![Simple Drawing of mountain and sun](img/mountain.png)
 
 ## How do I get more colors?
 This is a list of the colors pre-defined in dudraw:
@@ -77,7 +77,7 @@ dudraw.BOOK_RED
 To create colors of your own, first note that a color on a computer monitor can be defined by an intensity for red light, green light and blue light, each of which is an integer value from 0 to 255. Colors on a compter monitor are additive like light, rather than subtractive like paint. For example, to create yellow light, you add together green light and red light. So the brightest yellow is defined by red=255, green = 255, blue = 0. You can play around with choosing colors with many different programs. On many browsers, if you do an internet search on "color picker" one will show up. Or there are many free ones available on websites, for example here: [color picker website](https://htmlcolorcodes.com/color-picker/).
 For example, here's a nice plum color, with values r = 140, g = 40, b = 160:
 
-<img src="plum_color.png" alt="a swatch with a plum color" width="75"/>
+<img src="img/plum_color.png" alt="a swatch with a plum color" width="75"/>
 
 Here's a way to make your background this color, or to set your pen color to this color:
 
@@ -147,7 +147,7 @@ dudraw.elliptical_arc(475, 150, 50, 100, 200, 340)
 dudraw.show()
 ```
 
-![basic shapes](basic_shapes.png)
+![basic shapes](img/basic_shapes.png)
 
 These are not the only shapes affected by the pen width setting. Others include `dudraw.circle()`, `dudraw.square()`, `dudraw.polygon()`, `dudraw.triangle()`, `dudraw.arc()`, `dudraw.elliptical_sector()`, and `dudraw.annulus()`.
 
@@ -208,7 +208,7 @@ dudraw.filled_elliptical_sector(475, 150, 50, 100, 200, 340)
 dudraw.show()
 ```
 
-![filled basic shapes](filled_basic_shapes.png)
+![filled basic shapes](img/filled_basic_shapes.png)
 
 These are not the only filled shapes. Other examples include `dudraw.filled_triangle()`, dudraw.`filled_circle()`, `dudraw.filled_polygon()`, and `dudraw.filled_annulus()`.
 
@@ -227,7 +227,7 @@ dudraw.filled_circle(0.8, 0.75, 0.1)         # yellow circle sun
 dudraw.show()
 ```
 
-<img src="stretched_simple.png" alt="annotated simple drawing default scale" width="400"/>
+<img src="img/stretched_simple.png" alt="annotated simple drawing default scale" width="400"/>
 
 But sometimes you might prefer to set the scale to match the pixels, or some other scaling. This is often useful if the canvas is not square. Here's the code to produce a nearly identical drawing, with the scale on the x-axis and y-axis set to be different from each other, and to have one unit be the size of one pixel. The canvas was created with a width of 600 pixels and a height of 400 pixels. The x-scale is set to go from 0 to 600, while the y-scale is set to go from 0 to 400. Notice that each graphics primitive was modified to reflect the change of scale. The image below is annoted to show how the scale on the axes works.
 
@@ -245,7 +245,7 @@ dudraw.filled_circle(480, 300, 40)              # yellow circle sun
 dudraw.show()
 ```
 
-<img src="scaled_annotated_simple.png" alt="annotated simple drawing pixel scale" width="400"/>
+<img src="img/scaled_annotated_simple.png" alt="annotated simple drawing pixel scale" width="400"/>
 
 When you create a drawing, the first thing you should do is decide on your scale, since that is the basis for all of the numbers in each shape you draw.
 
@@ -274,7 +274,7 @@ dudraw.text(0.5, 0.8, "Arial 6 point")
 dudraw.show()
 ```
 
-<img src="text_demo.png" alt="sample of fonts and sizes" width="500"/>
+<img src="img/text_demo.png" alt="sample of fonts and sizes" width="500"/>
 
 
 ## How do I create an animation?

@@ -5,6 +5,7 @@
 * [About Python](about_python.md)
 * [Installation](installation.md)
 * [First Steps](first_steps.md)
+* [DUDraw Quickstart](dudraw_quickstart.md)
 * [Basics](basics.md)
 * [Operators and Expressions](op_exp.md)
 * [Control flow](control_flow.md)
