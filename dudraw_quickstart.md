@@ -357,7 +357,7 @@ while not done:
         done = True
 ```
 
-## How do I save my image in a file
+## How do I save my image in a file?
 
    Use the `dudraw.save()` function. You can output either .png files or .jpg files. The extension you use in the file name determines what file type is output.
    Here's an example of a program that draws a very simple picture, and saves the output to two files, one .png and one .jpg:
@@ -378,10 +378,12 @@ dudraw.save("red_circle.png")
 
 Notice that this program does not have a call to `dudraw.show()`. This means that, although the image is saved to both files, a window displaying the image is never opened, and the image is not displayed to the screen.
 
-## How do I use an image as a background?
+## How do I get official details on all of the methods?
 
-TBD
+See here for the official documentation:
 
-## How do I get official details on all of the methods
+[https://kwertyops.github.io/dudraw/](https://kwertyops.github.io/dudraw/)
 
-TBD
+And here for the source code:
+
+[https://github.com/kwertyops/dudraw](https://github.com/kwertyops/dudraw)
