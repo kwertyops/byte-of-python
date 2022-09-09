@@ -16,6 +16,7 @@
 * [Input and Output](io.md)
 * [Exceptions](exceptions.md)
 * [Standard Library](stdlib.md)
+* [Data Science](data_science.md)
 * [More](more.md)
 * [What Next](what_next.md)
 * [Appendix: FLOSS](floss.md)

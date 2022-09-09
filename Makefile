@@ -1,4 +1,4 @@
-# https://github.com/honkit/honkit
+.PHONY: setup build pdf epub serve publish
 setup:
 	npm install honkit --save-dev
 
@@ -13,3 +13,6 @@ epub:
 
 serve:
 	npx honkit serve
+
+publish:
+	rsync -ravP docs/* intropython@linux.cs.du.edu:~/public_html/byte-of-python
