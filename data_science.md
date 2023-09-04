@@ -61,7 +61,7 @@ The CSV format is more general than the specific use-case we're talking about he
 ```python
 with open('mydata.csv') as csvfile:
     # here's the magic step:
-    rows = csv.DictReader(csvfile)
+    rows = list(csv.DictReader(csvfile))
     for r in rows:
         print(r)
         # r is now a dictionary!

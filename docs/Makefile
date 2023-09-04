@@ -15,4 +15,4 @@ serve:
 	npx honkit serve
 
 publish:
-	scp -r docs intropython@linux.cs.du.edu:~/public_html/byte-of-python
+	rsync -ravP docs/* intropython@linux.cs.du.edu:~/public_html/byte-of-python

@@ -382,8 +382,8 @@ Notice that this program does not have a call to `dudraw.show()`. This means tha
 
 See here for the official documentation:
 
-[https://kwertyops.github.io/dudraw/](https://kwertyops.github.io/dudraw/)
+[https://cs.du.edu/~intropython/dudraw/](https://cs.du.edu/~intropython/dudraw/)
 
 And here for the source code:
 
-[https://github.com/kwertyops/dudraw](https://github.com/kwertyops/dudraw)
+[https://git.cs.du.edu/dudraw/dudraw](https://git.cs.du.edu/dudraw/dudraw)
