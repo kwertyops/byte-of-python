@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Introduction · HonKit</title>
+        <title>Data Science · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.4">
@@ -84,7 +84,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -189,7 +189,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="20_data_science.html">
+        <li class="chapter active" data-level="2.1.1" data-path="20_data_science.html">
             
                 <a href="20_data_science.html">
             
@@ -237,7 +237,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >Data Science</a>
     </h1>
 </div>
 
@@ -252,8 +252,84 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="university-of-denver---introduction-to-programming">University of Denver - Introduction to Programming</h1>
-<p>This online book is the reference for readings and examples for the DU Department of Computer Science COMP 1351/1352 courses.</p>
+                                <h1 id="data-science">Data Science </h1>
+<p>Python is becoming an increasingly popular choice for many applications, but in particular it has become one of the standards in the field of Data Science.</p>
+<p>Because of its popularity and applicability to this field, let&apos;s explore a few fundamental techniques for working with existing datasets and how Python can help make our lives easier!</p>
+<h2 id="tabular-data">Tabular Data</h2>
+<p>First, let&apos;s focus on a common data format known as &quot;tabular data&quot;. This just means data that is best represented as a table. A relatable way of thinking about this kind of data might be an Excel spreadsheet that represents a collection of &quot;items&quot; of the same type. Each row represents one &quot;item&quot;, and each column is an attribute of that &quot;item&quot;:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Age</strong></th>
+<th><strong>Favorite Icecream</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bob</td>
+<td>24</td>
+<td>Chocolate</td>
+</tr>
+<tr>
+<td>Alice</td>
+<td>31</td>
+<td>Vanilla</td>
+</tr>
+<tr>
+<td>John</td>
+<td>48</td>
+<td>Strawberry</td>
+</tr>
+</tbody>
+</table>
+<p>For example, this a sheet of &quot;people&quot;, where each row is a &quot;person&quot;, and each column is an attribute of that person.</p>
+<p>There are many different ways of working with tabular data (storing it, reading it, modifying it, analyzing it) and we&apos;re going to focus on one that will let us explore and use the data structures we&apos;re already familiar with.</p>
+<hr>
+<h2 id="csv-comma-separated-values">CSV (Comma-Separated Values)</h2>
+<p>The simplest way of representing a table is to just put it in a text file. Even for this, there are many ways you could choose to do it, but probably the most common way is using comma-separated-values (CSV).</p>
+<p>Each row of text will represent one item, where the attributes of that item are separated by commas. Typically, the first row of text in the file will be the names of the columns (attributes):</p>
+<pre><code>name,age,fav_icecream
+Bob,24,chocolate
+Alice,31,vanilla
+John,48,strawberry
+</code></pre><p>Note: sometimes this can be hard to read visually due to the mis-alignment of columns. If you&apos;re using VSCode (or something similar) you can install add-ons that color your CSV to make the columns clearer (or add spacing to align them).</p>
+<p>Since a .csv file is just a text file, we can read it as we would normally read any text file in Python (with the open() function). But turning that text into other data structures (lists/dictionaries) is so common that Python has a built-in CSV reader!:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> csv
+
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&apos;mydata.csv&apos;</span>) <span class="hljs-keyword">as</span> csvfile:
+    rows = csv.reader(csvfile)
+    <span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> rows:
+        <span class="hljs-built_in">print</span>(r)
+        <span class="hljs-comment"># r is a list of the values</span>
+        <span class="hljs-comment"># [value1, value2, ...]</span>
+</code></pre>
+<p>So in one go, we&apos;ve turned the CSV file full of text into a <strong>list of lists</strong>, containing our data!</p>
+<p>NOTE: You can also read files with separators other than a comma:</p>
+<pre><code class="lang-python">rows = csv.reader(csvfile, delimiter=<span class="hljs-string">&apos;;&apos;</span>)
+</code></pre>
+<p>The CSV format is more general than the specific use-case we&apos;re talking about here (tabular data) - it&apos;s really just a way of storing lists of values in rows! For the specific use-case of tabular data (i.e. items in rows, with attributes in columns, and a starting row of column names) there&apos;s a specific tool that we&apos;ll use from the csv module:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&apos;mydata.csv&apos;</span>) <span class="hljs-keyword">as</span> csvfile:
+    <span class="hljs-comment"># here&apos;s the magic step:</span>
+    rows = <span class="hljs-built_in">list</span>(csv.DictReader(csvfile))
+    <span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> rows:
+        <span class="hljs-built_in">print</span>(r)
+        <span class="hljs-comment"># r is now a dictionary!</span>
+        <span class="hljs-comment"># { column_name: attribute, ... }</span>
+</code></pre>
+<p>So now, we&apos;ve turned our text (CSV) representation of a table... into a <strong>list of dictionaries</strong>!!! Each dictionary represents one full &quot;Person&quot;, with all of their attributes. It looks like this:</p>
+<pre><code class="lang-python">[
+    { <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Bob&quot;</span>,
+      <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">24</span>,
+      <span class="hljs-string">&quot;fav_icecream&quot;</span>: <span class="hljs-string">&quot;chocolate&quot;</span> },
+    { <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Alice&quot;</span>,
+      <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">31</span>,
+      <span class="hljs-string">&quot;fav_icecream&quot;</span>: <span class="hljs-string">&quot;vanilla&quot;</span> },
+    { <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;John&quot;</span>,
+      <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">48</span>,
+      <span class="hljs-string">&quot;fav_icecream&quot;</span>: <span class="hljs-string">&quot;strawberry&quot;</span>}
+]
+</code></pre>
 
                                 
                                 </section>
@@ -289,7 +365,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Day 1","level":"1.2","depth":1,"ref":"","articles":[{"title":"Python, VSCode, and dudraw Installation","level":"1.2.1","depth":2,"path":"01_installation.md","ref":"01_installation.md","articles":[]},{"title":"dudraw Overview","level":"1.2.2","depth":2,"path":"02_dudraw_quickstart.md","ref":"02_dudraw_quickstart.md","articles":[]},{"title":"Class 1 Notes","level":"1.2.3","depth":2,"path":"03_class_notes_01.md","ref":"03_class_notes_01.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","backticks":"```","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"backticks":"```","backtickspy":"```python"},"backtickspy":"```python","gitbook":"*"},"file":{"path":"README.md","mtime":"2023-09-05T15:36:48.291Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2023-09-07T01:05:38.761Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Data Science","level":"2.1.1","depth":2,"previous":{"title":"Day 20","level":"2.1","depth":1,"ref":"","articles":[{"title":"Data Science","level":"2.1.1","depth":2,"path":"20_data_science.md","ref":"20_data_science.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","backticks":"```","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"backticks":"```","backtickspy":"```python"},"backtickspy":"```python","gitbook":"*"},"file":{"path":"20_data_science.md","mtime":"2023-09-05T16:08:04.255Z","type":"markdown"},"gitbook":{"version":"3.7.4","time":"2023-09-07T01:05:38.761Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

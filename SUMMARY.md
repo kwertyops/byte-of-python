@@ -1,27 +1,12 @@
 # Summary
 
-* [Dedication](dedication.md)
-* [About Python](about_python.md)
-* [Installation](installation.md)
-* [First Steps](first_steps.md)
-* [dudraw Quickstart](dudraw_quickstart.md)
-* [Data Types, Variables, and Syntax](basics.md)
-* [Operators and Expressions](op_exp.md)
-* [if Statements and while/for Loops](control_flow.md)
-* [Functions](functions.md)
-* [Modules](modules.md)
-* [Lists, Tuples, Dictionaries, and Sets](data_structures.md)
-* [Problem Solving](problem_solving.md)
-* [Object Oriented Programming](oop.md)
-* [Input and Output](io.md)
-* [Exceptions](exceptions.md)
-* [Standard Library](stdlib.md)
-* [Data Science](data_science.md)
-* [More](more.md)
-* [What Next](what_next.md)
-* [Appendix: FLOSS](floss.md)
-* [Appendix: About](about.md)
-* [Appendix: Revision History](revision_history.md)
-* [Appendix: Translations](translations.md)
-* [Appendix: Translation How-to](translation_howto.md)
-* [Feedback](feedback.md)
+* Day 1
+    * [Python, VSCode, and `dudraw` Installation](01_installation.md)
+    * [`dudraw` Overview](02_dudraw_quickstart.md)
+    * [Class 1 Notes](03_class_notes_01.md)
+
+* Day 2
+
+
+* Day 20
+    * [Data Science](20_data_science.md)
