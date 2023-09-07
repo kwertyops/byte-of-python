@@ -6,7 +6,7 @@ src = "src"
 title = "Introduction to Programming"
 
 [build]
-build-dir = "book"
+build-dir = "docs"
 
 [output.html]
 default-theme = "rust"

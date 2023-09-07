@@ -1,7 +1,7 @@
 .PHONY: build serve publish
 build:
 	mdbook build
-	cp js/searcher-pyscript.js book/searcher.js
+	cp js/searcher-pyscript.js docs/searcher.js
 
 serve:
 	mdbook serve
