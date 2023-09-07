@@ -1,18 +1,10 @@
-.PHONY: setup build pdf epub serve publish
-setup:
-	npm install honkit --save-dev
-
+.PHONY: build serve publish
 build:
-	npx honkit build . docs --log=debug
-
-pdf:
-	npx honkit pdf . byte-of-python.pdf
-
-epub:
-	npx honkit epub . byte-of-python.epub
+	mdbook build
+	cp js/searcher-pyscript.js book/searcher.js
 
 serve:
-	npx honkit serve
+	mdbook serve
 
 publish:
-	rsync -ravP docs/* intropython@linux.cs.du.edu:~/public_html/byte-of-python
+	rsync -ravP docs/* intropython@linux.cs.du.edu:~/public_html/intro-to-programming

@@ -1,0 +1,8 @@
+py-repl {
+    font-size: 0.875em;
+}
+
+py-repl .output {
+    font-family: monospace;
+    background: aliceblue;
+}

@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Class 1 Notes - Introduction to Programming</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../css/pyscript.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Day 1</li><li class="chapter-item expanded "><a href="../day_01/installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="../day_01/dudraw_quickstart.html"><strong aria-hidden="true">2.</strong> dudraw Overview</a></li><li class="chapter-item expanded "><a href="../day_01/class_notes.html" class="active"><strong aria-hidden="true">3.</strong> Class 1 Notes</a></li><li class="chapter-item expanded affix "><li class="part-title">Day 2</li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Draft Chapter</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="../draft_pages/data_science.html"><strong aria-hidden="true">5.</strong> Data Science</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Introduction to Programming</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="notes-for-class-meeting-1"><a class="header" href="#notes-for-class-meeting-1">Notes for Class Meeting 1</a></h2>
+<p><strong>Goals:</strong></p>
+<ul>
+<li>Introduction to course (Canvas, syllabus)</li>
+<li>Download and run VSCode (an IDE for working with the Python programming language)</li>
+<li>Create static drawings using Python and the dudraw package</li>
+<li>Create drawings using basic shapes with different locations, sizes and colors.</li>
+<li>Create functions as a way of separating code into logical blocks</li>
+</ul>
+<h3 id="what-are-python-vscode-and-dudraw"><a class="header" href="#what-are-python-vscode-and-dudraw">What are Python, VSCode and dudraw?</a></h3>
+<ul>
+<li>
+<p><strong>Python</strong> is a programming language, one of the languages commonly used in industry and academia.</p>
+</li>
+<li>
+<p><strong>VSCode</strong> is free software that allows you to create and run Python programs. To create a Python program, you first write code in a text editor. The VSCode program has a built-in editor that you will use for this step. Then, the Python code that you write must be converted to instructions that a computer can directly understand. This conversion step is known as compiling. VSCode provides the ability to compile Python programs. You can then run (execute) the compiled computer instructions, and VSCode also has an interface that allows you to do that. Finally, when you run your programs, often you will accidentally have made mistakes (called &quot;bugs&quot;). The process of figuring out and fixing these errors is called &quot;debugging&quot;. The VSCode program has built-in components that help you debug. Since VSCode has these many capabilities rolled into one program (editing, compiling, running, debugging), it is called an Integrated Development Environment (or IDE). There are many IDEs for Python available, some free and some for purchase. VSCode is one of the common IDEs used today in industry.</p>
+</li>
+<li>
+<p><strong>dudraw</strong> is a software package containing a collection of Python functions (code) for producing simple graphical output and animations. It is a modification and enhancement of code written and developed at Princeton University for undergraduates to use in beginning programming classes. It is available for free. You may find more information here: <a href="https://cs.du.edu/%7Eintropython/dudraw/">https://cs.du.edu/~intropython/dudraw/</a></p>
+</li>
+</ul>
+<h3 id="first-graphics-program"><a class="header" href="#first-graphics-program">First graphics program</a></h3>
+<h3 id="key-ideas-of-the-draw_line-program-using-dudraw"><a class="header" href="#key-ideas-of-the-draw_line-program-using-dudraw">Key ideas of the draw_line program using dudraw:</a></h3>
+<ul>
+<li>A Python program which uses the `dudraw`` library to draw several lines is shown below: </li>
+</ul>
+<pre><code class="language-python">&quot;&quot;&quot; 
+   Example program to draw several lines using dudraw
+   Author: 
+   Date:
+   Description of program 
+&quot;&quot;&quot;
+import dudraw
+
+# Create a canvas which is 500 pixels by 500 pixels
+dudraw.set_canvas_size(500, 500)
+
+# draw two lines on the canvas
+dudraw.line(0.33, 0.0, 0.66, 1.0)
+dudraw.line(0.66, 0.0, 0.33, 1.0)
+
+# show the canvas for 10000 milliseconds
+dudraw.show(10000)
+</code></pre>
+<ul>
+<li>When using DUDraw, start by setting the size of the canvas you are drawing on using<code>dudraw.set_canvas_size()</code></li>
+<li>The numbers represent the size of the canvas in pixels. The first number is the width in pixels and the second is the height in pixels. Pixels are the smallest &quot;picture element&quot; which can be drawn on the computer screen.</li>
+<li>The <code>dudraw.line()</code> statement draws a line between two endpoints (locations) on the canvas. The first two numbers specify the x and y coordinates (location) of the first endpoint and the last two numbers specify the x and y coordinate (location) of the second endpoint.</li>
+<li><code>dudraw.set_canvas_size()</code> and <code>dudraw.line()</code> are examples of commands, also known as &quot;function calls&quot;. Commands may take parameters (information), which go inside the parentheses and which give the details about what you want the command to do.</li>
+<li>Go to <a href="https://cs.du.edu/%7Eintropython/dudraw/">https://cs.du.edu/~intropython/dudraw/</a> for detailed information about graphics commands available in DUDraw.</li>
+<li>Just like in your algebra or calculus classes, the origin (x=0, y=0) in <code>dudraw</code> is the lower left-hand corner. Values for x increase to the right and values for y increase upwards, like you're used to in your mathematics classes.</li>
+<li>The default scale on the axes in <code>dudraw</code> is 1 unit horizontally and 1 unit vertically for the entire window. This can be changed if you like. The code below changes the scale creates a scale of 1 unit per pixel.</li>
+</ul>
+<pre><code class="language-python">import dudraw
+
+# create a 600 pixel wide by 400 pixel tall canvas 
+dudraw.set_canvas_size(600,400)
+
+# set the scale on each axis to be one unit per pixel
+dudraw.set_x_scale(0, 600)
+dudraw.set_y_scale(0, 400)
+
+# fill the background with light gray
+dudraw.clear(dudraw.LIGHT_GRAY)
+
+# draw a line from upper left corner to lower right corner
+dudraw.line(0, 400, 600, 0)
+
+# show the canvas for 10000 milliseconds
+dudraw.show(10000)
+</code></pre>
+<ul>
+<li>The code we write is called source-code, readable by people. The compiler converts source-code into machine-code, which is executable (runnable) by the computer. In VSCode, after making changes to your code, click the &quot;play&quot; button to compile and then execute (run) the program. If your code has a syntax error (which is like a grammatical error), then the compiler gives an error message, and the code will not run until you fix it. If your code has a logical error (which we refer to as a bug), then your program will compile and run, but will not behave the way you expect.</li>
+<li>Comments are embedded in a program. Their purpose is to help people reading the program to understand the thought process of the programmer (you). The compiler ignores them, so they have zero effect on how the program runs. Comments should add conceptual information rather than just parroting back what the code itself says. So for example, here is some <em>Bad</em> commenting, which does not add any additional information for the reader:</li>
+</ul>
+<pre><code class="language-python"># Here is an example of some unhelpful comments:
+dudraw.set_canvas_size(600,400)   # make the size 600 by 400
+dudraw.line(0, 400, 600, 0).      # make a line 
+</code></pre>
+<ul>
+<li>There are two types of comments: block comments and in-line comments. Block comments are bracketed between the symbols <code>'''</code> or <code>&quot;&quot;&quot;</code>. Everything between those two symbols is a comment, ignored by the interpreter. In-line comments start with the symbol <code>#</code>. Everything after the <code>#</code> on the same line is a comment and is ignored by the interpreter,</li>
+<li>Use tabs to properly indent code.</li>
+</ul>
+<h3 id="second-graphics-program-using-circles-arcs-and-rectangles-to-draw-a-happy-face"><a class="header" href="#second-graphics-program-using-circles-arcs-and-rectangles-to-draw-a-happy-face">Second graphics program: using circles, arcs and rectangles to draw a happy face</a></h3>
+<pre><code class="language-python">&quot;&quot;&quot;
+ Author: Jane Smith
+ Date: September, 2021
+ My second graphics program:
+ Draw a happy face using rectangles, circles and arcs
+&quot;&quot;&quot;
+import dudraw 
+# Create a 400 wide by 400 tall canvas to draw upon 
+dudraw.set_canvas_size(400,400)
+# Set horizontal scale to be one unit per pixel 
+dudraw.set_x_scale(0,400)
+# Set vertical scale to be one unit per pixel 
+dudraw.set_y_scale(0,400)  
+# gray background
+dudraw.clear(dudraw.LIGHT_GRAY)
+dudraw.set_pen_color(dudraw.WHITE)
+dudraw.filled_ellipse(200,200,200,200)
+dudraw.set_pen_color(dudraw.BLACK)
+# draw the head
+dudraw.ellipse(200,200,200,200) 
+# draw the left eye
+dudraw.rectangle(125,275,25,25)
+# draw the right eye  
+dudraw.rectangle(275,275,25,25)
+# draw the smiling mouth   
+dudraw.arc(200,175,100,180,360)
+
+dudraw.show(10000)
+</code></pre>
+<p>Program output:</p>
+<p><img src="../img/03_class_notes_01/happy.png" alt="happy.png" /></p>
+<h3 id="key-ideas-of-the-happy-face-program"><a class="header" href="#key-ideas-of-the-happy-face-program">Key ideas of the happy-face program:</a></h3>
+<ul>
+<li>Make it a practice to use on-line documentation.</li>
+<li>For rectangles, the first two parameters passed to the <code>dudraw.rectangle()</code> command are the x- and y-coordinates of the center of the rectangle, and the second two numbers are the half-width and half-height of the rectangle.</li>
+<li>Draw circles with the <code>dudraw.ellipse()</code> command. Draw disks (filled circles) with the <code>dudraw.filled_ellipse()</code> command. For these two commands, the first two parameters are the center of the ellipse, the second two parameters are the half-width and half-height of the ellipse (for a circle, the half-width and half-height should both be the same, and equal to the radius).</li>
+<li>An arc is part of a circle. The parameters to the <code>dudraw.arc()</code> command are two numbers for the center of the circle, then radius, and finally start and stop angle. Angles are measured in degrees. Like you see in a trigonometry class, an angle of 0 will point in the positive x-direction and increase in a counter-clockwise direction.</li>
+</ul>
+<h3 id="a-modification-to-the-happy-face-program-creating-and-using-our-own-commands-aka-functions"><a class="header" href="#a-modification-to-the-happy-face-program-creating-and-using-our-own-commands-aka-functions">A modification to the happy-face program: creating and using our own commands (aka functions)</a></h3>
+<p>It is often useful to separate parts of our code into logical blocks and to create new commands (or functions) using these snippets of code. This strategy is helpful because it makes it more convenient to share code with each other. But additionally, as we'll see in a future class, creating functions allows us to write more flexible code and to avoid duplicating our work. Below is a version of the happy face program that defines and uses its own command (function). The output is identical to the original version.</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+ Author: Jane Smith
+ Date: September, 2021
+ Improvement to my second graphics program: 
+ Draw a happy face using rectangles, circles and arcs
+ This time use a method to separate a logical block of code
+&quot;&quot;&quot;
+import dudraw
+
+# This function draws a primitive smiling face, filling the region from (0,0) to (400,400) */
+def draww_face():
+   dudraw.set_pen_color(dudraw.WHITE);
+   dudraw.filled_ellipse(200,200,200,200);
+   dudraw.set_pen_color(dudraw.BLACK);
+   dudraw.ellipse(200,200,200,200);  # Draw the head    
+   dudraw.rectangle(125,275,25,25);  # left eye    
+   dudraw.rectangle(275,275,25,25);  # right eye    
+   dudraw.arc(200,175,100,180,360);  # smiling mouth
+
+# Create a 400 wide by 400 tall canvas to draw upon 
+dudraw.set_canvas_size(400,400) 
+# Set horizontal scale to be one unit per pixel      
+dudraw.set_x_scale(0,400) 
+# Set vertical scale to be one unit per pixel            
+dudraw.set_y_scale(0,400)   
+# gray background          
+dudraw.clear(dudraw.LIGHT_GRAY)      
+draww_face()
+dudraw.show(10000)
+</code></pre>
+<h3 id="third-graphics-program-a-happy-face-with-more-colors"><a class="header" href="#third-graphics-program-a-happy-face-with-more-colors">Third graphics program: a happy face with more colors</a></h3>
+<pre><code class="language-python">&quot;&quot;&quot;
+ Author: Jane Smith
+ Date: September, 2021
+ My third graphics program:
+ Draw a happy face using rectangles, circles and arcs
+ But add some color and changes to line thickness this time
+&quot;&quot;&quot;
+import dudraw
+
+# This function draws a primitive smiling face, filling the region from (0,0) to (400,400)
+def draw_face():
+   dudraw.set_pen_width(3)                 # set line thickness to 3 pixels
+   dudraw.set_pen_color(255,255,0)          # yellow for the face
+   dudraw.filled_ellipse(200,200,200,200)  # face
+   dudraw.set_pen_color(0,255,255)          # cyan to outline the face
+   dudraw.ellipse(200,200,200,200)        # Draw the outline of the face  
+   dudraw.set_pen_color(137,114,85)         # Brown for the eyes  
+   dudraw.filledRectangle(125,275,25,25)  # left eye    
+   dudraw.filledRectangle(275,275,25,25)  # right eye  
+   dudraw.set_pen_color(194,106,206)        # lavender for the lips 
+   dudraw.set_pen_width(10)                # 10 pixel-wide line for the mouth
+   dudraw.arc(200,175,100,180,360)        # smiling mouth
+
+dudraw.set_canvas_size(400,400)           # Create a 400 wide by 400 tall canvas to draw upon
+dudraw.set_x_scale(0,400)                 # Set horizontal scale to be one unit per pixel
+dudraw.set_y_scale(0,400)                 # Set vertical scale to be one unit per pixel
+dudraw.set_pen_color(255,0,0)             # bright red
+dudraw.filled_rectangle(200,200,200,200)  # red background
+draw_face()
+dudraw.show(10000)
+</code></pre>
+<p>Program output:<br />
+<img src="../img/03_class_notes_01/happy_in_color.png" alt="happy_in_color.png" /></p>
+<h3 id="key-ideas-of-the-third-program"><a class="header" href="#key-ideas-of-the-third-program">Key ideas of the third program:</a></h3>
+<ul>
+<li>A common way to specify colors in computer graphics is to define the amount of red light, green light and blue light to use. The intensity of each color is a number from 0 to 255. For example, the command <code>dudraw.set_pen_color(255,0,0)</code> sets the current color to full intensity red, no component of green, and no component of blue.</li>
+<li>Since colors on the screen are defined by adding light intensity rather than adding pigment intensity, mixing colors on the screen works differently than mixing paint. For example, black is an intensity of 0 for all three colors, white is an intensity of 255 for all three colors, and pure yellow comes from full intensity red (255) plus full intensity green (255). For more details, see  <a href="https://en.wikipedia.org/wiki/RGB_color_model">https://en.wikipedia.org/wiki/RGB_color_model</a>.</li>
+<li>To find an on-line color selector tool, do an internet search on &quot;rgb color picker&quot;. This type of tool gives you numerical red/green/blue color values for specific colors.</li>
+<li>To change the width of lines (and arcs), use the <code>dudraw.set_pen_width()</code> command, which takes one parameter that gives the width of the line (or curve) in pixels. For example, <code>dudraw.set_pen_width(3)</code> sets the line thickness to be 3 pixels.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../day_01/dudraw_quickstart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../draft_pages/data_science.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../day_01/dudraw_quickstart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../draft_pages/data_science.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../js/disable_keyboard.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,17 @@
+[book]
+authors = ["Andrew Hannum", "Faan Tone Liu", "Mohammed Albow", "Jeffrey Edgington"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Introduction to Programming"
+
+[build]
+build-dir = "book"
+
+[output.html]
+default-theme = "rust"
+additional-js = ["js/disable_keyboard.js"]
+additional-css = ["css/pyscript.css"]
+
+[output.html.playground]
+editable = true
