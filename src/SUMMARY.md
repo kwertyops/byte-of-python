@@ -1,9 +1,9 @@
 # Summary
 
 # Day 1
-- [Python, VSCode, and `dudraw` Installation](day_01/installation.md)
-- [`dudraw` Overview](day_01/dudraw_quickstart.md)
-- [Class 1 Notes](day_01/class_notes.md)
+- [Python, VSCode, and `dudraw` Installation](installation.md)
+- [`dudraw` Overview](dudraw_quickstart.md)
+- [Class 1 Notes](class_notes_01.md)
 
 # Day 2
 - [Draft Chapter]()

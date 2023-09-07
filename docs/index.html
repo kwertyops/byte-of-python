@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Day 1</li><li class="chapter-item expanded "><a href="day_01/installation.html" class="active"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="day_01/dudraw_quickstart.html"><strong aria-hidden="true">2.</strong> dudraw Overview</a></li><li class="chapter-item expanded "><a href="day_01/class_notes.html"><strong aria-hidden="true">3.</strong> Class 1 Notes</a></li><li class="chapter-item expanded affix "><li class="part-title">Day 2</li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Draft Chapter</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">5.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Day 1</li><li class="chapter-item expanded "><a href="installation.html" class="active"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">2.</strong> dudraw Overview</a></li><li class="chapter-item expanded "><a href="class_notes_01.html"><strong aria-hidden="true">3.</strong> Class 1 Notes</a></li><li class="chapter-item expanded affix "><li class="part-title">Day 2</li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Draft Chapter</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">5.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,12 +147,12 @@
 <h2 id="development-environment"><a class="header" href="#development-environment">Development Environment</a></h2>
 <p>In order to be able to write and execute Python programs, we will have you install two different pieces of software on your computer:</p>
 <h3 id="python"><a class="header" href="#python">Python:</a></h3>
-<p><img src="../img/01_installation/installation_python_interpreter.png" alt="A console showing the Python interactive interpreter." /></p>
+<p><img src="img/01_installation/installation_python_interpreter.png" alt="A console showing the Python interactive interpreter." /></p>
 <p>This is the Python <strong><em>interpreter</em></strong> (or Python <em>executable</em>). This is the software that will actually read your Python code, and tell the computer how to execute it.</p>
 <p>This is usually bundled with an extra piece of software (written in Python!) called '<strong>pip</strong>'. Pip is a package manager that is used to install and manage extra Python packages and libraries. It gives you easy access to more powerful tools that aren't necessarily included with Python from the get-go.</p>
 <p>The interpreter is technically the only software you need to write and execute Python programs (and it is the most important!), but to make our lives easier we will also install...</p>
 <h3 id="visual-studio-code"><a class="header" href="#visual-studio-code">Visual Studio Code:</a></h3>
-<p><img src="../img/01_installation/installation_vscode.png" alt="A screenshot of Microsoft Visual Studio Code" /></p>
+<p><img src="img/01_installation/installation_vscode.png" alt="A screenshot of Microsoft Visual Studio Code" /></p>
 <p>This is a code editor called Visual Studio Code (<strong>VSCode</strong>) -- not to be confused with Visual Studio, another Microsoft product.</p>
 <p>Any Python program that you write will simply be a text file, but with a filename that ends in &quot;<strong>.py</strong>&quot; (instead of &quot;<strong>.txt</strong>&quot;, or &quot;<strong>.doc</strong>&quot; for example). Because of this, you can use any simple text editor to write the code if you want (for example Notepad.exe on Windows, or TextEdit.app on Mac -- but not Microsoft Word!).</p>
 <p>Nowadays though, many programmers will use a special text editor that makes writing code easier by adding helpful tools like syntax highlighting, autocomplete suggestions, and executing/debugging programs - all from within the text editor!</p>
@@ -201,9 +201,9 @@
 <ol>
 <li>Optionally, go through any initial setup that it walks you through (choosing a theme, etc) or skip all of that for now.</li>
 <li>When VSCode opens you will see the <strong>explorer</strong> pane on the left (see picture below). Click on <strong>Open Folder</strong>  and navigate to your &quot;COMP1351&quot; folder. Depending on where you saved your COMP1351 folder, and your operating system, at this point you might get a security popup asking you if &quot;you trust the author of the files in this folder&quot; so click yes<br />
-<img src="../img/01_installation/installation_vscodesetup1.png" alt="VSCode file explorer pane." /></li>
+<img src="img/01_installation/installation_vscodesetup1.png" alt="VSCode file explorer pane." /></li>
 <li>Create a new text file (File -&gt; New Text File) or by clicking the &quot;new file&quot; button (see picture below). Name the file &quot;hello.py&quot; then press return. A new file will be created as in the picture below. Once you've created the file, you may see a popup in the lower-right corner of VSCode asking if you want to install the &quot;Recommended Python (see &quot;Extension&quot; notes below - you can install them now or in a moment).
-<img src="../img/01_installation/installation_vscodesetup2.png" alt="VSCode new file and new folder buttons." /></li>
+<img src="img/01_installation/installation_vscodesetup2.png" alt="VSCode new file and new folder buttons." /></li>
 <li>Copy/paste the following Python code into that text file:</li>
 </ol>
 <pre><code class="language-python">print(&quot;Hello world!&quot;)  
@@ -216,17 +216,17 @@ print(&quot;This is my first Python program!&quot;)
 <li>If you have not already installed them, then install them now.</li>
 <li>This will probably take you to another window in VSCode showing the extension info.</li>
 <li>If you didn't get the recommended extensions popup, or have problems starting the installation, you can go to the Extensions tab on the left-hand panel and manually search for the official Microsoft &quot;Python&quot; extension:</li>
-<li><img src="../img/01_installation/installation_vscodesetup3.png" alt="Addon pane in VSCode." width="150"/><img src="../img/01_installation/installation_vscodesetup4.png" alt="Python Extension in VSCode." width="200"/></li>
+<li><img src="img/01_installation/installation_vscodesetup3.png" alt="Addon pane in VSCode." width="150"/><img src="img/01_installation/installation_vscodesetup4.png" alt="Python Extension in VSCode." width="200"/></li>
 <li>After you're done installing the Python extension, go back your code by selecting the tab at the top with the filename you chose.</li>
 </ul>
 </li>
 <li>In the bottom-right, you should see a part of the info bar that says &quot;Python&quot; and a version number next to it:
-<img src="../img/01_installation/installation_vscodesetup5.png" alt="Python version in bottom bar of VSCode." />
+<img src="img/01_installation/installation_vscodesetup5.png" alt="Python version in bottom bar of VSCode." />
 Make sure that version number matches the Python version you installed (for example 3.10.6). If it doesn't, click on the version number and then select the Python executable that you installed earlier.</li>
 <li>You should also now see in the upper-right corner a triangular &quot;play&quot; button. Go ahead and click it to run your Python file!<br />
-<img src="../img/01_installation/installation_vscodesetup6.png" alt="VSCode run button." /></li>
+<img src="img/01_installation/installation_vscodesetup6.png" alt="VSCode run button." /></li>
 <li>If everything is working, you should see a console come up at the bottom of your window, and at the end of the text in that console you should see the text &quot;Hello world!&quot; and &quot;This is my first Python program!&quot; (probably among other things).
-<img src="../img/01_installation/installation_vscodesetup7.png" alt="VSCode output pane." /></li>
+<img src="img/01_installation/installation_vscodesetup7.png" alt="VSCode output pane." /></li>
 </ol>
 <hr />
 <h2 id="final-setup"><a class="header" href="#final-setup">Final Setup</a></h2>
@@ -264,7 +264,7 @@ dudraw.show(10000)
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next" href="day_01/dudraw_quickstart.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="dudraw_quickstart.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -275,7 +275,7 @@ dudraw.show(10000)
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next" href="day_01/dudraw_quickstart.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="dudraw_quickstart.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

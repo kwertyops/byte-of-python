@@ -118,7 +118,7 @@ dudraw.show(10000)
 
 Program output:  
 
-![happy.png](../img/03_class_notes_01/happy.png)
+![happy.png](img/03_class_notes_01/happy.png)
 
 ### Key ideas of the happy-face program:
 
@@ -199,7 +199,7 @@ dudraw.show(10000)
 ```
 
 Program output:  
-![happy_in_color.png](../img/03_class_notes_01/happy_in_color.png)
+![happy_in_color.png](img/03_class_notes_01/happy_in_color.png)
 
 ### Key ideas of the third program:
 

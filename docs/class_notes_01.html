@@ -13,30 +13,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
-        <link rel="stylesheet" href="../css/print.css" media="print">
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../css/pyscript.css">
+        <link rel="stylesheet" href="css/pyscript.css">
 
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "../";
+            var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
         </script>
 
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Day 1</li><li class="chapter-item expanded "><a href="../day_01/installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="../day_01/dudraw_quickstart.html"><strong aria-hidden="true">2.</strong> dudraw Overview</a></li><li class="chapter-item expanded "><a href="../day_01/class_notes.html" class="active"><strong aria-hidden="true">3.</strong> Class 1 Notes</a></li><li class="chapter-item expanded affix "><li class="part-title">Day 2</li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Draft Chapter</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="../draft_pages/data_science.html"><strong aria-hidden="true">5.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Day 1</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">2.</strong> dudraw Overview</a></li><li class="chapter-item expanded "><a href="class_notes_01.html" class="active"><strong aria-hidden="true">3.</strong> Class 1 Notes</a></li><li class="chapter-item expanded affix "><li class="part-title">Day 2</li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Draft Chapter</div></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">5.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -114,7 +114,7 @@
                     <h1 class="menu-title">Introduction to Programming</h1>
 
                     <div class="right-buttons">
-                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -257,7 +257,7 @@ dudraw.arc(200,175,100,180,360)
 dudraw.show(10000)
 </code></pre>
 <p>Program output:</p>
-<p><img src="../img/03_class_notes_01/happy.png" alt="happy.png" /></p>
+<p><img src="img/03_class_notes_01/happy.png" alt="happy.png" /></p>
 <h3 id="key-ideas-of-the-happy-face-program"><a class="header" href="#key-ideas-of-the-happy-face-program">Key ideas of the happy-face program:</a></h3>
 <ul>
 <li>Make it a practice to use on-line documentation.</li>
@@ -330,7 +330,7 @@ draw_face()
 dudraw.show(10000)
 </code></pre>
 <p>Program output:<br />
-<img src="../img/03_class_notes_01/happy_in_color.png" alt="happy_in_color.png" /></p>
+<img src="img/03_class_notes_01/happy_in_color.png" alt="happy_in_color.png" /></p>
 <h3 id="key-ideas-of-the-third-program"><a class="header" href="#key-ideas-of-the-third-program">Key ideas of the third program:</a></h3>
 <ul>
 <li>A common way to specify colors in computer graphics is to define the amount of red light, green light and blue light to use. The intensity of each color is a number from 0 to 255. For example, the command <code>dudraw.set_pen_color(255,0,0)</code> sets the current color to full intensity red, no component of green, and no component of blue.</li>
@@ -343,11 +343,11 @@ dudraw.show(10000)
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../day_01/dudraw_quickstart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="dudraw_quickstart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../draft_pages/data_science.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="draft_pages/data_science.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -357,11 +357,11 @@ dudraw.show(10000)
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../day_01/dudraw_quickstart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="dudraw_quickstart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../draft_pages/data_science.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="draft_pages/data_science.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -375,22 +375,22 @@ dudraw.show(10000)
             window.playground_copyable = true;
         </script>
 
-        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        <script type="text/javascript" src="../js/disable_keyboard.js"></script>
+        <script type="text/javascript" src="js/disable_keyboard.js"></script>
 
 
     </body>
