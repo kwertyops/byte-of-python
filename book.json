@@ -1,8 +1,5 @@
 {
     "variables": {
-        "backticks": "```",
-        "backtickspy": "```python"
-    },
-    "backticks": "```",
-    "backtickspy": "```python"
+        "title": "Intro to Programming"
+    }
 }
