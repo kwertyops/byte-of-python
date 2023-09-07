@@ -3,10 +3,11 @@
 # Day 1
 - [Python, VSCode, and `dudraw` Installation](installation.md)
 - [`dudraw` Overview](dudraw_quickstart.md)
-- [Class 1 Notes](class_notes_01.md)
+- [First Program](hello.md)
 
 # Day 2
-- [Draft Chapter]()
+- [User Input and Output](user_input_and_output.md)
+- [Variables, Assignment, Types and Arithmetic](variables_assignment_types_arithmetic.md)
 
 ---
 
