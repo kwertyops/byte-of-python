@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Day 1</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">2.</strong> dudraw Overview</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">3.</strong> First Program</a></li><li class="chapter-item expanded affix "><li class="part-title">Day 2</li><li class="chapter-item expanded "><a href="user_input_and_output.html"><strong aria-hidden="true">4.</strong> User Input and Output</a></li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">5.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">6.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="output.html"><strong aria-hidden="true">3.</strong> Outputting information to the user using print()</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">4.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Using variables to store information</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">5.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="input.html"><strong aria-hidden="true">6.</strong> Inputting information from the user using input()</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">7.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -259,6 +259,70 @@ dudraw.show(10000)
 <li>If everything goes well, you should see a window appear with a black circle in it. It will close itself after 10 seconds. That's it!</li>
 </ol>
 <p><strong>If something went wrong in any of the steps above, try the videos in the preclass assignment. If those don't help, then please contact your instructor before the first class to get help with setting up.</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="your-first-python-program"><a class="header" href="#your-first-python-program">Your first python program.</a></h1>
+<p>It is traditional in Computer Science for your first program in any language to output the phrase &quot;Hello, world!&quot; to the console. This is a way of checking that your IDE (Integrated Development Environment) is working completely.
+In python, the bare-bones &quot;Hello, world!&quot; program is just one line. Our version will be longer, to illustrate some other important programming practices.</p>
+<p>In the VSCode application, open the browswer window and create a new file called <code>hello.py</code>. It's important that the name you choose ends with <code>.py</code>, so that your IDE knows to interpret your file as a python program. Paste the following:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+First python program, that outputs &quot;Hello, world!&quot;
+File Name: hello.py
+Date: 
+Course: COMP1351
+Assignment: first python program
+Collaborators: 1351 Instructors
+Internet Sources: None
+&quot;&quot;&quot;
+
+def main():
+    # Here's the guts of the program, just one line:
+    print(&quot;Hello, world!&quot;)
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+<p>Key points to notice and remember:</p>
+<ul>
+<li>Use the <code>print()</code> function to output to the console. Put the text you want to output inside of the parentheses. Text in python (called a <em>string literal</em>) is enclosed either within double quotes (&quot;text&quot;) or single quotes ('text').</li>
+<li><em>Comments</em> in a computer program are lines that python itself ignores. Comments are there for the benefit of humans (including your future self) reading your program. There are two kinds of comments in python: <em>block comments</em> and <em>in-line comments</em>. </li>
+<li>You can see that the first 9 lines of this program is a block comment, since it is enclosed between lines of three double-quotes. Every python program that you turn in this quarter will start with a block comment giving your name, the purpose of the program, the name of the file it is stored in, the date, the course it is for, the assignment it is fulfilling, your collaborators, and any internet sources you used.</li>
+<li>An inline comment starts with a <code>#</code>-sign. Anything on the line after a <code>#</code> is a comment that python ignores. Placing in-line comments in your code to explain your thought process while writing the code is an essential part of writing good code. Write the comments either before or during the coding process, <strong>not after</strong>.</li>
+<li>The lines</li>
+</ul>
+<pre><code class="language-python">def main():
+    # Here's the guts of the program, just one line:
+    print(&quot;Hello, world!&quot;)
+</code></pre>
+<p>define the main function of the program. This function has one comment, and one line of executable code.</p>
+<ul>
+<li>At the end of the program, the lines</li>
+</ul>
+<pre><code class="language-python">if __name__ == '__main__':
+    main()
+</code></pre>
+<p>have the effect of <em>calling</em> (also called <em>invoking</em> or <em>executing</em>) the main function. Notice that the definition of the function itself (<code>def main()</code>) has the line <code>print(&quot;Hello, world!&quot;)</code>. But that line doesn't get executed until the <code>main()</code> function itself is called.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="outputting-information-from-the-program-to-the-user"><a class="header" href="#outputting-information-from-the-program-to-the-user">Outputting information from the program to the user</a></h2>
+<p>In python, use the <code>print()</code> function to output information to the user.</p>
+<p>Here is a run-of-the-mill print statement:</p>
+<pre><code class="language-python">print(&quot;Hello, World!&quot;)
+</code></pre>
+<p>When you run this line of code, the following is output this to the console:</p>
+<pre><code class="language-python">Hello, World!
+</code></pre>
+<p>The following two lines demonstrate that when you have two print statements, they get executed in order. </p>
+<pre><code class="language-python">print(&quot;Hello&quot;)
+print(&quot;World&quot;)
+</code></pre>
+<p>The output shows that each print statement automatically takes you to the next line on the console.</p>
+<pre><code class="language-python">Hello
+World
+</code></pre>
+<p>You can put two or more strings in a print statement, separated by a comma:</p>
+<pre><code class="language-python">print(&quot;Hello&quot;, &quot;World&quot;, &quot;!&quot;)
+</code></pre>
+<p>The output shows that a space automatically is inserted between each parameter:</p>
+<pre><code class="language-python">Hello World !
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-to-dudraw"><a class="header" href="#introduction-to-dudraw">Introduction to <code>dudraw</code></a></h1>
 <h2 id="what-can-you-do-with-dudraw"><a class="header" href="#what-can-you-do-with-dudraw">What can you do with <code>dudraw</code>?</a></h2>
 <p>The python package <code>dudraw</code> is a minimal graphics library developed for teaching a beginning python programming class. Its starting point was <code>stddraw</code>, developed at Princeton University (see <a href="https://introcs.cs.princeton.edu/python/code/index.php#programs">Elements of Programming in Python</a>). At the University of Denver we modified and enhanced that package to produce <code>dudraw</code>.</p>
@@ -579,108 +643,121 @@ dudraw.save(&quot;red_circle.png&quot;)
 <p><a href="https://cs.du.edu/%7Eintropython/dudraw/">https://cs.du.edu/~intropython/dudraw/</a></p>
 <p>And here for the source code:</p>
 <p><a href="https://git.cs.du.edu/dudraw/dudraw">https://git.cs.du.edu/dudraw/dudraw</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="your-first-python-program"><a class="header" href="#your-first-python-program">Your first python program.</a></h1>
-<p>It is traditional in Computer Science for your first program in any language to output the phrase &quot;Hello, world!&quot; to the console. This is a way of checking that your IDE (Integrated Development Environment) is working completely.
-In python, the bare-bones &quot;Hello, world!&quot; program is just one line. Our version will be longer, to illustrate some other important programming practices.</p>
-<p>In the VSCode application, open the browswer window and create a new file called <code>hello.py</code>. It's important that the name you choose ends with <code>.py</code>, so that your IDE knows to interpret your program as a python program. Paste the following:</p>
-<pre><code class="language-python">&quot;&quot;&quot;
-First python program, that outputs &quot;Hello, world!&quot;
-File Name: hello.py
-Date: 
-Course: COMP1351
-Assignment: first python program
-Collaborators: 1351 Instructors
-Internet Sources: None
-&quot;&quot;&quot;
-
-def main():
-    # Here's the guts of the program, just one line:
-    print(&quot;Hello, world!&quot;)
-
-# Run the program:
-if __name__ == '__main__':
-    main()
-</code></pre>
-<p>Key points to notice and remember:</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="variables-in-python"><a class="header" href="#variables-in-python">Variables in python</a></h2>
 <ul>
-<li>Use the <code>print()</code> function to output to the console. Put the text you want to output inside of the parentheses. Text in python are enclosed either within double quotes (&quot;text&quot;) or single quotes ('text')</li>
-<li><strong>Comments</strong> in a computer program are lines that python itself ignores. Comments are there for the benefit of humans reading your program. There are two kinds of comments in python: <em>block comments</em> and <em>in-line comments</em>. </li>
-<li>You can see that the first 9 lines of this program is a block comment, since it is enclosed between lines of three double-quotes. Every python program that you turn in this quarter will start with a block comment giving your name, the purpose of the program, the name of the file it is stored in, the date, the course it is for, the assignment it is fulfilling, your collaborators, and any internet sources you used.</li>
-<li>An inline comment starts with a <code>#</code>-sign. Anything on the line after a <code>#</code> is a comment that python ignores. Placing in-line comments in your code to explain your thought process while writing the code is an essential part of writing good code. Write the comments either before or during the coding process, <strong>not after</strong>.</li>
-<li>The lines</li>
+<li>The purpose of a <em>variable</em> is to store information within a program while it is running.</li>
+<li>A variable is a named storage location in computer memory. Use the name to access the value.</li>
+<li>To store a value in a variable, use the <code>=</code> operator (called the assignment operator).</li>
+<li>An <code>=</code> sign in python is nothing like an equal sign in mathematics. Think of it more like an arrow going from right to left. The expression on the right is evaluated and then stored in the variable named on the left.</li>
+<li>For example, the line of code
+<code>hourly_wage = 16.75</code>
+stores the value 16.75 in the variable called <code>hourly_wage</code></li>
+<li>You can change the value of a variable with another assignment statement, such as 
+<code>hourly_wage = 17.25</code></li>
+<li>Every value has a type (<code>int</code> for integers, <code>float</code> for decimals, <code>str</code> for text). In python, when you store a value in a variable (with <code>=</code>), that variable then automatically has a type. For example, after the above assignment, <code>hourly_wage</code> is of type <code>float</code></li>
 </ul>
-<pre><code class="language-python">def main():
-    # Here's the guts of the program, just one line:
-    print(&quot;Hello, world!&quot;)
-</code></pre>
-<p>define the main function of the program. This function has one comment, and one line of executable code.</p>
+<h2 id="rules-and-conventions-for-naming-variables-in-python"><a class="header" href="#rules-and-conventions-for-naming-variables-in-python">Rules and conventions for naming variables in python</a></h2>
 <ul>
-<li>At the end of the program, the lines</li>
+<li>The first character must be a letter or an underscore. For now, stick to letters for the first character.</li>
+<li>The remaining characters must be letters, numbers or underscores.</li>
+<li>No spaces are allowed in variable names.</li>
+<li>Legal examples: <code>_pressure</code>, <code>pull</code>, <code>x_y</code>, <code>r2d2</code></li>
+<li>Invalid examples, these are NOT legal variable names: <code>4th_dimension</code>, <code>%profit</code>, <code>x*y</code>, <code>four(4)</code>, <code>repo man</code></li>
+<li>In python, it's a conventiion to use <em>snake case</em> to name variables. This means that we use all lower-case letters and we separate words in the variable name with underscores. Examples include <code>age</code>, <code>x_coordinate</code>, <code>hourly_wage</code>, <code>user_password</code></li>
+<li>If the value stored in a variable is a true constant (in other words, its value will never change throughout the program), then we use all capital letters: <code>COURSE_ENROLLMENT_LIMIT</code>, <code>MAX_PASSWORD_ATTEMPTS</code>.</li>
+<li>For high quality code, it is crucial that you choose names for variables that are descriptive. The variable names must help the reader of your program to understand your intention.</li>
 </ul>
-<pre><code class="language-python">if __name__ == '__main__':
-    main()
+<h2 id="typical-way-we-visualize-variables"><a class="header" href="#typical-way-we-visualize-variables">Typical way we visualize variables</a></h2>
+<p>We usually draw variables by putting the value in a box, and labelling the box with the name of the variable:</p>
+<p><img src="img/variables_assignment_types_arithmetic/depiction_of_variable.png" alt="Visual representation of a variable" /></p>
+<h2 id="types-of-variables"><a class="header" href="#types-of-variables">Types of variables</a></h2>
+<p>Each variable has a name, a value, and a type. Types are necessary because different kinds of data are stored differently within the computer's memory. For now, we will learn three different types, for storing signed (positive or negative) whole numbers, signed decimals, and text.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th>Type</th><th>Description</th><th>Examples</th></tr></thead><tbody>
+<tr><td>Numerical type</td><td><code>int</code></td><td>Signed integer that stores whole numbers (no decimal)</td><td>0, 7, -5</td></tr>
+<tr><td>Numerical type</td><td><code>float</code></td><td>Signed decimal value</td><td>0.5, 20.0, -18.2, 2.5e3 = 2.5x10^3</td></tr>
+<tr><td>String type (Text)</td><td><code>str</code></td><td>Any number of characters surrounded by &quot;&quot; or ''</td><td>&quot;Hello&quot;, 'world', '9'</td></tr>
+</tbody></table>
+</div>
+<h2 id="creating-a-variable-with-an-assignment-operator"><a class="header" href="#creating-a-variable-with-an-assignment-operator">Creating a variable with an assignment operator</a></h2>
+<p>A variable is created or declared when we assign a value to it using the assignment operator <code>=</code>. In python, the code looks like this:
+<code>variable_name = &lt;value&gt;</code>.</p>
+<p>Examples:</p>
+<pre><code class="language-python"># The next line stores an int value of 200 in the variable named age
+age = 200
+# The next line stores a float value of 7.5 in the variable named height
+height = 7.5
+# The next line stores a string (text) value of 'Chewbacca' in the variable named age
+name = 'Chewbacca'
 </code></pre>
-<p>have the effect of <em>calling</em> (also called <em>invoking</em> or <em>executing</em>) the main function. Notice that the definition of the function itself (<code>def main()</code>) has the line `print(&quot;Hello, world!&quot;). But that line doesn't get executed until the main function itself is called.</p>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="outputting-information-from-the-program-to-the-user"><a class="header" href="#outputting-information-from-the-program-to-the-user">Outputting information from the program to the user</a></h2>
-<p>In python, use the <code>print()</code> function to output information to the user.</p>
-<p>Here is a run-of-the-mill print statement:</p>
-<pre><code class="language-python">print(&quot;Hello, World!&quot;)
+<p>Notice that the left hand side of an assignment must be a variable name. Non-example:</p>
+<pre><code class="language-python"># The following line is an error, don't do this!
+7.5 = height
 </code></pre>
-<p>When you run this line of code, the following is output this to the console:</p>
-<pre><code class="language-python">Hello, World!
+<p>After creating a variable, you can change the value stored in a variable with another assignment operator at any time. This is called <em>reassignment</em>.</p>
+<pre><code class="language-python">age = 201
 </code></pre>
-<p>The following two lines show that when you have two print statements, they get executed in order. </p>
-<pre><code class="language-python">print(&quot;Hello&quot;)
-print(&quot;World&quot;)
+<h2 id="finding-out-the-type-of-a-variable-or-value"><a class="header" href="#finding-out-the-type-of-a-variable-or-value">Finding out the type of a variable or value</a></h2>
+<p>The <code>type()</code> function in python will return the type of either a variable or a value. Here's an example that shows how to use it:</p>
+<pre><code class="language-python">x = 5
+print(type(x))
+print(type(&quot;Wow!&quot;))
+print(type(3.14159))
 </code></pre>
-<p>The output shows that each print statement automatically takes you to the next line on the console.</p>
-<pre><code class="language-python">Hello
-World
+<p>The output of the above code will be:</p>
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'str'&gt;
+&lt;class 'float'&gt;
 </code></pre>
-<p>You can put two or more strings in a print statement, separated by a comma:</p>
-<pre><code class="language-python">print(&quot;Hello&quot;, &quot;World&quot;, &quot;!&quot;)
+<h2 id="casting-changing-the-type-of-a-variable-or-value"><a class="header" href="#casting-changing-the-type-of-a-variable-or-value">Casting (changing the type) of a variable or value</a></h2>
+<p>You can change the type of a value (called “casting”) using the <code>int()</code>, <code>float()</code> and <code>str()</code> functions. For example:</p>
+<ul>
+<li><code>int(23.7)</code> (truncates the float value 23.7 to the int value 23. This is different from rounding - the decimal part is discarded, regardless of whether it is larger or smaller than 0.5.</li>
+<li><code>float(23)</code> (outputting the result will give 23.0 rather than 23)</li>
+<li><code>str(23)</code> (converts the integer 23 to the text &quot;23&quot;)</li>
+<li><code>int(&quot;23&quot;)</code> (converts the string &quot;23&quot; into a numerical integer value 23)</li>
+<li><code>float(&quot;23&quot;)</code> (converts the string &quot;23&quot; into a numerical decimal value 23.0)</li>
+<li><code>int(&quot;23.5&quot;)</code> results in an error</li>
+<li><code>float(&quot;hello&quot;)</code> results in an error</li>
+</ul>
+<h2 id="doing-arithmetic-in-python"><a class="header" href="#doing-arithmetic-in-python">Doing arithmetic in python</a></h2>
+<p>Here are the basic arithmetic operators in python. In these examples, assume</p>
+<pre><code class="language-python">x = 11
+y = 4
 </code></pre>
-<p>The output shows that a space automatically is inserted between each parameter:</p>
-<pre><code class="language-python">Hello World !
-</code></pre>
-<p>You can use the <code>+</code> operator for <em>concatenation</em> (Concatenation means putting two strings together by tacking the second one onto the end of the first one).</p>
-<pre><code class="language-python">print(&quot;Hello&quot;+&quot;World&quot;)
-</code></pre>
-<p>The output shows that when concatenating strings, a space does <strong>not</strong> automatically get inserted:</p>
-<pre><code class="language-python">HelloWorld
-</code></pre>
-<p>Here are several ways to put a space between two different strings:</p>
-<pre><code class="language-python">print(&quot;Hello&quot;, &quot;World&quot;)
-print(&quot;Hello &quot; + &quot;World&quot;)
-print(&quot;Hello&quot; + &quot; World&quot;)
-print(&quot;Hello&quot; + &quot; &quot; + &quot;World&quot;)
-</code></pre>
-<p>Use <code>\n</code> to insert a new line in the middle of a string:</p>
-<pre><code class="language-python">print(&quot;Hello\nWorld&quot;)
-</code></pre>
-<p>Here's the output:</p>
-<pre><code class="language-python">Hello
-World
-</code></pre>
-<h2 id="getting-input-from-the-user-into-the-program"><a class="header" href="#getting-input-from-the-user-into-the-program">Getting input from the user into the program</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Operator</th><th>Description</th><th>Syntax</th><th>Output</th></tr></thead><tbody>
+<tr><td><code>+</code></td><td>Addition</td><td><code>x+y</code></td><td><code>15</code></td></tr>
+<tr><td><code>*</code></td><td>Multiplication</td><td><code>x*y</code></td><td><code>44</code></td></tr>
+<tr><td><code>-</code></td><td>Subtraction</td><td><code>x-y</code></td><td><code>7</code></td></tr>
+<tr><td><code>/</code></td><td>Decimal division (type is a <code>float)</code></td><td><code>x/y</code></td><td><code>2.75</code></td></tr>
+<tr><td><code>//</code></td><td>Integer division (result of division is truncated, giving an <code>int</code>)</td><td><code>x//y</code></td><td><code>2</code></td></tr>
+<tr><td><code>%</code></td><td>Modulus (remainder when first operand is divided by the second)</td><td><code>x%y</code></td><td><code>3</code></td></tr>
+<tr><td><code>**</code></td><td>Exponentiation (raises the first  to the power of the second )</td><td><code>x**y</code></td><td><code>14641</code></td></tr>
+</tbody></table>
+</div>
+<p>Another example of integer division and modulus: When we divide 3 by 4, we get a quotient of 0 and a remainder of 3. So <code>3//4</code> results in 0 and <code>3%4</code> results in 3.</p>
+<p>Warning note: In python, <code>^</code> is <strong>not</strong> an exponent!</p>
+<h2 id="order-of-operations"><a class="header" href="#order-of-operations">Order of operations</a></h2>
+<p>The order of operations in python is similar to the order you are familiar with in math:
+parentheses, then exponentiation, then multiplication/division/modulus in order from left to right, then addition/subtraction in order from left to right.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="getting-input-from-the-user-into-the-program"><a class="header" href="#getting-input-from-the-user-into-the-program">Getting input from the user into the program</a></h2>
 <p>Use the <code>input()</code> function to ask the user of your program for a value. For example:</p>
 <pre><code class="language-python">username = input(&quot;Enter your name: &quot;)
 print(&quot;Hello,&quot;, username)
 </code></pre>
-<p>Notice that the parameter to the <code>input()</code> function within the parentheses is a string that you want to display to the user as a message. That message is called a prompt, and it gets output to the console as part of the <code>input()</code> line. (In other words, you don't need a separate <code>print()</code> statement). Make sure the prompt clearly communicates to the user what information you are asking them to enter. Once they type the value and hit the <code>&lt;return&gt;</code> key,
-the <code>input</code> function returns the value they entered. In the above example, the user's response is stored in a variable called <code>username</code>.
+<p>Notice that the parameter within the parentheses of the <code>input()</code> function is the string that you want to display to the user as a message. That message is called a prompt, and it gets output to the console as part of the <code>input()</code> line. In other words, you don't need a separate <code>print()</code> statement. Make sure the prompt clearly communicates to the user what information you are asking them to enter. Once they type the value and hit the <code>&lt;return&gt;</code> key,
+the <code>input()</code> function returns the value they entered. In the above example, the user's response is stored in a variable called <code>username</code>.
 Here's a sample run of the above program:</p>
 <pre><code>Enter your name: Sam
 Hello, Sam
 </code></pre>
-<p>Note that the type that the <code>input</code> function returns is a string. So</p>
+<p>Note that the <code>input()</code> function always returns a string (of type <code>str</code>). To clarify,</p>
 <pre><code class="language-python">username = input(&quot;Enter your name: &quot;)
 print(type(username))
 </code></pre>
 <p>will output</p>
 <pre><code class="language-python">&lt;class 'str'&gt;
 </code></pre>
-<p>Often we want the user to input a numerical value rather than a string (text) value. In this case we must cast the result to convert it to a numerical type. For example:</p>
+<p>But often we want the user to input a numerical value rather than a string (text) value. In this case we must <em>cast</em> the result to convert it to a numerical type. This is mandatory any time you want to do arithmetic with the number the user enters. For example:</p>
 <pre><code class="language-python">user_age = input(&quot;Enter your age: &quot;)
 user_age = int(user_age)
 print(&quot;Next year you will be&quot;, user_age + 1)
@@ -689,7 +766,7 @@ print(&quot;Next year you will be&quot;, user_age + 1)
 <pre><code>Enter your age: 19
 Next year you will be 20
 </code></pre>
-<p>Note that the casting can actually be done on the same line as the input. The <code>input()</code> function returns a string, which we immediately cast using the <code>int()</code> function:</p>
+<p>Note that the casting can actually be done on the same line as the input. The <code>input()</code> function returns a string, which we can immediately cast using the <code>int()</code> function. The two lines below behave identically to the three lines of code just above.</p>
 <pre><code class="language-python">user_age = int(input(&quot;Enter your age: &quot;))
 print(&quot;Next year you will be&quot;, user_age + 1)
 </code></pre>
@@ -724,100 +801,6 @@ if __name__ == '__main__':
 How many steps did you walk today? 10000
 You walked 4.444444444444445 miles today
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="variables-in-python"><a class="header" href="#variables-in-python">Variables in python</a></h2>
-<ul>
-<li>The purpose of a <em>variable</em> is to store information within a program while it is running.</li>
-<li>A variable is named storage in computer memory. Use the name to access the value.</li>
-<li>To store a value in a variable, use the = operato (called the assignment operator). </li>
-<li>For example, the line of code
-<code>hourly_wage = 16.75</code>
-stores the value 16.75 in the variable called <code>hourly-wage</code></li>
-<li>You can change the value of a variable with another assignment statement, such as 
-<code>hourly_wage = 17.25</code></li>
-<li>Every value has a type (<code>int</code> for integers, <code>float</code> for decimals, <code>str</code> for text). In python, when you store a value in a variable (with =), that variable then automatically has a type. For example, after the above assignment, <code>hourly_wage</code> is of type <code>float</code></li>
-</ul>
-<h2 id="rules-and-conventions-for-naming-variables-in-python"><a class="header" href="#rules-and-conventions-for-naming-variables-in-python">Rules and conventions for naming variables in python</a></h2>
-<ul>
-<li>The first character must be a letter or an underscore. For now, stick to letters.</li>
-<li>The remaining letters must be letters, numbers or underscores.</li>
-<li>No spaces are allowed in variable names</li>
-<li>Valid examples: <code>_pressure</code>, <code>pull</code>, <code>x_y</code>, <code>r2d2</code></li>
-<li>Invalid examples, these are NOT legal variable names: <code>4th_dimension</code>, <code>%profit</code>, <code>x*y</code>, <code>four(4)</code>, <code>repo man</code></li>
-<li>In python, it's a conventiion to use <code>snake case</code> to name variables.This means that we use all lower-case letters and we separate words in the variable name with underscores. Examples include <code>age</code>, <code>x_coordinate</code>, <code>hourly_wage</code>, <code>user_password</code></li>
-<li>If the value stored in a variable is a true constant (in other words, its value will never change during the program), then we use all caps: <code>COURSE_ENROLLMENT_LIMIT</code>, <code>MAX_PASSWORD_ATTEMPTS</code></li>
-<li>It is crucial that you choose names for variables that are descriptive. The variable names must help the reader of your program to understand your intention.</li>
-</ul>
-<h2 id="typical-way-we-visualize-variables"><a class="header" href="#typical-way-we-visualize-variables">Typical way we visualize variables</a></h2>
-<p>We usually draw variables by putting the value in a box, and labelling the box with the name of the variable:</p>
-<p><img src="img/variables_assignment_types_arithmetic/depiction_of_variable.png" alt="Visual representation of a variable" /></p>
-<h2 id="types-of-variables"><a class="header" href="#types-of-variables">Types of variables</a></h2>
-<p>Each variable has a name, a value, and a type. Types are necessary because different kinds of data are stored differently within the computer's memory. For now, we will learn three different types, for storing signed (positive or negative) whole numbers, decimals, and text </p>
-<div class="table-wrapper"><table><thead><tr><th>Variable Type</th><th>Description</th><th>Examples</th></tr></thead><tbody>
-<tr><td>Numerical type</td><td><code>int</code></td><td>Signed integer type that stores whole numbers (no decimal)</td></tr>
-<tr><td>Numerical type</td><td><code>float</code></td><td>Signed decimal value</td></tr>
-<tr><td>String type (Text)</td><td><code>str</code></td><td>Any number of characters surrounded by &quot;&quot; or ''</td></tr>
-</tbody></table>
-</div>
-<h2 id="creating-variables---assignment-operators"><a class="header" href="#creating-variables---assignment-operators">Creating variables - assignment operators</a></h2>
-<p>A variable is created or declared when we assign a value to it using the assignment operator <code>=</code>. In python, the code looks like this:
-<code>variable_name = &lt;value&gt;</code>
-Notice that the left hand side of an assignment must be a variable name
-Examples:</p>
-<pre><code class="language-python"># The next line stores an int value of 200 in the variable named age
-age = 200
-# The next line stores a float value of 7.5 in the variable named height
-height = 7.5
-# The next line stores a string (text) value of 'Chewbacca' in the variable named age
-name = 'Chewbacca'
-</code></pre>
-<p>Non-example:</p>
-<pre><code class="language-python"># The following line is an error, don't do this!
-200 = height
-</code></pre>
-<p>After creating a variable, you can change the value stored in a variable with another assignment operator at any time. This is called <em>reassignment</em></p>
-<pre><code class="language-python">age = 201
-</code></pre>
-<h2 id="finding-out-the-type-of-a-variable-or-value"><a class="header" href="#finding-out-the-type-of-a-variable-or-value">Finding out the type of a variable or value</a></h2>
-<p>The <code>type()</code> function in python will return the type of either a variable or a value. Here's an example that shows how to use it:</p>
-<pre><code class="language-python">x = 5
-print(type(x))
-print(type(&quot;Wow!&quot;))
-print(type(3.14159))
-</code></pre>
-<p>The output of the above code will be:</p>
-<pre><code>&lt;class 'int'&gt;
-&lt;class 'str'&gt;
-&lt;class 'float'&gt;
-</code></pre>
-<h1 id="casting-changing-the-type-of-a-variable-or-value"><a class="header" href="#casting-changing-the-type-of-a-variable-or-value">Casting (changing the type) of a variable or value</a></h1>
-<p>You can change the type of a value (called “casting”) using the <code>int()</code>, <code>float()</code> and <code>str()</code> functions. For example:</p>
-<ul>
-<li><code>int(23.2)</code> (rounds down, or truncates the float value 23.2 to the int value 23)</li>
-<li><code>float(&quot;23&quot;)</code> (outputting the result will give 23.0 rather than 23)</li>
-<li><code>str(23)</code> (the result is the text &quot;23&quot; rather than the number 23)</li>
-<li><code>int('23')</code> (the result is a conversion of the string &quot;23&quot; into a numerical integer value of 23)</li>
-<li><code>int(&quot;23.5&quot;)</code> results in an error</li>
-<li><code>float(&quot;hello&quot;)</code> results in an error</li>
-</ul>
-<h1 id="doing-arithmetic-in-python"><a class="header" href="#doing-arithmetic-in-python">Doing arithmetic in python</a></h1>
-<p>Here are the basic arithmetic operators in python. In these examples, assume</p>
-<pre><code class="language-python">x = 11
-y = 4
-</code></pre>
-<div class="table-wrapper"><table><thead><tr><th>Operator</th><th>Description</th><th>Syntax</th><th>Output</th></tr></thead><tbody>
-<tr><td><code>+</code></td><td>Addition</td><td><code>x+y</code></td><td><code>15</code></td></tr>
-<tr><td><code>*</code></td><td>Multiplication</td><td><code>x*y</code></td><td><code>44</code></td></tr>
-<tr><td><code>-</code></td><td>Subtraction</td><td><code>x-y</code></td><td><code>7</code></td></tr>
-<tr><td><code>/</code></td><td>Decimal division (type is a float)</td><td><code>x/y</code></td><td><code>2.75</code></td></tr>
-<tr><td><code>//</code></td><td>Integer division (type is an int, result of division is truncated)</td><td><code>x//y</code></td><td><code>2</code></td></tr>
-<tr><td><code>%</code></td><td>Modulus (remainder when first operand is divided by the second)</td><td><code>x%y</code></td><td><code>3</code></td></tr>
-<tr><td><code>**</code></td><td>Exponentiation (raises the first  to the power of the second )</td><td><code>x**y</code></td><td><code>14641</code></td></tr>
-</tbody></table>
-</div>
-<p>Warning note: In python, <code>^</code> is <strong>not</strong> an exponent!</p>
-<h2 id="order-of-operations"><a class="header" href="#order-of-operations">Order of operations</a></h2>
-<p>The order of operations in python is similar to the order you are familiar with in math:
-parentheses, exponentiation, multiplication/division/modulus in order from left to right, addition/subtraction in order from left to right.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="data-science"><a class="header" href="#data-science">Data Science</a></h1>
 <p>Python is becoming an increasingly popular choice for many applications, but in particular it has become one of the standards in the field of Data Science.</p>
 <p>Because of its popularity and applicability to this field, let's explore a few fundamental techniques for working with existing datasets and how Python can help make our lives easier!</p>

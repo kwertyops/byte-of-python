@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Day 1</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">2.</strong> dudraw Overview</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">3.</strong> First Program</a></li><li class="chapter-item expanded affix "><li class="part-title">Day 2</li><li class="chapter-item expanded "><a href="user_input_and_output.html"><strong aria-hidden="true">4.</strong> User Input and Output</a></li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html" class="active"><strong aria-hidden="true">5.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">6.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="output.html"><strong aria-hidden="true">3.</strong> Outputting information to the user using print()</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">4.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Using variables to store information</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html" class="active"><strong aria-hidden="true">5.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="input.html"><strong aria-hidden="true">6.</strong> Inputting information from the user using input()</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">7.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -146,42 +146,42 @@
                         <h2 id="variables-in-python"><a class="header" href="#variables-in-python">Variables in python</a></h2>
 <ul>
 <li>The purpose of a <em>variable</em> is to store information within a program while it is running.</li>
-<li>A variable is named storage in computer memory. Use the name to access the value.</li>
-<li>To store a value in a variable, use the = operato (called the assignment operator). </li>
+<li>A variable is a named storage location in computer memory. Use the name to access the value.</li>
+<li>To store a value in a variable, use the <code>=</code> operator (called the assignment operator).</li>
+<li>An <code>=</code> sign in python is nothing like an equal sign in mathematics. Think of it more like an arrow going from right to left. The expression on the right is evaluated and then stored in the variable named on the left.</li>
 <li>For example, the line of code
 <code>hourly_wage = 16.75</code>
-stores the value 16.75 in the variable called <code>hourly-wage</code></li>
+stores the value 16.75 in the variable called <code>hourly_wage</code></li>
 <li>You can change the value of a variable with another assignment statement, such as 
 <code>hourly_wage = 17.25</code></li>
-<li>Every value has a type (<code>int</code> for integers, <code>float</code> for decimals, <code>str</code> for text). In python, when you store a value in a variable (with =), that variable then automatically has a type. For example, after the above assignment, <code>hourly_wage</code> is of type <code>float</code></li>
+<li>Every value has a type (<code>int</code> for integers, <code>float</code> for decimals, <code>str</code> for text). In python, when you store a value in a variable (with <code>=</code>), that variable then automatically has a type. For example, after the above assignment, <code>hourly_wage</code> is of type <code>float</code></li>
 </ul>
 <h2 id="rules-and-conventions-for-naming-variables-in-python"><a class="header" href="#rules-and-conventions-for-naming-variables-in-python">Rules and conventions for naming variables in python</a></h2>
 <ul>
-<li>The first character must be a letter or an underscore. For now, stick to letters.</li>
-<li>The remaining letters must be letters, numbers or underscores.</li>
-<li>No spaces are allowed in variable names</li>
-<li>Valid examples: <code>_pressure</code>, <code>pull</code>, <code>x_y</code>, <code>r2d2</code></li>
+<li>The first character must be a letter or an underscore. For now, stick to letters for the first character.</li>
+<li>The remaining characters must be letters, numbers or underscores.</li>
+<li>No spaces are allowed in variable names.</li>
+<li>Legal examples: <code>_pressure</code>, <code>pull</code>, <code>x_y</code>, <code>r2d2</code></li>
 <li>Invalid examples, these are NOT legal variable names: <code>4th_dimension</code>, <code>%profit</code>, <code>x*y</code>, <code>four(4)</code>, <code>repo man</code></li>
-<li>In python, it's a conventiion to use <code>snake case</code> to name variables.This means that we use all lower-case letters and we separate words in the variable name with underscores. Examples include <code>age</code>, <code>x_coordinate</code>, <code>hourly_wage</code>, <code>user_password</code></li>
-<li>If the value stored in a variable is a true constant (in other words, its value will never change during the program), then we use all caps: <code>COURSE_ENROLLMENT_LIMIT</code>, <code>MAX_PASSWORD_ATTEMPTS</code></li>
-<li>It is crucial that you choose names for variables that are descriptive. The variable names must help the reader of your program to understand your intention.</li>
+<li>In python, it's a conventiion to use <em>snake case</em> to name variables. This means that we use all lower-case letters and we separate words in the variable name with underscores. Examples include <code>age</code>, <code>x_coordinate</code>, <code>hourly_wage</code>, <code>user_password</code></li>
+<li>If the value stored in a variable is a true constant (in other words, its value will never change throughout the program), then we use all capital letters: <code>COURSE_ENROLLMENT_LIMIT</code>, <code>MAX_PASSWORD_ATTEMPTS</code>.</li>
+<li>For high quality code, it is crucial that you choose names for variables that are descriptive. The variable names must help the reader of your program to understand your intention.</li>
 </ul>
 <h2 id="typical-way-we-visualize-variables"><a class="header" href="#typical-way-we-visualize-variables">Typical way we visualize variables</a></h2>
 <p>We usually draw variables by putting the value in a box, and labelling the box with the name of the variable:</p>
 <p><img src="img/variables_assignment_types_arithmetic/depiction_of_variable.png" alt="Visual representation of a variable" /></p>
 <h2 id="types-of-variables"><a class="header" href="#types-of-variables">Types of variables</a></h2>
-<p>Each variable has a name, a value, and a type. Types are necessary because different kinds of data are stored differently within the computer's memory. For now, we will learn three different types, for storing signed (positive or negative) whole numbers, decimals, and text </p>
-<div class="table-wrapper"><table><thead><tr><th>Variable Type</th><th>Description</th><th>Examples</th></tr></thead><tbody>
-<tr><td>Numerical type</td><td><code>int</code></td><td>Signed integer type that stores whole numbers (no decimal)</td></tr>
-<tr><td>Numerical type</td><td><code>float</code></td><td>Signed decimal value</td></tr>
-<tr><td>String type (Text)</td><td><code>str</code></td><td>Any number of characters surrounded by &quot;&quot; or ''</td></tr>
+<p>Each variable has a name, a value, and a type. Types are necessary because different kinds of data are stored differently within the computer's memory. For now, we will learn three different types, for storing signed (positive or negative) whole numbers, signed decimals, and text.</p>
+<div class="table-wrapper"><table><thead><tr><th></th><th>Type</th><th>Description</th><th>Examples</th></tr></thead><tbody>
+<tr><td>Numerical type</td><td><code>int</code></td><td>Signed integer that stores whole numbers (no decimal)</td><td>0, 7, -5</td></tr>
+<tr><td>Numerical type</td><td><code>float</code></td><td>Signed decimal value</td><td>0.5, 20.0, -18.2, 2.5e3 = 2.5x10^3</td></tr>
+<tr><td>String type (Text)</td><td><code>str</code></td><td>Any number of characters surrounded by &quot;&quot; or ''</td><td>&quot;Hello&quot;, 'world', '9'</td></tr>
 </tbody></table>
 </div>
-<h2 id="creating-variables---assignment-operators"><a class="header" href="#creating-variables---assignment-operators">Creating variables - assignment operators</a></h2>
+<h2 id="creating-a-variable-with-an-assignment-operator"><a class="header" href="#creating-a-variable-with-an-assignment-operator">Creating a variable with an assignment operator</a></h2>
 <p>A variable is created or declared when we assign a value to it using the assignment operator <code>=</code>. In python, the code looks like this:
-<code>variable_name = &lt;value&gt;</code>
-Notice that the left hand side of an assignment must be a variable name
-Examples:</p>
+<code>variable_name = &lt;value&gt;</code>.</p>
+<p>Examples:</p>
 <pre><code class="language-python"># The next line stores an int value of 200 in the variable named age
 age = 200
 # The next line stores a float value of 7.5 in the variable named height
@@ -189,11 +189,11 @@ height = 7.5
 # The next line stores a string (text) value of 'Chewbacca' in the variable named age
 name = 'Chewbacca'
 </code></pre>
-<p>Non-example:</p>
+<p>Notice that the left hand side of an assignment must be a variable name. Non-example:</p>
 <pre><code class="language-python"># The following line is an error, don't do this!
-200 = height
+7.5 = height
 </code></pre>
-<p>After creating a variable, you can change the value stored in a variable with another assignment operator at any time. This is called <em>reassignment</em></p>
+<p>After creating a variable, you can change the value stored in a variable with another assignment operator at any time. This is called <em>reassignment</em>.</p>
 <pre><code class="language-python">age = 201
 </code></pre>
 <h2 id="finding-out-the-type-of-a-variable-or-value"><a class="header" href="#finding-out-the-type-of-a-variable-or-value">Finding out the type of a variable or value</a></h2>
@@ -208,17 +208,18 @@ print(type(3.14159))
 &lt;class 'str'&gt;
 &lt;class 'float'&gt;
 </code></pre>
-<h1 id="casting-changing-the-type-of-a-variable-or-value"><a class="header" href="#casting-changing-the-type-of-a-variable-or-value">Casting (changing the type) of a variable or value</a></h1>
+<h2 id="casting-changing-the-type-of-a-variable-or-value"><a class="header" href="#casting-changing-the-type-of-a-variable-or-value">Casting (changing the type) of a variable or value</a></h2>
 <p>You can change the type of a value (called “casting”) using the <code>int()</code>, <code>float()</code> and <code>str()</code> functions. For example:</p>
 <ul>
-<li><code>int(23.2)</code> (rounds down, or truncates the float value 23.2 to the int value 23)</li>
-<li><code>float(&quot;23&quot;)</code> (outputting the result will give 23.0 rather than 23)</li>
-<li><code>str(23)</code> (the result is the text &quot;23&quot; rather than the number 23)</li>
-<li><code>int('23')</code> (the result is a conversion of the string &quot;23&quot; into a numerical integer value of 23)</li>
+<li><code>int(23.7)</code> (truncates the float value 23.7 to the int value 23. This is different from rounding - the decimal part is discarded, regardless of whether it is larger or smaller than 0.5.</li>
+<li><code>float(23)</code> (outputting the result will give 23.0 rather than 23)</li>
+<li><code>str(23)</code> (converts the integer 23 to the text &quot;23&quot;)</li>
+<li><code>int(&quot;23&quot;)</code> (converts the string &quot;23&quot; into a numerical integer value 23)</li>
+<li><code>float(&quot;23&quot;)</code> (converts the string &quot;23&quot; into a numerical decimal value 23.0)</li>
 <li><code>int(&quot;23.5&quot;)</code> results in an error</li>
 <li><code>float(&quot;hello&quot;)</code> results in an error</li>
 </ul>
-<h1 id="doing-arithmetic-in-python"><a class="header" href="#doing-arithmetic-in-python">Doing arithmetic in python</a></h1>
+<h2 id="doing-arithmetic-in-python"><a class="header" href="#doing-arithmetic-in-python">Doing arithmetic in python</a></h2>
 <p>Here are the basic arithmetic operators in python. In these examples, assume</p>
 <pre><code class="language-python">x = 11
 y = 4
@@ -227,26 +228,27 @@ y = 4
 <tr><td><code>+</code></td><td>Addition</td><td><code>x+y</code></td><td><code>15</code></td></tr>
 <tr><td><code>*</code></td><td>Multiplication</td><td><code>x*y</code></td><td><code>44</code></td></tr>
 <tr><td><code>-</code></td><td>Subtraction</td><td><code>x-y</code></td><td><code>7</code></td></tr>
-<tr><td><code>/</code></td><td>Decimal division (type is a float)</td><td><code>x/y</code></td><td><code>2.75</code></td></tr>
-<tr><td><code>//</code></td><td>Integer division (type is an int, result of division is truncated)</td><td><code>x//y</code></td><td><code>2</code></td></tr>
+<tr><td><code>/</code></td><td>Decimal division (type is a <code>float)</code></td><td><code>x/y</code></td><td><code>2.75</code></td></tr>
+<tr><td><code>//</code></td><td>Integer division (result of division is truncated, giving an <code>int</code>)</td><td><code>x//y</code></td><td><code>2</code></td></tr>
 <tr><td><code>%</code></td><td>Modulus (remainder when first operand is divided by the second)</td><td><code>x%y</code></td><td><code>3</code></td></tr>
 <tr><td><code>**</code></td><td>Exponentiation (raises the first  to the power of the second )</td><td><code>x**y</code></td><td><code>14641</code></td></tr>
 </tbody></table>
 </div>
+<p>Another example of integer division and modulus: When we divide 3 by 4, we get a quotient of 0 and a remainder of 3. So <code>3//4</code> results in 0 and <code>3%4</code> results in 3.</p>
 <p>Warning note: In python, <code>^</code> is <strong>not</strong> an exponent!</p>
 <h2 id="order-of-operations"><a class="header" href="#order-of-operations">Order of operations</a></h2>
 <p>The order of operations in python is similar to the order you are familiar with in math:
-parentheses, exponentiation, multiplication/division/modulus in order from left to right, addition/subtraction in order from left to right.</p>
+parentheses, then exponentiation, then multiplication/division/modulus in order from left to right, then addition/subtraction in order from left to right.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="user_input_and_output.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="dudraw_quickstart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="draft_pages/data_science.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="input.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -256,11 +258,11 @@ parentheses, exponentiation, multiplication/division/modulus in order from left 
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="user_input_and_output.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="dudraw_quickstart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="draft_pages/data_science.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="input.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

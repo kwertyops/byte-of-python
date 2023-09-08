@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>First Program - Introduction to Programming</title>
+        <title>Inputting information from the user using input() - Introduction to Programming</title>
 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html" class="active"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="output.html"><strong aria-hidden="true">3.</strong> Outputting information to the user using print()</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">4.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Using variables to store information</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">5.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="input.html"><strong aria-hidden="true">6.</strong> Inputting information from the user using input()</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">7.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="output.html"><strong aria-hidden="true">3.</strong> Outputting information to the user using print()</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">4.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Using variables to store information</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">5.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="input.html" class="active"><strong aria-hidden="true">6.</strong> Inputting information from the user using input()</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">7.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,58 +143,78 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="your-first-python-program"><a class="header" href="#your-first-python-program">Your first python program.</a></h1>
-<p>It is traditional in Computer Science for your first program in any language to output the phrase &quot;Hello, world!&quot; to the console. This is a way of checking that your IDE (Integrated Development Environment) is working completely.
-In python, the bare-bones &quot;Hello, world!&quot; program is just one line. Our version will be longer, to illustrate some other important programming practices.</p>
-<p>In the VSCode application, open the browswer window and create a new file called <code>hello.py</code>. It's important that the name you choose ends with <code>.py</code>, so that your IDE knows to interpret your file as a python program. Paste the following:</p>
+                        <h2 id="getting-input-from-the-user-into-the-program"><a class="header" href="#getting-input-from-the-user-into-the-program">Getting input from the user into the program</a></h2>
+<p>Use the <code>input()</code> function to ask the user of your program for a value. For example:</p>
+<pre><code class="language-python">username = input(&quot;Enter your name: &quot;)
+print(&quot;Hello,&quot;, username)
+</code></pre>
+<p>Notice that the parameter within the parentheses of the <code>input()</code> function is the string that you want to display to the user as a message. That message is called a prompt, and it gets output to the console as part of the <code>input()</code> line. In other words, you don't need a separate <code>print()</code> statement. Make sure the prompt clearly communicates to the user what information you are asking them to enter. Once they type the value and hit the <code>&lt;return&gt;</code> key,
+the <code>input()</code> function returns the value they entered. In the above example, the user's response is stored in a variable called <code>username</code>.
+Here's a sample run of the above program:</p>
+<pre><code>Enter your name: Sam
+Hello, Sam
+</code></pre>
+<p>Note that the <code>input()</code> function always returns a string (of type <code>str</code>). To clarify,</p>
+<pre><code class="language-python">username = input(&quot;Enter your name: &quot;)
+print(type(username))
+</code></pre>
+<p>will output</p>
+<pre><code class="language-python">&lt;class 'str'&gt;
+</code></pre>
+<p>But often we want the user to input a numerical value rather than a string (text) value. In this case we must <em>cast</em> the result to convert it to a numerical type. This is mandatory any time you want to do arithmetic with the number the user enters. For example:</p>
+<pre><code class="language-python">user_age = input(&quot;Enter your age: &quot;)
+user_age = int(user_age)
+print(&quot;Next year you will be&quot;, user_age + 1)
+</code></pre>
+<p>Sample run of the above program:</p>
+<pre><code>Enter your age: 19
+Next year you will be 20
+</code></pre>
+<p>Note that the casting can actually be done on the same line as the input. The <code>input()</code> function returns a string, which we can immediately cast using the <code>int()</code> function. The two lines below behave identically to the three lines of code just above.</p>
+<pre><code class="language-python">user_age = int(input(&quot;Enter your age: &quot;))
+print(&quot;Next year you will be&quot;, user_age + 1)
+</code></pre>
+<h2 id="putting-it-all-together"><a class="header" href="#putting-it-all-together">Putting it all together</a></h2>
+<p>Here's a full sample program:</p>
 <pre><code class="language-python">&quot;&quot;&quot;
-First python program, that outputs &quot;Hello, world!&quot;
-File Name: hello.py
-Date: 
+Demo of creating and using variables and user input
+
+File Name: variables_and_user_input.py
+Date:
 Course: COMP1351
-Assignment: first python program
+Assignment: Preclass Assignment 2
 Collaborators: 1351 Instructors
 Internet Sources: None
 &quot;&quot;&quot;
 
 def main():
-    # Here's the guts of the program, just one line:
-    print(&quot;Hello, world!&quot;)
+    print(&quot;Program that computes number of miles from steps walked&quot;)
+    # Find out step count from user
+    step_count = int(input(&quot;How many steps did you walk today? &quot;))
+    # On average there are 2250 steps per mile
+    num_of_miles = step_count/2250
+    # Report result to user
+    print(&quot;You walked&quot;, num_of_miles, &quot;miles today&quot;)
 
 # Run the program:
 if __name__ == '__main__':
     main()
 </code></pre>
-<p>Key points to notice and remember:</p>
-<ul>
-<li>Use the <code>print()</code> function to output to the console. Put the text you want to output inside of the parentheses. Text in python (called a <em>string literal</em>) is enclosed either within double quotes (&quot;text&quot;) or single quotes ('text').</li>
-<li><em>Comments</em> in a computer program are lines that python itself ignores. Comments are there for the benefit of humans (including your future self) reading your program. There are two kinds of comments in python: <em>block comments</em> and <em>in-line comments</em>. </li>
-<li>You can see that the first 9 lines of this program is a block comment, since it is enclosed between lines of three double-quotes. Every python program that you turn in this quarter will start with a block comment giving your name, the purpose of the program, the name of the file it is stored in, the date, the course it is for, the assignment it is fulfilling, your collaborators, and any internet sources you used.</li>
-<li>An inline comment starts with a <code>#</code>-sign. Anything on the line after a <code>#</code> is a comment that python ignores. Placing in-line comments in your code to explain your thought process while writing the code is an essential part of writing good code. Write the comments either before or during the coding process, <strong>not after</strong>.</li>
-<li>The lines</li>
-</ul>
-<pre><code class="language-python">def main():
-    # Here's the guts of the program, just one line:
-    print(&quot;Hello, world!&quot;)
+<p>Sample run from the above program:</p>
+<pre><code>Program that computes number of miles from steps walked
+How many steps did you walk today? 10000
+You walked 4.444444444444445 miles today
 </code></pre>
-<p>define the main function of the program. This function has one comment, and one line of executable code.</p>
-<ul>
-<li>At the end of the program, the lines</li>
-</ul>
-<pre><code class="language-python">if __name__ == '__main__':
-    main()
-</code></pre>
-<p>have the effect of <em>calling</em> (also called <em>invoking</em> or <em>executing</em>) the main function. Notice that the definition of the function itself (<code>def main()</code>) has the line <code>print(&quot;Hello, world!&quot;)</code>. But that line doesn't get executed until the <code>main()</code> function itself is called.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="installation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="variables_assignment_types_arithmetic.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="output.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="draft_pages/data_science.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -204,11 +224,11 @@ if __name__ == '__main__':
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="installation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="variables_assignment_types_arithmetic.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="output.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="draft_pages/data_science.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
