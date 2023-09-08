@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # Trigger the workflow on push to the main branch
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -42,6 +43,6 @@ jobs:
 
       # Deploy the built documentation to the remote server using rsync
       - name: Deploy Documentation to Remote Server
-        run: rsync -ravP docs/* intropython@linux.cs.du.edu:~/public_html/intro-to-programming
+        run: rsync -ravP --rsh "ssh -o StrictHostKeyChecking=no" docs/* intropython@linux.cs.du.edu:~/public_html/intro-to-programming
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
