@@ -24,7 +24,7 @@ if __name__ == '__main__':
 ```
 Key points to notice and remember:
 - Use the `print()` function to output to the console. Put the text you want to output inside of the parentheses. Text in python are enclosed either within double quotes ("text") or single quotes ('text')
-- **Comments** in a computer program are lines that python itself ignores. Comments are there for the benefit of humans reading your program. There are two kinds of comments in python: *block comments* and *in-line comments*. 
+- *Comments* in a computer program are lines that python itself ignores. Comments are there for the benefit of humans reading your program. There are two kinds of comments in python: *block comments* and *in-line comments*. 
 - You can see that the first 9 lines of this program is a block comment, since it is enclosed between lines of three double-quotes. Every python program that you turn in this quarter will start with a block comment giving your name, the purpose of the program, the name of the file it is stored in, the date, the course it is for, the assignment it is fulfilling, your collaborators, and any internet sources you used.
 - An inline comment starts with a `#`-sign. Anything on the line after a `#` is a comment that python ignores. Placing in-line comments in your code to explain your thought process while writing the code is an essential part of writing good code. Write the comments either before or during the coding process, **not after**.
 - The lines
@@ -39,4 +39,4 @@ define the main function of the program. This function has one comment, and one 
 if __name__ == '__main__':
     main()
 ```
-have the effect of *calling* (also called *invoking* or *executing*) the main function. Notice that the definition of the function itself (`def main()`) has the line `print("Hello, world!"). But that line doesn't get executed until the main function itself is called.
+have the effect of *calling* (also called *invoking* or *executing*) the main function. Notice that the definition of the function itself (`def main()`) has the line `print("Hello, world!")`. But that line doesn't get executed until the `main()` function itself is called.
