@@ -28,15 +28,15 @@ Key points to notice and remember:
 - You can see that the first 9 lines of this program is a block comment, since it is enclosed between lines of three double-quotes. Every python program that you turn in this quarter will start with a block comment giving your name, the purpose of the program, the name of the file it is stored in, the date, the course it is for, the assignment it is fulfilling, your collaborators, and any internet sources you used.
 - An inline comment starts with a `#`-sign. Anything on the line after a `#` is a comment that python ignores. Placing in-line comments in your code to explain your thought process while writing the code is an essential part of writing good code. Write the comments either before or during the coding process, **not after**.
 - The lines
-```python
-def main():
-    # Here's the guts of the program, just one line:
-    print("Hello, world!")
-```
-define the main function of the program. This function has one comment, and one line of executable code.
+    ```python
+    def main():
+        # Here's the guts of the program, just one line:
+        print("Hello, world!")
+    ```
+    define the main function of the program. This function has one comment, and one line of executable code.
 - At the end of the program, the lines
-```python
-if __name__ == '__main__':
-    main()
-```
-have the effect of *calling* (also called *invoking* or *executing*) the main function. Notice that the definition of the function itself (`def main()`) has the line `print("Hello, world!")`. But that line doesn't get executed until the `main()` function itself is called.
+    ```python
+    if __name__ == '__main__':
+        main()
+    ```
+    have the effect of *calling* (also called *invoking* or *executing*) the main function. Notice that the definition of the         function itself (`def main()`) has the line `print("Hello, world!")`. But that line doesn't get executed until the `main()`       function itself is called.
