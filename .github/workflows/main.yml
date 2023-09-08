@@ -1,29 +1,47 @@
-name: github pages
+name: Build, Commit, and Deploy Documentation
 
 on:
   push:
     branches:
-      - main
-  pull_request:
+      - main  # Trigger the workflow on push to the main branch
 
 jobs:
-  deploy:
-    runs-on: ubuntu-20.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+      # Checkout the code
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
-        with:
-          mdbook-version: 'latest'
+      # Install and run mdbook to build the documentation
+      - name: Install mdBook
+        run: |
+          curl -L https://github.com/rust-lang/mdBook/releases/download/v0.4.34/mdbook-v0.4.34-x86_64-unknown-linux-gnu.tar.gz | tar xvz
+          sudo mv mdbook /usr/local/bin/
+        
+      - name: Build Documentation
+        run: mdbook build
 
-      - run: mdbook build
+      # Commit the built files back to the repository
+      - name: Commit and Push Documentation
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Add built documentation" || exit 0  # exit 0 if no files to commit
+          git push
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book
+      # Setup SSH Key
+      - name: Setup SSH
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > deploy_key
+          chmod 600 deploy_key
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add deploy_key
+
+      # Deploy the built documentation to the remote server using rsync
+      - name: Deploy Documentation to Remote Server
+        run: rsync -ravP docs/* intropython@linux.cs.du.edu:~/public_html/intro-to-programming
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
