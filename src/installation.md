@@ -6,7 +6,7 @@ In order to be able to write and execute Python programs, we will have you insta
 
 ### Python:
 
-![A console showing the Python interactive interpreter.](img/01_installation/installation_python_interpreter.png)
+![A console showing the Python interactive interpreter.](img/installation/installation_python_interpreter.png)
 
 This is the Python **_interpreter_** (or Python _executable_). This is the software that will actually read your Python code, and tell the computer how to execute it.
 
@@ -16,7 +16,7 @@ The interpreter is technically the only software you need to write and execute P
 
 ### Visual Studio Code:
 
-![A screenshot of Microsoft Visual Studio Code](img/01_installation/installation_vscode.png)
+![A screenshot of Microsoft Visual Studio Code](img/installation/installation_vscode.png)
 
 This is a code editor called Visual Studio Code (**VSCode**) -- not to be confused with Visual Studio, another Microsoft product.
 
@@ -84,9 +84,9 @@ Open VSCode and do the following:
 
 1. Optionally, go through any initial setup that it walks you through (choosing a theme, etc) or skip all of that for now.
 2. When VSCode opens you will see the **explorer** pane on the left (see picture below). Click on **Open Folder**  and navigate to your "COMP1351" folder. Depending on where you saved your COMP1351 folder, and your operating system, at this point you might get a security popup asking you if "you trust the author of the files in this folder" so click yes  
-![VSCode file explorer pane.](img/01_installation/installation_vscodesetup1.png)
+![VSCode file explorer pane.](img/installation/installation_vscodesetup1.png)
 3. Create a new text file (File -> New Text File) or by clicking the "new file" button (see picture below). Name the file "hello.py" then press return. A new file will be created as in the picture below. Once you've created the file, you may see a popup in the lower-right corner of VSCode asking if you want to install the "Recommended Python (see "Extension" notes below - you can install them now or in a moment).
-![VSCode new file and new folder buttons.](img/01_installation/installation_vscodesetup2.png)
+![VSCode new file and new folder buttons.](img/installation/installation_vscodesetup2.png)
 4. Copy/paste the following Python code into that text file:
 ```python
 print("Hello world!")  
@@ -97,15 +97,15 @@ print("This is my first Python program!")
     * If you have not already installed them, then install them now.
     * This will probably take you to another window in VSCode showing the extension info.
     * If you didn't get the recommended extensions popup, or have problems starting the installation, you can go to the Extensions tab on the left-hand panel and manually search for the official Microsoft "Python" extension:
-    * <img src="img/01_installation/installation_vscodesetup3.png" alt="Addon pane in VSCode." width="150"/><img src="img/01_installation/installation_vscodesetup4.png" alt="Python Extension in VSCode." width="200"/>
+    * <img src="img/installation/installation_vscodesetup3.png" alt="Addon pane in VSCode." width="150"/><img src="img/installation/installation_vscodesetup4.png" alt="Python Extension in VSCode." width="200"/>
     * After you're done installing the Python extension, go back your code by selecting the tab at the top with the filename you chose.
 7. In the bottom-right, you should see a part of the info bar that says "Python" and a version number next to it:
-![Python version in bottom bar of VSCode.](img/01_installation/installation_vscodesetup5.png)
+![Python version in bottom bar of VSCode.](img/installation/installation_vscodesetup5.png)
 Make sure that version number matches the Python version you installed (for example 3.10.6). If it doesn't, click on the version number and then select the Python executable that you installed earlier.
 8. You should also now see in the upper-right corner a triangular "play" button. Go ahead and click it to run your Python file!  
-![VSCode run button.](img/01_installation/installation_vscodesetup6.png)  
+![VSCode run button.](img/installation/installation_vscodesetup6.png)  
 9. If everything is working, you should see a console come up at the bottom of your window, and at the end of the text in that console you should see the text "Hello world!" and "This is my first Python program!" (probably among other things).
-![VSCode output pane.](img/01_installation/installation_vscodesetup7.png)
+![VSCode output pane.](img/installation/installation_vscodesetup7.png)
 
 * * *
 
@@ -126,7 +126,7 @@ The `dudraw` graphics library is a software package written at DU, based on the 
 1. Make a new Python file (File -> New File... -> Python).
 2. Copy/paste the following code into the file:
 ```python
-{{#include programs/01_installation/install_dudraw.py}}
+{{#include programs/installation/install_dudraw.py}}
 ```
 3. Save the file somewhere (again, with a ".py" ending, maybe "dudraw_test.py").
 4. And then run it (again using the triangular "run" button).

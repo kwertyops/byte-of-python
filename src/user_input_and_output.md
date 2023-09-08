@@ -3,56 +3,56 @@
 In python, use the `print()` function to output information to the user.
 
 Here is a run-of-the-mill print statement:
-```
+```python
 print("Hello, World!")
 ```
 When you run this line of code, the following is output this to the console:
-```
+```python
 Hello, World!
 ```
 
 The following two lines show that when you have two print statements, they get executed in order. 
-```
+```python
 print("Hello")
 print("World")
 ```
 The output shows that each print statement automatically takes you to the next line on the console.
-```
+```python
 Hello
 World
 ```
 
 You can put two or more strings in a print statement, separated by a comma:
-```
+```python
 print("Hello", "World", "!")
 ```
 The output shows that a space automatically is inserted between each parameter:
-```
+```python
 Hello World !
 ```
 
 You can use the `+` operator for *concatenation* (Concatenation means putting two strings together by tacking the second one onto the end of the first one).
-```
+```python
 print("Hello"+"World")
 ```
 The output shows that when concatenating strings, a space does **not** automatically get inserted:
-```
+```python
 HelloWorld
 ```
 
 Here are several ways to put a space between two different strings:
-```
+```python
 print("Hello", "World")
 print("Hello " + "World")
 print("Hello" + " World")
 print("Hello" + " " + "World")
 ```
 Use `\n` to insert a new line in the middle of a string:
-```
+```python
 print("Hello\nWorld")
 ```
 Here's the output:
-```
+```python
 Hello
 World
 ```
@@ -60,7 +60,7 @@ World
 ## Getting input from the user into the program
 
 Use the `input()` function to ask the user of your program for a value. For example:
-```
+```python
 username = input("Enter your name: ")
 print("Hello,", username)
 ```
@@ -73,16 +73,16 @@ Hello, Sam
 ```
 
 Note that the type that the `input` function returns is a string. So
-```
+```python
 username = input("Enter your name: ")
 print(type(username))
 ```
 will output
-```
+```python
 <class 'str'>
 ```
 Often we want the user to input a numerical value rather than a string (text) value. In this case we must cast the result to convert it to a numerical type. For example:
-```
+```python
 user_age = input("Enter your age: ")
 user_age = int(user_age)
 print("Next year you will be", user_age + 1)
@@ -94,14 +94,14 @@ Next year you will be 20
 ```
 
 Note that the casting can actually be done on the same line as the input. The `input()` function returns a string, which we immediately cast using the `int()` function:
-```
+```python
 user_age = int(input("Enter your age: "))
 print("Next year you will be", user_age + 1)
 ```
 
 ## Putting it all together
 Here's a full sample program:
-```
+```python
 """
 Demo of creating and using variables and user input
 

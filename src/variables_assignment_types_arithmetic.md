@@ -24,7 +24,8 @@ stores the value 16.75 in the variable called `hourly-wage`
 
 ## Typical way we visualize variables
 We usually draw variables by putting the value in a box, and labelling the box with the name of the variable:
-![Visual representation of a variable](img/depiction_of_variable.png)
+
+![Visual representation of a variable](img/variables_assignment_types_arithmetic/depiction_of_variable.png)
 
 ## Types of variables
 Each variable has a name, a value, and a type. Types are necessary because different kinds of data are stored differently within the computer's memory. For now, we will learn three different types, for storing signed (positive or negative) whole numbers, decimals, and text 
@@ -42,7 +43,7 @@ A variable is created or declared when we assign a value to it using the assignm
 `variable_name = <value>`
 Notice that the left hand side of an assignment must be a variable name
 Examples:
-```
+```python
 # The next line stores an int value of 200 in the variable named age
 age = 200
 # The next line stores a float value of 7.5 in the variable named height
@@ -52,19 +53,19 @@ name = 'Chewbacca'
 ```
 
 Non-example:
-``` 
+```python
 # The following line is an error, don't do this!
 200 = height
 ```
 After creating a variable, you can change the value stored in a variable with another assignment operator at any time. This is called *reassignment*
-```
+```python
 age = 201
 ```
 
 ## Finding out the type of a variable or value
 
 The `type()` function in python will return the type of either a variable or a value. Here's an example that shows how to use it:
-```
+```python
 x = 5
 print(type(x))
 print(type("Wow!"))
@@ -90,7 +91,7 @@ You can change the type of a value (called “casting”) using the `int()`, `fl
 # Doing arithmetic in python
 
 Here are the basic arithmetic operators in python. In these examples, assume
-```
+```python
 x = 11
 y = 4
 ```

@@ -25,10 +25,10 @@ you will be able to call any of the functions in `dudraw`
 Begin by creating a canvas of a specified size (in pixels), then issue graphics commands. When you are done, call the `show()`function and a window will appear with the image you have created. Unless you set the scale, the default scale is from 0 to 1 on the x-axis and 0 to 1 on the y-axis. Here's a simple program, and the image it produces.
 
 ```python
-{{#include programs/02_dudraw_quickstart/mountain_and_sun.py}}
+{{#include programs/dudraw_quickstart/mountain_and_sun.py}}
 ```
 
-![Simple Drawing of mountain and sun](img/02_dudraw_quickstart/mountain.png)
+![Simple Drawing of mountain and sun](img/dudraw_quickstart/mountain.png)
 
 ## How do I get more colors?
 This is a list of the colors pre-defined in dudraw:
@@ -58,7 +58,7 @@ dudraw.BOOK_RED
 To create colors of your own, first note that a color on a computer monitor can be defined by an intensity for red light, green light and blue light, each of which is an integer value from 0 to 255. Colors on a compter monitor are additive like light, rather than subtractive like paint. For example, to create yellow light, you add together green light and red light. So the brightest yellow is defined by red=255, green = 255, blue = 0. You can play around with choosing colors with many different programs. On many browsers, if you do an internet search on "color picker" one will show up. Or there are many free ones available on websites, for example here: [color picker website](https://htmlcolorcodes.com/color-picker/).
 For example, here's a nice plum color, with values r = 140, g = 40, b = 160:
 
-<img src="img/02_dudraw_quickstart/plum_color.png" alt="a swatch with a plum color" width="75"/>
+<img src="img/dudraw_quickstart/plum_color.png" alt="a swatch with a plum color" width="75"/>
 
 Here's a way to make your background this color, or to set your pen color to this color:
 
@@ -72,20 +72,20 @@ dudraw.set_pen_color_rgb(140, 40,160)
 The code below shows some examples of lines and basic shapes that are affected by the pen radius.
 
 ```python
-{{#include programs/02_dudraw_quickstart/basic_shapes.py}}
+{{#include programs/dudraw_quickstart/basic_shapes.py}}
 ```
 
-![basic shapes](img/02_dudraw_quickstart/basic_shapes.png)
+![basic shapes](img/dudraw_quickstart/basic_shapes.png)
 
 These are not the only shapes affected by the pen width setting. Others include `dudraw.circle()`, `dudraw.square()`, `dudraw.polygon()`, `dudraw.triangle()`, `dudraw.arc()`, `dudraw.elliptical_sector()`, and `dudraw.annulus()`.
 
 There are also `dudraw` primitives that produce filled regions rather than outlines, and these are not affected by the pen width. Here's a program with some examples of filled regions.
 
 ```python
-{{#include programs/02_dudraw_quickstart/basic_filled_shapes.py}}
+{{#include programs/dudraw_quickstart/basic_filled_shapes.py}}
 ```
 
-![filled basic shapes](img/02_dudraw_quickstart/filled_basic_shapes.png)
+![filled basic shapes](img/dudraw_quickstart/filled_basic_shapes.png)
 
 These are not the only filled shapes. Other examples include `dudraw.filled_triangle()`, dudraw.`filled_circle()`, `dudraw.filled_polygon()`, and `dudraw.filled_annulus()`.
 
@@ -93,18 +93,18 @@ These are not the only filled shapes. Other examples include `dudraw.filled_tria
 By default, the scale in a dudraw canvas is [0, 1] x [0, 1], even if the size of the canvas itself is not square. For example, the code below produces the image shown. (The image is annotated to show the coordinates of a few points)
 
 ```python
-{{#include programs/02_dudraw_quickstart/stretched_simple.py}}
+{{#include programs/dudraw_quickstart/stretched_simple.py}}
 ```
 
-<img src="img/02_dudraw_quickstart/stretched_simple.png" alt="annotated simple drawing default scale" width="400"/>
+<img src="img/dudraw_quickstart/stretched_simple.png" alt="annotated simple drawing default scale" width="400"/>
 
 But sometimes you might prefer to set the scale to match the pixels, or some other scaling. This is often useful if the canvas is not square. Here's the code to produce a nearly identical drawing, with the scale on the x-axis and y-axis set to be different from each other, and to have one unit be the size of one pixel. The canvas was created with a width of 600 pixels and a height of 400 pixels. The x-scale is set to go from 0 to 600, while the y-scale is set to go from 0 to 400. Notice that each graphics primitive was modified to reflect the change of scale. The image below is annoted to show how the scale on the axes works.
 
 ```python
-{{#include programs/02_dudraw_quickstart/scaled_annotated_simple.py}}
+{{#include programs/dudraw_quickstart/scaled_annotated_simple.py}}
 ```
 
-<img src="img/02_dudraw_quickstart/scaled_annotated_simple.png" alt="annotated simple drawing pixel scale" width="400"/>
+<img src="img/dudraw_quickstart/scaled_annotated_simple.png" alt="annotated simple drawing pixel scale" width="400"/>
 
 When you create a drawing, the first thing you should do is decide on your scale, since that is the basis for all of the numbers in each shape you draw.
 
@@ -115,11 +115,11 @@ To change the size of the font, use `dudraw.set_font_size(size)`.
 The size is in points. The default font family is Helvetica, and the default size is 12 points Here is demo code and the resulting image:
 
 ```python
-{{#include programs/02_dudraw_quickstart/text_demo.py}}
+{{#include programs/dudraw_quickstart/text_demo.py}}
 
 ```
 
-<img src="img/02_dudraw_quickstart/text_demo.png" alt="sample of fonts and sizes" width="500"/>
+<img src="img/dudraw_quickstart/text_demo.png" alt="sample of fonts and sizes" width="500"/>
 
 
 ## How do I create an animation?
@@ -134,7 +134,7 @@ When you pass a parameter to `dudraw.show()`, the program pauses for the given w
 Here is sample code that animates a circle appearing to move from the lower left corner of the canvas to the upper right corner:
 
 ```python
-{{#include programs/02_dudraw_quickstart/simple_animation.py}}
+{{#include programs/dudraw_quickstart/simple_animation.py}}
 ```
 
 ## How do I found out if the user clicked the mouse?
@@ -144,7 +144,7 @@ The function `dudraw.mouse_pressed()` returns a boolean, True if the mouse was p
 You can find out the position of the mouse (regardless of whether the mouse is pressed) by calling `dudraw.mouse_x()` and `dudraw.mouse_y()`. Each returns a float with the current position of the mouse. The position of the mouse is relative to the scale that has been set. Here's a sample program showing mouse interaction. Each time the mouse is pressed, a small circle on the canvas at the mouse position.
 
 ```python
-{{#include programs/02_dudraw_quickstart/mouse_press_demo.py}}
+{{#include programs/dudraw_quickstart/mouse_press_demo.py}}
 ```
 
 ## How do I find out if the user typed a key?
@@ -152,7 +152,7 @@ You can find out the position of the mouse (regardless of whether the mouse is p
 Polling for a key click typically happens within an animation loop. You must first call `dudraw.has_next_key_typed()`, which returns a boolean indicating whether the user has typed a key (or perhaps more than one). If the method returns `True`, then you can make a call to `dudraw.next_key_typed()`, which will return a string containing the next most-recently entered key. As an example, the following code is a modification of the mouse interaction code, with the added feature of quiting when the 'q' key is typed:
 
 ```python
-{{#include programs/02_dudraw_quickstart/mouse_and_key_demo.py}}
+{{#include programs/dudraw_quickstart/mouse_and_key_demo.py}}
 ```
 
 ## How do I save my image in a file?
@@ -161,7 +161,7 @@ Polling for a key click typically happens within an animation loop. You must fir
    Here's an example of a program that draws a very simple picture, and saves the output to two files, one .png and one .jpg:
 
 ```python
-{{#include programs/02_dudraw_quickstart/save_image.py}}
+{{#include programs/dudraw_quickstart/save_image.py}}
 ```
 
 Notice that this program does not have a call to `dudraw.show()`. This means that, although the image is saved to both files, a window displaying the image is never opened, and the image is not displayed to the screen.
