@@ -7,7 +7,7 @@
 - [`dudraw` Overview](dudraw_quickstart.md)
 
 
-# Using variables to store information
+# Variables
 - [Variables, Assignment, Types and Arithmetic](variables_assignment_types_arithmetic.md)
 - [Inputting information from the user using `input()`](input.md)
 
