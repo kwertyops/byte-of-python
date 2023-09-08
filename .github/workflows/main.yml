@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > deploy_key
           chmod 600 deploy_key
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          eval $(ssh-agent -s)
           ssh-add deploy_key
 
       # Deploy the built documentation to the remote server using rsync
