@@ -97,7 +97,7 @@ Here are the basic arithmetic operators in python. In these examples, assume
 x = 11
 y = 4
 ```
-|Operator|Description|Syntax|Output|
+|Operator|Description|Syntax|Output (x=11, y=4)|
 | ----- | ----- | ----- | ----- |
 |`+`|Addition |`x+y`|`15`|
 |`*`|Multiplication |`x*y`|`44`|
