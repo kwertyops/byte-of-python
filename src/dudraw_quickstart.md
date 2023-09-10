@@ -22,7 +22,7 @@ you will be able to call any of the functions in `dudraw`
 
 ## How do I use `dudraw`?
 
-Begin by creating a canvas of a specified size (in pixels), then issue graphics commands. When you are done, call the `show()`function and a window will appear with the image you have created. Unless you set the scale, the default scale is from 0 to 1 on the x-axis and 0 to 1 on the y-axis. Here's a simple program, and the image it produces.
+Begin by creating a canvas of a specified size (in pixels), then issue graphics commands. When you are done, call the `show()`function and a window will appear with the image you have created. The parameter to the `show()` function is the number of milliseconds to display the image.  Unless you set the scale, the default scale is from 0 to 1 on the x-axis and 0 to 1 on the y-axis. Here's a simple program, and the image it produces.
 
 ```python
 {{#include programs/dudraw_quickstart/mountain_and_sun.py}}
@@ -166,7 +166,7 @@ Polling for a key click typically happens within an animation loop. You must fir
 
 Notice that this program does not have a call to `dudraw.show()`. This means that, although the image is saved to both files, a window displaying the image is never opened, and the image is not displayed to the screen.
 
-## How do I get official details on all of the methods?
+## How do I get official details on all of the functions?
 
 See here for the official documentation:
 
