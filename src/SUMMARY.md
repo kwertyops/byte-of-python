@@ -3,13 +3,12 @@
 # Basics
 - [Python, VSCode, and `dudraw` Installation](installation.md)
 - [First Program](hello.md)
-- [Outputting information to the user using `print()`](output.md)
 - [`dudraw` Overview](dudraw_quickstart.md)
 
 
 # Variables
 - [Variables, Assignment, Types and Arithmetic](variables_assignment_types_arithmetic.md)
-- [Inputting information from the user using `input()`](input.md)
+- [Output and input using `print()` and `input()`](user_input_and_output.md)
 
 
 
