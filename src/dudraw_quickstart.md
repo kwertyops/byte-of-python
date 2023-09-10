@@ -140,7 +140,7 @@ Here is sample code that animates a circle appearing to move from the lower left
 ## How do I found out if the user clicked the mouse?
 
 There are three `dudraw` methods for handling mouse ineraction
-The function `dudraw.mouse_pressed()` returns a boolean, True if the mouse was pressed. It is typically used within an animation loop.
+The function `dudraw.mouse_is_pressed()` returns a boolean, True if the mouse was pressed. It is typically used within an animation loop.
 You can find out the position of the mouse (regardless of whether the mouse is pressed) by calling `dudraw.mouse_x()` and `dudraw.mouse_y()`. Each returns a float with the current position of the mouse. The position of the mouse is relative to the scale that has been set. Here's a sample program showing mouse interaction. Each time the mouse is pressed, a small circle on the canvas at the mouse position.
 
 ```python

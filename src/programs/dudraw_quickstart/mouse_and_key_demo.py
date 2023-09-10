@@ -9,7 +9,7 @@ done = False
 # animation loop
 while not done:
     # when mouse is pressed, draw a circle of radius 0.02 at the mouse location
-    if dudraw.mouse_pressed():
+    if dudraw.mouse_is_pressed():
         dudraw.filled_circle(dudraw.mouse_x(), dudraw.mouse_y(), 0.02)
     # pause for 200th of a second
     dudraw.show(50)
