@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Inputting information from the user using input() - Introduction to Programming</title>
+        <title>Output and input using print() and input() - Introduction to Programming</title>
 
 
         <!-- Custom HTML head -->
@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="output.html"><strong aria-hidden="true">3.</strong> Outputting information to the user using print()</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">4.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">5.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="input.html" class="active"><strong aria-hidden="true">6.</strong> Inputting information from the user using input()</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">7.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">3.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">4.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html" class="active"><strong aria-hidden="true">5.</strong> Output and input using print() and input()</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">6.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -167,12 +167,81 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="getting-input-from-the-user-into-the-program"><a class="header" href="#getting-input-from-the-user-into-the-program">Getting input from the user into the program</a></h2>
+                        <h2 id="outputting-information-from-the-program-to-the-user"><a class="header" href="#outputting-information-from-the-program-to-the-user">Outputting information from the program to the user</a></h2>
+<p>In python, use the <code>print()</code> function to output information to the user.</p>
+<p>Here is a run-of-the-mill print statement:</p>
+<pre><code class="language-python">print(&quot;Hello, World!&quot;)
+</code></pre>
+<p>When you run this line of code, the following is output this to the console:</p>
+<pre><code>Hello, World!
+</code></pre>
+<p>The following two lines show that when you have two print statements, they get executed in order. </p>
+<pre><code class="language-python">print(&quot;Hello&quot;)
+print(&quot;World&quot;)
+</code></pre>
+<p>The output shows that each print statement automatically takes you to the next line on the console.</p>
+<pre><code>Hello
+World
+</code></pre>
+<p>You can put two or more strings in a <code>print()</code> statement, separated by commas. Usually, one or more of these string values comes from a variable. Note that the comma inside the quotes is part of the output, while the commas between strings are part of the syntax of the <code>print()</code> statement:</p>
+<pre><code class="language-python">username = &quot;Sam&quot;
+print(&quot;Hello,&quot;, username, &quot;!&quot;)
+</code></pre>
+<p>The output shows that a space automatically is inserted between each parameter:</p>
+<pre><code>Hello, Sam !
+</code></pre>
+<p>Another way to build strings for output is to use the <code>+</code> operator for <em>concatenation</em> (Concatenation means putting two strings together by tacking the second one onto the end of the first one).</p>
+<pre><code class="language-python">print(&quot;Hello,&quot; + username + &quot;!&quot;)
+</code></pre>
+<p>The output below shows that when concatenating strings, a space does <strong>not</strong> automatically get inserted:</p>
+<pre><code>HelloSam!
+</code></pre>
+<p>Here are ways to put a space between two different strings</p>
+<pre><code class="language-python">print(&quot;Hello&quot;, username)
+print(&quot;Hello &quot; + username)
+</code></pre>
+<p>Use <code>\n</code> to insert a new line in the middle of a string:</p>
+<pre><code class="language-python">print(&quot;Hello\nWorld&quot;)
+</code></pre>
+<p>Here's the output:</p>
+<pre><code>Hello
+World
+</code></pre>
+<p>The backslash symbol <code>\</code>  in <code>\n</code> is called an <em>escape character</em>. It tells python that the letter following the backslash should be interpreted together with the <code>\</code> as a pair with special meaning. Other examples include </p>
+<ul>
+<li><code>\t</code> for tab, </li>
+<li><code>\&quot;</code> and <code>\'</code> to put a double quote or single quote into a string literal, and</li>
+<li><code>\\</code> to insert a backslash.</li>
+</ul>
+<p>For example, see if you can write a <code>print()</code> statement to produce the following tricky output:</p>
+<pre><code>&quot;\n&quot; is a newline,
+while &quot;\'&quot; is a single quote.
+</code></pre>
+<p>Answer:</p>
+<pre><code class="language-python">print(&quot;\&quot;\\n\&quot; is a newline,\nwhile \&quot;\\\'\&quot; is a single quote.&quot;)
+</code></pre>
+<p>A third way in python to combine multiple strings together and to include variable values within a string is a <em>formatted string literal</em>, commonly called an <em>f-string</em>. Create an f-string by prefixing the string with an <code>f</code>, then include any variable values within a pair of curly braces <code>{}</code>. For example:</p>
+<pre><code class="language-python">print(f&quot;Hello, {username}!&quot;)
+</code></pre>
+<p>outputs</p>
+<pre><code>Hello, Sam!
+</code></pre>
+<p>With f-strings, you can have rich and control over the formatting.
+For example</p>
+<pre><code class="language-python">import math
+print(f&quot;pi to 5 decimal places is {math.pi:.5f}, and e to 3 decimal places is {math.e:.3f}.&quot;)
+</code></pre>
+<p>outputs</p>
+<pre><code>pi to 5 decimal places is 3.14159, and e to 3 decimal places is 2.718.
+</code></pre>
+<p>Here's an online tutorial if you want to investigate more capabilities of f-strings:
+<a href="https://builtin.com/data-science/python-f-string">https://builtin.com/data-science/python-f-string</a></p>
+<h2 id="getting-input-from-the-user-into-the-program"><a class="header" href="#getting-input-from-the-user-into-the-program">Getting input from the user into the program</a></h2>
 <p>Use the <code>input()</code> function to ask the user of your program for a value. For example:</p>
 <pre><code class="language-python">username = input(&quot;Enter your name: &quot;)
 print(&quot;Hello,&quot;, username)
 </code></pre>
-<p>Notice that the parameter within the parentheses of the <code>input()</code> function is the string that you want to display to the user as a message. That message is called a prompt, and it gets output to the console as part of the <code>input()</code> line. In other words, you don't need a separate <code>print()</code> statement. Make sure the prompt clearly communicates to the user what information you are asking them to enter. Once they type the value and hit the <code>&lt;return&gt;</code> key,
+<p>Notice that the parameter within the parentheses of the <code>input()</code> function is the string that you want to display to the user as a message. That message, called a prompt, is output to the console when the <code>input()</code> line is executed. In other words, you don't need a separate <code>print()</code> statement. Make sure the prompt clearly communicates to the user what information you are asking them to enter. Once they type the value and hit the <code>&lt;return&gt;</code> key,
 the <code>input()</code> function returns the value they entered. In the above example, the user's response is stored in a variable called <code>username</code>.
 Here's a sample run of the above program:</p>
 <pre><code>Enter your name: Sam
@@ -188,15 +257,15 @@ print(type(username))
 <p>But often we want the user to input a numerical value rather than a string (text) value. In this case we must <em>cast</em> the result to convert it to a numerical type. This is mandatory any time you want to do arithmetic with the number the user enters. For example:</p>
 <pre><code class="language-python">user_age = input(&quot;Enter your age: &quot;)
 user_age = int(user_age)
-print(&quot;Next year you will be&quot;, user_age + 1)
+print(f&quot;Next year you will be {user_age + 1}.&quot;)
 </code></pre>
 <p>Sample run of the above program:</p>
 <pre><code>Enter your age: 19
-Next year you will be 20
+Next year you will be 20.
 </code></pre>
 <p>Note that the casting can actually be done on the same line as the input. The <code>input()</code> function returns a string, which we can immediately cast using the <code>int()</code> function. The two lines below behave identically to the three lines of code just above.</p>
 <pre><code class="language-python">user_age = int(input(&quot;Enter your age: &quot;))
-print(&quot;Next year you will be&quot;, user_age + 1)
+print(f&quot;Next year you will be {user_age + 1}.&quot;)
 </code></pre>
 <h2 id="putting-it-all-together"><a class="header" href="#putting-it-all-together">Putting it all together</a></h2>
 <p>Here's a full sample program:</p>
@@ -218,7 +287,8 @@ def main():
     # On average there are 2250 steps per mile
     num_of_miles = step_count/2250
     # Report result to user
-    print(&quot;You walked&quot;, num_of_miles, &quot;miles today&quot;)
+    print(f&quot;You walked {num_of_miles:.2f} miles today.&quot;)
+
 
 # Run the program:
 if __name__ == '__main__':
@@ -227,7 +297,7 @@ if __name__ == '__main__':
 <p>Sample run from the above program:</p>
 <pre><code>Program that computes number of miles from steps walked
 How many steps did you walk today? 10000
-You walked 4.444444444444445 miles today
+You walked 4.44 miles today.
 </code></pre>
 
                     </main>

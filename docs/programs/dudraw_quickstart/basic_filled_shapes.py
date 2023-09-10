@@ -49,4 +49,4 @@ dudraw.point(500, 150)
 # Angles are measured as typical in mathematics, counter-clockwise starting at the positive x-axis
 dudraw.set_pen_color(dudraw.PINK)
 dudraw.filled_elliptical_sector(475, 150, 50, 100, 200, 340)
-dudraw.show()
+dudraw.show(10000) # display the result for 10 seconds

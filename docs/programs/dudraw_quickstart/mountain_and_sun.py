@@ -17,4 +17,4 @@ dudraw.set_pen_color(dudraw.YELLOW)
 dudraw.filled_circle(0.8, 0.75, 0.1)
 
 # Display the canvas
-dudraw.show()
+dudraw.show(10000) # display the result for 10 seconds

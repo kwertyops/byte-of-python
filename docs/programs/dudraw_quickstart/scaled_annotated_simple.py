@@ -8,4 +8,4 @@ dudraw.set_pen_color(dudraw.DARK_GREEN)
 dudraw.filled_triangle(0, 0, 600, 0, 300, 280)  # green triangle mountain
 dudraw.set_pen_color(dudraw.YELLOW)    
 dudraw.filled_circle(480, 300, 40)              # yellow circle sun
-dudraw.show()
+dudraw.show(10000) # display the result for 10 seconds
