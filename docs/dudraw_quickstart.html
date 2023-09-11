@@ -429,7 +429,7 @@ while True:
 </code></pre>
 <h2 id="how-do-i-found-out-if-the-user-clicked-the-mouse"><a class="header" href="#how-do-i-found-out-if-the-user-clicked-the-mouse">How do I found out if the user clicked the mouse?</a></h2>
 <p>There are three <code>dudraw</code> methods for handling mouse ineraction
-The function <code>dudraw.mouse_pressed()</code> returns a boolean, True if the mouse was pressed. It is typically used within an animation loop.
+The function <code>dudraw.mouse_is_pressed()</code> returns a boolean, True if the mouse was pressed. It is typically used within an animation loop.
 You can find out the position of the mouse (regardless of whether the mouse is pressed) by calling <code>dudraw.mouse_x()</code> and <code>dudraw.mouse_y()</code>. Each returns a float with the current position of the mouse. The position of the mouse is relative to the scale that has been set. Here's a sample program showing mouse interaction. Each time the mouse is pressed, a small circle on the canvas at the mouse position.</p>
 <pre><code class="language-python">#--------------------------------
 # demo of mouse presses in dudraw
@@ -441,7 +441,7 @@ dudraw.set_canvas_size(500,500)
 # animation loop
 while True:
     # when mouse is pressed, draw a circle of radius 0.02 at the mouse location
-    if dudraw.mouse_pressed():
+    if dudraw.mouse_is_pressed():
         dudraw.filled_circle(dudraw.mouse_x(), dudraw.mouse_y(), 0.02)
     # pause for 200th of a second
     dudraw.show(50)
@@ -459,7 +459,7 @@ done = False
 # animation loop
 while not done:
     # when mouse is pressed, draw a circle of radius 0.02 at the mouse location
-    if dudraw.mouse_pressed():
+    if dudraw.mouse_is_pressed():
         dudraw.filled_circle(dudraw.mouse_x(), dudraw.mouse_y(), 0.02)
     # pause for 200th of a second
     dudraw.show(50)
