@@ -1,7 +1,7 @@
 # Introduction to `dudraw`
 
 ## What can you do with `dudraw`?
-The python package `dudraw` is a minimal graphics library developed for teaching a beginning python programming class. Its starting point was `stddraw`, developed at Princeton University (see [Elements of Programming in Python](https://introcs.cs.princeton.edu/python/code/index.php#programs)). At the University of Denver we modified and enhanced that package to produce `dudraw`.
+The Python package `dudraw` is a minimal graphics library developed for teaching a beginning Python programming class. Its starting point was `stddraw`, developed at Princeton University (see [Elements of Programming in Python](https://introcs.cs.princeton.edu/python/code/index.php#programs)). At the University of Denver we modified and enhanced that package to produce `dudraw`.
 
 The `dudraw` package has graphics primitives for drawing points, lines, circles and ellipses, squares and rectangles, triangles, quadrilaterals, polygons, circular and elliptical sectors, annuli and text. You can set the color you want the objects to be, and the width of points, lines and outlines.
 
@@ -10,15 +10,17 @@ You can find out about key-clicks and mouse presses from the user, and respond t
 The `dudraw` package is a paint-style graphics package. In other words, you draw graphical objects, but they cannot be moved or deleted after being drawn.
 
 ## How do I get access to `dudraw`?
-If you have not already installed `dudraw` through the instructions in class, then you can install it by running  
-
-`pip install dudraw`
-
-Then if start your python program with the line
+First make sure that you have followed all the installation steps on the [Python, VSCode, and dudraw Installation](installation.md) page. If you've successfully completed these steps then by starting your Python program with the line
 
 `import dudraw`
 
-you will be able to call any of the functions in `dudraw`
+you will be able to call any of the functions in `dudraw`.
+
+If you were unable to install `dudraw` with the normal installation instructions, please reach out to a teacher or TA for help and they will have you attempt to install `dudraw` using the command line for your operating system and some command like:
+
+`pip install dudraw`
+
+Again, please ask for help if you're having trouble installing `dudraw`.
 
 ## How do I use `dudraw`?
 

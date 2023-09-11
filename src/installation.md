@@ -122,7 +122,7 @@ If you've gotten this far, congratulations! You have a working Python and VSCode
 
 ### dudraw Graphics Library:
 
-The `dudraw` graphics library is a software package written at DU, based on the original `stddraw` package written at Princeton. It is a simple package that will allow us to draw images and create animations in our python programs. Here's how to install it:
+The `dudraw` graphics library is a software package written at DU, based on the original `stddraw` package written at Princeton. It is a simple package that will allow us to draw images and create animations in our Python programs. Here's how to install it:
 1. Make a new Python file (File -> New File... -> Python).
 2. Copy/paste the following code into the file:
 ```python

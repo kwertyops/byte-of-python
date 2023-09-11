@@ -1,6 +1,6 @@
 ## Outputting information from the program to the user
 
-In python, use the `print()` function to output information to the user.
+In Python, use the `print()` function to output information to the user.
 
 Here is a run-of-the-mill print statement:
 ```python

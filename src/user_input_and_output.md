@@ -1,6 +1,6 @@
 ## Outputting information from the program to the user
 
-In python, use the `print()` function to output information to the user.
+In Python, use the `print()` function to output information to the user.
 
 Here is a run-of-the-mill print statement:
 ```python
@@ -56,7 +56,7 @@ Hello
 World
 ```
 
-The backslash symbol `\`  in `\n` is called an *escape character*. It tells python that the letter following the backslash should be interpreted together with the `\` as a pair with special meaning. Other examples include 
+The backslash symbol `\`  in `\n` is called an *escape character*. It tells Python that the letter following the backslash should be interpreted together with the `\` as a pair with special meaning. Other examples include 
 - `\t` for tab, 
 - `\"` and `\'` to put a double quote or single quote into a string literal, and
 - `\\` to insert a backslash.
@@ -71,7 +71,7 @@ Answer:
 print("\"\\n\" is a newline,\nwhile \"\\\'\" is a single quote.")
 ```
 
-A third way in python to combine multiple strings together and to include variable values within a string is a *formatted string literal*, commonly called an *f-string*. Create an f-string by prefixing the string with an `f`, then include any variable values within a pair of curly braces `{}`. For example:
+A third way in Python to combine multiple strings together and to include variable values within a string is a *formatted string literal*, commonly called an *f-string*. Create an f-string by prefixing the string with an `f`, then include any variable values within a pair of curly braces `{}`. For example:
 ```python
 print(f"Hello, {username}!")
 ```
