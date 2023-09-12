@@ -239,9 +239,11 @@ else:
 ```
 </td>
 <td>
+    
 <figure>
 <img src="img/nested_conditionals/voting_flowchart.png" alt="Flowchart for the voting program" class="center", width="300">
 </figure>
+
 </td>
 </table>
 
