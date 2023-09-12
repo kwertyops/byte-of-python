@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">3.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">4.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html"><strong aria-hidden="true">5.</strong> Output and input using print() and input()</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">6.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">3.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">4.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html"><strong aria-hidden="true">5.</strong> Output and input using print() and input()</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded "><a href="control_flow.html"><strong aria-hidden="true">6.</strong> What is control flow?</a></li><li class="chapter-item expanded "><a href="boolean_relational_logical.html"><strong aria-hidden="true">7.</strong> Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html"><strong aria-hidden="true">8.</strong> Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html"><strong aria-hidden="true">9.</strong> Nested conditional statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements with for-loops</li><li class="chapter-item expanded "><a href="for_loop.html"><strong aria-hidden="true">10.</strong> for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html"><strong aria-hidden="true">11.</strong> Combining conditionals with loops</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">12.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -624,8 +624,8 @@ while not done:
         done = True
 </code></pre>
 <h2 id="how-do-i-save-my-image-in-a-file"><a class="header" href="#how-do-i-save-my-image-in-a-file">How do I save my image in a file?</a></h2>
-<p>Use the <code>dudraw.save()</code> function. You can output either .png files or .jpg files. The extension you use in the file name determines what file type is output.
-Here's an example of a program that draws a very simple picture, and saves the output to two files, one .png and one .jpg:</p>
+<p>Use the <code>dudraw.save()</code> function to output <code>.jpg</code> files.
+Here's an example of a program that draws a very simple picture, and saves the output to a <code>.jpg</code> file:</p>
 <pre><code class="language-python">#-----------------------------------
 # demo of saving to a file in dudraw
 #-----------------------------------
@@ -636,7 +636,6 @@ dudraw.set_canvas_size(300,300)
 dudraw.set_pen_color(dudraw.RED)
 dudraw.filled_circle(0.5, 0.5, 0.25)
 dudraw.save(&quot;red_circle.jpg&quot;)
-dudraw.save(&quot;red_circle.png&quot;)
 </code></pre>
 <p>Notice that this program does not have a call to <code>dudraw.show()</code>. This means that, although the image is saved to both files, a window displaying the image is never opened, and the image is not displayed to the screen.</p>
 <h2 id="how-do-i-get-official-details-on-all-of-the-functions"><a class="header" href="#how-do-i-get-official-details-on-all-of-the-functions">How do I get official details on all of the functions?</a></h2>
@@ -735,6 +734,7 @@ y = 4
 <tr><td><code>**</code></td><td>Exponentiation (raises the first  to the power of the second )</td><td><code>x**y</code></td><td><code>14641</code></td></tr>
 </tbody></table>
 </div>
+<p>An example of a use of the modulus operator is to determine if an integer is even or odd. Note that if <code>x</code> is an integer, then <code>x%2</code> takes the value <code>0</code> or <code>1</code>. So <code>x % 2 == 0</code> is <code>True</code> when <code>x</code> is even and false when <code>x</code> is odd.</p>
 <p>Another example of integer division and modulus: When we divide 3 by 4, we get a quotient of 0 and a remainder of 3. So <code>3//4</code> results in 0 and <code>3%4</code> results in 3.</p>
 <p>Warning note: In Python, <code>^</code> is <strong>not</strong> an exponent!</p>
 <h2 id="order-of-operations"><a class="header" href="#order-of-operations">Order of operations</a></h2>
@@ -871,6 +871,966 @@ if __name__ == '__main__':
 <pre><code>Program that computes number of miles from steps walked
 How many steps did you walk today? 10000
 You walked 4.44 miles today.
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="what-is-control-flow"><a class="header" href="#what-is-control-flow">What is control flow?</a></h2>
+<p>Programs often need to take one action in certain cases, and different actions in different cases. Also, programs often need to repeat actions multiple times. These two ideas are called <em>control flow</em>.</p>
+<p><em>Conditional statements</em> (or <em>branches</em>) allow us to make choices about which lines of code to execute based on the values of variables. In python, we will learn <code>if</code>, <code>if-else</code>, and <code>if</code>-ladder statements.</p>
+<p><em>Iterative statements</em> (or <em>loops</em>) allow us to repeat lines of code either a specific number of times, or based on the value of a variable, or based on the contents of stored data. In python we will learn <code>for</code>-loop statements and <code>while</code>-loop statements.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="boolean-variables"><a class="header" href="#boolean-variables">Boolean variables</a></h2>
+<p>In order to control the flow of a program, we will need a new type of value and variable called a boolean. In python the name of the type is <code>bool</code>. Boolean variables can only have two possible values: <code>True</code> and <code>False</code>.</p>
+<p>Boolean variables are used much like other variables in python. For example, when creating an animated (moving) drawing in <code>dudraw</code>, we may want a variable called <code>is_moving</code> to keep track of whether one of our objects is continuing to move. Here is some code that would create and access that variable:</p>
+<table>
+<tr>
+<th> Code </th>
+<th> Output </th>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">is_moving = True
+print(is_moving)
+print(type(is_moving))
+</code></pre>
+</td>
+<td>
+<pre><code>True
+&lt;class 'bool'&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+<h2 id="relational-operators"><a class="header" href="#relational-operators">Relational operators</a></h2>
+<p>Relational operators can be used to compare two values to produce a boolean (<code>True</code> or <code>False</code>) result.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Relational operator</th><th style="text-align: center">What it does</th><th style="text-align: center">Example (x=4, y=8)</th></tr></thead><tbody>
+<tr><td style="text-align: center"><code>==</code></td><td style="text-align: center"><code>True</code> if the two sides are <strong>equal</strong>, <code>False</code> otherwise</td><td style="text-align: center"><code>x==y</code>→<code>False</code></td></tr>
+<tr><td style="text-align: center"><code>!=</code></td><td style="text-align: center"><code>True</code> if the two sides are <strong>not equal</strong>, <code>False</code> otherwise</td><td style="text-align: center"><code>x!=y</code>→<code>True</code></td></tr>
+<tr><td style="text-align: center"><code>&gt;</code></td><td style="text-align: center"><code>True</code> if the left side is <strong>greater than</strong>  the right side, <code>False</code> otherwise</td><td style="text-align: center"><code>x&gt;y</code>→<code>False</code></td></tr>
+<tr><td style="text-align: center"><code>&lt;</code></td><td style="text-align: center"><code>True</code> if the left side is <strong>less than</strong>  the right side, <code>False</code> otherwise</td><td style="text-align: center"><code>x&lt;y</code>→<code>True</code></td></tr>
+<tr><td style="text-align: center"><code>&gt;=</code></td><td style="text-align: center"><code>True</code> if the left side is <strong>greater than or equal to</strong> the right side, <code>False</code> otherwise</td><td style="text-align: center"><code>x&gt;=y</code>→<code>False</code></td></tr>
+<tr><td style="text-align: center"><code>&lt;=</code></td><td style="text-align: center"><code>True</code> if the left side is <strong>less than or equal to</strong> the right side, <code>False</code> otherwise</td><td style="text-align: center"><code>x&lt;=y</code>→<code>True</code></td></tr>
+</tbody></table>
+</div>
+<h2 id="boolean-expressions"><a class="header" href="#boolean-expressions">Boolean Expressions</a></h2>
+<p>A <em>Boolean expression</em> is an expression that evaluates to either <code>True</code> or <code>False</code>.</p>
+<p>Examples: Suppose the following code has executed:</p>
+<pre><code class="language-python">x = 5
+y = 3
+z = 10
+g = 2
+</code></pre>
+<p>Evaluate the following boolean expressions:</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Boolean expression...</th><th style="text-align: center">...evaluates to:</th></tr></thead><tbody>
+<tr><td style="text-align: center"><code>x * g == z</code></td><td style="text-align: center"><code>True</code></td></tr>
+<tr><td style="text-align: center"><code>2 + y &gt; z</code></td><td style="text-align: center"><code>False</code></td></tr>
+<tr><td style="text-align: center"><code>x - z &gt;= g</code></td><td style="text-align: center"><code>False</code></td></tr>
+<tr><td style="text-align: center"><code>x * g &lt;= z</code></td><td style="text-align: center"><code>True</code></td></tr>
+</tbody></table>
+</div>
+<h2 id="logical-operators"><a class="header" href="#logical-operators">Logical Operators</a></h2>
+<p>Logical operators are used to construct more complicated boolean expressions from simpler boolean expressions.
+The three logical operators we will use in python are <code>not</code>, <code>and</code>, and <code>or</code>.</p>
+<table>
+<tr>
+<td>Logical operator</td>
+<td>What it does</td>
+<td> 
+<p>Example (<code>x = True, y = False</code>)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>not</code></p>
+</td>
+<td>
+<p>Negate the value - meaning a <code>True</code> boolean expression becomes <code>False</code> and a <code>False</code> boolean expression becomes true.</td></p>
+<td>
+<p><code>not x</code> → <code>False</code></p>
+<p><code>not y</code> → <code>True</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>and</code></p>
+</td>
+<td>
+<p><code>True</code> <strong>only if both boolean expressions are true</strong>, otherwise <code>False</code>.</p>
+<p>Such as &quot;I completed homework <strong>and</strong> read a book&quot;, evaluates to <code>True</code> only if you have done <strong>both</strong>.</p>
+</td>
+<td>
+<p><code>x and y</code> → <code>False</code></p>
+<p><code>x and (not y)</code> → <code>True</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><code>or</code></p>
+</td>
+<td>
+<p><code>True</code> <strong>if either boolean expression is true</strong>, otherwise <code>False</code>.</p>
+<p>Such as &quot;I completed homework <strong>or</strong> read a book&quot; evaluates as <code>True</code> if you have done one or the other or both.</p>
+</td>
+<td>
+<p><code>x or y</code> → <code>True</code></p>
+<p><code>(not x) or y</code> → <code>False</code></p>
+</td>
+</tr>
+</table>
+<p>Note that in the English language, sometimes people use the word &quot;or&quot; to mean one or the other but <em>not</em> both. That is an alternate meaning that in Computer Science and mathematics is called <em>exclusive or</em>. But in programming and in mathematics, <code>or</code> <strong>always</strong> means <em>one or the other or both</em>.</p>
+<h2 id="precedence-of-logical-operators"><a class="header" href="#precedence-of-logical-operators">Precedence of Logical Operators</a></h2>
+<p>The order of precedence for logical operators is</p>
+<ul>
+<li><code>not</code>, then</li>
+<li><code>and</code>, then</li>
+<li><code>or</code>.</li>
+</ul>
+<p>Just like in arithmetic, the order of precedence can be overridden with parentheses.
+Sometimes people forget whether <code>and</code> or <code>or</code> has higher precedence. So you are urged to use parentheses in logical expressions even if they are not required, to avoid ambiguity and to improve the clarify of your code to others who read it.</p>
+<p>Examples:
+Suppose the following code has executed:</p>
+<pre><code class="language-python">x = 5
+y = 3
+z = 10
+g = 2
+</code></pre>
+<p>Evaluate the following boolean expressions:
+|Boolean expression...|...evaluates to:|
+|:-:|:-:|
+|<code>x * g == z or not ( x * x &lt; y)</code> | <code>True</code>|
+|<code>(2 * y &lt; z and z &lt;= g) or x != 5</code> | <code>False</code>|
+|<code>not (x == 7)</code>|<code>True</code>|</p>
+<p>Note: In the above examples, none of the parentheses are required, but they improve readability of the code.</p>
+<p>Note: In the last example <code>not (x == 7)</code> is equivalent to <code>x != 7 </code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="conditional-statements-also-called-branch-statements"><a class="header" href="#conditional-statements-also-called-branch-statements">Conditional statements (also called branch statements)</a></h2>
+<p>In python, conditional statements include <code>if</code> statements, <code>if-else</code> statements, and <code>if-else</code> ladders.</p>
+<h2 id="if-statements"><a class="header" href="#if-statements"><code>If</code> statements</a></h2>
+<p>The syntax of an <code>if</code> statement is:</p>
+<pre><code class="language-python">if &lt;condition&gt;:
+    # Indented statement block
+# Rest of program
+</code></pre>
+<p>The condition is a boolean expression (in other words, it is <code>True</code> or <code>False</code>). The indented code block is executed if the condition evaluates to <code>True</code>, otherwise it is skipped. So the <code>if</code> statement controls whether or not that block of code runs. The indentation is extremely important - the indentation tells python which lines to skip if the condition is <code>False</code>.</p>
+<p>This flowchart shows visually that the indented block of code is executed if the boolean expression is <code>True</code>, and is skipped if the boolean expression is <code>False</code>.</p>
+<figure>
+<img src="img/conditional_statements/if_flowchart.png" alt="Flowchart for if statement" class="center", width="200">
+</figure>
+<p>Examples of <code>if</code>-statements:
+Trace the following code blocks and confirm the outputs.</p>
+<table>
+<tr>
+<td>Code</td><td>Output</td><td>Notes</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x=5
+y=7
+if x&gt;y:
+    print(&quot;A&quot;)
+print(&quot;B&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>B
+</code></pre>
+</td>
+<td>
+<p><code>&quot;A&quot;</code> is not output, since <code>x&gt;y</code> is <code>False</code>.<br>
+But <code>&quot;B&quot;</code> is output, since it is not<br>
+part of the indented block.</p>
+</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x=10
+y=7
+if x&gt;y:
+    print(&quot;A&quot;)
+print(&quot;B&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>A
+B
+</code></pre>
+</td>
+<td>
+<p><code>&quot;A&quot;</code> <strong>is</strong> output, since <code>x&gt;y</code> is <code>True</code>.<br>
+And <code>&quot;B&quot;</code> is output regardless, since it is<br> 
+<strong>not</strong> part of the indented block.</p>
+</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x=5
+y=7
+if x&gt;y:
+    print(&quot;A&quot;)
+    print(&quot;B&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>
+</code></pre>
+</td>
+<td>
+<p><code>&quot;A&quot;</code> is not output, since <code>x&gt;y</code> is <code>False</code>.<br>
+And this time <code>&quot;B&quot;</code> is <strong>also not</strong> output,<br>
+since this time it <strong>is</strong> part of the indented block.</p>
+</td>
+</tr>
+</table>
+<h2 id="if-else-statements"><a class="header" href="#if-else-statements"><code>If-else</code> statements</a></h2>
+<p>An <code>if-else</code> statement gives the program an alternative block of code to execute if the condition in the <code>if</code> statement is <code>False</code>. The <code>if-else</code> statement will execute <strong>one</strong> (and <strong>only one</strong>) of the two code blocks </p>
+<p>The syntax of an <code>if-else</code> statement is:</p>
+<pre><code class="language-python">if &lt;condition&gt;:
+    # Indented statement block 1
+else:
+    # Indented statement block 2
+# Rest of program
+</code></pre>
+<p>The condition is a boolean expression (in other words, it is <code>True</code> or <code>False</code>). The indented code block 1 is executed if the condition evaluates to <code>True</code>, otherwise the indented code block 2 is executed. Thus we control which block of code to execute based on the <code>True/False</code> value of the condition.</p>
+<p>This flowchart shows visually the path through an <code>if-else</code> statement:</p>
+<figure>
+<img src="img/conditional_statements/if_else_flowchart.png" alt="Flowchart for if-else statement" class="center", width="200">
+</figure>
+<p>Trace through the following examples of <code>if-else</code>-statements, and confirm the outputs.</p>
+<table>
+<tr>
+<td>Code</td><td>Output</td><td>Notes</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x=5
+y=7
+if x&gt;y:
+    print(&quot;A&quot;)
+else:
+    print(&quot;B&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>B
+</code></pre>
+</td>
+<td>
+<p>Since <code>x&gt;y</code> is <code>False</code>, <code>&quot;A&quot;</code> is <strong>not</strong> output. <br>
+Instead the <code>else</code> block is executed, <br>
+and <strong>just</strong> <code>&quot;B&quot;</code> is output. </p>
+</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x=5
+y=7
+if x&lt;y:
+    print(&quot;A&quot;)
+else:
+    print(&quot;B&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>A
+</code></pre>
+</td>
+<td>
+<p>This time <code>&quot;A&quot;</code> <strong>is</strong> output, since <code>x&lt;y</code> is <code>True</code>.<br>
+<code>&quot;B&quot;</code> is <strong>not</strong> output since it is part of the <code>else</code> block.</p>
+</td>
+</tr>
+</table>
+<p>Notice that in the above code, only one of <code>&quot;A&quot;</code> and <code>&quot;B&quot;</code> can be printed, since one lies in the <code>if</code> block and the other lies in the <code>else</code> block.</p>
+<h2 id="if-else-ladder-statements"><a class="header" href="#if-else-ladder-statements"><code>If-else</code> ladder statements</a></h2>
+<p>We use an <code>if-else</code> ladder if there are more than two options - it allows for multiple branches. It will execute one block for each of many possible outcomes.</p>
+<p>Here is the syntax for an <code>if-else</code> ladder:</p>
+<pre><code class="language-python">if &lt;condition_1&gt;:
+    # Indented statement block 1
+elif &lt;condition_2&gt;:
+    # Indented statement block 2
+elif &lt;condition_3&gt;:
+    # Indented statement block 3
+...
+elif &lt;condition_k&gt;:
+    # Indented statement block k
+else:
+    # Indented statement block
+# Rest of program
+</code></pre>
+<p>Each of the conditions is a boolean expression (<code>True</code> or <code>False</code>). If the outcome of one of the conditions is <code>True</code>, then the associated indented statement block will get executed. Once that block is executed, the rest of the <code>if-else</code> ladder is skipped, so no further conditions are checked. This means that <strong>no more than one</strong> of the blocks will be executed.</p>
+<p>Note that the last <code>else</code> block is optional. If the <code>else</code> block is omitted, and if none of the previous blocks gets executed, then no code at all in the <code>if-else</code> ladder will run.</p>
+<p>Here is a flowchart for the <code>if-else</code> ladder:</p>
+<figure>
+<img src="img/conditional_statements/if_else_ladder_flowchart.png" alt="Flowchart for if-else ladder statement" class="center", width="200">
+</figure>
+<p>Trace through the following examples of an <code>if-else</code> ladder and confirm the output:</p>
+<table>
+<tr>
+<td>Code</td><td>Output</td><td>Notes</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x=15
+
+if x &gt; 0 and x &lt; 10:
+    print(&quot;Low&quot;)
+elif x &gt;= 10 and x &lt; 20:
+    print(&quot;Medium&quot;)
+elif x &gt;= 20 and x &lt; 30:
+    print(&quot;High&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>Medium
+</code></pre>
+</td>
+<td>
+<p>The first condition <code>x &gt; 0 and x &lt; 10</code> evaluates to <code>False</code>,<br>
+so the first code block is skipped and the next condition is checked.</p>
+<p>The second condition <code>x &gt;= 10 and x &lt; 20</code> evaluates to <code>True</code>,<br>
+and so <code>&quot;Medium&quot;</code> is output.</p>
+<p>No further conditions are checked - the rest of the code is skipped.</p>
+</td nowrap>
+</tr>
+<tr>
+<td>
+<pre><code class="language-python">x=100
+
+if x &gt; 0 and x &lt; 10:
+    print(&quot;Low&quot;)
+elif x &gt;= 10 and x &lt; 20:
+    print(&quot;Medium&quot;)
+elif x &gt;= 20 and x &lt; 30:
+    print(&quot;High&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>
+</code></pre>
+</td>
+<td>
+<p>The first condition <code>x &gt; 0 and x &lt; 10</code> evaluates to <code>False</code>,<br>
+so the first code block is skipped and the next condition is checked.</p>
+<p>The second condition <code>x &gt;= 10 and x &lt; 20</code> also evaluates to <code>False</code>,<br>
+and so the second code block is skipped and the third condition is checked.</p>
+<p>The third and final condition <code>x &gt;= 20 and x &lt; 30</code> also evaluates to <code>False</code>,<br>
+and so the third code block is also skipped.</p>
+<p>Nothing is output! Notice that the same issue occurs if <code>x</code><br>
+is initialized to a value of 0 or less.</p>
+<p>This code could benefit from a final <code>else</code> block,<br>
+so that no possibilities are skipped.</p>
+</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x=100
+
+if x &gt; 0 and x &lt; 10:
+    print(&quot;Low&quot;)
+elif x &gt;= 10 and x &lt; 20:
+    print(&quot;Medium&quot;)
+elif x &gt;= 20 and x &lt; 30:
+    print(&quot;High&quot;)
+else:
+    print(&quot;Out of range&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>Out of range
+</code></pre>
+</td>
+<td>
+<p>The first condition <code>x &gt; 0 and x &lt; 10</code> evaluates to <code>False</code>, then the second condition <code>x &gt;= 10 and x &lt; 20</code> also evaluates to <code>False</code>, and then
+the third condition <code>x &gt;= 20 and x &lt; 30</code> also evaluates to <code>False</code>.</p>
+<p>This drops us into the <code>else</code> block, and <code>&quot;Out of range&quot;</code> is output.</p>
+</td>
+</tr>
+</table>
+<h2 id="putting-it-all-together-1"><a class="header" href="#putting-it-all-together-1">Putting it all together</a></h2>
+<p>Here's a complete sample program demonstrating <code>if-else</code> ladders:</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+A simple program to demonstrate an if-else ladder
+Author: COMP 1351 Instructor
+File Name: conditional_demo.py
+Course: Comp 1351
+Assignment: Preview of conditional statements
+Collaborators: 1351 Instructors
+Internet Sources: None
+&quot;&quot;&quot;
+
+&quot;&quot;&quot;
+What to wear in Colorado based on temperature (integer degrees)
+Winter jacket if it is less than 25 degrees
+Light to medium coat if it is 25 to 44 degrees
+Fleece if it is 45 and above, and less than 65 degrees
+&quot;&quot;&quot;
+
+def main():
+    # Find out the temperature:
+    temperature = int(input(&quot;What is the temperature today? &quot;))
+    # Give user clothing recommendation based on temperature:
+    if temperature &lt; 25:
+        print(&quot;You should wear a winter jacket.&quot;)
+    elif temperature &gt;= 25 and temperature &lt; 45:
+        print(&quot;You should wear a medium or light coat.&quot;)
+    elif temperature &gt;= 45 and temperature &lt; 65:
+        print(&quot;You should wear a fleece.&quot;)
+    else:
+        print(&quot;You do not need to wear a jacket.&quot;)
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+<p>Key points:</p>
+<ul>
+<li>
+<p>The <code>else</code> block guarantees that the program will give output no matter what the user enters.</p>
+</li>
+<li>
+<p>The program only accepts integer input. Entering a decimal value will result in a <code>ValueError</code>. We will learn later how to respond to errors on user input.</p>
+</li>
+<li>
+<p>It's a common student error to create a boolean expression like this: <code>temperature &gt;= 25 and &lt;= 45</code>. Both sides of the <code>and</code> operator must be fully-formed boolean expressions. So it must say <code>temperature &gt;= 25 and temperature &lt;= 45</code>.</p>
+</li>
+<li>
+<p>By the time we reach the line <code>elif temperature &gt;=25 and temperature &lt; 45</code> we can already be sure that the temperature <strong>is</strong> greater than or equal to 25. For it if were not, then we would have executed the first indented block in the <code>if</code>, and skipped the rest of the <code>if-else</code> ladder. Thus, a simpler and still correct version of this ladder is:</p>
+<pre><code class="language-python">if temperature &lt; 25:
+    print(&quot;You should wear a winter jacket.&quot;)
+elif temperature &lt; 45:
+    print(&quot;You should wear a medium or light coat.&quot;)
+elif temperature &lt; 65:
+    print(&quot;You should wear a fleece.&quot;)
+else:
+    print(&quot;You do not need to wear a jacket.&quot;)
+</code></pre>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="nested-conditional-statements"><a class="header" href="#nested-conditional-statements">Nested conditional statements</a></h2>
+<p>Recall that an ordinary <code>if-else</code> statement has this syntax:</p>
+<pre><code class="language-python">if &lt;condition&gt;:
+    # Indented statement block
+else:
+    # Indented statement block
+</code></pre>
+<p>It is possible for the indented statement blocks themselves to include <em>another</em> <code>if</code> or <code>if-else</code> statement. This is called <em>nesting</em>, and it is both useful and common. Nesting might look like this (another <code>if/else</code> within the outer <code>if</code> block):</p>
+<pre><code class="language-python">if &lt;condition 1&gt;:
+    if &lt;condition 2&gt;:
+        # Indented statement block
+    else:
+        # Indented statement block
+else:
+    # Indented statement block
+</code></pre>
+<p>or like this (another <code>if/else</code> within each of the outer <code>if</code> and the outer <code>else</code> blocks):</p>
+<pre><code class="language-python">if &lt;condition 1&gt;:
+    if &lt;condition 2&gt;:
+        # Indented statement block
+    else:
+        # Indented statement block
+else:
+    if &lt;condition 3&gt;:
+        # Indented statement block
+    else:
+        # Indented statement block
+</code></pre>
+<p>or even like this: (an <code>if/else</code> within the outer <code>if</code>, then another <code>if/else</code> within the inner <code>if</code>)</p>
+<pre><code class="language-python">if &lt;condition 1&gt;:
+    if &lt;condition 2&gt;:
+        if &lt;condition 3&gt;:
+            # Indented statement block
+        else:
+            # Indented statement block
+    else:
+        # Indented statement block
+else:
+    # Indented statement block
+</code></pre>
+<p>Notice that the last two cases each have three <code>if</code> conditions, but they are very different from each other. The last one has three levels of nesting, while the previous one has only two levels.  In python, we always pay close attention to the indentation, because it tells us which inner block is part of which outer block. That placement controls the logical flow of the program. An inner block only gets executed if the condition for its outer block evaluates to <code>True</code>.</p>
+<h2 id="examples-of-nested-conditionals"><a class="header" href="#examples-of-nested-conditionals">Examples of nested conditionals</a></h2>
+<table>
+<tr>
+<td>Code</td><td>Output</td><td>Notes</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x = 5
+y = 7
+z = 10
+
+if x &lt; y:
+    print(&quot;A&quot;)
+    if z &gt;= 20:
+        print(&quot;B&quot;)
+    else:
+        print(&quot;C&quot;)
+else:
+    print(&quot;D&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>A
+C
+</code></pre>
+</td>
+<td>
+<p>The condition for the outer <code>if</code> is <code>True</code> (<code>x &lt; y</code>), so the outer <code>if</code> block is executed and
+<code>&quot;A&quot;</code> is output. Next, the inner condition is checked. But <code>z &gt;= 20</code> is <code>False</code>, so the <code>else</code>
+block of the inner <code>if-else</code> is executed, and <code>&quot;C&quot;</code> is output.</p>
+</td>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x = 5
+y = 7
+z = 50
+
+if x &lt; y:
+    print(&quot;A&quot;)
+    if z &gt;= 20:
+        print(&quot;B&quot;)
+    else:
+        print(&quot;C&quot;)
+else:
+    print(&quot;D&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>A
+B
+</code></pre>
+</td>
+</td>
+<td>
+<p>The condition for the outer <code>if</code> is <code>True</code> (<code>x &lt; y</code>), so the outer <code>if</code> block is executed and
+<code>&quot;A&quot;</code> is output. Next, the inner condition is checked. Now <code>z &gt;= 20</code> is <code>True</code>, so the <code>if</code>
+block of the inner <code>if-else</code> is executed, and <code>&quot;B&quot;</code> is output.</p>
+</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x = 5
+y = 1
+z = 50
+
+if x &lt; y:
+    print(&quot;A&quot;)
+    if z &gt;= 20:
+        print(&quot;B&quot;)
+    else:
+        print(&quot;C&quot;)
+else:
+    print(&quot;D&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>D
+</code></pre>
+</td>
+</td>
+<td>
+<p>The condition for the outer <code>if</code> is <code>False</code>, so the outer <code>else</code> block is executed and <code>&quot;D&quot;</code> is output.</p>
+</td>
+</tr>
+<td nowrap>
+<pre><code class="language-python">x = 5
+y = 1
+z = 50
+
+if x &lt; y:
+    print(&quot;A&quot;)
+    if z &gt;= 20:
+        print(&quot;B&quot;)
+    else:
+        print(&quot;C&quot;)
+else:
+    print(&quot;D&quot;)
+    if x % 2 == 0:
+        print(&quot;E&quot;)
+    else:
+        print(&quot;F&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>D
+F
+</code></pre>
+</td>
+</td>
+<td>
+<p>The condition for the outer <code>if</code> is <code>False</code>, so the outer <code>else</code> block is executed and
+<code>&quot;D&quot;</code> is output. Next, the inner condition is checked. And <code>x % 2 == 0</code> is <code>False</code> (since <code>x</code> is odd), so the <code>else</code>
+block of the inner <code>if-else</code> is executed, and <code>&quot;F&quot;</code> is output.</p>
+</td>
+<tr>
+</table>
+<p>Exercise: For the last code block in the above examples, can you come up with initial values for <code>x</code>, <code>y</code>, and <code>z</code> so that the output is <code>D E</code>? Can you come up with initial values for <code>x</code>, <code>y</code>, and <code>z</code> so that the output is <code>A F</code>?</p>
+<h2 id="putting-it-all-together-2"><a class="header" href="#putting-it-all-together-2">Putting it all together</a></h2>
+<p>The code below on the left checks if the user can vote in an upcoming election. It checks that the user is a US citizen, is 18 or over, and has registered to vote. The flowchart on the right shows the flow of control through the program, as it checks the three conditions.</p>
+<table>
+<tr>
+<td>Code</td>
+<td>Flowchart</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">&quot;&quot;&quot;
+A simple program that determines uer elifibiity to vote
+Author: COMP 1351 Instructor
+Filename: voting.py
+Date:
+Course: COMP 1351
+Assignment: Preview of nested conditional statements
+Collaborators: 1351 Instructors
+Internet Sources: None
+&quot;&quot;&quot;
+# Check citizenship requirement
+is_citizen = input(&quot;Are you a US citizen? Y for yes, N for no. &quot;)
+if is_citizen == 'Y':
+    # Check age requirement
+    age = int(input(&quot;How old are you? &quot;))
+    if age &gt;= 18:
+        # Check registration requirement
+        is_registered = input(&quot;Are you registered to vote? Y for yes, N for no. &quot;)
+        if is_registered == 'Y':
+            print(&quot;You can go ahead and vote.&quot;)
+        else:
+            # Cannot vote because unregistered
+            print(&quot;You must be registered to vote.&quot;)
+    else:
+        # Cannot vote due to age
+        print(&quot;You must be 18 years or older to vote.&quot;)
+else:
+    # cannot vote due to citizenship
+    print(&quot;You must be a US citizen to vote.&quot;)
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/nested_conditionals/voting_flowchart.png" alt="Flowchart for the voting program" class="center", width="300">
+</figure>
+</td>
+</table>
+<p>Key points:</p>
+<ul>
+<li>Notice that this program has three levels of nesting.</li>
+<li>Notice that if the user enters <code>N</code> to the first question, then no further questions are asked. Similarly, if they are too young, they are not asked the last question. This is accomplished using the structure of the <code>if-else</code> nesting.</li>
+<li>The indentation is vital. Look at the code above and carefully notice how each <code>if</code> lines up directly above the <code>else</code> that pairs with it. </li>
+<li>Copy/paste the above program into VSCode and run it. To test completely, you have to try all possible combinations of inputs, so that every possible line of code in the program gets tested. This means running the program multiple times and entering multiple possibilities at each input line. What happens if the user enters <code>P</code> instead of <code>Y</code> or <code>N</code>? Why?</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="for-loops-in-python"><a class="header" href="#for-loops-in-python"><code>for</code>-loops in python</a></h2>
+<p>The <code>for</code> loop structure in python is an example of an <em>iterative</em> statement. Iterative structures allow you to repeat blocks of code multiple times rather than retyping the lines of code themselves multiple times.</p>
+<h2 id="syntax-of-an-index-based-for-loop"><a class="header" href="#syntax-of-an-index-based-for-loop">Syntax of an index-based <code>for</code>-loop</a></h2>
+<p>To repeat a block of code a specific number of times, we can use the following syntax:</p>
+<pre><code class="language-python">for i in range(&lt;number&gt;):
+    # indented block of code
+</code></pre>
+<p>Example: output <code>&quot;Hello, world!&quot;</code> 5 times, then output <code>&quot;Done with greetings.&quot;</code></p>
+<table>
+<tr><td>Without loops</td>
+<td>
+<p>With a <code>for</code>-loop</td></tr></p>
+<tr>
+<td nowrap>
+<pre><code class="language-python"># Awful to have to repeat lines of code!
+print(&quot;Hello, world!&quot;)
+print(&quot;Hello, world!&quot;)
+print(&quot;Hello, world!&quot;)
+print(&quot;Hello, world!&quot;)
+print(&quot;Hello, world!&quot;)
+print(&quot;Done with greetings.&quot;)
+</code></pre>
+</td>
+<td nowrap>
+<pre><code class="language-python"># Ah, much more efficient!
+for i in range(5):
+    print(&quot;Hello, world!&quot;)
+print(&quot;Done with greetings.&quot;)
+</code></pre>
+</td>
+</tr>
+</table>
+<p>Key points:</p>
+<ul>
+<li>When programming, we always want to avoid repeating a line or block of code. Not duplicating saves us time when coding. But it also helps us later if we find there is an error or if we decide to make a change. Ideally, we want to make fixes and changes in only one place.</li>
+<li>The indentation is very important. Any lines indented after the <code>for</code> line get repeated. When the indentation reverts to the same level as the <code>for</code> line, those lines are not repeated, and execute only once.</li>
+<li>The <code>i</code> is just the name of a variable. In this kind of <code>for</code>-loop designed to simply repeat a block of code a specific number of times, the variable counts which iteration (repeat) we are on. In this situation, it is traditional to call the variable <code>i</code>, <code>j</code>, or <code>k</code>, though technically you may give it any legal variable name.</li>
+</ul>
+<h2 id="the-parameter-passed-to-the-range-function-can-be-a-variable"><a class="header" href="#the-parameter-passed-to-the-range-function-can-be-a-variable">The parameter passed to the <code>range()</code> function can be a variable.</a></h2>
+<p>Example: Ask the user how many greetings they want, then output <code>&quot;Hello, world!&quot;</code> that many times, then output <code>&quot;Done with greetings.&quot;</code></p>
+<table>
+<tr><td>Without loops</td>
+<td>
+<p>With a <code>for</code>-loop</td></tr></p>
+<tr>
+<td nowrap>
+<pre><code class="language-python"># It's not possible!
+</code></pre>
+</td>
+<td nowrap>
+<pre><code class="language-python">num_greetings = int(input(&quot;How many greetings would you like? &quot;))
+for i in range(num_greetings):
+    print(&quot;Hello, world!&quot;)
+print(&quot;Done with greetings.&quot;)
+</code></pre>
+</td>
+</tr>
+</table>
+<p>Graphical example: draw 50 small squares at random locations on the screen.</p>
+<table>
+<tr><td>Code</td><td>Image created</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">import dudraw
+from random import random
+
+# initialize canvas size and clear background
+dudraw.set_canvas_size(400,400)
+dudraw.clear(dudraw.LIGHT_GRAY)
+
+# Draw a small square at a random 
+# (x, y) position, repeat 50 times
+for i in range(50):
+    x = random()
+    y = random()
+    dudraw.filled_square(x, y, 0.01)
+# display until window is closed:
+dudraw.show(float('inf'))
+</code></pre>
+<td>
+<figure>
+<img src="img/for_loop/random_squares.jpg" alt="Image of squares at 50 random locations" class="center", width="200">
+</figure>
+</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python"># Interesting bug! The (x, y) position
+# is randomly chosen *before* the loop.
+# So the same values are used every
+# time through the loop. The 50 squares
+# are all drawn on top of each other
+# at the one random location.
+dudraw.set_canvas_size(400,400)
+dudraw.clear(dudraw.LIGHT_GRAY)
+x = random()
+y = random()
+for i in range(50):
+    dudraw.filled_square(x, y, 0.01)
+# display until window is closed
+dudraw.show(float('inf'))
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/for_loop/random_squares_bug.jpg" alt="Image of 50 squares all at the same location" class="center", width="200">
+</figure>
+</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python"># Another interesting bug! The
+# dudraw.show(forever) command
+# is mistakenly indented. So
+# only one square is drawn and
+# the program never returns from
+# the dudraw.show() call
+dudraw.set_canvas_size(400,400)
+dudraw.clear(dudraw.LIGHT_GRAY)
+for i in range(50):
+    # The x and y random values are created as
+    # parameters within the call to filled_square
+    dudraw.filled_square(random(), random(), 0.01)
+    # display until window is closed
+    dudraw.show(float('inf'))
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/for_loop/random_squares_bug2.jpg" alt="Bug - only one square is drawn" class="center", width="200">
+</figure>
+</td>
+</tr>
+</table>
+<h2 id="using-the-loop-variable-within-the-body-of-the-loop"><a class="header" href="#using-the-loop-variable-within-the-body-of-the-loop">Using the loop variable within the body of the loop</a></h2>
+<p>In the <code>for</code>-statement</p>
+<pre><code class="language-python">for i in range(N):
+    # body of loop
+</code></pre>
+<p><code>range(N)</code> produces a sequence of integers from <code>0</code> through <code>N-1</code>, a total of <code>N</code> integers. The first time through the loop, he loop variable <code>i</code> takes the value <code>0</code>,then it takes the value <code>1</code> the second time, etc., until in the final iteration of the loop, <code>i</code> takes the value <code>N-1</code>. Often we make use of the value of <code>i</code> itself, since it is effectively counting which iteration of the loop we are currently executing. Note that you can use any legal variable name for the loop variable</p>
+<p>Here's a simplest example, with the corresponding output:</p>
+<table>
+<tr><td>Code</td><td>Output</td></tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">print('I know how to count!')
+for i in range(5):
+    print(i+1)
+</code></pre>
+</td>
+<td>
+<pre><code>I know how to count!
+1
+2
+3
+4
+5
+</code></pre>
+</td>
+</tr>
+</table>
+<h2 id="variations-on-the-range-function"><a class="header" href="#variations-on-the-range-function">Variations on the <code>range()</code> function</a></h2>
+<p><code>range(N)</code> always starts the loop variable at <code>0</code> and ends at <code>N-1</code>. However, you can specify a different integer start value.</p>
+<p><code>range(start, stop)</code> produces a sequence of integers beginning with <code>start</code> and ending one less than <code>stop</code>. Note that the value for <code>stop</code> is never included in the sequence. You can double-check yourself by confirmng that <code>stop-start</code> gives the total number of integers in the sequence.</p>
+<p>Example: <code>range(1, 6)</code> produces the sequence <code>1, 2, 3, 4, 5</code></p>
+<p>The <code>range()</code> function also allows you to control the step size. This means you can change the sequence so it doesn't increase by <code>1</code> from one number to the next.</p>
+<p><code>range(start, stop, step)</code></p>
+<ul>
+<li>start: (optional) is the first value of the sequence</li>
+<li>stop: the sequence stops on the term <em>before</em> this value is reached</li>
+<li>step: (optional) integer value giving the increment from one number to the next</li>
+</ul>
+<p>Example: <code>range(3, 10, 2)</code> produces the sequence <code>3, 5, 7, 9</code>.</p>
+<p>Example: <code>range(-2, 13, 3)</code> produces the sequence <code>-2, 1, 4, 7, 10</code>.</p>
+<p>Example: <code>range(10, 7, -1)</code> produces the sequence <code>10, 9, 8</code>.</p>
+<p>Example: <code>range(6, 1, 2)</code> produces an empty sequence, since the step value is positive, and the start value is greater than the stop value. If this range were used in a <code>for</code>-loop, then the loop block would never execute.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="loops-and-conditional-statements-can-be-nested"><a class="header" href="#loops-and-conditional-statements-can-be-nested">Loops and conditional statements can be nested</a></h2>
+<p><code>for</code>-loops can be nested within conditional statements, and conditional statements can be nested within loops.</p>
+<h2 id="for-loops-within-conditional-statements"><a class="header" href="#for-loops-within-conditional-statements"><code>for</code>-loops within conditional statements</a></h2>
+<p>Here is the structure of a <code>for</code>-loop nested within an <code>if</code>-statement:</p>
+<pre><code class="language-python">if &lt;condition&gt;:
+    for i in range(...):
+        # indented code block
+</code></pre>
+<p>In this case, the loop executes if the condition evaluates to <code>True</code>, otherwise it is skipped.</p>
+<p>Another possibility is <code>for</code>-loops nested within an <code>if-else</code> statement:</p>
+<pre><code class="language-python">if &lt;condition&gt;:
+    for i in range(...):
+        # indented code block
+else &lt;condition&gt;:
+    for i in range(...):
+        # indented code block
+</code></pre>
+<p>Examples: Trace the following code examples, confirming the output.</p>
+<table>
+<tr>
+<td>Code</td><td>Output</td><td>Notes</td>
+</tr>
+<tr>
+<td nowrap >
+<pre><code class="language-python">a = 5
+b = 1
+
+if a &gt; b:
+    for i in range(5):
+        print(&quot;a&quot;)
+else:
+    for i in range(5):
+        print(&quot;b&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>a
+a
+a
+a
+a
+</code></pre>
+</td>
+<td> 
+<p>The condition <code>a&gt;b</code> evaluates to <code>True</code>, so the <code>for</code>-loop within the <code>if</code> block is executed. Five <code>&quot;a&quot;</code>s are output.</p>
+</tr>
+<td nowrap >
+<pre><code class="language-python">a = 5
+b = 10
+
+if a &gt; b:
+    for i in range(5):
+        print(&quot;a&quot;)
+else:
+    for i in range(5):
+        print(&quot;b&quot;)
+</code></pre>
+</td>
+<td>
+<pre><code>b
+b
+b
+b
+b
+</code></pre>
+</td>
+<td> 
+<p>The condition <code>a&gt;b</code> evaluates to <code>False</code> this time, so the <code>for</code>-loop within the <code>else</code> block is executed. Five <code>&quot;b&quot;</code>s are output.</p>
+</table>
+<h2 id="conditional-statements-within-for-loops"><a class="header" href="#conditional-statements-within-for-loops">Conditional statements within <code>for</code>-loops</a></h2>
+<p>Here is the structure of an <code>if</code> statement nested within a <code>for</code>-loop:</p>
+<pre><code class="language-python">for i in range(...):
+    if &lt;condition&gt;:
+        # indented code block
+</code></pre>
+<p>In this case, the condition is checked newly on <em>each iteration</em> of the loop. In some of the iterations it may evaluate <code>True</code>, and then in others it may be <code>False</code>. The check is done independently each time.  The indented code block only executes on the iterations where the condition comes out to be <code>True</code>.</p>
+<p>Of course, inside the <code>for</code>-loop we may instead have an <code>if-else</code> statement or an <code>if-else</code> ladder.</p>
+<p>Examples: trace the following code examples, confirming the output.</p>
+<table>
+<tr>
+<td>Code</td><td>Output</td><td>Notes</td>
+</tr>
+<tr>
+<td nowrap >
+<pre><code class="language-python">for i in range(8):
+    if i % 2 == 0:
+            print(i)
+</code></pre>
+</td>
+<td>
+<pre><code>0
+2
+4
+6
+</code></pre>
+</td>
+<td>
+<p>Each time through the loop, the variable <code>i</code> will take the next value from the sequence <code>0, 1, 2, 3, 4, 5, 6, 7</code>. Each time, the <code>if</code> statement checks if <code>i % 2 == 0</code>, in other words, if <code>i</code> is even. Each time that condition is <code>True</code>, the value is output, resulting in <code>0 2 4 6</code>.</p>
+</td>
+</tr>
+</table>
+<h2 id="putting-it-all-together-3"><a class="header" href="#putting-it-all-together-3">Putting it all together</a></h2>
+<p>Here's a complete program that uses an <code>if-else</code> statement nested within a <code>for</code>-loop. Carefully trace the program and predict the image that results. You can run the code to test if you were correct.</p>
+<pre><code class="language-python">&quot;&quot;&quot;
+Produce a drawing of randomly-placed squares in two colors
+Mystery output: Trace the 
+Author: COMP 1351 Instructor
+Date:
+File: two_colors.py
+Course: COMP 1351
+Assignment: Preview assignment for for-loops
+Collaborators: 1351 Instructors
+Internet Sources: None
+&quot;&quot;&quot;
+
+import dudraw
+from random import random
+
+dudraw.set_canvas_size(500, 500)
+dudraw.clear(dudraw.LIGHT_GRAY)
+
+for i in range(10000):
+    # generate random x and y locations:
+    x = random()
+    y = random()
+    # set color based on position
+    if y &gt; 0.5:
+        # Magenta is a hot-pink color
+        dudraw.set_pen_color(dudraw.MAGENTA)
+    else:
+        # Cyan is a turquoise color
+        dudraw.set_pen_color(dudraw.CYAN)
+
+    # draw the circle at the randomly-chosen location:
+    dudraw.filled_circle(x, y, 0.01)
+    # outline the circle with a black edge:
+    dudraw.set_pen_color(dudraw.BLACK)
+    dudraw.circle(x, y, 0.01)
+
+# display the image until the window is closed
+dudraw.show(float('inf'))
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="data-science"><a class="header" href="#data-science">Data Science</a></h1>
 <p>Python is becoming an increasingly popular choice for many applications, but in particular it has become one of the standards in the field of Data Science.</p>
