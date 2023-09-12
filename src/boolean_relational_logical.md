@@ -151,6 +151,7 @@ z = 10
 g = 2
 ```
 Evaluate the following boolean expressions:
+
 |Boolean expression...|...evaluates to:|
 |:-:|:-:|
 |`x * g == z or not ( x * x < y)` | `True`|
