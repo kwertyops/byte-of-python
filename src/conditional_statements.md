@@ -12,7 +12,7 @@ The condition is a boolean expression (in other words, it is `True` or `False`).
 
 This flowchart shows visually that the indented block of code is executed if the boolean expression is `True`, and is skipped if the boolean expression is `False`.
 <figure>
-<img src="img/if_flowchart.png" alt="Flowchart for if statement" class="center", width="200">
+<img src="img/conditional_statements/if_flowchart.png" alt="Flowchart for if statement" class="center", width="200">
 </figure>
 
 Examples of `if`-statements:
@@ -118,7 +118,7 @@ The condition is a boolean expression (in other words, it is `True` or `False`).
 
 This flowchart shows visually the path through an `if-else` statement:
 <figure>
-<img src="img/if_else_flowchart.png" alt="Flowchart for if-else statement" class="center", width="200">
+<img src="img/conditional_statements/if_else_flowchart.png" alt="Flowchart for if-else statement" class="center", width="200">
 </figure>
 
 
@@ -213,7 +213,7 @@ Note that the last `else` block is optional. If the `else` block is omitted, and
 
 Here is a flowchart for the `if-else` ladder:
 <figure>
-<img src="img/if_else_ladder_flowchart.png" alt="Flowchart for if-else ladder statement" class="center", width="200">
+<img src="img/conditional_statements/if_else_ladder_flowchart.png" alt="Flowchart for if-else ladder statement" class="center", width="200">
 </figure>
 
 Trace through the following examples of an `if-else` ladder and confirm the output:

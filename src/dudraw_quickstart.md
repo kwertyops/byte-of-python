@@ -159,8 +159,8 @@ Polling for a key click typically happens within an animation loop. You must fir
 
 ## How do I save my image in a file?
 
-   Use the `dudraw.save()` function. You can output either .png files or .jpg files. The extension you use in the file name determines what file type is output.
-   Here's an example of a program that draws a very simple picture, and saves the output to two files, one .png and one .jpg:
+   Use the `dudraw.save()` function to output `.jpg` files.
+   Here's an example of a program that draws a very simple picture, and saves the output to a `.jpg` file:
 
 ```python
 {{#include programs/dudraw_quickstart/save_image.py}}

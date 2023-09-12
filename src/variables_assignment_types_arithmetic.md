@@ -107,6 +107,8 @@ y = 4
 |`%`|Modulus (remainder when first operand is divided by the second)| `x%y`|`3`
 |`**`|Exponentiation (raises the first  to the power of the second )|`x**y`|`14641`|
 
+An example of a use of the modulus operator is to determine if an integer is even or odd. Note that if `x` is an integer, then `x%2` takes the value `0` or `1`. So `x % 2 == 0` is `True` when `x` is even and false when `x` is odd.
+
 Another example of integer division and modulus: When we divide 3 by 4, we get a quotient of 0 and a remainder of 3. So `3//4` results in 0 and `3%4` results in 3.
 
 Warning note: In Python, `^` is **not** an exponent!

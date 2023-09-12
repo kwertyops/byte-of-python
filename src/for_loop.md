@@ -104,7 +104,7 @@ dudraw.show(float('inf'))
 <td>
 
 <figure>
-<img src="img/random_squares.jpg" alt="Image of squares at 50 random locations" class="center", width="200">
+<img src="img/for_loop/random_squares.jpg" alt="Image of squares at 50 random locations" class="center", width="200">
 </figure>
 </td>
 </tr>
@@ -131,7 +131,7 @@ dudraw.show(float('inf'))
 <td>
 
 <figure>
-<img src="img/random_squares_bug.jpg" alt="Image of 50 squares all at the same location" class="center", width="200">
+<img src="img/for_loop/random_squares_bug.jpg" alt="Image of 50 squares all at the same location" class="center", width="200">
 </figure>
 </td>
 </tr>
@@ -159,7 +159,7 @@ for i in range(50):
 <td>
 
 <figure>
-<img src="img/random_squares_bug2.jpg" alt="Bug - only one square is drawn" class="center", width="200">
+<img src="img/for_loop/random_squares_bug2.jpg" alt="Bug - only one square is drawn" class="center", width="200">
 </figure>
 </td>
 </tr>
