@@ -238,6 +238,7 @@ else:
     print("You must be a US citizen to vote.")
 ```
 </td>
+
 <td>
     
 <figure>
