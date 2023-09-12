@@ -264,7 +264,7 @@ Make sure that version number matches the Python version you installed (for exam
 <li>Now in the bottom-left of your VSCode window, you should see a &quot;Live Share&quot; button. You'll use this later in class to collaboratively write code with your group!</li>
 </ol>
 <h3 id="dudraw-graphics-library"><a class="header" href="#dudraw-graphics-library">dudraw Graphics Library:</a></h3>
-<p>The <code>dudraw</code> graphics library is a software package written at DU, based on the original <code>stddraw</code> package written at Princeton. It is a simple package that will allow us to draw images and create animations in our python programs. Here's how to install it:</p>
+<p>The <code>dudraw</code> graphics library is a software package written at DU, based on the original <code>stddraw</code> package written at Princeton. It is a simple package that will allow us to draw images and create animations in our Python programs. Here's how to install it:</p>
 <ol>
 <li>Make a new Python file (File -&gt; New File... -&gt; Python).</li>
 <li>Copy/paste the following code into the file:</li>
@@ -283,16 +283,16 @@ dudraw.show(10000)
 <li>If everything goes well, you should see a window appear with a black circle in it. It will close itself after 10 seconds. That's it!</li>
 </ol>
 <p><strong>If something went wrong in any of the steps above, try the videos in the preclass assignment. If those don't help, then please contact your instructor before the first class to get help with setting up.</strong></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="your-first-python-program"><a class="header" href="#your-first-python-program">Your first python program.</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="your-first-python-program"><a class="header" href="#your-first-python-program">Your first Python program.</a></h1>
 <p>It is traditional in Computer Science for your first program in any language to output the phrase &quot;Hello, world!&quot; to the console. This is a way of checking that your IDE (Integrated Development Environment) is working completely.
-In python, the bare-bones &quot;Hello, world!&quot; program is just one line. Our version will be longer, to illustrate some other important programming practices.</p>
-<p>In the VSCode application, open the browswer window and create a new file called <code>hello.py</code>. It's important that the name you choose ends with <code>.py</code>, so that your IDE knows to interpret your file as a python program. Paste the following:</p>
+In Python, the bare-bones &quot;Hello, world!&quot; program is just one line. Our version will be longer, to illustrate some other important programming practices.</p>
+<p>In the VSCode application, open the browswer window and create a new file called <code>hello.py</code>. It's important that the name you choose ends with <code>.py</code>, so that your IDE knows to interpret your file as a Python program. Paste the following:</p>
 <pre><code class="language-python">&quot;&quot;&quot;
-First python program, that outputs &quot;Hello, world!&quot;
+First Python program, that outputs &quot;Hello, world!&quot;
 File Name: hello.py
 Date: 
 Course: COMP1351
-Assignment: first python program
+Assignment: first Python program
 Collaborators: 1351 Instructors
 Internet Sources: None
 &quot;&quot;&quot;
@@ -307,10 +307,10 @@ if __name__ == '__main__':
 </code></pre>
 <p>Key points to notice and remember:</p>
 <ul>
-<li>Use the <code>print()</code> function to output to the console. Put the text you want to output inside of the parentheses. Text in python (called a <em>string literal</em>) is enclosed either within double quotes (&quot;text&quot;) or single quotes ('text').</li>
-<li><em>Comments</em> in a computer program are lines that python itself ignores. Comments are there for the benefit of humans (including your future self) reading your program. There are two kinds of comments in python: <em>block comments</em> and <em>in-line comments</em>. </li>
-<li>You can see that the first 9 lines of this program is a block comment, since it is enclosed between lines of three double-quotes. Every python program that you turn in this quarter will start with a block comment giving your name, the purpose of the program, the name of the file it is stored in, the date, the course it is for, the assignment it is fulfilling, your collaborators, and any internet sources you used.</li>
-<li>An inline comment starts with a <code>#</code>-sign. Anything on the line after a <code>#</code> is a comment that python ignores. Placing in-line comments in your code to explain your thought process while writing the code is an essential part of writing good code. Write the comments either before or during the coding process, <strong>not after</strong>.</li>
+<li>Use the <code>print()</code> function to output to the console. Put the text you want to output inside of the parentheses. Text in Python (called a <em>string literal</em>) is enclosed either within double quotes (&quot;text&quot;) or single quotes ('text').</li>
+<li><em>Comments</em> in a computer program are lines that Python itself ignores. Comments are there for the benefit of humans (including your future self) reading your program. There are two kinds of comments in Python: <em>block comments</em> and <em>in-line comments</em>. </li>
+<li>You can see that the first 9 lines of this program is a block comment, since it is enclosed between lines of three double-quotes. Every Python program that you turn in this quarter will start with a block comment giving your name, the purpose of the program, the name of the file it is stored in, the date, the course it is for, the assignment it is fulfilling, your collaborators, and any internet sources you used.</li>
+<li>An inline comment starts with a <code>#</code>-sign. Anything on the line after a <code>#</code> is a comment that Python ignores. Placing in-line comments in your code to explain your thought process while writing the code is an essential part of writing good code. Write the comments either before or during the coding process, <strong>not after</strong>.</li>
 <li>The lines
 <pre><code class="language-python">def main():
     # Here's the guts of the program, just one line:
@@ -325,16 +325,17 @@ have the effect of <em>calling</em> (also called <em>invoking</em> or <em>execut
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-to-dudraw"><a class="header" href="#introduction-to-dudraw">Introduction to <code>dudraw</code></a></h1>
 <h2 id="what-can-you-do-with-dudraw"><a class="header" href="#what-can-you-do-with-dudraw">What can you do with <code>dudraw</code>?</a></h2>
-<p>The python package <code>dudraw</code> is a minimal graphics library developed for teaching a beginning python programming class. Its starting point was <code>stddraw</code>, developed at Princeton University (see <a href="https://introcs.cs.princeton.edu/python/code/index.php#programs">Elements of Programming in Python</a>). At the University of Denver we modified and enhanced that package to produce <code>dudraw</code>.</p>
+<p>The Python package <code>dudraw</code> is a minimal graphics library developed for teaching a beginning Python programming class. Its starting point was <code>stddraw</code>, developed at Princeton University (see <a href="https://introcs.cs.princeton.edu/python/code/index.php#programs">Elements of Programming in Python</a>). At the University of Denver we modified and enhanced that package to produce <code>dudraw</code>.</p>
 <p>The <code>dudraw</code> package has graphics primitives for drawing points, lines, circles and ellipses, squares and rectangles, triangles, quadrilaterals, polygons, circular and elliptical sectors, annuli and text. You can set the color you want the objects to be, and the width of points, lines and outlines.</p>
 <p>You can find out about key-clicks and mouse presses from the user, and respond to them within your program. You can clear the background or use an image from a file as your background. You can save the image you produce to a file.</p>
 <p>The <code>dudraw</code> package is a paint-style graphics package. In other words, you draw graphical objects, but they cannot be moved or deleted after being drawn.</p>
 <h2 id="how-do-i-get-access-to-dudraw"><a class="header" href="#how-do-i-get-access-to-dudraw">How do I get access to <code>dudraw</code>?</a></h2>
-<p>If you have not already installed <code>dudraw</code> through the instructions in class, then you can install it by running</p>
-<p><code>pip install dudraw</code></p>
-<p>Then if start your python program with the line</p>
+<p>First make sure that you have followed all the installation steps on the <a href="installation.html">Python, VSCode, and dudraw Installation</a> page. If you've successfully completed these steps then by starting your Python program with the line</p>
 <p><code>import dudraw</code></p>
-<p>you will be able to call any of the functions in <code>dudraw</code></p>
+<p>you will be able to call any of the functions in <code>dudraw</code>.</p>
+<p>If you were unable to install <code>dudraw</code> with the normal installation instructions, please reach out to a teacher or TA for help and they will have you attempt to install <code>dudraw</code> using the command line for your operating system and some command like:</p>
+<p><code>pip install dudraw</code></p>
+<p>Again, please ask for help if you're having trouble installing <code>dudraw</code>.</p>
 <h2 id="how-do-i-use-dudraw"><a class="header" href="#how-do-i-use-dudraw">How do I use <code>dudraw</code>?</a></h2>
 <p>Begin by creating a canvas of a specified size (in pixels), then issue graphics commands. When you are done, call the <code>show()</code>function and a window will appear with the image you have created. The parameter to the <code>show()</code> function is the number of milliseconds to display the image.  Unless you set the scale, the default scale is from 0 to 1 on the x-axis and 0 to 1 on the y-axis. Here's a simple program, and the image it produces.</p>
 <pre><code class="language-python">import dudraw
@@ -643,27 +644,27 @@ dudraw.save(&quot;red_circle.png&quot;)
 <p><a href="https://cs.du.edu/~intropython/dudraw/">https://cs.du.edu/~intropython/dudraw/</a></p>
 <p>And here for the source code:</p>
 <p><a href="https://git.cs.du.edu/dudraw/dudraw">https://git.cs.du.edu/dudraw/dudraw</a></p>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="variables-in-python"><a class="header" href="#variables-in-python">Variables in python</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="variables-in-python"><a class="header" href="#variables-in-python">Variables in Python</a></h2>
 <ul>
 <li>The purpose of a <em>variable</em> is to store information within a program while it is running.</li>
 <li>A variable is a named storage location in computer memory. Use the name to access the value.</li>
 <li>To store a value in a variable, use the <code>=</code> operator (called the assignment operator).</li>
-<li>An <code>=</code> sign in python is nothing like an equal sign in mathematics. Think of it more like an arrow going from right to left. The expression on the right is evaluated and then stored in the variable named on the left.</li>
+<li>An <code>=</code> sign in Python is nothing like an equal sign in mathematics. Think of it more like an arrow going from right to left. The expression on the right is evaluated and then stored in the variable named on the left.</li>
 <li>For example, the line of code
 <code>hourly_wage = 16.75</code>
 stores the value 16.75 in the variable called <code>hourly_wage</code></li>
 <li>You can change the value of a variable with another assignment statement, such as 
 <code>hourly_wage = 17.25</code></li>
-<li>Every value has a type (<code>int</code> for integers, <code>float</code> for decimals, <code>str</code> for text). In python, when you store a value in a variable (with <code>=</code>), that variable then automatically has a type. For example, after the above assignment, <code>hourly_wage</code> is of type <code>float</code></li>
+<li>Every value has a type (<code>int</code> for integers, <code>float</code> for decimals, <code>str</code> for text). In Python, when you store a value in a variable (with <code>=</code>), that variable then automatically has a type. For example, after the above assignment, <code>hourly_wage</code> is of type <code>float</code></li>
 </ul>
-<h2 id="rules-and-conventions-for-naming-variables-in-python"><a class="header" href="#rules-and-conventions-for-naming-variables-in-python">Rules and conventions for naming variables in python</a></h2>
+<h2 id="rules-and-conventions-for-naming-variables-in-python"><a class="header" href="#rules-and-conventions-for-naming-variables-in-python">Rules and conventions for naming variables in Python</a></h2>
 <ul>
 <li>The first character must be a letter or an underscore. For now, stick to letters for the first character.</li>
 <li>The remaining characters must be letters, numbers or underscores.</li>
 <li>No spaces are allowed in variable names.</li>
 <li>Legal examples: <code>_pressure</code>, <code>pull</code>, <code>x_y</code>, <code>r2d2</code></li>
 <li>Invalid examples, these are NOT legal variable names: <code>4th_dimension</code>, <code>%profit</code>, <code>x*y</code>, <code>four(4)</code>, <code>repo man</code></li>
-<li>In python, it's a conventiion to use <em>snake case</em> to name variables. This means that we use all lower-case letters and we separate words in the variable name with underscores. Examples include <code>age</code>, <code>x_coordinate</code>, <code>hourly_wage</code>, <code>user_password</code></li>
+<li>In Python, it's a conventiion to use <em>snake case</em> to name variables. This means that we use all lower-case letters and we separate words in the variable name with underscores. Examples include <code>age</code>, <code>x_coordinate</code>, <code>hourly_wage</code>, <code>user_password</code></li>
 <li>If the value stored in a variable is a true constant (in other words, its value will never change throughout the program), then we use all capital letters: <code>COURSE_ENROLLMENT_LIMIT</code>, <code>MAX_PASSWORD_ATTEMPTS</code>.</li>
 <li>For high quality code, it is crucial that you choose names for variables that are descriptive. The variable names must help the reader of your program to understand your intention.</li>
 </ul>
@@ -679,7 +680,7 @@ stores the value 16.75 in the variable called <code>hourly_wage</code></li>
 </tbody></table>
 </div>
 <h2 id="creating-a-variable-with-an-assignment-operator"><a class="header" href="#creating-a-variable-with-an-assignment-operator">Creating a variable with an assignment operator</a></h2>
-<p>A variable is created or declared when we assign a value to it using the assignment operator <code>=</code>. In python, the code looks like this:
+<p>A variable is created or declared when we assign a value to it using the assignment operator <code>=</code>. In Python, the code looks like this:
 <code>variable_name = &lt;value&gt;</code>.</p>
 <p>Examples:</p>
 <pre><code class="language-python"># The next line stores an int value of 200 in the variable named age
@@ -697,7 +698,7 @@ name = 'Chewbacca'
 <pre><code class="language-python">age = 201
 </code></pre>
 <h2 id="finding-out-the-type-of-a-variable-or-value"><a class="header" href="#finding-out-the-type-of-a-variable-or-value">Finding out the type of a variable or value</a></h2>
-<p>The <code>type()</code> function in python will return the type of either a variable or a value. Here's an example that shows how to use it:</p>
+<p>The <code>type()</code> function in Python will return the type of either a variable or a value. Here's an example that shows how to use it:</p>
 <pre><code class="language-python">x = 5
 print(type(x))
 print(type(&quot;Wow!&quot;))
@@ -719,12 +720,12 @@ print(type(3.14159))
 <li><code>int(&quot;23.5&quot;)</code> results in an error</li>
 <li><code>float(&quot;hello&quot;)</code> results in an error</li>
 </ul>
-<h2 id="doing-arithmetic-in-python"><a class="header" href="#doing-arithmetic-in-python">Doing arithmetic in python</a></h2>
-<p>Here are the basic arithmetic operators in python. In these examples, assume</p>
+<h2 id="doing-arithmetic-in-python"><a class="header" href="#doing-arithmetic-in-python">Doing arithmetic in Python</a></h2>
+<p>Here are the basic arithmetic operators in Python. In these examples, assume</p>
 <pre><code class="language-python">x = 11
 y = 4
 </code></pre>
-<div class="table-wrapper"><table><thead><tr><th>Operator</th><th>Description</th><th>Syntax</th><th>Output</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th>Operator</th><th>Description</th><th>Syntax</th><th>Output (x=11, y=4)</th></tr></thead><tbody>
 <tr><td><code>+</code></td><td>Addition</td><td><code>x+y</code></td><td><code>15</code></td></tr>
 <tr><td><code>*</code></td><td>Multiplication</td><td><code>x*y</code></td><td><code>44</code></td></tr>
 <tr><td><code>-</code></td><td>Subtraction</td><td><code>x-y</code></td><td><code>7</code></td></tr>
@@ -735,12 +736,12 @@ y = 4
 </tbody></table>
 </div>
 <p>Another example of integer division and modulus: When we divide 3 by 4, we get a quotient of 0 and a remainder of 3. So <code>3//4</code> results in 0 and <code>3%4</code> results in 3.</p>
-<p>Warning note: In python, <code>^</code> is <strong>not</strong> an exponent!</p>
+<p>Warning note: In Python, <code>^</code> is <strong>not</strong> an exponent!</p>
 <h2 id="order-of-operations"><a class="header" href="#order-of-operations">Order of operations</a></h2>
-<p>The order of operations in python is similar to the order you are familiar with in math:
+<p>The order of operations in Python is similar to the order you are familiar with in math:
 parentheses, then exponentiation, then multiplication/division/modulus in order from left to right, then addition/subtraction in order from left to right.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="outputting-information-from-the-program-to-the-user"><a class="header" href="#outputting-information-from-the-program-to-the-user">Outputting information from the program to the user</a></h2>
-<p>In python, use the <code>print()</code> function to output information to the user.</p>
+<p>In Python, use the <code>print()</code> function to output information to the user.</p>
 <p>Here is a run-of-the-mill print statement:</p>
 <pre><code class="language-python">print(&quot;Hello, World!&quot;)
 </code></pre>
@@ -779,7 +780,7 @@ print(&quot;Hello &quot; + username)
 <pre><code>Hello
 World
 </code></pre>
-<p>The backslash symbol <code>\</code>  in <code>\n</code> is called an <em>escape character</em>. It tells python that the letter following the backslash should be interpreted together with the <code>\</code> as a pair with special meaning. Other examples include </p>
+<p>The backslash symbol <code>\</code>  in <code>\n</code> is called an <em>escape character</em>. It tells Python that the letter following the backslash should be interpreted together with the <code>\</code> as a pair with special meaning. Other examples include </p>
 <ul>
 <li><code>\t</code> for tab, </li>
 <li><code>\&quot;</code> and <code>\'</code> to put a double quote or single quote into a string literal, and</li>
@@ -792,7 +793,7 @@ while &quot;\'&quot; is a single quote.
 <p>Answer:</p>
 <pre><code class="language-python">print(&quot;\&quot;\\n\&quot; is a newline,\nwhile \&quot;\\\'\&quot; is a single quote.&quot;)
 </code></pre>
-<p>A third way in python to combine multiple strings together and to include variable values within a string is a <em>formatted string literal</em>, commonly called an <em>f-string</em>. Create an f-string by prefixing the string with an <code>f</code>, then include any variable values within a pair of curly braces <code>{}</code>. For example:</p>
+<p>A third way in Python to combine multiple strings together and to include variable values within a string is a <em>formatted string literal</em>, commonly called an <em>f-string</em>. Create an f-string by prefixing the string with an <code>f</code>, then include any variable values within a pair of curly braces <code>{}</code>. For example:</p>
 <pre><code class="language-python">print(f&quot;Hello, {username}!&quot;)
 </code></pre>
 <p>outputs</p>
