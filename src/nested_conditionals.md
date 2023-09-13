@@ -242,7 +242,7 @@ else:
 <td>
     
 <figure>
-<img src="img/nested_conditionals/voting_flowchart.png" alt="Flowchart for the voting program" class="center" width="300">
+<img src="img/nested_conditionals/voting_flowchart.png" alt="Flowchart for the voting program" class="center" width="100">
 </figure>
 
 </td>
