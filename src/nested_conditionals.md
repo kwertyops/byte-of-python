@@ -218,13 +218,13 @@ Collaborators: 1351 Instructors
 Internet Sources: None
 """
 # Check citizenship requirement
-is_citizen = input("Are you a US citizen? Y for yes, N for no. ")
+is_citizen = input("Are you a US citizen? (Enter Y or N) ")
 if is_citizen == 'Y':
     # Check age requirement
     age = int(input("How old are you? "))
     if age >= 18:
         # Check registration requirement
-        is_registered = input("Are you registered to vote? Y for yes, N for no. ")
+        is_registered = input("Are you registered to vote? (Enter Y or N) ")
         if is_registered == 'Y':
             print("You can go ahead and vote.")
         else:
