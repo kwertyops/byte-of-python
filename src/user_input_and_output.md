@@ -93,6 +93,19 @@ pi to 5 decimal places is 3.14159, and e to 3 decimal places is 2.718.
 Here's an online tutorial if you want to investigate more capabilities of f-strings:
 [https://builtin.com/data-science/python-f-string](https://builtin.com/data-science/python-f-string)
 
+Finally, it sometimes causes us problems that a call to `print()` automatically includes a newline at the end of the output. Occasionally we want to suppress that. We do this by specifying in a second parameter to `print()` that the end should be an empty string `""` rather than the default `"\n"`. Here's an example showing how two calls to `print()` can both output on the same line of the console:
+
+```python
+print("Hello, world! ", end="")
+print("It's a beautiful day! ")
+```
+
+Output:
+```
+Hello, world! It's a beautiful day! 
+```
+
+
 
 ## Getting input from the user into the program
 
