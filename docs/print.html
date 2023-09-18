@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">3.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">4.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html"><strong aria-hidden="true">5.</strong> Output and input using print() and input()</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded "><a href="control_flow.html"><strong aria-hidden="true">6.</strong> What is control flow?</a></li><li class="chapter-item expanded "><a href="boolean_relational_logical.html"><strong aria-hidden="true">7.</strong> Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html"><strong aria-hidden="true">8.</strong> Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html"><strong aria-hidden="true">9.</strong> Nested conditional statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements with for-loops</li><li class="chapter-item expanded "><a href="for_loop.html"><strong aria-hidden="true">10.</strong> for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html"><strong aria-hidden="true">11.</strong> Combining conditionals with loops</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">12.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">3.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">4.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html"><strong aria-hidden="true">5.</strong> Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html"><strong aria-hidden="true">6.</strong> Generating random numbers</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded "><a href="control_flow.html"><strong aria-hidden="true">7.</strong> What is control flow?</a></li><li class="chapter-item expanded "><a href="boolean_relational_logical.html"><strong aria-hidden="true">8.</strong> Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html"><strong aria-hidden="true">9.</strong> Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html"><strong aria-hidden="true">10.</strong> Nested conditional statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements with for-loops</li><li class="chapter-item expanded "><a href="for_loop.html"><strong aria-hidden="true">11.</strong> for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html"><strong aria-hidden="true">12.</strong> Combining conditionals with loops</a></li><li class="chapter-item expanded affix "><li class="part-title">Functions</li><li class="chapter-item expanded "><a href="shift_scale_drawings.html"><strong aria-hidden="true">13.</strong> Application - scaled and shifted drawings</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">14.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -809,6 +809,13 @@ print(f&quot;pi to 5 decimal places is {math.pi:.5f}, and e to 3 decimal places 
 </code></pre>
 <p>Here's an online tutorial if you want to investigate more capabilities of f-strings:
 <a href="https://builtin.com/data-science/python-f-string">https://builtin.com/data-science/python-f-string</a></p>
+<p>Finally, it sometimes causes us problems that a call to <code>print()</code> automatically includes a newline at the end of the output. Occasionally we want to suppress that. We do this by specifying in a second parameter to <code>print()</code> that the end should be an empty string <code>&quot;&quot;</code> rather than the default <code>&quot;\n&quot;</code>. Here's an example showing how two calls to <code>print()</code> can both output on the same line of the console:</p>
+<pre><code class="language-python">print(&quot;Hello, world! &quot;, end=&quot;&quot;)
+print(&quot;It's a beautiful day! &quot;)
+</code></pre>
+<p>Output:</p>
+<pre><code>Hello, world! It's a beautiful day! 
+</code></pre>
 <h2 id="getting-input-from-the-user-into-the-program"><a class="header" href="#getting-input-from-the-user-into-the-program">Getting input from the user into the program</a></h2>
 <p>Use the <code>input()</code> function to ask the user of your program for a value. For example:</p>
 <pre><code class="language-python">username = input(&quot;Enter your name: &quot;)
@@ -872,6 +879,98 @@ if __name__ == '__main__':
 How many steps did you walk today? 10000
 You walked 4.44 miles today.
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="generating-random-numbers"><a class="header" href="#generating-random-numbers">Generating random numbers</a></h2>
+<p>Often when programming we would like to use random numbers. For example, if we want to put a circle on a <code>dudraw</code> canvas at a random location, then for the <code>(x, y)</code> location we would use two random numbers of type <code>float</code>, chosen between <code>0</code> and <code>1</code>. Or perhaps we want to write a program to play a guessing game where the user has to guess a number from <code>1</code> to <code>100</code>, so we would need to generate an integer in that range.</p>
+<p>Note that on a computer, there is no such thing as a true random number, since the processes on a computer are deterministic. However, randomness can be simulated using complex mathematical functions. Numbers generated this way are called <em>pseudorandom numbers</em>.</p>
+<h2 id="generating-random-float-values"><a class="header" href="#generating-random-float-values">Generating random <code>float</code> values</a></h2>
+<p>Begin by importing the <code>random</code> package. Then use the <code>random()</code> function from that package to generate a (pseudo)random <code>float</code> in the interval <code>[0,1)</code>. For example:</p>
+<pre><code class="language-python">import random
+
+def main():
+    print(random.random())
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+<p>gives the following possible output (of course when you run it, a different number will be generated, since the number produced is random).</p>
+<pre><code>0.9654798677156062
+</code></pre>
+<p>A note about <code>import</code>: it is possible to import just a single function from a package rather than the entire package. If you do this, then you can refer to the function by its name <code>function_name</code>, rather than <code>package_name.function_name</code>. The following code is functionally identical to the example above:</p>
+<pre><code class="language-python">from random import random
+
+def main():
+    print(random())
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+<h2 id="generating-float-values-within-an-interval"><a class="header" href="#generating-float-values-within-an-interval">Generating <code>float</code> values within an interval</a></h2>
+<p>Use the <code>random.uniform()</code> function if you want a random <code>float</code>, but not necessarily from the interval <code>[0,1)</code>. For example,</p>
+<pre><code class="language-python">import random
+
+def main():
+    print(random.uniform(2, 5))
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+<p>outputs a random decimal number in the range <code>[2, 5)</code>, such as</p>
+<pre><code>2.7178618144891766
+</code></pre>
+<h2 id="generating-random-int-values"><a class="header" href="#generating-random-int-values">Generating random <code>int</code> values</a></h2>
+<p>One way to generate random integer values is to use the <code>randint()</code> function from the <code>random</code> package. The parameters are the lower bound and the upper bound you want for the integers. Unlike other functions in python, the stop value <strong>is</strong> included in the possible outcomes. For example:</p>
+<pre><code class="language-python">    print(random.randint(2, 5))
+</code></pre>
+<p>will output one of <code>2</code>, <code>3</code>, <code>4</code>, or <code>5</code>.</p>
+<h2 id="putting-it-all-together-1"><a class="header" href="#putting-it-all-together-1">Putting it all together</a></h2>
+<p>The example below draws a circle at a random location on a <code>1x1</code> <code>dudraw</code> canvas, with a radius from <code>0.05</code> to <code>0.1</code> and with a random color. A possible output image is shown.</p>
+<table>
+<tr>
+<td>Code for the image scaled by variable scaling factors</td>
+<td>Image</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">import random
+import dudraw
+
+
+def main():
+    # Set up the canvas, 400x400 pixels
+    dudraw.set_canvas_size(400,400)
+    # Background light gray
+    dudraw.clear(dudraw.LIGHT_GRAY)
+    # Pick two random values from the interval [0,1]
+    # for the center of the circle.
+    x_center = random.random()
+    y_center = random.random()
+    # Random from 0.05 up to 0.1 for the radius
+    radius = random.uniform(0.05, 0.1)
+    # three values from 0-255 (inclusive) for the rgb color
+    red = random.randint(0,255)
+    green = random.randint(0,255)
+    blue = random.randint(0,255)
+    # Set pen color then draw the circle
+    dudraw.set_pen_color_rgb(red, green, blue)
+    dudraw.filled_circle(x_center, y_center, radius)
+    # Display the result for 10 seconds
+    dudraw.show(10000)
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/random_numbers/random_circle.jpg" alt="randomly sized circle, random location, random colors class="center", width="300">
+</figure>
+</td>
+</tr>
+</table>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="what-is-control-flow"><a class="header" href="#what-is-control-flow">What is control flow?</a></h2>
 <p>Programs often need to take one action in certain cases, and different actions in different cases. Also, programs often need to repeat actions multiple times. These two ideas are called <em>control flow</em>.</p>
 <p><em>Conditional statements</em> (or <em>branches</em>) allow us to make choices about which lines of code to execute based on the values of variables. In python, we will learn <code>if</code>, <code>if-else</code>, and <code>if</code>-ladder statements.</p>
@@ -1243,7 +1342,7 @@ the third condition <code>x &gt;= 20 and x &lt; 30</code> also evaluates to <cod
 </td>
 </tr>
 </table>
-<h2 id="putting-it-all-together-1"><a class="header" href="#putting-it-all-together-1">Putting it all together</a></h2>
+<h2 id="putting-it-all-together-2"><a class="header" href="#putting-it-all-together-2">Putting it all together</a></h2>
 <p>Here's a complete sample program demonstrating <code>if-else</code> ladders:</p>
 <pre><code class="language-python">&quot;&quot;&quot;
 A simple program to demonstrate an if-else ladder
@@ -1461,7 +1560,7 @@ block of the inner <code>if-else</code> is executed, and <code>&quot;F&quot;</co
 <tr>
 </table>
 <p>Exercise: For the last code block in the above examples, can you come up with initial values for <code>x</code>, <code>y</code>, and <code>z</code> so that the output is <code>D E</code>? Can you come up with initial values for <code>x</code>, <code>y</code>, and <code>z</code> so that the output is <code>A F</code>?</p>
-<h2 id="putting-it-all-together-2"><a class="header" href="#putting-it-all-together-2">Putting it all together</a></h2>
+<h2 id="putting-it-all-together-3"><a class="header" href="#putting-it-all-together-3">Putting it all together</a></h2>
 <p>The code below on the left checks if the user can vote in an upcoming election. It checks that the user is a US citizen, is 18 or over, and has registered to vote. The flowchart on the right shows the flow of control through the program, as it checks the three conditions.</p>
 <table>
 <tr>
@@ -1792,7 +1891,7 @@ b
 </td>
 </tr>
 </table>
-<h2 id="putting-it-all-together-3"><a class="header" href="#putting-it-all-together-3">Putting it all together</a></h2>
+<h2 id="putting-it-all-together-4"><a class="header" href="#putting-it-all-together-4">Putting it all together</a></h2>
 <p>Here's a complete program that uses an <code>if-else</code> statement nested within a <code>for</code>-loop. Carefully trace the program and predict the image that results. You can run the code to test if you were correct.</p>
 <pre><code class="language-python">&quot;&quot;&quot;
 Produce a drawing of randomly-placed squares in two colors
@@ -1833,6 +1932,448 @@ for i in range(10000):
 # display the image until the window is closed
 dudraw.show(float('inf'))
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="creating-drawings-that-you-can-scale-and-shift"><a class="header" href="#creating-drawings-that-you-can-scale-and-shift">Creating drawings that you can scale and shift</a></h2>
+<p>The code below creates an image of a house that fills a 
+[0, 1] x [0, 1] square. The canvas itself is set to a scale of [0, 5] x [0, 5], so the house appears in the lower left corner. Examine the code carefully, since we will modify it to show how to shift and scale each shape in the drawing.</p>
+<table>
+<tr>
+<td>Code for the original drawing</td>
+<td>Image</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">&quot;&quot;&quot; Demo showing how to shift an image
+    File Name: shifted_house.py
+    Author: COMP 1351 instructor
+    Date: August 2022
+    Course: COMP 1351
+    Assignment: Preclass assignment on shifting and scaling
+    Collaborators: None
+    Internet Source: None
+&quot;&quot;&quot;
+import dudraw
+
+def draw_house() -&gt; None:
+    &quot;&quot;&quot; Draw a house, fills a [0, 1]x[0, 1] square
+        parameters: None
+        return: None
+    &quot;&quot;&quot;
+    # draw green main body of the house
+    dudraw.set_pen_color_rgb(20, 150, 100)
+    dudraw.filled_rectangle(0.5, 0.3, 0.5, 0.3)
+    # draw brown roof
+    dudraw.set_pen_color_rgb(100, 25, 10)
+    dudraw.filled_triangle(0, 0.6, 1, 0.6, 0.5, 1)
+    # draw red door
+    dudraw.set_pen_color_rgb(150, 0, 0)
+    dudraw.filled_rectangle(0.5, 0.15, 0.1, 0.15)
+
+
+def main():
+    # On a 400x400 pixel canvas, with a scale from (0,5) to (0,5)
+    dudraw.set_canvas_size(400, 400)
+    dudraw.set_x_scale(0, 5)
+    dudraw.set_y_scale(0, 5)
+    # clear the background
+    dudraw.clear(dudraw.LIGHT_GRAY)
+    # draw a 1x1 unit house in the lower left corner
+    draw_house()
+    dudraw.show(float('inf'))
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/shift_scale_drawing/house.jpg" alt="Simple image of a house, lower left corner" class="center", width="300">
+</figure>
+</td>
+</tr>
+</table>
+<h1 id="shifting-translating-images"><a class="header" href="#shifting-translating-images">Shifting (translating) images</a></h1>
+<p>Recall from Algebra that to translate a point in the Cartesian plane to the right or left, we add or subtract from the <code>x</code> value, and to translate a point up or down, we add or subtract from the <code>y</code> value. We can use this idea to shift our house by modifying all of the <code>(x, y)</code> values. Below is the original program, modified so that the image is shifted 2 units to the right and 3 units up. All <code>x</code> values have been replaced by <code>2+x</code> and all <code>y</code> values have been replaced by <code>3+y</code>. Notice that only the numbers representing positions have been changed - no values representing sizes have been modified. The image on the right is still 1x1 in size, and still lies in a <code>[0, 5] x [0, 5]</code> canvas, but its lower left corner has been translated.</p>
+<table>
+<tr>
+<td>Code for the image shifted by `(2, 3)`</td>
+<td>Image</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">&quot;&quot;&quot; Demo showing how to shift an image.
+    File Name: shifted_house.py
+    Author: COMP 1351 instructor
+    Date:
+    Course: COMP 1351
+    Assignment: Preclass assignment on shifting and scaling
+    Collaborators: None
+    Internet Source: None
+&quot;&quot;&quot;
+import dudraw
+
+def draw_house() -&gt; None:
+    &quot;&quot;&quot; Draw a house. The size is 1 by 1, but it is shifted
+        to the right 2 and up 3. Thus it fills a 
+        [2, 3]x[3, 4] square
+        parameters: None
+        return: None
+    &quot;&quot;&quot;
+    # draw green main body of the house
+    dudraw.set_pen_color_rgb(20, 150, 100)
+    # shift the (x, y) center, leave the width and height as-is
+    dudraw.filled_rectangle(2 + 0.5, 3 + 0.3, 0.5, 0.3)
+    # draw brown roof
+    dudraw.set_pen_color_rgb(100, 25, 10)
+    # the filled_triangle function takes three points as parameters,
+    # all of which have to be shifted
+    dudraw.filled_triangle(2 + 0, 3 + 0.6, 2 + 1, 
+        3 + 0.6, 2 + 0.5, 3 + 1)
+    # draw red door
+    dudraw.set_pen_color_rgb(150, 0, 0)
+    # shift the (x, y) center, leave the width and height as-is
+    dudraw.filled_rectangle(2 + 0.5, 3 + 0.15, 0.1, 0.15)
+
+
+def main():
+    # On a 400x400 pixel canvas, with a scale from (0,5) to (0,5)
+    dudraw.set_canvas_size(400, 400)
+    dudraw.set_x_scale(0, 5)
+    dudraw.set_y_scale(0, 5)
+    # clear the background
+    dudraw.clear(dudraw.LIGHT_GRAY)
+    # draw a 1x1 unit house shifted to the point (2, 3)
+    draw_house()
+    dudraw.save(&quot;house.jpg&quot;)
+    dudraw.show(float('inf'))
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/shift_scale_drawing/shifted_house.jpg" alt="Simple image of a house, shifted to (2, 3)" class="center", width="300">
+</figure>
+</td>
+</tr>
+</table>
+<p>The above code would be much more flexible if we modified the <code>draw_house()</code> function to accept two parameters that give the <code>x</code>-shift and <code>y</code>-shift of the image. That way we could easily draw several houses, shifted to various locations with very small changes to the code. This strategy is demonstrated below, with multiple houses drawn at various locations. The changes made include</p>
+<ul>
+<li>In the <code>draw_house()</code> function, change the shift from <code>(2, 3)</code> to generic values of <code>(x, y)</code></li>
+<li>Make the <code>draw_house()</code> function accept two parameters <code>x</code> and <code>y</code> for the generic shift values. These values are both specified to be <code>float</code> values.</li>
+<li>In the <code>main()</code> function, add several calls to <code>draw_house(_, _)</code>, with a variety of values for the shift.</li>
+</ul>
+<table>
+<tr>
+<td>Code for image shifted by variable shift values</td>
+<td>Image</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">&quot;&quot;&quot; Demo showing how to shift an image.
+    The draw_house() function takes two parameters for the
+    x-shift and y-shift
+    File Name: shifted_house_parameters.py
+    Author: COMP 1351 instructor
+    Date:
+    Course: COMP 1351
+    Assignment: Preclass assignment on shifting and scaling
+    Collaborators: None
+    Internet Source: None
+&quot;&quot;&quot;
+import dudraw
+
+def draw_house(x_shift: float, y_shift: float) -&gt; None:
+    &quot;&quot;&quot; Draw a house. The size is 1 by 1, but it is shifted
+        horizontally by x_shift and vertically by y_shift. Thus it fills a 
+        [x_shift, x_shift+1]x[y_shift, y_shift+1] square
+        parameters:
+            x_shift: left edge of the shifted image (type: float)
+            y_shift: bottom edge of the shifted image (type: float)
+        return: None
+    &quot;&quot;&quot;
+    # draw green main body of the house
+    dudraw.set_pen_color_rgb(20, 150, 100)
+    # shift the (x, y) center, leave the width and height as-is
+    dudraw.filled_rectangle(x_shift + 0.5, y_shift + 0.3, 0.5, 0.3)
+    # draw brown roof
+    dudraw.set_pen_color_rgb(100, 25, 10)
+    # the filled_triangle function takes three points as parameters,
+    # all of which have to be shifted
+    dudraw.filled_triangle(x_shift + 0, y_shift + 0.6, 
+        x_shift + 1, y_shift + 0.6, x_shift + 0.5, y_shift + 1)
+    # draw red door
+    dudraw.set_pen_color_rgb(150, 0, 0)
+    # shift the (x, y) center, leave the width and height as-is
+    dudraw.filled_rectangle(x_shift + 0.5, y_shift + 0.15, 0.1, 0.15)
+
+
+def main():
+    # On a 400x400 pixel canvas, with a scale from (0,5) to (0,5)
+    dudraw.set_canvas_size(400, 400)
+    dudraw.set_x_scale(0, 5)
+    dudraw.set_y_scale(0, 5)
+    # clear the background
+    dudraw.clear(dudraw.LIGHT_GRAY)
+    # draw four houses at various locations
+    draw_house(2, 3)
+    draw_house(1, 1)
+    draw_house(4, 4)
+    draw_house(3, 2)
+    dudraw.save(&quot;many_shifted_houses.jpg&quot;)
+    dudraw.show(float('inf'))
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/shift_scale_drawing/many_shifted_houses.jpg" alt="Simple image of a house, shifted to various locations" class="center", width="300">
+</figure>
+</td>
+</tr>
+</table>
+<h2 id="scaling-stretching-or-compressing-images"><a class="header" href="#scaling-stretching-or-compressing-images">Scaling (stretching or compressing) images</a></h2>
+<p>This time we will modify the original code so that the image is scaled. If the scale factor is more than 1, then the image is stretched, while a scale factor of less than 1 results in a compression. Recall that to stretch/compress an <code>x</code> value, we multiply it by the scale factor. Geometrically, this results in every point being stretched away from the <code>y</code>-axis. Similarly, to stretch/compress a <code>y</code>-value, we multiply it by our other chosen scale factor, which stretches the point away from the <code>x</code>-axis. We can use this idea to change the size of our house. Below is the original program, modified so that the image is stretched a factor of 4 in the <code>x</code> direction and a factor of <code>2</code> in the <code>y</code>-direction. All of <code>x</code> values have been replaced by <code>4*x</code> and all <code>y</code> values have been replaced by <code>2*y</code>. Notice that numbers representing sizes (height and width) also must be scaled. The image on the right is now 4x2 in size, and its lower left corner still lies at the origin.</p>
+<table>
+<tr>
+<td>Code for the image scaled 4 horizontally and 2 vertically</td>
+<td>Image</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">&quot;&quot;&quot; Demo showing how to scale an image.
+    File Name: scaled_house.py
+    Author: COMP 1351 instructor
+    Date:
+    Course: COMP 1351
+    Assignment: Preclass assignment on shifting and scaling
+    Collaborators: None
+    Internet Source: None
+&quot;&quot;&quot;
+import dudraw
+
+def draw_house() -&gt; None:
+    &quot;&quot;&quot; Draw a house. The size is 4 by 2 with its lower
+    corner at (0, 0). Thus it fills a [0, 0]x[4, 2] square
+        parameters: None
+        return: None
+    &quot;&quot;&quot;
+    # draw green main body of the house
+    dudraw.set_pen_color_rgb(20, 150, 100)
+    # scale the x-positions and sizes by 4 and the
+    # y-positions and sizes by 2.
+    dudraw.filled_rectangle(4 * 0.5, 2 * 0.3, 4 * 0.5, 2 * 0.3)
+    # draw brown roof
+    dudraw.set_pen_color_rgb(100, 25, 10)
+    # the filled_triangle function takes three points as parameters,
+    # all of which have to be scaled
+    dudraw.filled_triangle(4 * 0, 2 * 0.6, 4 * 1, 
+        2 * 0.6, 4 * 0.5, 2 * 1)
+    # draw red door
+    dudraw.set_pen_color_rgb(150, 0, 0)
+    # scale all x and y values
+    dudraw.filled_rectangle(4 * 0.5, 2 * 0.15, 4 * 0.1, 2 * 0.15)
+
+
+def main():
+    # On a 400x400 pixel canvas, with a scale from (0,5) to (0,5)
+    dudraw.set_canvas_size(400, 400)
+    dudraw.set_x_scale(0, 5)
+    dudraw.set_y_scale(0, 5)
+    # clear the background
+    dudraw.clear(dudraw.LIGHT_GRAY)
+    # draw a 4x2 unit house with lower left corner at (0, 0)
+    draw_house()
+    dudraw.save(&quot;scaled_house.jpg&quot;)
+    dudraw.show(float('inf'))
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/shift_scale_drawing/scaled_house.jpg" alt="Simple image of a house, scaled to a 4x2 size" class="center", width="300">
+</figure>
+</td>
+</tr>
+</table>
+<p>It shouldn't surprise you that our next step will be to modify the <code>draw_house()</code> function to accept two parameters for the <code>x</code>-scaling factor and the <code>y</code>-scaling factor. This makes our function flexible, so that the caller can determine the scaled size. As before, the changes made include</p>
+<ul>
+<li>In the <code>draw_house()</code> function, change the scaling from <code>4</code> in the <code>x</code> direction and <code>2</code> in the <code>y</code> direction to generic values of  <code>x_scale</code> and <code>y_scale</code></li>
+<li>Make the <code>draw_house()</code> function accept two parameters <code>x_scale</code> and <code>y_scale</code> for the generic scaling values. These values are both specified to be <code>float</code> values.</li>
+<li>In the <code>main()</code> function, add a call to <code>draw_house(_, _)</code>, with a chosen values for the size.</li>
+</ul>
+<table>
+<tr>
+<td>Code for the image scaled by variable scaling factors</td>
+<td>Image</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">&quot;&quot;&quot; Demo showing how to scale an image.
+    File Name: scaled_house_parameter.py
+    Author: COMP 1351 instructor
+    Date:
+    Course: COMP 1351
+    Assignment: Preclass assignment on shifting and scaling
+    Collaborators: None
+    Internet Source: None
+&quot;&quot;&quot;
+import dudraw
+
+def draw_house(x_scale: float, y_scale: float):
+    &quot;&quot;&quot; Draw a house. The size is x_scale by y_scale, 
+        with (0, 0) as the lower left corner.
+        [0, x_scale]x[0, y_scale] square
+        parameters:
+            x_scale: width of the image (type: float)
+            y_scale: height edge of the shifted image (type: float)
+        return: None
+    &quot;&quot;&quot;
+    # draw green main body of the house
+    dudraw.set_pen_color_rgb(20, 150, 100)
+    # scale the x-positions and sizes by x_scale and the
+    # y-positions and sizes by y_scale.
+    dudraw.filled_rectangle(x_scale * 0.5, y_scale * 0.3, 
+        x_scale * 0.5, y_scale * 0.3)
+    # draw brown roof
+    dudraw.set_pen_color_rgb(100, 25, 10)
+    # the filled_triangle function takes three points as parameters,
+    # all of which have to be scaled
+    dudraw.filled_triangle(x_scale * 0, y_scale * 0.6, x_scale * 1, 
+        y_scale * 0.6, x_scale * 0.5, y_scale * 1)
+    # draw red door
+    dudraw.set_pen_color_rgb(150, 0, 0)
+    # scale all x and y values
+    dudraw.filled_rectangle(x_scale * 0.5, y_scale * 0.15, 
+        x_scale * 0.1, y_scale * 0.15)
+
+
+def main():
+    # On a 400x400 pixel canvas, with a scale from (0,5) to (0,5)
+    dudraw.set_canvas_size(400, 400)
+    dudraw.set_x_scale(0, 5)
+    dudraw.set_y_scale(0, 5)
+    # clear the background
+    dudraw.clear(dudraw.LIGHT_GRAY)
+    # draw a 2x5 unit house with lower left corner at (0, 0)
+    draw_house(2, 5)
+    dudraw.save(&quot;scaled_house2.jpg&quot;)
+    dudraw.show(float('inf'))
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/shift_scale_drawing/scaled_house2.jpg" alt="Simple image of a house, scaled to a 2x5 size" class="center", width="300">
+</figure>
+</td>
+</tr>
+</table>
+<h2 id="putting-it-all-together-5"><a class="header" href="#putting-it-all-together-5">Putting it all together</a></h2>
+<p>In the final example, we modify the code for <code>draw_house()</code> to allow for both shift values and scale values to set by the caller. This means our function will have four parameters:</p>
+<ul>
+<li><code>x_shift</code></li>
+<li><code>y_shift</code></li>
+<li><code>x_scale</code></li>
+<li><code>y_scale</code></li>
+</ul>
+<p>Every original <code>xpos</code> position will be replaced by <code>x_shift + x_scale*xpos</code></p>
+<p>Every original <code>ypos</code> position will be replaced by <code>y_shift + y_scale*ypos</code></p>
+<p>Every original <code>x_size</code> size will be replaced by <code>x_scale*x_size</code></p>
+<p>Every original <code>y_size</code> size will be replaced by <code>y_scale*y_size</code></p>
+<p>Notice that positions are scaled and shifted. Sizes, however, are just scaled and not shifted.</p>
+<table>
+<tr>
+<td>Code for the image scaled by variable scaling factors</td>
+<td>Image</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">&quot;&quot;&quot; Demo showing how to scale and shift an image.
+    File Name: scaled__shifted_house_parameter.py
+    Author: COMP 1351 instructor
+    Date:
+    Course: COMP 1351
+    Assignment: Preclass assignment on shifting and scaling
+    Collaborators: None
+    Internet Source: None
+&quot;&quot;&quot;
+import dudraw
+
+def draw_house(x_shift: float, y_shift: float, 
+               x_scale: float, y_scale: float):
+    &quot;&quot;&quot; Draw a house. The size is x_scale by y_scale, 
+        with (x_shift, y_shift) as the lower left corner.
+        It fills a square:
+        [x_shift, y_shift+x_scale]x[y_shift, y_shift + y_scale]
+        parameters:
+            x_shift: left corner of image (type: float)
+            y_shift: bottom corner of image (type: float)
+            x_scale: width of the image (type: float)
+            y_scale: height edge of the shifted image (type: float)
+        return: None
+    &quot;&quot;&quot;
+    # draw green main body of the house
+    dudraw.set_pen_color_rgb(20, 150, 100)
+    # scale the x-positions and sizes by x_scale and the
+    # y-positions and sizes by y_scale.
+    dudraw.filled_rectangle(
+        x_shift + x_scale * 0.5, y_shift + y_scale * 0.3, 
+        x_scale * 0.5, y_scale * 0.3)
+    # draw brown roof
+    dudraw.set_pen_color_rgb(100, 25, 10)
+    # the filled_triangle function takes three points
+    # as parameters, all of which have to be scaled
+    dudraw.filled_triangle(
+        x_shift + x_scale * 0, y_shift + y_scale * 0.6, 
+        x_shift + x_scale * 1, y_shift + y_scale * 0.6, 
+        x_shift + x_scale * 0.5, y_shift + y_scale * 1)
+    # draw red door
+    dudraw.set_pen_color_rgb(150, 0, 0)
+    # scale all x and y values
+    dudraw.filled_rectangle(
+        x_shift + x_scale * 0.5, y_shift + y_scale * 0.15, 
+        x_scale * 0.1, y_scale * 0.15)
+
+
+def main():
+    # On a 400x400 pixel canvas, with a scale from (0,1) to (0,1)
+    dudraw.set_canvas_size(400, 400)
+    dudraw.set_x_scale(0, 1)
+    dudraw.set_y_scale(0, 1)
+    # clear the background
+    dudraw.clear(dudraw.LIGHT_GRAY)
+    # draw several houses with various shifts and scaling
+    draw_house(0.05, 0.05, 0.45, 0.45)
+    draw_house(0.05, 0.75, 0.4, 0.1)
+    draw_house(0.75, 0.55, 0.1, 0.4)
+    draw_house(0.75, 0.25, 0.1, 0.1)
+    dudraw.save(&quot;scaled_shifted_house.jpg&quot;)
+    dudraw.show(float('inf'))
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/shift_scale_drawing/scaled_shifted_house.jpg" alt="4 houses, scaled and shifted variously" class="center", width="300">
+</figure>
+</td>
+</tr>
+</table>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="data-science"><a class="header" href="#data-science">Data Science</a></h1>
 <p>Python is becoming an increasingly popular choice for many applications, but in particular it has become one of the standards in the field of Data Science.</p>
 <p>Because of its popularity and applicability to this field, let's explore a few fundamental techniques for working with existing datasets and how Python can help make our lives easier!</p>

@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">3.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">4.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html" class="active"><strong aria-hidden="true">5.</strong> Output and input using print() and input()</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded "><a href="control_flow.html"><strong aria-hidden="true">6.</strong> What is control flow?</a></li><li class="chapter-item expanded "><a href="boolean_relational_logical.html"><strong aria-hidden="true">7.</strong> Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html"><strong aria-hidden="true">8.</strong> Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html"><strong aria-hidden="true">9.</strong> Nested conditional statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements with for-loops</li><li class="chapter-item expanded "><a href="for_loop.html"><strong aria-hidden="true">10.</strong> for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html"><strong aria-hidden="true">11.</strong> Combining conditionals with loops</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">12.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">3.</strong> dudraw Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">4.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html" class="active"><strong aria-hidden="true">5.</strong> Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html"><strong aria-hidden="true">6.</strong> Generating random numbers</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded "><a href="control_flow.html"><strong aria-hidden="true">7.</strong> What is control flow?</a></li><li class="chapter-item expanded "><a href="boolean_relational_logical.html"><strong aria-hidden="true">8.</strong> Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html"><strong aria-hidden="true">9.</strong> Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html"><strong aria-hidden="true">10.</strong> Nested conditional statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements with for-loops</li><li class="chapter-item expanded "><a href="for_loop.html"><strong aria-hidden="true">11.</strong> for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html"><strong aria-hidden="true">12.</strong> Combining conditionals with loops</a></li><li class="chapter-item expanded affix "><li class="part-title">Functions</li><li class="chapter-item expanded "><a href="shift_scale_drawings.html"><strong aria-hidden="true">13.</strong> Application - scaled and shifted drawings</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">14.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -236,6 +236,13 @@ print(f&quot;pi to 5 decimal places is {math.pi:.5f}, and e to 3 decimal places 
 </code></pre>
 <p>Here's an online tutorial if you want to investigate more capabilities of f-strings:
 <a href="https://builtin.com/data-science/python-f-string">https://builtin.com/data-science/python-f-string</a></p>
+<p>Finally, it sometimes causes us problems that a call to <code>print()</code> automatically includes a newline at the end of the output. Occasionally we want to suppress that. We do this by specifying in a second parameter to <code>print()</code> that the end should be an empty string <code>&quot;&quot;</code> rather than the default <code>&quot;\n&quot;</code>. Here's an example showing how two calls to <code>print()</code> can both output on the same line of the console:</p>
+<pre><code class="language-python">print(&quot;Hello, world! &quot;, end=&quot;&quot;)
+print(&quot;It's a beautiful day! &quot;)
+</code></pre>
+<p>Output:</p>
+<pre><code>Hello, world! It's a beautiful day! 
+</code></pre>
 <h2 id="getting-input-from-the-user-into-the-program"><a class="header" href="#getting-input-from-the-user-into-the-program">Getting input from the user into the program</a></h2>
 <p>Use the <code>input()</code> function to ask the user of your program for a value. For example:</p>
 <pre><code class="language-python">username = input(&quot;Enter your name: &quot;)
@@ -308,7 +315,7 @@ You walked 4.44 miles today.
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="control_flow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="random_numbers.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -322,7 +329,7 @@ You walked 4.44 miles today.
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="control_flow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="random_numbers.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
