@@ -25,6 +25,5 @@
 - [Application - scaled and shifted drawings](shift_scale_drawings.md)
 
 ---
-.
 # Extras
 - [Data Science](draft_pages/data_science.md)
