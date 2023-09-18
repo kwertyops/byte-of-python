@@ -71,7 +71,7 @@ The example below draws a circle at a random location on a `1x1` `dudraw` canvas
 
 <table>
 <tr>
-<td>Code for the image scaled by variable scaling factors</td>
+<td>Code demonstrating use of random `float` and `int` numbers </td>
 <td>Image</td>
 </tr>
 <tr>
