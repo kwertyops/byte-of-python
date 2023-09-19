@@ -94,7 +94,7 @@ def greet_user(num_greetings: int, name: str) -> None:
     """ Give greetings to the user, including their name
         parameters:
             num_greetings: number of repetitions of greeting (type: int)
-            name: username, to be included in greeting
+            name: username, to be included in greeting (type: str)
         return: None
     """
     for i in range(num_greetings):
