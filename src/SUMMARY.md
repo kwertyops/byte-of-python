@@ -24,6 +24,7 @@
 
 # Functions
 - [Re-read the introduction to functions](functions.md)
+- [Functions that take parameters](function_parameters.md)
 - [Application - scaled and shifted drawings](shift_scale_drawings.md)
 
 ---
