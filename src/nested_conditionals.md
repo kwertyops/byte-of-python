@@ -208,7 +208,7 @@ The code below on the left checks if the user can vote in an upcoming election. 
 
 ```python
 """
-A simple program that determines uer elifibiity to vote
+A simple program that determines user eligibiity to vote
 Author: COMP 1351 Instructor
 Filename: voting.py
 Date:
