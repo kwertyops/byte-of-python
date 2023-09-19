@@ -4,6 +4,7 @@
 - [Python, VSCode, and `dudraw` Installation](installation.md)
 - [First Program](hello.md)
 - [`dudraw` Overview](dudraw_quickstart.md)
+- [Introduction to functions](functions.md)
 
 # Variables
 - [Variables, Assignment, Types and Arithmetic](variables_assignment_types_arithmetic.md)
@@ -22,6 +23,7 @@
 - [Combining conditionals with loops](nesting_conditionals_and_loops.md)
 
 # Functions
+- [Re-read the introduction to functions](functions.md)
 - [Application - scaled and shifted drawings](shift_scale_drawings.md)
 
 ---
