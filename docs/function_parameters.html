@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Page not found - Introduction to Programming</title>
-        <base href="/">
+        <title>Functions that take parameters - Introduction to Programming</title>
 
 
         <!-- Custom HTML head -->
@@ -85,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">3.</strong> dudraw Overview</a></li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">4.</strong> Introduction to functions</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">5.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html"><strong aria-hidden="true">6.</strong> Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html"><strong aria-hidden="true">7.</strong> Generating random numbers</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded "><a href="control_flow.html"><strong aria-hidden="true">8.</strong> What is control flow?</a></li><li class="chapter-item expanded "><a href="boolean_relational_logical.html"><strong aria-hidden="true">9.</strong> Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html"><strong aria-hidden="true">10.</strong> Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html"><strong aria-hidden="true">11.</strong> Nested conditional statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements with for-loops</li><li class="chapter-item expanded "><a href="for_loop.html"><strong aria-hidden="true">12.</strong> for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html"><strong aria-hidden="true">13.</strong> Combining conditionals with loops</a></li><li class="chapter-item expanded affix "><li class="part-title">Functions</li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">14.</strong> Re-read the introduction to functions</a></li><li class="chapter-item expanded "><a href="function_parameters.html"><strong aria-hidden="true">15.</strong> Functions that take parameters</a></li><li class="chapter-item expanded "><a href="shift_scale_drawings.html"><strong aria-hidden="true">16.</strong> Application - scaled and shifted drawings</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">17.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">3.</strong> dudraw Overview</a></li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">4.</strong> Introduction to functions</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">5.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html"><strong aria-hidden="true">6.</strong> Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html"><strong aria-hidden="true">7.</strong> Generating random numbers</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded "><a href="control_flow.html"><strong aria-hidden="true">8.</strong> What is control flow?</a></li><li class="chapter-item expanded "><a href="boolean_relational_logical.html"><strong aria-hidden="true">9.</strong> Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html"><strong aria-hidden="true">10.</strong> Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html"><strong aria-hidden="true">11.</strong> Nested conditional statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements with for-loops</li><li class="chapter-item expanded "><a href="for_loop.html"><strong aria-hidden="true">12.</strong> for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html"><strong aria-hidden="true">13.</strong> Combining conditionals with loops</a></li><li class="chapter-item expanded affix "><li class="part-title">Functions</li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">14.</strong> Re-read the introduction to functions</a></li><li class="chapter-item expanded "><a href="function_parameters.html" class="active"><strong aria-hidden="true">15.</strong> Functions that take parameters</a></li><li class="chapter-item expanded "><a href="shift_scale_drawings.html"><strong aria-hidden="true">16.</strong> Application - scaled and shifted drawings</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">17.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -168,14 +167,97 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h2 id="functions-that-take-parameters"><a class="header" href="#functions-that-take-parameters">Functions that take parameters</a></h2>
+<p>You're already familiar with calling functions that take input values (<em>parameters</em>). For example:</p>
+<pre><code class="language-python"># The `print()` function accepts a parameter - the string to output to the console
+print(&quot;Hello!&quot;)
+
+# The dudraw ellipse function takes four parameters
+# x-location of center, y-location of center, half-width, and half-height
+dudraw.line(0, 0, 1, 0.5)
+</code></pre>
+<p>Notice that when you call (i.e., <em>use</em>) a function that has parameters, you put those values within the parentheses of the function call. These values are also called <em>arguments</em>. You must pass the correct number of arguments (i.e., the number of values the defined function is expecting), and they must be passed in the correct order.</p>
+<p>We will now learn how to create user-defined functions that accept parameters. Just like variables, the parameters each have a name (that name can be accessed only within the function definition). Here is the template:</p>
+<pre><code class="language-python">def function_name(parameter1_name: parameter1_type, parameter2_name: parameter2_type,...) -&gt; None:
+    # Code defining the function
+</code></pre>
+<p>Example 1: In the program below, the simple function <code>greet_user()</code> outputs <code>&quot;Hello, world!&quot;</code> to the console multiple times. The parameter to the function determines how many times the line is output.</p>
+<table>
+<tr><td>Code</td><td>Output</td></tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">def greet_user(num_greetings: int) -&gt; None:
+    for i in range(num_greetings):
+        print(f&quot;Hello, world!&quot;)
+
+def main():
+    greet_user(5)
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+</td>
+<td>
+<pre><code>Hello, world!
+Hello, world!
+Hello, world!
+Hello, world!
+Hello, world!
+</code></pre>
+</tr>
+</table>
+<p>Example 2: Here we see the definition of a simple function that takes two parameters: the number of greetings to output, and the name of the user.</p>
+<table>
+<tr><td>Code</td><td>Output</td></tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">def greet_user(num_greetings: int, name: str) -&gt; None:
+    for i in range(num_greetings):
+        print(f&quot;Hello, {name}&quot;)
+
+def main():
+    name = input(&quot;What is your name? &quot;)
+    num = int(input(&quot;How many greetings do you want? &quot;))
+    greet_user(num, name)
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+</td>
+<td>
+<pre><code>What is your name? Mahsa
+How many greetings do you want? 3
+Hello, Mahsa
+Hello, Mahsa
+Hello, Mahsa
+</code></pre>
+</tr>
+</table>
+<p>In this course, we will have a standard for commenting functions. After the <code>def</code> line, put a block comment explaining the purpose of the function as well as any parameters and what their purpose is. For example:</p>
+<pre><code class="language-python">def greet_user(num_greetings: int, name: str) -&gt; None:
+    &quot;&quot;&quot; Give greetings to the user, including their name
+        parameters:
+            num_greetings: number of repetitions of greeting (type: int)
+            name: username, to be included in greeting
+        return: None
+    &quot;&quot;&quot;
+    for i in range(num_greetings):
+        print(f&quot;Hello, {name}&quot;)
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="functions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
+                            <a rel="next" href="shift_scale_drawings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -183,7 +265,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="functions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
+                    <a rel="next" href="shift_scale_drawings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
