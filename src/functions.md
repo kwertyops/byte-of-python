@@ -20,6 +20,7 @@ Key points:
 - Defining functions is not completely new to you - you have defined the function `main()` in every program you have written
 - When you define a function, note that the code in the function is **not executed**. The code within the function is executed only when you *call* the function.
 - Think of the function definition as a recipe, telling python exactly what to do when another part of the program calls the function.
+- To *call* a function (i.e., to *run its code*): at the point where you want it to run, write the name of the funtion, with parentheses.
 
 Example:
 
@@ -31,13 +32,28 @@ def greet_user() -> None:
     print(f"Hello, {name}")
 ```
 
-In the above code, nothing is executed. Only when the function is called (used, run, executed) do the lines of code get executed. Consider the following program that defines and uses (calls) the function `greet_user()`:
+In the above code, nothing is executed. The lines of code within the functon only get executed when the function is called. Consider the following program that defines and uses (calls) the function `greet_user()`:
 
 <figure>
 <img src="img/functions/greet_user.png" alt="definition and use of greet_user() function" class="center", width="300">
 </figure>
 
 In the above code, lines 1-3 are the *definition* of the `greet_user()` function. Those lines define what you want python to do whenever `greet_user()` is called. On line 6, the `greet_user()` function is called. So when python executes line 6, it puts `main()` on hold, jumps to line 1, and executes the contents of the `greet_user()` function. That's the moment that the user is asked for their name, and the greeting is output. After that completes, the running of the program reverts back to line 6 in `main()` and continues from there.
+
+## Commenting functions
+
+In this course, we will have a standard for commenting every function. After the `def` line, put a block comment explaining the purpose of the function. When we learn about parameters and return values, we will add additional information into these comments.
+
+Example:
+```python
+def greet_user() -> None:
+    """
+    First example of a user-defined function. Ask user for their name, then
+    output "Hello, ", followed by their name
+    """
+    name = input("What is your name? ")
+    print(f"Hello, {name}")
+```
 
 ## Putting it all together
 
