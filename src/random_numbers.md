@@ -56,7 +56,7 @@ outputs a random decimal number in the range `[2, 5)`, such as
 2.7178618144891766
 ```
 
-## Generating random `int` values
+## Generating random `int` values within a range
 
 One way to generate random integer values is to use the `randint()` function from the `random` package. The parameters are the lower bound and the upper bound you want for the integers. Unlike other functions in python, the stop value **is** included in the possible outcomes. For example:
 
@@ -65,9 +65,20 @@ One way to generate random integer values is to use the `randint()` function fro
 ```
 will output one of `2`, `3`, `4`, or `5`.
 
+## An alternate method for generating random numbers within a range
+
+You can use `random.random()` to generate a random `float` in the range `[0,1)`, then multiply by a number to scale it. For example, the expression `10*random.random()` will generate a random `float` in the range `[0, 10)`. You can then shift the interval by adding a number. For example, the expression `2 + 10 * random.random()` generates a random `float` in the range `[2, 12)`. 
+
+More generally, the number that is added represents the left edge of the interval, while the scaling factor represents the length of the interval. The expression `a + (b - a) * random.random()` generates a random `float` in the range `[a, b)`.
+
+To generate a random `int` value in a specific range, we use the same multiplication and addition technique, followed by casting the result to an integer. For example, `int(5 * random.random())` generates a random integer `0`, `1`, `2`, `3` or `4`. Notice that before casting, `5 * random.random()` generates a number in the range `[0, 5)`. Since `5` is not included in the interval, when we cast to an `int`, it will not be one of the possible outcomes.  As another example, to generate a random `int` from the integers `6, 7, 8, 9`, Note that there are 4 possibilities, beginning with `5`. So we can generate random `int`s in that range with the expression `int(6 + 4 * random.random())`
+
+More generally, the expression `int(a + n * random.random())` will generate a random `int` in a range of `n` possible integer outputs, starting with `a`.
+
+
 ## Putting it all together
 
-The example below draws a circle at a random location on a `1x1` `dudraw` canvas, with a radius from `0.05` to `0.1` and with a random color. A possible output image is shown.
+The example below draws a circle at a random location on a `400x400` pixel `dudraw` canvas, with the default `[0, 1]x[0, 1]` scale. radius from `0.05` to `0.1` and with a random color. A possible output image is shown.
 
 <table>
 <tr>
