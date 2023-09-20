@@ -18,9 +18,10 @@
 - [Nested conditional statements](nested_conditionals.md)
 
 
-# Control flow - iterative statements with `for`-loops
+# Control flow - iterative statements
 - [`for`-loops](for_loop.md)
 - [Combining conditionals with loops](nesting_conditionals_and_loops.md)
+- [`while`-loops](while.md)
 
 # Functions
 - [Re-read the introduction to functions](functions.md)
