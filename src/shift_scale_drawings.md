@@ -9,7 +9,7 @@ The code below creates an image of a house that fills a
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:450px;">
 
 ```python
 """ Demo showing how to shift an image
@@ -58,8 +58,8 @@ if __name__ == '__main__':
 <td>
 
 
-<figure>
-<img src="img/shift_scale_drawing/house.jpg" alt="Simple image of a house, lower left corner" class="center", width="300">
+<figure style="margin: 5px auto;">
+<img src="img/shift_scale_drawing/house.jpg" alt="Simple image of a house, lower left corner" class="center", width="250">
 </figure>
 
 </td>
@@ -77,7 +77,7 @@ Recall from Algebra that to translate a point in the Cartesian plane to the righ
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:450px;">
 
 ```python
 """ Demo showing how to shift an image.
@@ -134,8 +134,8 @@ if __name__ == '__main__':
 <td>
 
 
-<figure>
-<img src="img/shift_scale_drawing/shifted_house.jpg" alt="Simple image of a house, shifted to (2, 3)" class="center", width="300">
+<figure style="margin: 5px auto;">
+<img src="img/shift_scale_drawing/shifted_house.jpg" alt="Simple image of a house, shifted to (2, 3)" class="center", width="250">
 </figure>
 
 </td>
@@ -154,7 +154,7 @@ The above code would be much more flexible if we modified the `draw_house()` fun
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap style="display:inline-block; width:400px;">
+<td nowrap style="display:inline-block; width:450px;">
 
 ```python
 """ Demo showing how to shift an image.
@@ -219,7 +219,7 @@ if __name__ == '__main__':
 
 
 <figure style="margin: 5px auto;">
-<img src="img/shift_scale_drawing/many_shifted_houses.jpg" alt="Simple image of a house, shifted to various locations" class="center", width="300">
+<img src="img/shift_scale_drawing/many_shifted_houses.jpg" alt="Simple image of a house, shifted to various locations" class="center", width="250">
 </figure>
 
 </td>
@@ -237,7 +237,7 @@ This time we will modify the original code so that the image is scaled. If the s
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:450px;">
 
 ```python
 """ Demo showing how to scale an image.
@@ -294,8 +294,8 @@ if __name__ == '__main__':
 <td>
 
 
-<figure>
-<img src="img/shift_scale_drawing/scaled_house.jpg" alt="Simple image of a house, scaled to a 4x2 size" class="center", width="300">
+<figure style="margin: 5px auto;">
+<img src="img/shift_scale_drawing/scaled_house.jpg" alt="Simple image of a house, scaled to a 4x2 size" class="center", width="250">
 </figure>
 
 </td>
@@ -314,7 +314,7 @@ It shouldn't surprise you that our next step will be to modify the `draw_house()
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:450px;">
 
 ```python
 """ Demo showing how to scale an image.
@@ -376,8 +376,8 @@ if __name__ == '__main__':
 <td>
 
 
-<figure>
-<img src="img/shift_scale_drawing/scaled_house2.jpg" alt="Simple image of a house, scaled to a 2x5 size" class="center", width="300">
+<figure style="margin: 5px auto;">
+<img src="img/shift_scale_drawing/scaled_house2.jpg" alt="Simple image of a house, scaled to a 2x5 size" class="center", width="250">
 </figure>
 
 </td>
@@ -393,13 +393,11 @@ In the final example, we modify the code for `draw_house()` to allow for both sh
 - `x_scale`
 - `y_scale`
 
-Every original `xpos` position will be replaced by `x_shift + x_scale*xpos`
-
-Every original `ypos` position will be replaced by `y_shift + y_scale*ypos`
-
-Every original `x_size` size will be replaced by `x_scale*x_size`
-
-Every original `y_size` size will be replaced by `y_scale*y_size`
+Summary of changes made to each value in an image:
+- Every original `xpos` position will be replaced by `x_shift + x_scale*xpos`
+- Every original `ypos` position will be replaced by `y_shift + y_scale*ypos`
+- Every original `x_size` size will be replaced by `x_scale*x_size`
+- Every original `y_size` size will be replaced by `y_scale*y_size`
 
 Notice that positions are scaled and shifted. Sizes, however, are just scaled and not shifted.
 
@@ -482,7 +480,7 @@ if __name__ == '__main__':
 <td>
 
 
-<figure>
+<figure style="margin: 5px auto;">
 <img src="img/shift_scale_drawing/scaled_shifted_house.jpg" alt="4 houses, scaled and shifted variously" class="center", width="300">
 </figure>
 
