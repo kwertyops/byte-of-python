@@ -176,7 +176,7 @@
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:450px;">
 <pre><code class="language-python">&quot;&quot;&quot; Demo showing how to shift an image
     File Name: shifted_house.py
     Author: COMP 1351 instructor
@@ -221,8 +221,8 @@ if __name__ == '__main__':
 </code></pre>
 </td>
 <td>
-<figure>
-<img src="img/shift_scale_drawing/house.jpg" alt="Simple image of a house, lower left corner" class="center", width="300">
+<figure style="margin: 5px auto;">
+<img src="img/shift_scale_drawing/house.jpg" alt="Simple image of a house, lower left corner" class="center", width="250">
 </figure>
 </td>
 </tr>
@@ -235,7 +235,7 @@ if __name__ == '__main__':
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:450px;">
 <pre><code class="language-python">&quot;&quot;&quot; Demo showing how to shift an image.
     File Name: shifted_house.py
     Author: COMP 1351 instructor
@@ -288,8 +288,8 @@ if __name__ == '__main__':
 </code></pre>
 </td>
 <td>
-<figure>
-<img src="img/shift_scale_drawing/shifted_house.jpg" alt="Simple image of a house, shifted to (2, 3)" class="center", width="300">
+<figure style="margin: 5px auto;">
+<img src="img/shift_scale_drawing/shifted_house.jpg" alt="Simple image of a house, shifted to (2, 3)" class="center", width="250">
 </figure>
 </td>
 </tr>
@@ -306,7 +306,7 @@ if __name__ == '__main__':
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap style="display:inline-block; width:400px;">
+<td nowrap style="display:inline-block; width:450px;">
 <pre><code class="language-python">&quot;&quot;&quot; Demo showing how to shift an image.
     The draw_house() function takes two parameters for the
     x-shift and y-shift
@@ -367,7 +367,7 @@ if __name__ == '__main__':
 </td>
 <td>
 <figure style="margin: 5px auto;">
-<img src="img/shift_scale_drawing/many_shifted_houses.jpg" alt="Simple image of a house, shifted to various locations" class="center", width="300">
+<img src="img/shift_scale_drawing/many_shifted_houses.jpg" alt="Simple image of a house, shifted to various locations" class="center", width="250">
 </figure>
 </td>
 </tr>
@@ -380,7 +380,7 @@ if __name__ == '__main__':
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:450px;">
 <pre><code class="language-python">&quot;&quot;&quot; Demo showing how to scale an image.
     File Name: scaled_house.py
     Author: COMP 1351 instructor
@@ -433,8 +433,8 @@ if __name__ == '__main__':
 </code></pre>
 </td>
 <td>
-<figure>
-<img src="img/shift_scale_drawing/scaled_house.jpg" alt="Simple image of a house, scaled to a 4x2 size" class="center", width="300">
+<figure style="margin: 5px auto;">
+<img src="img/shift_scale_drawing/scaled_house.jpg" alt="Simple image of a house, scaled to a 4x2 size" class="center", width="250">
 </figure>
 </td>
 </tr>
@@ -451,7 +451,7 @@ if __name__ == '__main__':
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:450px;">
 <pre><code class="language-python">&quot;&quot;&quot; Demo showing how to scale an image.
     File Name: scaled_house_parameter.py
     Author: COMP 1351 instructor
@@ -509,8 +509,8 @@ if __name__ == '__main__':
 </code></pre>
 </td>
 <td>
-<figure>
-<img src="img/shift_scale_drawing/scaled_house2.jpg" alt="Simple image of a house, scaled to a 2x5 size" class="center", width="300">
+<figure style="margin: 5px auto;">
+<img src="img/shift_scale_drawing/scaled_house2.jpg" alt="Simple image of a house, scaled to a 2x5 size" class="center", width="250">
 </figure>
 </td>
 </tr>
@@ -523,10 +523,13 @@ if __name__ == '__main__':
 <li><code>x_scale</code></li>
 <li><code>y_scale</code></li>
 </ul>
-<p>Every original <code>xpos</code> position will be replaced by <code>x_shift + x_scale*xpos</code></p>
-<p>Every original <code>ypos</code> position will be replaced by <code>y_shift + y_scale*ypos</code></p>
-<p>Every original <code>x_size</code> size will be replaced by <code>x_scale*x_size</code></p>
-<p>Every original <code>y_size</code> size will be replaced by <code>y_scale*y_size</code></p>
+<p>Summary of changes made to each value in an image:</p>
+<ul>
+<li>Every original <code>xpos</code> position will be replaced by <code>x_shift + x_scale*xpos</code></li>
+<li>Every original <code>ypos</code> position will be replaced by <code>y_shift + y_scale*ypos</code></li>
+<li>Every original <code>x_size</code> size will be replaced by <code>x_scale*x_size</code></li>
+<li>Every original <code>y_size</code> size will be replaced by <code>y_scale*y_size</code></li>
+</ul>
 <p>Notice that positions are scaled and shifted. Sizes, however, are just scaled and not shifted.</p>
 <table>
 <tr>
@@ -603,7 +606,7 @@ if __name__ == '__main__':
 </code></pre>
 </td>
 <td>
-<figure>
+<figure style="margin: 5px auto;">
 <img src="img/shift_scale_drawing/scaled_shifted_house.jpg" alt="4 houses, scaled and shifted variously" class="center", width="300">
 </figure>
 </td>
