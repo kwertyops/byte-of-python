@@ -982,13 +982,18 @@ if __name__ == '__main__':
 <p>outputs a random decimal number in the range <code>[2, 5)</code>, such as</p>
 <pre><code>2.7178618144891766
 </code></pre>
-<h2 id="generating-random-int-values"><a class="header" href="#generating-random-int-values">Generating random <code>int</code> values</a></h2>
+<h2 id="generating-random-int-values-within-a-range"><a class="header" href="#generating-random-int-values-within-a-range">Generating random <code>int</code> values within a range</a></h2>
 <p>One way to generate random integer values is to use the <code>randint()</code> function from the <code>random</code> package. The parameters are the lower bound and the upper bound you want for the integers. Unlike other functions in python, the stop value <strong>is</strong> included in the possible outcomes. For example:</p>
 <pre><code class="language-python">    print(random.randint(2, 5))
 </code></pre>
 <p>will output one of <code>2</code>, <code>3</code>, <code>4</code>, or <code>5</code>.</p>
+<h2 id="an-alternate-method-for-generating-random-numbers-within-a-range"><a class="header" href="#an-alternate-method-for-generating-random-numbers-within-a-range">An alternate method for generating random numbers within a range</a></h2>
+<p>You can use <code>random.random()</code> to generate a random <code>float</code> in the range <code>[0,1)</code>, then multiply by a number to scale it. For example, the expression <code>10*random.random()</code> will generate a random <code>float</code> in the range <code>[0, 10)</code>. You can then shift the interval by adding a number. For example, the expression <code>2 + 10 * random.random()</code> generates a random <code>float</code> in the range <code>[2, 12)</code>. </p>
+<p>More generally, the number that is added represents the left edge of the interval, while the scaling factor represents the length of the interval. The expression <code>a + (b - a) * random.random()</code> generates a random <code>float</code> in the range <code>[a, b)</code>.</p>
+<p>To generate a random <code>int</code> value in a specific range, we use the same multiplication and addition technique, followed by casting the result to an integer. For example, <code>int(5 * random.random())</code> generates a random integer <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code> or <code>4</code>. Notice that before casting, <code>5 * random.random()</code> generates a number in the range <code>[0, 5)</code>. Since <code>5</code> is not included in the interval, when we cast to an <code>int</code>, it will not be one of the possible outcomes.  As another example, to generate a random <code>int</code> from the integers <code>6, 7, 8, 9</code>, Note that there are 4 possibilities, beginning with <code>5</code>. So we can generate random <code>int</code>s in that range with the expression <code>int(6 + 4 * random.random())</code></p>
+<p>More generally, the expression <code>int(a + n * random.random())</code> will generate a random <code>int</code> in a range of <code>n</code> possible integer outputs, starting with <code>a</code>.</p>
 <h2 id="putting-it-all-together-2"><a class="header" href="#putting-it-all-together-2">Putting it all together</a></h2>
-<p>The example below draws a circle at a random location on a <code>1x1</code> <code>dudraw</code> canvas, with a radius from <code>0.05</code> to <code>0.1</code> and with a random color. A possible output image is shown.</p>
+<p>The example below draws a circle at a random location on a <code>400x400</code> pixel <code>dudraw</code> canvas, with the default <code>[0, 1]x[0, 1]</code> scale. radius from <code>0.05</code> to <code>0.1</code> and with a random color. A possible output image is shown.</p>
 <table>
 <tr>
 <td>Code demonstrating use of random `float` and `int` numbers </td>
