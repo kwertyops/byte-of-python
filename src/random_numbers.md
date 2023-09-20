@@ -78,7 +78,7 @@ More generally, the expression `int(a + n * random.random())` will generate a ra
 
 ## Putting it all together
 
-The example below draws a circle at a random location on a `400x400` pixel `dudraw` canvas, with the default `[0, 1]x[0, 1]` scale. radius from `0.05` to `0.1` and with a random color. A possible output image is shown.
+The example below draws a circle at a random location on a `400x400` pixel `dudraw` canvas, with the default `[0, 1]x[0, 1]` scale, a radius from `0.05` to `0.1` and with a random color. A possible output image is shown.
 
 <table>
 <tr>
