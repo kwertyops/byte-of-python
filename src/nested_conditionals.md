@@ -204,7 +204,7 @@ The code below on the left checks if the user can vote in an upcoming election. 
 <td>Flowchart</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:400px;">
 
 ```python
 """
@@ -241,8 +241,8 @@ else:
 
 <td>
     
-<figure>
-<img src="img/nested_conditionals/voting_flowchart.png" alt="Flowchart for the voting program" class="center">
+<figure style="margin: 5px auto;">
+<img src="img/nested_conditionals/voting_flowchart.png" alt="Flowchart for the voting program" class="center" width="300">
 </figure>
 
 </td>

@@ -154,7 +154,7 @@ The above code would be much more flexible if we modified the `draw_house()` fun
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:400px;">
 
 ```python
 """ Demo showing how to shift an image.
@@ -218,7 +218,7 @@ if __name__ == '__main__':
 <td>
 
 
-<figure>
+<figure style="margin: 5px auto;">
 <img src="img/shift_scale_drawing/many_shifted_houses.jpg" alt="Simple image of a house, shifted to various locations" class="center", width="300">
 </figure>
 
