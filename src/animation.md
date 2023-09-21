@@ -12,7 +12,7 @@ Here is sample code that animates a circle appearing to move from the lower left
 <table>
 <tr><td>Code</td><td>Animation</td></tr>
 <tr>
-<td nowrap style="display:inline-block; width:400px;">
+<td nowrap style="display:inline-block; width:500px;">
 
 ```python
 """ Demo showing a simple animation,
@@ -73,7 +73,7 @@ You can find out the position of the mouse (regardless of whether the mouse is p
 <table>
 <tr><td>Code</td><td>Animation</td></tr>
 <tr>
-<td nowrap style="display:inline-block; width:400px;">
+<td nowrap style="display:inline-block; width:500px;">
 
 ```python
 """ Demo showing how to detect mouse presses
