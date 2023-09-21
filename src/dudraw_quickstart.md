@@ -124,38 +124,6 @@ The size is in points. The default font family is Helvetica, and the default siz
 <img src="img/dudraw_quickstart/text_demo.png" alt="sample of fonts and sizes" width="500"/>
 
 
-## How do I create an animation?
-
-Animation is usually created with a while loop. The following template shows what usually goes in the body of the while loop:
-* clear the background
-* redraw the next frame of the animation
-* call `dudraw.show(wait_time)`
-
-When you pass a parameter to `dudraw.show()`, the program pauses for the given wait_time, which is a `float` value giving the time in milliseconds.
-
-Here is sample code that animates a circle appearing to move from the lower left corner of the canvas to the upper right corner:
-
-```python
-{{#include programs/dudraw_quickstart/simple_animation.py}}
-```
-
-## How do I found out if the user clicked the mouse?
-
-There are three `dudraw` methods for handling mouse ineraction
-The function `dudraw.mouse_is_pressed()` returns a boolean, True if the mouse was pressed. It is typically used within an animation loop.
-You can find out the position of the mouse (regardless of whether the mouse is pressed) by calling `dudraw.mouse_x()` and `dudraw.mouse_y()`. Each returns a float with the current position of the mouse. The position of the mouse is relative to the scale that has been set. Here's a sample program showing mouse interaction. Each time the mouse is pressed, a small circle on the canvas at the mouse position.
-
-```python
-{{#include programs/dudraw_quickstart/mouse_press_demo.py}}
-```
-
-## How do I find out if the user typed a key?
-
-Polling for a key click typically happens within an animation loop. You must first call `dudraw.has_next_key_typed()`, which returns a boolean indicating whether the user has typed a key (or perhaps more than one). If the method returns `True`, then you can make a call to `dudraw.next_key_typed()`, which will return a string containing the next most-recently entered key. As an example, the following code is a modification of the mouse interaction code, with the added feature of quiting when the 'q' key is typed:
-
-```python
-{{#include programs/dudraw_quickstart/mouse_and_key_demo.py}}
-```
 
 ## How do I save my image in a file?
 

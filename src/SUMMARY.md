@@ -22,6 +22,7 @@
 - [`for`-loops](for_loop.md)
 - [Combining conditionals with loops](nesting_conditionals_and_loops.md)
 - [`while`-loops](while.md)
+- [Application - animation in dudraw](animation.md)
 
 # Functions
 - [Re-read the introduction to functions](functions.md)
