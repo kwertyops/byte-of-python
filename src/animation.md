@@ -177,15 +177,16 @@ The above option uses a string method called `lower()` which converts a string t
 
 Please note the following two common errors in using the dudraw.next_key() function:
 - In the following INCORRECT CODE, note that on each side of the `or`, we need a full boolean expression
-```python
-        # This code is incorrect!
-        if dudraw.next_key() == 'q' or 'Q'
-            done = True
-```
+    ```python
+            # This code is incorrect!
+            if dudraw.next_key() == 'q' or 'Q'
+                done = True
+    ```
 - The error in the INCORRECT CODE below is a little subtle. Here the function `dudraw.next_key()` is mistakenly invoked twice. If a `Q` is entered, that key click is processed in the first call to `dudraw.next_key()`. You can think of it as being *used up*. So on the second call to `dudraw.next_key()`, the `Q` is gone, and there are no key presses left to check.
-```python
-        # This code is incorrect!
-        if dudraw.next_key() == 'q' or dudraw.next_key() == 'Q'
-            done = True
+    ```python
+            # This code is incorrect!
+            if dudraw.next_key() == 'q' or dudraw.next_key() == 'Q'
+                done = True
+    ```
 
 
