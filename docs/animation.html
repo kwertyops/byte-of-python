@@ -323,21 +323,19 @@ if __name__ == '__main__':
 <p>The above option uses a string method called <code>lower()</code> which converts a string to lower case. We will learn more about string manipulation in a later section.</p>
 <p>Please note the following two common errors in using the dudraw.next_key() function:</p>
 <ul>
-<li>In the following INCORRECT CODE, note that on each side of the <code>or</code>, we need a full boolean expression</li>
-</ul>
+<li>In the following INCORRECT CODE, note that on each side of the <code>or</code>, we need a full boolean expression
 <pre><code class="language-python">        # This code is incorrect!
         if dudraw.next_key() == 'q' or 'Q'
             done = True
 </code></pre>
-<ul>
-<li>The error in the INCORRECT CODE below is a little subtle. Here the function <code>dudraw.next_key()</code> is mistakenly invoked twice. If a <code>Q</code> is entered, that key click is processed in the first call to <code>dudraw.next_key()</code>. You can think of it as being <em>used up</em>. So on the second call to <code>dudraw.next_key()</code>, the <code>Q</code> is gone, and there are no key presses left to check.</li>
-</ul>
+</li>
+<li>The error in the INCORRECT CODE below is a little subtle. Here the function <code>dudraw.next_key()</code> is mistakenly invoked twice. If a <code>Q</code> is entered, that key click is processed in the first call to <code>dudraw.next_key()</code>. You can think of it as being <em>used up</em>. So on the second call to <code>dudraw.next_key()</code>, the <code>Q</code> is gone, and there are no key presses left to check.
 <pre><code class="language-python">        # This code is incorrect!
         if dudraw.next_key() == 'q' or dudraw.next_key() == 'Q'
             done = True
-
-
 </code></pre>
+</li>
+</ul>
 
                     </main>
 
