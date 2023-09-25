@@ -222,20 +222,20 @@ if __name__ == '__main__':
 </tr>
 </table>
 <h2 id="how-do-i-find-out-if-the-user-clicked-the-mouse"><a class="header" href="#how-do-i-find-out-if-the-user-clicked-the-mouse">How do I find out if the user clicked the mouse?</a></h2>
-<p>There are three <code>dudraw</code> methods for handling mouse interaction:</p>
+<p>Here are three <code>dudraw</code> methods for handling mouse interaction (see documentation for other options)</p>
 <ul>
-<li><code>dudraw.mouse_is_pressed()</code></li>
+<li><code>dudraw.mouse_clicked()</code></li>
 <li><code>dudraw.mouse_x()</code></li>
 <li><code>dudraw.mouse_y()</code></li>
 </ul>
-<p>The function <code>dudraw.mouse_is_pressed()</code> returns a boolean, <code>True</code> if the mouse is pressed at the moment when the function is called. It is typically used within an animation loop.
-You can find out the position of the mouse (regardless of whether the mouse is pressed) by calling <code>dudraw.mouse_x()</code> and <code>dudraw.mouse_y()</code>. Each returns a <code>float</code> with the current position of the mouse. The position of the mouse is given relative to the scale that has been set. Here's a sample program showing mouse interaction. Each time the mouse is pressed, a small circle is drawn on the canvas at the current mouse position. This program does not repeatedly clear the screen in the animation loop, so the circles drawn remain there as further circles are added. Finally, note that the call to <code>dudraw.mouse_is_pressed()</code> must occur within an animation loop, otherwise the user would be unlikely to be pressing the mouse at the exact moment that the one call to <code>dudraw.mouse_is_pressed()</code> is executing, and the mouse press will not be detected.</p>
+<p>The function <code>dudraw.mouse_clicked()</code> returns a boolean, <code>True</code> if there is an unprocessed mouse click. It is typically used within an animation loop.
+You can find out the position of the mouse (regardless of whether the mouse is pressed) by calling <code>dudraw.mouse_x()</code> and <code>dudraw.mouse_y()</code>. Each returns a <code>float</code> with the current position of the mouse. The position of the mouse is given relative to the scale that has been set. Here's a sample program showing mouse interaction. Each time the mouse is clicked, a small circle is drawn on the canvas at the current mouse position. This program does not repeatedly clear the screen in the animation loop, so the circles drawn remain there as further circles are added.</p>
 <table>
 <tr><td>Code</td><td>Animation</td></tr>
 <tr>
 <td nowrap style="display:inline-block; width:500px;">
-<pre><code class="language-python">&quot;&quot;&quot; Demo showing how to detect mouse presses
-    This happens by calling dudraw.mouse_is_pressed()
+<pre><code class="language-python">&quot;&quot;&quot; Demo showing how to detect mouse clicks
+    This happens by calling dudraw.mouse_clicked()
     within an animation loop
     File Name: simple_animation.py
     Author: COMP 1351 instructor
@@ -252,8 +252,8 @@ def main():
 
     # animation loop
     while True:
-        # when mouse is pressed, draw a circle of radius 0.02 at the mouse location
-        if dudraw.mouse_is_pressed():
+        # when mouse is clicked, draw a circle of radius 0.02 at the mouse location
+        if dudraw.mouse_clicked():
             dudraw.filled_circle(dudraw.mouse_x(), dudraw.mouse_y(), 0.02)
         # pause for 200th of a second
         dudraw.show(50)
@@ -272,11 +272,10 @@ if __name__ == '__main__':
 </tr>
 </table>
 <h2 id="how-do-i-find-out-if-the-user-typed-a-key"><a class="header" href="#how-do-i-find-out-if-the-user-typed-a-key">How do I find out if the user typed a key?</a></h2>
-<p>As with mouse presses, polling for a key click typically happens within an animation loop. Use the function <code>dudraw.next_key()</code>, which will return a string containing the next most-recently entered key. If no key has been pressed, the function returns an empty string. As an example, the following code is a modification of the mouse interaction code, with the added feature of terminating (quitting) the program when the <code>'q'</code> key is typed:</p>
+<p>As with mouse clicks, polling for a key click typically happens within an animation loop. Use the function <code>dudraw.next_key()</code>, which will return a string containing the next most-recently entered key. If no key has been pressed, the function returns an empty string. As an example, the following code is a modification of the mouse interaction code, with the added feature of terminating (quitting) the program when the <code>'q'</code> key is typed:</p>
 <pre><code class="language-python">&quot;&quot;&quot; Demo showing how to detect key clicks
     This happens by, within an animation loop,
-    calling dudraw.has_next_key_typed() and
-    then if it returns True, then dudraw.next_key_typed()
+    by calling dudraw.next_key()
     File Name: simple_animation.py
     Author: COMP 1351 instructor
     Date:
@@ -293,8 +292,8 @@ def main():
 
     # animation loop
     while not done:
-        # when mouse is pressed, draw a circle of radius 0.02 at the mouse location
-        if dudraw.mouse_is_pressed():
+        # when mouse is clicked, draw a circle of radius 0.02 at the mouse location
+        if dudraw.mouse_clicked():
             dudraw.filled_circle(dudraw.mouse_x(), dudraw.mouse_y(), 0.02)
         # pause for one 20th of a second
         dudraw.show(50)
@@ -321,10 +320,11 @@ if __name__ == '__main__':
             done = True
 </code></pre>
 <p>The above option uses a string method called <code>lower()</code> which converts a string to lower case. We will learn more about string manipulation in a later section.</p>
-<p>Please note the following two common errors in using the dudraw.next_key() function:</p>
+<p>Please note the following two common errors in using the <code>dudraw.next_key()</code> function:</p>
 <ul>
 <li>In the following INCORRECT CODE, note that on each side of the <code>or</code>, we need a full boolean expression
 <pre><code class="language-python">        # This code is incorrect!
+        # The following line is wrong!
         if dudraw.next_key() == 'q' or 'Q'
             done = True
 </code></pre>
