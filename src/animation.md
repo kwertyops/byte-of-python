@@ -62,13 +62,13 @@ if __name__ == '__main__':
 
 ## How do I find out if the user clicked the mouse?
 
-There are three `dudraw` methods for handling mouse interaction:
-- `dudraw.mouse_is_pressed()`
+Here are three `dudraw` methods for handling mouse interaction (see documentation for other options)
+- `dudraw.mouse_clicked()`
 - `dudraw.mouse_x()`
 - `dudraw.mouse_y()`
 
-The function `dudraw.mouse_is_pressed()` returns a boolean, `True` if the mouse is pressed at the moment when the function is called. It is typically used within an animation loop.
-You can find out the position of the mouse (regardless of whether the mouse is pressed) by calling `dudraw.mouse_x()` and `dudraw.mouse_y()`. Each returns a `float` with the current position of the mouse. The position of the mouse is given relative to the scale that has been set. Here's a sample program showing mouse interaction. Each time the mouse is pressed, a small circle is drawn on the canvas at the current mouse position. This program does not repeatedly clear the screen in the animation loop, so the circles drawn remain there as further circles are added. Finally, note that the call to `dudraw.mouse_is_pressed()` must occur within an animation loop, otherwise the user would be unlikely to be pressing the mouse at the exact moment that the one call to `dudraw.mouse_is_pressed()` is executing, and the mouse press will not be detected.
+The function `dudraw.mouse_clicked()` returns a boolean, `True` if there is an unprocessed mouse click. It is typically used within an animation loop.
+You can find out the position of the mouse (regardless of whether the mouse is pressed) by calling `dudraw.mouse_x()` and `dudraw.mouse_y()`. Each returns a `float` with the current position of the mouse. The position of the mouse is given relative to the scale that has been set. Here's a sample program showing mouse interaction. Each time the mouse is clicked, a small circle is drawn on the canvas at the current mouse position. This program does not repeatedly clear the screen in the animation loop, so the circles drawn remain there as further circles are added.
 
 <table>
 <tr><td>Code</td><td>Animation</td></tr>
@@ -76,8 +76,8 @@ You can find out the position of the mouse (regardless of whether the mouse is p
 <td nowrap style="display:inline-block; width:500px;">
 
 ```python
-""" Demo showing how to detect mouse presses
-    This happens by calling dudraw.mouse_is_pressed()
+""" Demo showing how to detect mouse clicks
+    This happens by calling dudraw.mouse_clicked()
     within an animation loop
     File Name: simple_animation.py
     Author: COMP 1351 instructor
@@ -94,8 +94,8 @@ def main():
 
     # animation loop
     while True:
-        # when mouse is pressed, draw a circle of radius 0.02 at the mouse location
-        if dudraw.mouse_is_pressed():
+        # when mouse is clicked, draw a circle of radius 0.02 at the mouse location
+        if dudraw.mouse_clicked():
             dudraw.filled_circle(dudraw.mouse_x(), dudraw.mouse_y(), 0.02)
         # pause for 200th of a second
         dudraw.show(50)
@@ -119,13 +119,12 @@ if __name__ == '__main__':
 
 ## How do I find out if the user typed a key?
 
-As with mouse presses, polling for a key click typically happens within an animation loop. Use the function `dudraw.next_key()`, which will return a string containing the next most-recently entered key. If no key has been pressed, the function returns an empty string. As an example, the following code is a modification of the mouse interaction code, with the added feature of terminating (quitting) the program when the `'q'` key is typed:
+As with mouse clicks, polling for a key click typically happens within an animation loop. Use the function `dudraw.next_key()`, which will return a string containing the next most-recently entered key. If no key has been pressed, the function returns an empty string. As an example, the following code is a modification of the mouse interaction code, with the added feature of terminating (quitting) the program when the `'q'` key is typed:
 
 ```python
 """ Demo showing how to detect key clicks
     This happens by, within an animation loop,
-    calling dudraw.has_next_key_typed() and
-    then if it returns True, then dudraw.next_key_typed()
+    by calling dudraw.next_key()
     File Name: simple_animation.py
     Author: COMP 1351 instructor
     Date:
@@ -142,8 +141,8 @@ def main():
 
     # animation loop
     while not done:
-        # when mouse is pressed, draw a circle of radius 0.02 at the mouse location
-        if dudraw.mouse_is_pressed():
+        # when mouse is clicked, draw a circle of radius 0.02 at the mouse location
+        if dudraw.mouse_clicked():
             dudraw.filled_circle(dudraw.mouse_x(), dudraw.mouse_y(), 0.02)
         # pause for one 20th of a second
         dudraw.show(50)
@@ -175,10 +174,11 @@ Here is another option for allowing either uppercase or lowercase:
 ```
 The above option uses a string method called `lower()` which converts a string to lower case. We will learn more about string manipulation in a later section.
 
-Please note the following two common errors in using the dudraw.next_key() function:
+Please note the following two common errors in using the `dudraw.next_key()` function:
 - In the following INCORRECT CODE, note that on each side of the `or`, we need a full boolean expression
     ```python
             # This code is incorrect!
+            # The following line is wrong!
             if dudraw.next_key() == 'q' or 'Q'
                 done = True
     ```
