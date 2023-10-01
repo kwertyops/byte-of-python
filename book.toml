@@ -12,6 +12,7 @@ build-dir = "docs"
 default-theme = "rust"
 additional-js = ["js/disable_keyboard.js"]
 additional-css = ["css/pyscript.css"]
+no-section-label = true
 
 [output.html.playground]
 editable = true
