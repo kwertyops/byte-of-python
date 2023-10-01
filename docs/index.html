@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Python, VSCode, and dudraw Installation - Introduction to Programming</title>
+        <title>Data Science - Introduction to Programming</title>
 
 
         <!-- Custom HTML head -->
@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html" class="active"><strong aria-hidden="true">1.</strong> Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html"><strong aria-hidden="true">2.</strong> First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html"><strong aria-hidden="true">3.</strong> dudraw Overview</a></li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">4.</strong> Introduction to functions</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html"><strong aria-hidden="true">5.</strong> Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html"><strong aria-hidden="true">6.</strong> Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html"><strong aria-hidden="true">7.</strong> Generating random numbers</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded "><a href="control_flow.html"><strong aria-hidden="true">8.</strong> What is control flow?</a></li><li class="chapter-item expanded "><a href="boolean_relational_logical.html"><strong aria-hidden="true">9.</strong> Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html"><strong aria-hidden="true">10.</strong> Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html"><strong aria-hidden="true">11.</strong> Nested conditional statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements</li><li class="chapter-item expanded "><a href="for_loop.html"><strong aria-hidden="true">12.</strong> for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html"><strong aria-hidden="true">13.</strong> Combining conditionals with loops</a></li><li class="chapter-item expanded "><a href="while.html"><strong aria-hidden="true">14.</strong> while-loops</a></li><li class="chapter-item expanded "><a href="animation.html"><strong aria-hidden="true">15.</strong> Application - animation in dudraw</a></li><li class="chapter-item expanded "><a href="nested_for_loops.html"><strong aria-hidden="true">16.</strong> Nested for-loops</a></li><li class="chapter-item expanded affix "><li class="part-title">Functions</li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">17.</strong> Re-read the introduction to functions</a></li><li class="chapter-item expanded "><a href="function_parameters.html"><strong aria-hidden="true">18.</strong> Functions that take parameters</a></li><li class="chapter-item expanded "><a href="shift_scale_drawings.html"><strong aria-hidden="true">19.</strong> Application - scaled and shifted drawings</a></li><li class="chapter-item expanded "><a href="function_return_values.html"><strong aria-hidden="true">20.</strong> Functions that return a value</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html"><strong aria-hidden="true">21.</strong> Data Science</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements</li><li class="chapter-item expanded affix "><li class="part-title">Functions</li><li class="chapter-item expanded affix "><li class="part-title">Lists</li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html" class="active"><strong aria-hidden="true">1.</strong> Data Science</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -167,130 +167,71 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
-<h2 id="development-environment"><a class="header" href="#development-environment">Development Environment</a></h2>
-<p>In order to be able to write and execute Python programs, we will have you install two different pieces of software on your computer:</p>
-<h3 id="python"><a class="header" href="#python">Python:</a></h3>
-<p><img src="img/installation/installation_python_interpreter.png" alt="A console showing the Python interactive interpreter." /></p>
-<p>This is the Python <strong><em>interpreter</em></strong> (or Python <em>executable</em>). This is the software that will actually read your Python code, and tell the computer how to execute it.</p>
-<p>This is usually bundled with an extra piece of software (written in Python!) called '<strong>pip</strong>'. Pip is a package manager that is used to install and manage extra Python packages and libraries. It gives you easy access to more powerful tools that aren't necessarily included with Python from the get-go.</p>
-<p>The interpreter is technically the only software you need to write and execute Python programs (and it is the most important!), but to make our lives easier we will also install...</p>
-<h3 id="visual-studio-code"><a class="header" href="#visual-studio-code">Visual Studio Code:</a></h3>
-<p><img src="img/installation/installation_vscode.png" alt="A screenshot of Microsoft Visual Studio Code" /></p>
-<p>This is a code editor called Visual Studio Code (<strong>VSCode</strong>) -- not to be confused with Visual Studio, another Microsoft product.</p>
-<p>Any Python program that you write will simply be a text file, but with a filename that ends in &quot;<strong>.py</strong>&quot; (instead of &quot;<strong>.txt</strong>&quot;, or &quot;<strong>.doc</strong>&quot; for example). Because of this, you can use any simple text editor to write the code if you want (for example Notepad.exe on Windows, or TextEdit.app on Mac -- but not Microsoft Word!).</p>
-<p>Nowadays though, many programmers will use a special text editor that makes writing code easier by adding helpful tools like syntax highlighting, autocomplete suggestions, and executing/debugging programs - all from within the text editor!</p>
-<p>VSCode is one of these -- it's just a special text editor with helpful features for working with code. A neat bonus is that, while we will be using it for Python exclusively in this class, VSCode also works with most other popular programming languages!</p>
-<ul>
-<li>Side-note: When enough features are bundled together in a code editor, and especially when that editor is specifically targeted towards one particular programming language, it is often called an IDE (Integrated Development Environment). VSCode is like our IDE in this case, although it doesn't have all the features that a true IDE might have - but that's okay, we won't need them for now.</li>
-</ul>
-<p>VSCode will also give us the ability to collaboratively write code together in real-time on separate computers!</p>
+                        <h1 id="data-science"><a class="header" href="#data-science">Data Science</a></h1>
+<p>Python is becoming an increasingly popular choice for many applications, but in particular it has become one of the standards in the field of Data Science.</p>
+<p>Because of its popularity and applicability to this field, let's explore a few fundamental techniques for working with existing datasets and how Python can help make our lives easier!</p>
+<h2 id="tabular-data"><a class="header" href="#tabular-data">Tabular Data</a></h2>
+<p>First, let's focus on a common data format known as &quot;tabular data&quot;. This just means data that is best represented as a table. A relatable way of thinking about this kind of data might be an Excel spreadsheet that represents a collection of &quot;items&quot; of the same type. Each row represents one &quot;item&quot;, and each column is an attribute of that &quot;item&quot;:</p>
+<div class="table-wrapper"><table><thead><tr><th><strong>Name</strong></th><th><strong>Age</strong></th><th><strong>Favorite Icecream</strong></th></tr></thead><tbody>
+<tr><td>Bob</td><td>24</td><td>Chocolate</td></tr>
+<tr><td>Alice</td><td>31</td><td>Vanilla</td></tr>
+<tr><td>John</td><td>48</td><td>Strawberry</td></tr>
+</tbody></table>
+</div>
+<p>For example, this a sheet of &quot;people&quot;, where each row is a &quot;person&quot;, and each column is an attribute of that person.</p>
+<p>There are many different ways of working with tabular data (storing it, reading it, modifying it, analyzing it) and we're going to focus on one that will let us explore and use the data structures we're already familiar with.</p>
 <hr />
-<h2 id="python-installation-and-setup"><a class="header" href="#python-installation-and-setup">Python Installation and Setup</a></h2>
-<p>Visit the following page to download the latest official Python installer for your operating system:</p>
-<p><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
-<p>The latest Python version will appear as 3.xx.xx, where xx is some version number. </p>
-<p>Once you've downloaded the installer (<strong>.pkg</strong> for MacOS, or <strong>.exe</strong> for Windows) you can run it simply by double-clicking it.</p>
-<p>For the most part, the installation process should be self-explanatory and you can just click through without changing any settings, though there is one extra consideration depending on your operating system:</p>
-<p><strong>Windows:</strong></p>
-<ul>
-<li>When the installation begins, on the first screen you should see a checkbox at the bottom for the option to &quot;<strong>add Python to PATH</strong>&quot;. Make sure that box <strong>IS CHECKED</strong> (you DO want to add the Python executable to your system PATH!), before continuing with installation.</li>
-</ul>
-<p><strong>MacOS:</strong></p>
-<ul>
-<li>After the installation is complete, go to your Applications folder and find the Python folder inside (probably named &quot;Python 3.xx&quot;). The installer program may even have opened this folder for you automatically. Inside that folder there should be a file named &quot;<strong>Update Shell Profile.command</strong>&quot;. Double-click on that file to add the Python executable to your system PATH. Some windows may be opened during this process. It's fine to close them.</li>
-<li>You may be asked if you want to move the &quot;Python&quot; Installer to the Trash. You may say yes to this, since the installation is complete.</li>
-</ul>
-<hr />
-<h2 id="visual-studio-code-installation-and-setup"><a class="header" href="#visual-studio-code-installation-and-setup">Visual Studio Code Installation and Setup</a></h2>
-<h3 id="download-and-install-instructions"><a class="header" href="#download-and-install-instructions">Download and Install Instructions:</a></h3>
-<p>Visit to the following page to download the official VSCode installer (on Windows you can also install it through the Microsoft App Store): <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<p>You'll want to download the latest &quot;Stable&quot; build (which should be the default option for the download button). Continue through the default installation (no need to change any settings).</p>
-<p>Then follow the instructions based on your operating system:</p>
-<p><strong>Windows:</strong></p>
-<ul>
-<li>Double click on .exe file, accept the license agreement then click next.</li>
-<li>Leave the default destination location unchanged and click next</li>
-<li>Leave the &quot;Select Start Menu Folder&quot; location unchanged and click Next</li>
-<li>Check &quot;Create a desktop icon&quot;, leaving the rest of the selections as-is, and click next.</li>
-<li>Finally, click &quot;Install&quot;, and &quot;Finish&quot;, and the program will open.</li>
-</ul>
-<p><strong>MacOS:</strong></p>
-<ul>
-<li><a href="https://code.visualstudio.com/"></a> Double-click to unzip, then drag the file &quot;Visual Studio Code&quot; into the &quot;Applications&quot; folder on your mac. You can then drag it again, from the applications folder, to the dock to create a shortcut.</li>
-</ul>
-<h3 id="setup-vscode"><a class="header" href="#setup-vscode">Setup VSCode:</a></h3>
-<p>Once installation is done and before you open VSCode, create a new folder on Desktop or Documents named &quot;COMP1351&quot;.</p>
-<p>Open VSCode and do the following:</p>
-<ol>
-<li>Optionally, go through any initial setup that it walks you through (choosing a theme, etc) or skip all of that for now.</li>
-<li>When VSCode opens you will see the <strong>explorer</strong> pane on the left (see picture below). Click on <strong>Open Folder</strong>  and navigate to your &quot;COMP1351&quot; folder. Depending on where you saved your COMP1351 folder, and your operating system, at this point you might get a security popup asking you if &quot;you trust the author of the files in this folder&quot; so click yes<br />
-<img src="img/installation/installation_vscodesetup1.png" alt="VSCode file explorer pane." /></li>
-<li>Create a new text file (File -&gt; New Text File) or by clicking the &quot;new file&quot; button (see picture below). Name the file &quot;hello.py&quot; then press return. A new file will be created as in the picture below. Once you've created the file, you may see a popup in the lower-right corner of VSCode asking if you want to install the &quot;Recommended Python (see &quot;Extension&quot; notes below - you can install them now or in a moment).
-<img src="img/installation/installation_vscodesetup2.png" alt="VSCode new file and new folder buttons." /></li>
-<li>Copy/paste the following Python code into that text file:</li>
-</ol>
-<pre><code class="language-python">print(&quot;Hello world!&quot;)  
-print(&quot;This is my first Python program!&quot;)
+<h2 id="csv-comma-separated-values"><a class="header" href="#csv-comma-separated-values">CSV (Comma-Separated Values)</a></h2>
+<p>The simplest way of representing a table is to just put it in a text file. Even for this, there are many ways you could choose to do it, but probably the most common way is using comma-separated-values (CSV).</p>
+<p>Each row of text will represent one item, where the attributes of that item are separated by commas. Typically, the first row of text in the file will be the names of the columns (attributes):</p>
+<pre><code>name,age,fav_icecream
+Bob,24,chocolate
+Alice,31,vanilla
+John,48,strawberry
 </code></pre>
-<ol start="5">
-<li>Save that file (File -&gt; Save, or Command-S on a Mac and Control-S on Windows).</li>
-<li> Extensions.
-<ul>
-<li>If you have not already installed them, then install them now.</li>
-<li>This will probably take you to another window in VSCode showing the extension info.</li>
-<li>If you didn't get the recommended extensions popup, or have problems starting the installation, you can go to the Extensions tab on the left-hand panel and manually search for the official Microsoft &quot;Python&quot; extension:</li>
-<li><img src="img/installation/installation_vscodesetup3.png" alt="Addon pane in VSCode." width="150"/><img src="img/installation/installation_vscodesetup4.png" alt="Python Extension in VSCode." width="200"/></li>
-<li>After you're done installing the Python extension, go back your code by selecting the tab at the top with the filename you chose.</li>
-</ul>
-</li>
-<li>In the bottom-right, you should see a part of the info bar that says &quot;Python&quot; and a version number next to it:
-<img src="img/installation/installation_vscodesetup5.png" alt="Python version in bottom bar of VSCode." />
-Make sure that version number matches the Python version you installed (for example 3.10.6). If it doesn't, click on the version number and then select the Python executable that you installed earlier.</li>
-<li>You should also now see in the upper-right corner a triangular &quot;play&quot; button. Go ahead and click it to run your Python file!<br />
-<img src="img/installation/installation_vscodesetup6.png" alt="VSCode run button." /></li>
-<li>If everything is working, you should see a console come up at the bottom of your window, and at the end of the text in that console you should see the text &quot;Hello world!&quot; and &quot;This is my first Python program!&quot; (probably among other things).
-<img src="img/installation/installation_vscodesetup7.png" alt="VSCode output pane." /></li>
-</ol>
-<hr />
-<h2 id="final-setup"><a class="header" href="#final-setup">Final Setup</a></h2>
-<p>If you've gotten this far, congratulations! You have a working Python and VSCode installation! There just two more things to do before you're ready to go for this class:</p>
-<h3 id="live-share-collaboration"><a class="header" href="#live-share-collaboration">Live Share Collaboration:</a></h3>
-<ol>
-<li>Go to the Extensions tab of VSCode (the icon on the left that looks like a 2x2 grid with a square popped out).</li>
-<li>From there search for the &quot;Live Share&quot; extension. It will have an official Microsoft check-mark logo attached to it, so you know which one is the correct one.</li>
-<li>Install it!</li>
-<li>Now in the bottom-left of your VSCode window, you should see a &quot;Live Share&quot; button. You'll use this later in class to collaboratively write code with your group!</li>
-</ol>
-<h3 id="dudraw-graphics-library"><a class="header" href="#dudraw-graphics-library">dudraw Graphics Library:</a></h3>
-<p>The <code>dudraw</code> graphics library is a software package written at DU, based on the original <code>stddraw</code> package written at Princeton. It is a simple package that will allow us to draw images and create animations in our Python programs. Here's how to install it:</p>
-<ol>
-<li>Make a new Python file (File -&gt; New File... -&gt; Python).</li>
-<li>Copy/paste the following code into the file:</li>
-</ol>
-<pre><code class="language-python">import sys
-import subprocess
-subprocess.check_call([sys.executable, &quot;-m&quot;, &quot;pip&quot;, &quot;install&quot;, &quot;dudraw&quot;])
-import dudraw
-dudraw.set_canvas_size(400,400)
-dudraw.filled_circle(0.5, 0.5, 0.25)
-dudraw.show(10000)
+<p>Note: sometimes this can be hard to read visually due to the mis-alignment of columns. If you're using VSCode (or something similar) you can install add-ons that color your CSV to make the columns clearer (or add spacing to align them).</p>
+<p>Since a .csv file is just a text file, we can read it as we would normally read any text file in Python (with the open() function). But turning that text into other data structures (lists/dictionaries) is so common that Python has a built-in CSV reader!:</p>
+<pre><code class="language-python">import csv
+
+with open('mydata.csv') as csvfile:
+    rows = csv.reader(csvfile)
+    for r in rows:
+        print(r)
+        # r is a list of the values
+        # [value1, value2, ...]
 </code></pre>
-<ol start="3">
-<li>Save the file somewhere (again, with a &quot;.py&quot; ending, maybe &quot;dudraw_test.py&quot;).</li>
-<li>And then run it (again using the triangular &quot;run&quot; button).</li>
-<li>If everything goes well, you should see a window appear with a black circle in it. It will close itself after 10 seconds. That's it!</li>
-</ol>
-<p><strong>If something went wrong in any of the steps above, try the videos in the preclass assignment. If those don't help, then please contact your instructor before the first class to get help with setting up.</strong></p>
+<p>So in one go, we've turned the CSV file full of text into a <strong>list of lists</strong>, containing our data!</p>
+<p>NOTE: You can also read files with separators other than a comma:</p>
+<pre><code class="language-python">rows = csv.reader(csvfile, delimiter=';')
+</code></pre>
+<p>The CSV format is more general than the specific use-case we're talking about here (tabular data) - it's really just a way of storing lists of values in rows! For the specific use-case of tabular data (i.e. items in rows, with attributes in columns, and a starting row of column names) there's a specific tool that we'll use from the csv module:</p>
+<pre><code class="language-python">with open('mydata.csv') as csvfile:
+    # here's the magic step:
+    rows = list(csv.DictReader(csvfile))
+    for r in rows:
+        print(r)
+        # r is now a dictionary!
+        # { column_name: attribute, ... }
+</code></pre>
+<p>So now, we've turned our text (CSV) representation of a table... into a <strong>list of dictionaries</strong>!!! Each dictionary represents one full &quot;Person&quot;, with all of their attributes. It looks like this:</p>
+<pre><code class="language-python">[
+    { &quot;name&quot;: &quot;Bob&quot;,
+      &quot;age&quot;: 24,
+      &quot;fav_icecream&quot;: &quot;chocolate&quot; },
+    { &quot;name&quot;: &quot;Alice&quot;,
+      &quot;age&quot;: 31,
+      &quot;fav_icecream&quot;: &quot;vanilla&quot; },
+    { &quot;name&quot;: &quot;John&quot;,
+      &quot;age&quot;: 48,
+      &quot;fav_icecream&quot;: &quot;strawberry&quot;}
+]
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next" href="hello.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -299,9 +240,6 @@ dudraw.show(10000)
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next" href="hello.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
