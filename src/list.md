@@ -162,7 +162,7 @@ Here's sample code showing defining a list, accessing a list, modifying a list e
 <tr><td>Code</td><td>Output</td>
 </tr>
 <tr>
-<td nowrap style="display:inline-block; width:550px;">
+<td nowrap style="display:inline-block; width:400px;">
 
 ```python
 month_names = ['January', 'February', 'March', 'April', 
@@ -176,10 +176,10 @@ print(month_names[0]) # index 0 is the first month
 print(month_names[4]) # index 4 is the 5th month
 print(month_names[11]) # index 11 is 12th month
 print(month_names[-1]) # index -1 means the last month
-# List slive with first 6 months (index 0, 1, 2, 3, 4, 5)
+# Create a new list with first 6 months (index 0, 1, 2, 3, 4, 5)
 first_half = month_names[0:6]
 print(first_half) # note that this is a list
-# List slice with the last 6 months (index 6, 7, 8, 9, 10, 11)
+# Create a new list with the last 6 months (index 6, 7, 8, 9, 10, 11)
 second_half = month_names[6:]
 print(second_half)
 # I'm calling Sept/Oct/Nov autumn, these are index 8, 9, 10
@@ -211,9 +211,3 @@ True
 </td>
 </tr>
 </table>
-
-
-
-
-
-

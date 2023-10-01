@@ -33,7 +33,7 @@
 
 - Lists
     - [Introduction to lists](lists.md)
-    - [List methods]()
+    - [List methods](list_methods.md)
 
 ---
 # Extras
