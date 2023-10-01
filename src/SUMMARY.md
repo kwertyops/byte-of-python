@@ -34,6 +34,7 @@
 # Lists
 - [Introduction to lists](lists.md)
 - [List methods](list_methods.md)
+- [Lists and Functions](lists_and_functions.md)
 
 ---
 # Extras
