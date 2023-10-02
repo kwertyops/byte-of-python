@@ -31,10 +31,12 @@
 - [Application - scaled and shifted drawings](shift_scale_drawings.md)
 - [Functions that return a value](function_return_values.md)
 
-# Lists
+# Lists and Tuples
 - [Introduction to lists](lists.md)
 - [List methods](list_methods.md)
-- [Lists and Functions](lists_and_functions.md)
+- [Lists and functions](lists_and_functions.md)
+- [List mutability](list_mutability.md)
+- [Tuples](tuples.md)
 
 ---
 # Extras

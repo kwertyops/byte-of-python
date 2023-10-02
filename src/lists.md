@@ -127,7 +127,7 @@ Joey
 
 In the above code, the variable `names` is a list, whose contents might be `["Ross", "Chandler", "Joey"]`, visualized like this:
 
-<img src="img/lists/names_list.png" alt="Visual representation of a list pf names" width="450"/>
+<img src="img/lists/name_list.png" alt="Visual representation of a list 0f names" width="450"/>
 
  Note that in the index-based loop, the loop variable `i` iterates over the index values, so it takes the values `0`, `1` and `2`. In the content-based loop, on the other hand, the loop variable `friend` iterates over the contents of the list, and takes the values "Ross", "Chandler", "Joey". Finally, notice that in the index-based loop, we access the value stored in the list with `names[i]`, whereas in the content-based loop, the loop variable `friends` itself already contains the value stored in the list.
 
@@ -139,12 +139,18 @@ In the above code, the variable `names` is a list, whose contents might be `["Ro
 
  In the above example, note that `scores[-1]` evaluates to `91`, and `scores[-2]` evaluates to `81`.
  The expressions `scores[-1]` and `scores[len(scores)-1]` refer to the same location in memory. Similarly, `scores[-2]` and `scores[3]` also refer to the same location in memory.
-
+list_name[::-1]`
  ## Slicing lists
 
- Slicing gives a way to extract a sublist from a list. By putting a start index and a stop index separated by a colon in square brackets, we create a new list that includes the contents at those index values. Note that the stop index itself is not included in the slice. For example, from the list shown above, the expression `scores[0:3]` result in the list `[92, 87, 93]`, built from the values stored at indices `0, 1, 2`. If the start index is omitted, the start index is assumed to be `0`. For example, `scores[:3]` is the same slice as `scores[0:3]`.
+ Slicing gives a way to extract a sublist from a list. By putting a start index and a stop index separated by a colon in square brackets, we create a new list that includes the contents at those index values. A typical slice is of the form `list_name[start_index, stop_index]`. Note that the stop index itself is not included in the slice. For example, from the list shown above, the expression `scores[0:3]` result in the list `[92, 87, 93]`, built from the values stored at indices `0, 1, 2`. If the start index is omitted, the start index is assumed to be `0`. For example, `scores[:3]` is the same slice as `scores[0:3]`.
 
  The slice `scores[1:5]` might look confusing at first, since the list is too short to have an index `5`. However, recall that the stop index of a slice is not itself included in the sublist, so the index values used are `1, 2, 3, 4`, to produce the sublist `[87, 93, 81, 91]`. If you omit the stop index, its default is `len(your_list)`, meaning that the slice goes to the end of the list, including its last element. Thus `scores[1:5]` in this example is equivalent to `scores[1:]`
+
+ A slice can be used to extract a range from a list while skipping elements. More generally, `list_name[start_index, stop_index, step]` begins at `start_index`, ends before reaching `stop_index`, and uses `step` to increment the index count. For example, in the list shown above, the slice `scores[0:5:2]` starts at index `0`, increasing the index by `2` at each step, and ending before index `5`. So the index values `0, 2, 4` are used and the list generated is `[92, 93, 91]`.
+
+ Negative values can be used for the `step`, allowing us to traverse backwards through the list. For example, in the list shown above, the slice `scores[4:0:-2]` uses the index values `4, 2` and produces the list `[91, 93]`. Note that the index `0` element is not included. To include it, use `scores[4::-2]` to produce the list `[93, 91, 92]`.
+
+ A special case can be used to produce a list in reverse order, using `list_name[::-1]`.
 
 ## List membership
 
@@ -153,6 +159,28 @@ You can determine whether a value is in a list or not using the `in` and `not in
 - On the other hand, `93 not in scores` evaluates to `False`. 
 - `20 in scores` evaluates to `False`, since none of the values in the list equal `20`.
 - On the other hand, `20  not in scores` evalutes to `True`.
+
+## Choosing random elements from a list
+
+If you want to choose a random element from an existing list, one option is to choose a random integer as the index value, ranging from `0` to `len(your_list)-1`. Then that random index can be used to access the list. For example, here we output a random element from the list `["eenie", "meenie", "miney", "mo"]`
+
+```python
+import random
+words = ["eenie", "meenie", "miney", "mo"]
+# produce a random integer from 0 to the last index, len(words)-1
+# (recall that randint includes its upper limit)
+index = random.randint(0, len(words)-1)
+print(words[index])
+```
+
+However, there is an easier way to generate a random element from a list. The `random` package has a function called `choice()` that can take a list as a parameter, and will return a randomly-chosen element from the list. You don't have to worry about index values - the `random.choice()` function does that for you. Here's an example of its use:
+
+```python
+import random
+words = ["eenie", "meenie", "miney", "mo"]
+# produces a random integer from 0 to the last index, len(words)-1
+print(random.choice(words))
+```
 
 ## Putting it all together
 
