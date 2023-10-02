@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>List mutability - Introduction to Programming</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/pyscript.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html">Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html">First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html">dudraw Overview</a></li><li class="chapter-item expanded "><a href="functions.html">Introduction to functions</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html">Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html">Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html">Generating random numbers</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded "><a href="control_flow.html">What is control flow?</a></li><li class="chapter-item expanded "><a href="boolean_relational_logical.html">Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html">Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html">Nested conditional statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements</li><li class="chapter-item expanded "><a href="for_loop.html">for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html">Combining conditionals with loops</a></li><li class="chapter-item expanded "><a href="while.html">while-loops</a></li><li class="chapter-item expanded "><a href="animation.html">Application - animation in dudraw</a></li><li class="chapter-item expanded "><a href="nested_for_loops.html">Nested for-loops</a></li><li class="chapter-item expanded affix "><li class="part-title">Functions</li><li class="chapter-item expanded "><a href="functions.html">Re-read the introduction to functions</a></li><li class="chapter-item expanded "><a href="function_parameters.html">Functions that take parameters</a></li><li class="chapter-item expanded "><a href="shift_scale_drawings.html">Application - scaled and shifted drawings</a></li><li class="chapter-item expanded "><a href="function_return_values.html">Functions that return a value</a></li><li class="chapter-item expanded affix "><li class="part-title">Lists and Tuples</li><li class="chapter-item expanded "><a href="lists.html">Introduction to lists</a></li><li class="chapter-item expanded "><a href="list_methods.html">List methods</a></li><li class="chapter-item expanded "><a href="lists_and_functions.html">Lists and functions</a></li><li class="chapter-item expanded "><a href="list_mutability.html" class="active">List mutability</a></li><li class="chapter-item expanded "><a href="tuples.html">Tuples</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html">Data Science</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Introduction to Programming</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="immutable-versus-mutable-types"><a class="header" href="#immutable-versus-mutable-types">Immutable versus mutable types</a></h2>
+<p>The types <code>str</code>, <code>float</code>, <code>int</code>, <code>bool</code> are all immutable. The <code>list</code> type is the first one you have seen that is mutable.</p>
+<p>The value of an <em>immutable</em> type cannot be changed. This may sound wrong to you, since you have been changing the values of variables since the first day of programming. However, in python when we assign a value to a variable, we are technically not changing the value. Instead we are actually assigning to the variable a new value with a new memory address. The old value in its old memory address is not changed - it just becomes irrelevant to this variable. Each snippet of code below is accompanied by a memory diagram that shows what is happening behind the scenes:</p>
+<table>
+<tr><td>Code</td><td>Memory diagram</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x = 5
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/list_mutability/memory_diagram1.png" alt="Memory diagram for storing an int" class="center", width="200">
+</figure>
+</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x = 5
+y = x 
+
+# Note that the following has the identical memory diagram
+# x = 5
+# y = 5 
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/list_mutability/memory_diagram2.png" alt="Memory diagram for two variables refering to the same int value" class="center", width="200">
+</figure>
+</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">x = 5
+y = x
+y += 3
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/list_mutability/memory_diagram3.png" alt="Memory diagram for two variables referring to different int values" class="center", width="200">
+</figure>
+</td>
+</tr>
+</table>
+<p>In the above example, if we output the contents of <code>x</code> and <code>y</code>, the values will be different. With immutable types, changing the value of one variable will not change the value that another variable refers to.</p>
+<p>On the other hand, mutable types like <code>list</code> can change. This means that if you have more than one variable assigned to the same list, any of those variables can modify the list. And any changes made are visible regardless of which variable accesses the list afterwards. For example:</p>
+<table>
+<tr><td>Code</td><td>Memory diagram</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">cats_1 = ['Tabby', 'Bo']
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/list_mutability/memory_diagram4.png" alt="Memory diagram for creating a list" class="center", width="250">
+</figure>
+</td>
+</tr>
+<tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">cats_1 = ['Tabby', 'Bo']
+cats_2 = cats_1
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/list_mutability/memory_diagram5.png" alt="Memory diagram for two variables refering to the same list" class="center", width="250">
+</figure>
+</td>
+</tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">cats_1 = ['Tabby', 'Bo']
+cats_2 = cats_1
+cats_2.append('Mochi')
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/list_mutability/memory_diagram6.png" alt="Memory diagram for two variables referring to the same modified list" class="center", width="250">
+</figure>
+</td>
+</tr>
+</table>
+<p>Here, if we output <code>cats_1</code> and <code>cats_2</code>, the contents are <em>the same</em>, both are <code>['Tabby', 'Bo', 'Mochi']</code>. The list itself has changed, and this change is the reflected in any variable that refers to the same mutable list. It's important to stay aware of which types are mutable and which types are immutable. Without that, you may have unintentional side-effects to your variables that cause bugs.</p>
+<h2 id="mutable-types-and-functions"><a class="header" href="#mutable-types-and-functions">Mutable types and functions</a></h2>
+<p>When lists are passed to functions, the same mutable behavior applies.  For example, trace the following code by hand starting in <code>main()</code>.</p>
+<pre><code class="language-python">def foo(a: list[int])-&gt;None:
+    a.append(3)
+
+def main():
+    b = [1, 2]
+    foo(b)
+    print(b)
+</code></pre>
+<p>The function <code>foo()</code> is called, and the list <code>b</code> is passed to it. Within <code>foo()</code>, the list <code>a</code> refers to the same memory location as does the variable <code>b</code> from <code>main()</code>. In other words, there is only one list, and both <code>b</code> and <code>a</code> have access to it. Here is the memory diagram immediately after the value <code>3</code> is appended to the list:</p>
+<figure>
+<img src="img/list_mutability/memory_diagram7.png" alt="Memory diagram for passing a list to a function" class="center", width="250">
+</figure>
+<p>When we exit  the function <code>foo()</code> and return to <code>main()</code>, the variable <code>a</code> ceases to exist. The memory now looks like this:</p>
+<figure>
+<img src="img/list_mutability/memory_diagram8.png" alt="Memory diagram after return from function" class="center", width="250">
+</figure>
+<p>The contents of the list <code>b</code> have been altered by the function <code>foo()</code>. The output is <code>[1, 2, 3]</code>.</p>
+<h2 id="reassigning-a-new-list-to-a-variable"><a class="header" href="#reassigning-a-new-list-to-a-variable">Reassigning a new list to a variable</a></h2>
+<p>The following shows a slightly different situation, in which we reassign a new list to a variable. In this case, we have made the two variables point to <em>two different lists</em>. So here, changing one list does not modify the other.</p>
+<pre><code class="language-python">cats_1 = ['Tabby', 'Bo']
+cats_2 = cats_1
+cats_2 = ['Mochi']
+</code></pre>
+<p>Here's the memory diagram at the end of execution of the above code block:</p>
+<figure>
+<img src="img/list_mutability/memory_diagram9.png" alt="Memory diagram of two variables pointing to two different lists" class="center", width="250">
+</figure>
+<p>In this situation, changes to the contents of either list will not after the list that the other variable refers to.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="lists_and_functions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="tuples.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="lists_and_functions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="tuples.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js"></script>
+        <script src="editor.js"></script>
+        <script src="mode-rust.js"></script>
+        <script src="theme-dawn.js"></script>
+        <script src="theme-tomorrow_night.js"></script>
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="js/disable_keyboard.js"></script>
+
+
+    </div>
+    </body>
+</html>

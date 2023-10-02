@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Tuples - Introduction to Programming</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/pyscript.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Basics</li><li class="chapter-item expanded "><a href="installation.html">Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html">First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html">dudraw Overview</a></li><li class="chapter-item expanded "><a href="functions.html">Introduction to functions</a></li><li class="chapter-item expanded affix "><li class="part-title">Variables</li><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html">Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html">Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html">Generating random numbers</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - conditional statements</li><li class="chapter-item expanded "><a href="control_flow.html">What is control flow?</a></li><li class="chapter-item expanded "><a href="boolean_relational_logical.html">Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html">Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html">Nested conditional statements</a></li><li class="chapter-item expanded affix "><li class="part-title">Control flow - iterative statements</li><li class="chapter-item expanded "><a href="for_loop.html">for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html">Combining conditionals with loops</a></li><li class="chapter-item expanded "><a href="while.html">while-loops</a></li><li class="chapter-item expanded "><a href="animation.html">Application - animation in dudraw</a></li><li class="chapter-item expanded "><a href="nested_for_loops.html">Nested for-loops</a></li><li class="chapter-item expanded affix "><li class="part-title">Functions</li><li class="chapter-item expanded "><a href="functions.html">Re-read the introduction to functions</a></li><li class="chapter-item expanded "><a href="function_parameters.html">Functions that take parameters</a></li><li class="chapter-item expanded "><a href="shift_scale_drawings.html">Application - scaled and shifted drawings</a></li><li class="chapter-item expanded "><a href="function_return_values.html">Functions that return a value</a></li><li class="chapter-item expanded affix "><li class="part-title">Lists and Tuples</li><li class="chapter-item expanded "><a href="lists.html">Introduction to lists</a></li><li class="chapter-item expanded "><a href="list_methods.html">List methods</a></li><li class="chapter-item expanded "><a href="lists_and_functions.html">Lists and functions</a></li><li class="chapter-item expanded "><a href="list_mutability.html">List mutability</a></li><li class="chapter-item expanded "><a href="tuples.html" class="active">Tuples</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html">Data Science</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Introduction to Programming</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="what-is-a-python-tuple"><a class="header" href="#what-is-a-python-tuple">What is a python <code>tuple</code>?</a></h2>
+<p>In python, a <code>tuple</code> gives a way to tie together two or more values into one container.
+You may pronounce it &quot;tupple&quot; or &quot;toople&quot;. The idea comes from having an ordered pair of values (a double), or a triple of values, a quadruple, quintuple, etc. You may package as many values together as makes sense for your application.</p>
+<p>The elements in a <code>tuple</code> may be of the same type, or not. Use a <code>tuple</code> when there is some natural underlying concept that ties the values in your <code>tuple</code> together - this makes it easier for others to understand your code. The values being put together in the <code>tuple</code> should be inextricably connected, and they should be values that we want to access in conjunction.</p>
+<p>The syntax is to place the comma-separated values within a pair of parentheses, as in <code>jane_birthday = (11, 4, 2004)</code>. Here <code>(11, 4, 2004)</code> is a <code>tuple</code>.</p>
+<p><code>Tuple</code>s are immutable. The values within the <code>tuple</code> cannot be changed once the <code>tuple</code> has been created.</p>
+<h2 id="example-1---coordinates-in-the-x-y-plane"><a class="header" href="#example-1---coordinates-in-the-x-y-plane">Example 1 - coordinates in the x-y plane</a></h2>
+<p>An ordered pair gives a location in the x-y plane. So each point in the x-y plane can be stored in a <code>tuple</code>.</p>
+<table>
+<tr><td>Code</td><td>Geometry we are modeling</td></tr>
+<tr>
+<td>
+<pre><code class="language-python">origin = (0, 0)
+vertex_a = (6, 4)
+vertex_b = (-6, 9)
+vertex_c = origin
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/tuples/triangle_graph.png" alt="A triangle in the xy plane, vertices A, B and C. C is at the origin" class="center", width="200">
+</figure>
+</td>
+</tr>
+</table>
+<h2 id="accessing-individual-values-within-a-tuple"><a class="header" href="#accessing-individual-values-within-a-tuple">Accessing individual values within a <code>tuple</code></a></h2>
+<p>Much like with lists, we can access individual elements within a <code>tuple</code> using an index within square brackets. For example, using the tuples defined in the previous example,</p>
+<pre><code class="language-python">print(vertex_b[1])
+</code></pre>
+<p>will output <code>9</code> (the second coordinate of vertex B).</p>
+<p>You can unpack elements from a <code>tuple</code> into individual variables:</p>
+<pre><code class="language-python">(b_x, b_y) = vertex_b
+</code></pre>
+<p>The value of <code>b_x</code> will be <code>-6</code> and the value of <code>b_y</code> will be <code>9</code>.</p>
+<p>While you can examine an individual value in a <code>tuple</code> using square brackets, note that you <em>cannot modify individual elements of a <code>tuple</code></em>, since <code>tuple</code>s are immutable.</p>
+<pre><code class="language-python">vertex_b = (-6, 9)s
+x = vertex_b[0] # valid line of code
+vertex_b[0] = -3  # not allowed, since tuples are immutable
+</code></pre>
+<h2 id="example-2---gps-coordinates"><a class="header" href="#example-2---gps-coordinates">Example 2 - GPS coordinates</a></h2>
+<p>GPS locations specify a position on earth. They have two values that represent latitude and longitude. The pair of latitude/longitude values can conveniently be stored in a <code>tuple</code>.</p>
+<pre><code class="language-python">du_ecs_building = (39.6743, -104.9615) 
+# ECS is 39.6743° N of the equator and 
+# 104.9615° W of the prime meridian. 
+# The value of du_ecs_building[0] is 39.6743
+# The value of du_ecs_building[1] is -104.9615
+
+taj_mahal = (27.1751, 78.0421)
+machu_picchu = (-13.1631, 72.5450)
+denali_peak = (63.1148, -151.1926)
+
+print(f&quot;The taj-mahal is located at latitude {taj_mahal[0]}, longitude {taj_mahal[1]}&quot;)
+</code></pre>
+<h2 id="example-3---dimensions-of-a-3d-object"><a class="header" href="#example-3---dimensions-of-a-3d-object">Example 3 - dimensions of a 3D object</a></h2>
+<p>A rectangular box has a length, a width, and a height. These dimensions can be stored together in a <code>tuple</code>. The code below also demonstrates how to pass a <code>tuple</code> to a function, including how to define the type of the parameter. The function can access the individual values within the <code>tuple</code>. In <code>main()</code> below, two tuples are defined. Then the <code>volume()</code> function is called with each of them, and the value is output, rounded to two decimal places.</p>
+<table>
+<tr>
+<td nowrap>
+<pre><code class="language-python">def volume(dimensions: tuple[float, float, float])-&gt;float:
+    return dimensions[0]*dimensions[1]*dimensions[2]
+
+def main():
+    box_1 = (2.0, 2.0, 2.0)
+    box_2 = (3.0, 0.8, 1)
+    # calculate the volume of each box, and 
+    # output it to 2 decimal places
+    print(f&quot;Box 1 has volume {volume(box_1):.2f}&quot;)
+    print(f&quot;Box 2 has volume {volume(box_2):.2f}&quot;)    
+          
+main()
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/tuples/boxes.png" alt="Two boxes with visibly different dimensions" class="center", width="250">
+</figure>
+</td>
+</tr>
+</table>
+<h2 id="example-4---playing-cards"><a class="header" href="#example-4---playing-cards">Example 4 - playing cards</a></h2>
+<p>A playing card represents two pieces of information - the card suit and the card value. These are logically paired together in a <code>tuple</code>:</p>
+<table>
+<tr>
+<td>
+<pre><code class="language-python">card  = (“Ace”, “Spades”)
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/tuples/ace_of_spades.png" alt="The Ace of Spades" class="center", width="200">
+</figure>
+</td>
+</tr>
+<tr>
+<td>
+<pre><code class="language-python">hand = [
+    (“Ace”, “Diamonds),
+    (“4”, “Hearts”),
+    (“6”, “Diamonds”),
+    (“3”, “Spades”),
+    (“3”, “Hearts”),
+    (“2”, “Spades”)]
+</code></pre>
+</td>
+<td>
+<figure>
+<img src="img/tuples/poker_hand.png" alt="A poker hand" class="center", width="200">
+</figure>
+</td>
+</tr>
+</table>
+<p>Notice that in this final example we are combining lists and tuples to create a list of tuples. This is called a <em>compound data structure</em>. Compound data structures are commonly used and essential in python.</p>
+<h2 id="putting-it-all-together"><a class="header" href="#putting-it-all-together">Putting it all together</a></h2>
+<p>The code below contains a function that creates a random playing card. A random element from the list of all possible card suits is chosen, as well as a random element from the list of all possible card values. These are each randomly chosen using the <code>random.choice()</code> function. The two are put together into a <code>tuple</code>, which is returned to the caller. While it may feel that the function is returning <em>two</em> values, in fact it is only returning one: a <code>tuple</code> with two elements.</p>
+<pre><code class="language-python">import random
+
+# Here are the constant full list for all possible card suits
+# and all possible card values
+SUITS = [&quot;Spades&quot;, &quot;Hearts&quot;, &quot;Diamonds&quot;, &quot;Clubs&quot;]
+VALUES = [&quot;Ace&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;, 
+          &quot;10&quot;, &quot;Jack&quot;, &quot;Queen&quot;, &quot;King&quot;]
+
+# Create a random card by randomly choosing from the list of all
+# possible card suits and all possible card values. Then combine
+# into a tuple and return it. Notice the type hinting for the 
+# function return type
+def random_card()-&gt;tuple[str, str]:
+    random_suit = random.choice(SUITS)
+    random_value = random.choice(VALUES)
+    return (random_value, random_suit)
+
+def main():
+    # random_card() returns a tuple
+    card = random_card()
+    print(card) # outputs &quot;(7, diamonds)&quot;, for example
+
+main()
+</code></pre>
+<h2 id="differences-and-similarities-between-tuple-and-list"><a class="header" href="#differences-and-similarities-between-tuple-and-list">Differences and similarities between <code>tuple</code> and <code>list</code></a></h2>
+<p>In python, <code>tuple</code>s and <code>list</code>s have these things in common:</p>
+<ul>
+<li>They are ordered.</li>
+<li>You can access individual elements using an index in square brackets</li>
+<li>You can iterate through the individual elements in order (either with an index-based loop or a content-based loop).</li>
+<li>They can be sliced.</li>
+</ul>
+<p>But <code>tuple</code>s and <code>list</code>s differ in the following ways:</p>
+<ul>
+<li>Define a <code>list</code> using <code>[]</code>, and define a <code>tuple</code> using <code>()</code></li>
+<li><code>tuple</code>s are immutable, while <code>list</code>s are mutable.</li>
+</ul>
+<p>Use a <code>list</code> and not a <code>tuple</code> in this situation:</p>
+<ul>
+<li>Use a <code>list</code> when you expect the contents of your data to change while running the program. Tuples are immutable, so once a <code>tuple</code> is created, you can neither change the values of the elements nor add/remove elements without creating a new <code>tuple</code>.</li>
+</ul>
+<p>Use a <code>tuple</code> when:</p>
+<ul>
+<li>Use a <code>tuple</code> when you <em>need</em> your data to be immutable (e.g., we’ll see later that keys for dictionaries must be immutable).</li>
+<li>When you want a function to return two values, you can put the two values into a <code>tuple</code> and return just the <code>tuple</code>.</li>
+<li>If your data is sure not to change during running of the program, using a <code>tuple</code> can avoid a bug created by your program accidentally modifying the contents.</li>
+<li>When it’s possible to use either a <code>list</code> or a <code>tuple</code>, it’s more common to use a <code>tuple</code> for heterogenous data types (the elements within the <code>tuple</code> are of varying types), and to use a <code>list</code> for homogeneous data types (all the elements of the <code>list</code> are of the same type).</li>
+<li>It is more efficient (runs faster) to iterate through a <code>tuple</code> than a <code>list</code>. So if your program is running too slowly, switching to a <code>tuple</code> if possible could improve performance.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="list_mutability.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="draft_pages/data_science.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="list_mutability.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="draft_pages/data_science.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js"></script>
+        <script src="editor.js"></script>
+        <script src="mode-rust.js"></script>
+        <script src="theme-dawn.js"></script>
+        <script src="theme-tomorrow_night.js"></script>
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="js/disable_keyboard.js"></script>
+
+
+    </div>
+    </body>
+</html>
