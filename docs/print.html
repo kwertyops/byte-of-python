@@ -2262,7 +2262,29 @@ if __name__ == '__main__':
 </code></pre>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="a-first-example-of-a-nested-for-loop"><a class="header" href="#a-first-example-of-a-nested-for-loop">A first example of a nested <code>for</code>-loop</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><style>
+    .code-and-image {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: 1px solid whitesmoke;
+        padding: 5px;
+    }
+
+    .code-and-image pre {
+        min-width: 70%;
+        max-width: 440px;
+        flex-grow: 1;
+    }
+
+    .code-and-image img {
+        max-width: 30%;
+        box-sizing: border-box;
+        padding: 7px;
+        align-self: center;
+    }
+</style>
+<h2 id="a-first-example-of-a-nested-for-loop"><a class="header" href="#a-first-example-of-a-nested-for-loop">A first example of a nested <code>for</code>-loop</a></h2>
 <p>Imagine that you want to produce the following output to the console:</p>
 <pre><code>*****
 *****
@@ -2354,29 +2376,17 @@ for row in range(1, 6):
 <h2 id="a-graphical-example-of-nested-for-loops"><a class="header" href="#a-graphical-example-of-nested-for-loops">A graphical example of nested <code>for</code>-loops</a></h2>
 <p>In this example we will create a drawing with a 5x5 grid of circles. This is most easily done with a nested for loop.</p>
 <p>As a first try, see how the following code snippet produces just <strong>one row</strong> of five circles. Within the loop the <code>x</code>-position of the center of the circle is updated, so that each time through the loop, the next circle is draw, with its center shifted to the right.</p>
-<table>
-<tr><td>Code</td><td>Image</td></tr>
-<tr>
-<td nowrap style="display:inline-block; width:450px;">
+<div class="code-and-image">
 <pre><code class="language-python"># This loop loop steps through the columns, so the
 # x position changes, producing 5 circles
 for column in range(5):
     dudraw.circle(x_center,  y_center, radius)
     x_center += 2 * radius
 </code></pre>
-</td>
-<td>
-<figure style="margin: 5px auto;">
-<img src="img/nested_for/one_row_circles.jpg" alt="for loop produces one row of circles" class="center" width="300">
-</figure>
-</td>
-</tr>
-</table>
+<img src="img/nested_for/one_row_circles.jpg" alt="for loop produces one row of circles">
+</div>
 <p>To produce a 5x5 grid of circles, we need to repeat the above block of code 5 times. Thus the code above becomes the inner block of a loop, resulting in a nested block of <code>for</code> statements. After each row has been completed (i.e., after the inner <code>for</code>-loop but inside the outer <code>for</code>-loop), we update the <code>y</code>-center so that the next row of circles is higher up in the image. We also must reset the <code>x</code>-center back to the left side of the image.</p>
-<table>
-<tr><td>Code</td><td>Image</td></tr>
-<tr>
-<td nowrap style="display:inline-block; width:450px;">
+<div class="code-and-image">
 <pre><code class="language-python">import dudraw
 
 # We will draw a 5 by 5 grid of circles
@@ -2407,14 +2417,8 @@ for row in range(5):
 # display until user closes the window
 dudraw.show(float('inf'))
 </code></pre>
-</td>
-<td>
-<figure style="margin: 5px auto;">
 <img src="img/nested_for/circle_grid.jpg" alt="five by five grid of circles" class="center" width="300">
-</figure>
-</tr>
-</td>
-</table>
+</div>
 <p>Trace the code carefully, either by hand or by running the debugger, and confirm that an entire row is drawn before moving to the next higher row. This order of drawing the circles is determined because the outer block updates the row number, while the inner block updates the column number. We take this into account in the code by updating the <code>x_center</code> within the inner <code>for</code>-loop. By restructuring the <code>for</code>-loops, the circles can actually be drawn in a different order. The code below draws an entire column (from bottom up) before traversing to the next column. Note that the renaming of the variable is <strong>not</strong> what effected this change. Instead, it was the updating of <code>y-center</code> in the middle of the inner <code>for</code>-loop. Then, inside the outer loop but outside of the inner loop, the value of <code>y-center</code> is reset to the lower edge and <code>x-center</code> is increased to move to the next column to the right.</p>
 <pre><code class="language-python"># Each circle takes 1/5 of the canvas, and the radius is 1/2 of that
 radius = (1/5)/2
@@ -2459,10 +2463,7 @@ for row in range(5):
 </code></pre>
 <h2 id="using-the-outer-loop-variable-within-the-inner-loop-1"><a class="header" href="#using-the-outer-loop-variable-within-the-inner-loop-1">Using the outer loop variable within the inner loop</a></h2>
 <p>The image we want to produce shown below on the right is a similar grid of circles, but this time the number of circles varies depending on which row we are on. Notice that the rows are created from bottom to top. The code to produce this image is very similar to the original 5x5 grid of circles. The only difference is that the end point of the inner loop (the <code>range()</code> used for the inner <code>for</code>-loop), depends on which row we are on. For row 0 we need 1 circle, for row 1 we need 2 circles, for row 2 we need 3 circles, and so on. Thus the number of circles for each row is given by the formula <code>row + 1</code>. So the only change to the code is to change the inner <code>for</code>-loop to repeat in <code>range(row + 1)</code>.</p>
-<table>
-<tr><td>Code</td><td>Image</td></tr>
-<tr>
-<td nowrap style="display:inline-block; width:450px;">
+<div class="code-and-image">
 <pre><code class="language-python">import dudraw
 
 # We will draw a 5 by 5 grid of circles
@@ -2495,14 +2496,8 @@ for row in range(5):
 # display until user closes the window
 dudraw.show(float('inf'))
 </code></pre>
-</td>
-<td>
-<figure style="margin: 5px auto;">
-<img src="img/nested_for/circle_grid_upperleft.jpg" alt="upper left triangle of circles" class="center" width="300">
-</figure>
-</tr>
-</td>
-</table>
+<img src="img/nested_for/circle_grid_upperleft.jpg" alt="upper left triangle of circles">
+</div>
 <h2 id="the-order-that-the-combination-of-variables-are-executed"><a class="header" href="#the-order-that-the-combination-of-variables-are-executed">The order that the combination of variables are executed</a></h2>
 <p>In the code above, the outer loop runs through all possibilities for rows. The name of the variable <code>row</code> helps us keep track of this, but notice that the value of that variable is not used within the loop. So you must check that how the values of <code>x_center</code> and <code>y_center</code> are incremented matches the fact that each iteration of the outer loop outputs an entire row. Tracing through the loop shows that the range values of the pair <code>row</code> and <code>column</code> occur in the following order:</p>
 <pre><code> row: 0, column: 0
