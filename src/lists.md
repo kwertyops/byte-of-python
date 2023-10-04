@@ -239,3 +239,56 @@ True
 </td>
 </tr>
 </table>
+
+## Practicing creating and traversing lists (index-based and content-based loops)
+
+Here is a code snippet showing the creation of a list, and then a content-based traversal through the list, followed by an index-based traversal through the list:
+
+```python
+from random import random
+# Defining a constant LIST_LENGTH makes for more flexible and clear code
+LIST_LENGTH = 6
+# Generate a list of 6 random numbers
+randos = []
+for i in range(LIST_LENGTH):
+    randos.append(random())
+
+# content-based loop that iterates over all of the
+# previously-generated random numbers, and outputs them
+# to 5 decimale places.
+# The variable randos is the entire list itself.
+# The variable rando takes each value stored in the
+# list, one by one as the loop iterates over the list.
+for rando in randos:
+    print(f"{rando:0.5f}")
+
+# index-based loop that iterates over all of the valid
+# index values for the previously-generated list of
+# random numbers. The variable i takes the values
+# 0, 1, 2, ..., 5
+# It's better programming practice to use len(your_list)
+# rather than a hard-coded number. The variable i stores
+# which element we are on. We output i+1 so that the
+# # user sees the counting from 1-6 rather than 0-5.
+# The expression randos[i] gives the value
+# of the random number stored at that index in the list.
+for i in range(len(randos)):
+    print(f"random number {i+1}: {randos[i]:0.5f}")
+```
+
+A possible output is:
+```
+0.05184
+0.17759
+0.30319
+0.83254
+0.61733
+0.75492
+random number 1: 0.05184
+random number 2: 0.17759
+random number 3: 0.30319
+random number 4: 0.83254
+random number 5: 0.61733
+random number 6: 0.75492
+```
+
