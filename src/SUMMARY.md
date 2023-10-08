@@ -30,21 +30,27 @@
     - [Application - scaled and shifted drawings](shift_scale_drawings.md)
     - [Functions that return a value](function_return_values.md)
 
-- [Lists](lists.md)
+- [Lists and tuples](lists_and_tuples.md)
     - [Introduction to lists](list_intro.md)
     - [List methods](list_methods.md)
     - [Lists and functions](lists_and_functions.md)
     - [List mutability](list_mutability.md)
     - [Tuples](tuples.md)
 
-- [Strings](string_review.md)
-    - [More on pythong Strings](strings.md)
+- [Strings](strings.md)
+    - [Review of strings](string_review.md)
+    - [More on python strings](strings_continued.md)
     - [String methods](string_methods.md)
 
 - [File I/O](file_io.md)
     - [Opening, closing and reading files](file_open_read_close.md)
     - [Writing to files](file_write.md)
     - [Files and exceptions](files_and_exceptions.md)
+
+- [Dictionaries](dictionaries.md)
+    - [Why we use dictionaries](dictionary_intro.md)
+    - [How to use dictionaries](dictionary_basics.md)
+    - [Iterating through dictionaries](dictionary_iteration.md)
 
 ---
 # Extras

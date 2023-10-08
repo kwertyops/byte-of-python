@@ -15,7 +15,7 @@ a_file.flush()
 ```
 When you call `a_file.close()`, the buffer is automatically flushed. So if the text you are writing to a file isn't showing up, check for either a missing all to `flush()` or to `close()`.
 
-# Example
+## Example
 The previous section ended with a program to read from a file and process the data, ending with a list of number of students available for office hours at each hour of the day. We will now extend that program to write the computed results to a file.
 
 ```python

@@ -1,0 +1,4 @@
+## Python lists and tuples
+Lists are a built-in data structure in python. Lists are used to store multiple values that are accessed with a single variable name.  Tuples are also used to store grouped data, but with some key differences in their use and syntax.
+
+Typically the values stored in a list are all of the same type, though python does allow for different types to be stored within the same list. This chapter contains details on creating lists, accessing individual elements in a list, and modifying lists with list methods. The last section is on tuples, and includes key differences between the two types of data structures.
