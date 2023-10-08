@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Opening, closing and reading files - Introduction to Programming</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/pyscript.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="basics.html">Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation.html">Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html">First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html">dudraw Overview</a></li><li class="chapter-item expanded "><a href="functions.html">Introduction to functions</a></li></ol></li><li class="chapter-item expanded "><a href="variables.html">Variables</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html">Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html">Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html">Generating random numbers</a></li></ol></li><li class="chapter-item expanded "><a href="control_flow.html">Control flow - conditional statements</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="boolean_relational_logical.html">Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html">Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html">Nested conditional statements</a></li></ol></li><li class="chapter-item expanded "><a href="control_flow_loops.html">Control flow - iterative statements</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="for_loop.html">for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html">Combining conditionals with loops</a></li><li class="chapter-item expanded "><a href="while.html">while-loops</a></li><li class="chapter-item expanded "><a href="animation.html">Application - animation in dudraw</a></li><li class="chapter-item expanded "><a href="nested_for_loops.html">Nested for-loops</a></li></ol></li><li class="chapter-item expanded "><a href="functions_revisited.html">Functions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functions.html">Re-read the introduction to functions</a></li><li class="chapter-item expanded "><a href="function_parameters.html">Functions that take parameters</a></li><li class="chapter-item expanded "><a href="shift_scale_drawings.html">Application - scaled and shifted drawings</a></li><li class="chapter-item expanded "><a href="function_return_values.html">Functions that return a value</a></li></ol></li><li class="chapter-item expanded "><a href="lists.html">Lists</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_intro.html">Introduction to lists</a></li><li class="chapter-item expanded "><a href="list_methods.html">List methods</a></li><li class="chapter-item expanded "><a href="lists_and_functions.html">Lists and functions</a></li><li class="chapter-item expanded "><a href="list_mutability.html">List mutability</a></li><li class="chapter-item expanded "><a href="tuples.html">Tuples</a></li></ol></li><li class="chapter-item expanded "><a href="string_review.html">Strings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="strings.html">More on pythong Strings</a></li><li class="chapter-item expanded "><a href="string_methods.html">String methods</a></li></ol></li><li class="chapter-item expanded "><a href="file_io.html">File I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="file_open_read_close.html" class="active">Opening, closing and reading files</a></li><li class="chapter-item expanded "><a href="file_write.html">Writing to files</a></li><li class="chapter-item expanded "><a href="files_and_exceptions.html">Files and exceptions</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html">Data Science</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Introduction to Programming</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="opening-files"><a class="header" href="#opening-files">Opening files</a></h2>
+<p>Before reading from a file (input) or writing to a file(output), the program must <em>open</em> the file.</p>
+<p>The <code>open()</code> function returns a file object, which can then be uesd for reading, writing or appending to a file.</p>
+<pre><code class="language-python">some_file = open('&lt;path/file_name&gt;'), mode  = &lt;'string'&gt;')
+</code></pre>
+<p>If the file we're trying to open is in the same directory (folder) as the program we're running, then <code>file_name.extension</code> is sufficient. If the file is stored somewhere else in the file system, then we specify a full path to the file.</p>
+<p>Modes:
+| Mode      | Name | Details |
+| --------- | ---- |---------|
+| <code>'r'</code>      | Read | Fails if the file doesn't exist (<code>'r'</code> is the default if the mode is unspecified')|
+| <code>'w'</code>      | Write | File is created if it doesn't exist. Overwrites existing content if the file already exists. |
+| <code>'a'</code>      | Append | File is created if it doesn't exist. Adds to the end of existing file.|
+| <code>'r+'</code>      | Read/write | Open file for reading and writing. Fails if the file doesn't exist.|
+| <code>'w+'</code>      | Write/read | Writing and reading. Overwrites existing content if the file already exists.|
+| <code>'a+'</code>      | Append/read | Open file for reading and appending, create file if it doesn't exist.|</p>
+<h2 id="reading-from-a-text-file"><a class="header" href="#reading-from-a-text-file">Reading from a text file</a></h2>
+<p>There are multiple ways to read text data from a file. These examples assume that the file object <code>some_file</code> has already been opened.</p>
+<ul>
+<li>
+<p>Read the entire contents of the file into one string:</p>
+<pre><code class="language-python">giant_string = some_file.read()`
+</code></pre>
+</li>
+<li>
+<p>Read the file into a <code>list</code> of lines. The contents are broken at each <code>\n</code> in the file, and <code>lines_list</code> is a list of strings:</p>
+<pre><code class="language-python">lines_list = some_file.readlines()
+</code></pre>
+</li>
+<li>
+<p>Read the lines with a loop:</p>
+<pre><code class="language-python">for line in some_file:
+    # The variable line (type str) contains the next line in the file
+    # Code to process each line goes here
+    # You might need to strip the terminating '\n' from each line
+    # There might be final empty lines of just '\n'
+</code></pre>
+</li>
+<li>
+<p>Use a context manager, which combines opening/reading/closing within one organized block. This makes for more readable and organized code and is the preferred technique.</p>
+<pre><code class="language-python">with open(...) as some_file:
+    # All code involving the file `some_file` goes here
+# No need to close file, it is closed automatically at end of indented block
+</code></pre>
+</li>
+</ul>
+<h2 id="closing-files"><a class="header" href="#closing-files">Closing files</a></h2>
+<p>When done reading a file, unless you are using a context manager, always close the file object by calling its <code>close()</code> method:</p>
+<pre><code class="language-python">some_file.close()
+</code></pre>
+<p>If you don't make a practice of this, you are tying up memory resources. This problem typically doesn't show up until you write larger programs. If you leave too many files unclosed, then your program could slow down or even crash.</p>
+<p>Once you call <code>close()</code>, you can no longer read from that file.</p>
+<h2 id="reading-from-files-without-context-manager-versus-with-context-manager"><a class="header" href="#reading-from-files-without-context-manager-versus-with-context-manager">Reading from files without context manager versus with context manager</a></h2>
+<table>
+<tr><td>No context manager:</td><td>With context manager:</td></tr>
+<tr>
+<td nowrap>
+<pre><code class="language-python">a_file = open('foo.txt', 'r')
+
+for line in a_file:
+    # process line
+
+a_file.close()
+</code></pre>
+</td>
+<td nowrap>
+<pre><code class="language-python">with open('foo.txt', 'r') as a_file:
+    for line in a_file:
+        # process line
+# file is closed automatically
+</code></pre>
+</td>
+</tr>
+</table>
+<h2 id="putting-it-all-together"><a class="header" href="#putting-it-all-together">Putting it all together</a></h2>
+<p>The code snippets below open a file called <code>names.txt</code> that is stored in a directory (folder) called <code>data_files</code>. It contains a comma-separated list of names.</p>
+<p>In this example, the entire contents of the file are stored in one string.</p>
+<pre><code class="language-python"># open the file names.txt, which is stored in a directory called
+# data_files within this working directory. This is a relative path.
+a_file = open(&quot;data_files/names.txt&quot;)
+# Read the entire contents of the file into one string
+giant_string = a_file.read()
+# output the entire contents of the file
+print(giant_string)
+a_file.close()
+</code></pre>
+<p>The output is </p>
+<pre><code>Janis Joplin,Aretha Franklin,Pat Benatar,Deborah Harry,Tina Turner,Joan Jett,Stevie Nicks,Melissa Etheridge,Grace Slick,Courtney Love
+</code></pre>
+<p>In this code snippet, the contents of the file are split into a list of separate strings.</p>
+<pre><code class="language-python">a_file = open(&quot;data_files/names.txt&quot;)
+# Read the entire contents of the file into one string, then process that
+# list by stripping whitespace from the beginning and end of the string.
+# The names are separated by commas, so split them at each comma
+# into separate strings
+name_list = a_file.read().strip().split(&quot;,&quot;)
+# output the list of names
+print(name_list)
+
+# or output the names one at a time:
+for name in name_list:
+    print(name)
+a_file.close()
+</code></pre>
+<p>The output for <code>print(name_list)</code> is:</p>
+<pre><code>['Janis Joplin', 'Aretha Franklin', 'Pat Benatar', 'Deborah Harry', 'Tina Turner', 'Joan Jett', 'Stevie Nicks', 'Melissa Etheridge', 'Grace Slick', 'Courtney Love']
+</code></pre>
+<p>The output for the for loop is:</p>
+<pre><code>Janis Joplin
+Aretha Franklin
+Pat Benatar
+Deborah Harry
+Tina Turner
+Joan Jett
+Stevie Nicks
+Melissa Etheridge
+Grace Slick
+Courtney Love
+</code></pre>
+<p>The following code snippet shows how to use a context manager to open and read the same file.</p>
+<pre><code class="language-python"># Use a context manager to open and read the file
+with open(&quot;data_files/names.txt&quot;) as a_file:
+# Read the entire contents of the file into one string
+    names_list = a_file.read().strip().split(&quot;,&quot;)
+
+# Use loop to output names:
+for name in names_list:
+    print(name)
+</code></pre>
+<h2 id="processing-multi-line-files"><a class="header" href="#processing-multi-line-files">Processing multi-line files</a></h2>
+<p>The following shows the contents of a file <code>OH_prefs.csv</code>. This file contains the data for each student of which office hours they are available for.</p>
+<pre><code>Student name,8AM,9AM,10AM,11AM,12PM,1PM,2PM,3PM,4PM,5PM
+Janis Joplin,Y,Y,Y,Y,Y,N,Y,N,Y,Y
+Aretha Franklin,Y,Y,Y,Y,Y,N,N,Y,N,Y,Y
+Pat Benatar,Y,Y,Y,Y,N,N,Y,N,Y,Y
+Deborah Harry,Y,N,Y,Y,N,Y,Y,Y,Y,N
+Tina Turner,Y,Y,Y,Y,N,Y,Y,Y,Y,Y
+Joan Jett,Y,Y,Y,N,Y,Y,N,Y,N,N
+Stevie Nicks,N,Y,Y,Y,Y,Y,N,Y,N,N
+Melissa Etheridge,N,N,Y,Y,N,N,Y,N,N,N
+Grace Slick,N,N,N,N,N,Y,Y,N,Y,Y
+Courtney Love,N,Y,N,N,N,N,Y,N,Y,N
+</code></pre>
+<p>Our goal is to read this file and transform it into a list of counts for how many students are available at each office hour. Please use this exercise to practice reading from a file, using lists, as well as algorithmic thinking.</p>
+<pre><code class="language-python">def get_oh_prefs(file_name: str)-&gt;list[int]:
+    &quot;&quot;&quot;
+    read contents of file file_name and returns a list that contains
+    the number of students available at each hour of the day
+
+    parameters:
+        filename: file to read (type: str)
+    return:
+        count of number of students available at each hour (type: list[int])
+    &quot;&quot;&quot;
+
+    # Create a list, initialized with 10 0's
+    hours_prefs = []
+    for i in range(10):
+        hours_prefs.append(0)
+
+    # read the file
+    with open(file_name, 'r') as a_file:
+        # Each line in the file corresponds to one student
+        for line in a_file:
+            # student_prefs will contain 'Y's and 'N's
+            student_prefs = line.strip().split(&quot;,&quot;)
+            # ignore the first entry in the line, which is the name
+            for i in range(1,len(student_prefs)):
+                # If they said 'Y', then count them for this time of day
+                if student_prefs[i] == 'Y':
+                    # Remember that i=0 is the  name
+                    hours_prefs[i-1] += 1
+    return hours_prefs
+
+def main():
+   hours_list = get_oh_prefs('data_files/OH_prefs.csv')
+   print(hours_list)
+
+# Run the program:
+if __name__ == '__main__':
+    main()
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="file_io.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="file_write.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="file_io.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="file_write.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js"></script>
+        <script src="editor.js"></script>
+        <script src="mode-rust.js"></script>
+        <script src="theme-dawn.js"></script>
+        <script src="theme-tomorrow_night.js"></script>
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="js/disable_keyboard.js"></script>
+
+
+    </div>
+    </body>
+</html>

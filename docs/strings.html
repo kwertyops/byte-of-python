@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>More on pythong Strings - Introduction to Programming</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/pyscript.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="basics.html">Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation.html">Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html">First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html">dudraw Overview</a></li><li class="chapter-item expanded "><a href="functions.html">Introduction to functions</a></li></ol></li><li class="chapter-item expanded "><a href="variables.html">Variables</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html">Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html">Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html">Generating random numbers</a></li></ol></li><li class="chapter-item expanded "><a href="control_flow.html">Control flow - conditional statements</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="boolean_relational_logical.html">Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html">Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html">Nested conditional statements</a></li></ol></li><li class="chapter-item expanded "><a href="control_flow_loops.html">Control flow - iterative statements</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="for_loop.html">for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html">Combining conditionals with loops</a></li><li class="chapter-item expanded "><a href="while.html">while-loops</a></li><li class="chapter-item expanded "><a href="animation.html">Application - animation in dudraw</a></li><li class="chapter-item expanded "><a href="nested_for_loops.html">Nested for-loops</a></li></ol></li><li class="chapter-item expanded "><a href="functions_revisited.html">Functions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functions.html">Re-read the introduction to functions</a></li><li class="chapter-item expanded "><a href="function_parameters.html">Functions that take parameters</a></li><li class="chapter-item expanded "><a href="shift_scale_drawings.html">Application - scaled and shifted drawings</a></li><li class="chapter-item expanded "><a href="function_return_values.html">Functions that return a value</a></li></ol></li><li class="chapter-item expanded "><a href="lists.html">Lists</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_intro.html">Introduction to lists</a></li><li class="chapter-item expanded "><a href="list_methods.html">List methods</a></li><li class="chapter-item expanded "><a href="lists_and_functions.html">Lists and functions</a></li><li class="chapter-item expanded "><a href="list_mutability.html">List mutability</a></li><li class="chapter-item expanded "><a href="tuples.html">Tuples</a></li></ol></li><li class="chapter-item expanded "><a href="string_review.html">Strings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="strings.html" class="active">More on pythong Strings</a></li><li class="chapter-item expanded "><a href="string_methods.html">String methods</a></li></ol></li><li class="chapter-item expanded "><a href="file_io.html">File I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="file_open_read_close.html">Opening, closing and reading files</a></li><li class="chapter-item expanded "><a href="file_write.html">Writing to files</a></li><li class="chapter-item expanded "><a href="files_and_exceptions.html">Files and exceptions</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html">Data Science</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Introduction to Programming</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>This section contains some new information about using python strings.</p>
+<h2 id="arithmetic-on-strings"><a class="header" href="#arithmetic-on-strings">&quot;Arithmetic&quot; on strings</a></h2>
+<p>You've seen the <code>+</code> concatenation operator, which  naturally can be extended to the <code>+=</code> shorthand operator.</p>
+<pre><code class="language-python">name = &quot;Iron&quot;
+# Concatenate &quot;Man&quot; to end of &quot;Iron&quot;, reassigning to name:
+name += &quot;Man&quot;  #name now stores &quot;IronMan&quot;
+# Convert int 3 to string &quot;3&quot;, concatenate to end of &quot;IronMan&quot;, reassigning to name:
+name += str(3)
+print(name) # outputs IronMan3
+</code></pre>
+<p>An uncommonly-used but cute feature of python is multiplying a string by an integer. This results in the string being repeated multiple times.</p>
+<pre><code class="language-python">print(&quot;Hello!&quot;*5)
+</code></pre>
+<p>outputs</p>
+<pre><code>Hello!Hello!Hello!Hello!Hello!
+</code></pre>
+<h2 id="accessing-individual-elements-of-strings"><a class="header" href="#accessing-individual-elements-of-strings">Accessing individual elements of strings</a></h2>
+<p>Many of the operations you've learned on lists also work on strings (and some do not).</p>
+<p>The <code>len()</code> function returns the number of characters in a string.</p>
+<pre><code class="language-python">greeting = &quot;Welcome to the wonderful world of strings.&quot;
+print(len(greeting))  # outputs 42, the number of characters in greeting
+</code></pre>
+<p>Just like lists, strings are ordered. So we can use an index to access individual characters in a string. Similarly, they can be sliced.</p>
+<pre><code class="language-python">greeting = &quot;Welcome to the wonderful world of strings.&quot;
+print(greeting[0])   # outputs the first character, &quot;W&quot;
+print(greeting[-1])  # outputs the last character, &quot;.&quot;
+print(greeting[:10]) # outputs first 10 characters, &quot;Welcome to&quot;
+print(greeting[-5:]) # outputs from 5th to last up to last, &quot;ings.&quot;
+</code></pre>
+<h1 id="iterating-over-the-characters-in-a-string-for-loops"><a class="header" href="#iterating-over-the-characters-in-a-string-for-loops">Iterating over the characters in a string (<code>for</code>-loops)</a></h1>
+<p>You can use a for loop to traverse the characters in a string, either by iterating over the index values, or iterating over the characters themselves.</p>
+<p>Here's an index-based loop that counts the number of <code>&quot;o&quot;</code>s in the string:</p>
+<pre><code class="language-python">count = 0  # initial value, zero o's
+# iterate over all index values. i ranges from 0 to 41
+for i in range(len(greeting)):
+    # greetings[i] is the next character in the string
+    if greeting[i] == &quot;o&quot;:
+        # if the current character is an &quot;o&quot;, count it
+        count += 1
+# output the formatted result
+print(f&quot;Number of o's in the greeting is {count}.&quot;)
+</code></pre>
+<p>The code below is the content-based version of the same code. This time the variable <code>character</code> iterates over each character in the greeting, starting from <code>W</code> and ending with <code>.</code>, the last character. The variable <code>character</code> takes the value of each character in turn, so we don't need worry about the length of the string, nor keep track of the value of the index.</p>
+<pre><code class="language-python">count = 0  # initial value, zero o's
+# iterate over all characters, from &quot;W&quot; to &quot;.&quot;
+for character in greeting:
+    # character is the next character in the string
+    if character == &quot;o&quot;:
+        # if the current character is an &quot;o&quot;, count it
+        count += 1
+# output the formatted result
+print(f&quot;Number of o's in the greeting is {count}.&quot;)
+</code></pre>
+<h1 id="strings-are-immutable"><a class="header" href="#strings-are-immutable">Strings are immutable</a></h1>
+<p>Unlike lists, strings are immutable. This means their contents cannot be changed. While I can access an individual character in a string with an index in square brackets, attempting to modify an individual character fails with a <code>TypeError</code></p>
+<pre><code class="language-python">greeting = &quot;Welcome to the wonderful world of strings.&quot;
+greeting[0] = 'V'
+</code></pre>
+<p>outputs</p>
+<pre><code>TypeError: 'str' object does not support item assignment
+</code></pre>
+<p>This doesn't mean that the value stored in a variable can't be changed. But because of the immutability of strings, we must re-assign a new string to the variable, rather than changing the contents of the string itself. Here's one possible way to do this:</p>
+<pre><code class="language-python">greeting = &quot;Welcome to the wonderful world of strings.&quot;
+# Build an entirely new string, starting with &quot;V&quot;, then concatenating all but the first character of the original
+greeting = &quot;V&quot; + greeting[1:] 
+print(greeting)
+</code></pre>
+<p>outputs</p>
+<pre><code>Velcome to the wonderful world of strings.
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="string_review.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="string_methods.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="string_review.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="string_methods.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js"></script>
+        <script src="editor.js"></script>
+        <script src="mode-rust.js"></script>
+        <script src="theme-dawn.js"></script>
+        <script src="theme-tomorrow_night.js"></script>
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="js/disable_keyboard.js"></script>
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>String methods - Introduction to Programming</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/pyscript.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="basics.html">Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation.html">Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html">First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html">dudraw Overview</a></li><li class="chapter-item expanded "><a href="functions.html">Introduction to functions</a></li></ol></li><li class="chapter-item expanded "><a href="variables.html">Variables</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html">Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html">Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html">Generating random numbers</a></li></ol></li><li class="chapter-item expanded "><a href="control_flow.html">Control flow - conditional statements</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="boolean_relational_logical.html">Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html">Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html">Nested conditional statements</a></li></ol></li><li class="chapter-item expanded "><a href="control_flow_loops.html">Control flow - iterative statements</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="for_loop.html">for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html">Combining conditionals with loops</a></li><li class="chapter-item expanded "><a href="while.html">while-loops</a></li><li class="chapter-item expanded "><a href="animation.html">Application - animation in dudraw</a></li><li class="chapter-item expanded "><a href="nested_for_loops.html">Nested for-loops</a></li></ol></li><li class="chapter-item expanded "><a href="functions_revisited.html">Functions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functions.html">Re-read the introduction to functions</a></li><li class="chapter-item expanded "><a href="function_parameters.html">Functions that take parameters</a></li><li class="chapter-item expanded "><a href="shift_scale_drawings.html">Application - scaled and shifted drawings</a></li><li class="chapter-item expanded "><a href="function_return_values.html">Functions that return a value</a></li></ol></li><li class="chapter-item expanded "><a href="lists.html">Lists</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_intro.html">Introduction to lists</a></li><li class="chapter-item expanded "><a href="list_methods.html">List methods</a></li><li class="chapter-item expanded "><a href="lists_and_functions.html">Lists and functions</a></li><li class="chapter-item expanded "><a href="list_mutability.html">List mutability</a></li><li class="chapter-item expanded "><a href="tuples.html">Tuples</a></li></ol></li><li class="chapter-item expanded "><a href="string_review.html">Strings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="strings.html">More on pythong Strings</a></li><li class="chapter-item expanded "><a href="string_methods.html" class="active">String methods</a></li></ol></li><li class="chapter-item expanded "><a href="file_io.html">File I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="file_open_read_close.html">Opening, closing and reading files</a></li><li class="chapter-item expanded "><a href="file_write.html">Writing to files</a></li><li class="chapter-item expanded "><a href="files_and_exceptions.html">Files and exceptions</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html">Data Science</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Introduction to Programming</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="string-methods"><a class="header" href="#string-methods">String methods</a></h2>
+<p>In python, strings come with many built-in methods that allow us to examine and compute results about text. A <em>string method</em> is a special kind of function that is executed on a specific string.
+Execute a string method with the syntax <code>your_string.method_name()</code>.  We will learn just a few of the many available string methods. </p>
+<h2 id="documentation"><a class="header" href="#documentation">Documentation</a></h2>
+<p>The full details of the entire list of string methods is not something people typically memorize. Instead you are encouraged to look up the details when you need them. The full list can be found at <a href="https://www.w3schools.com/python/python_ref_string.asp">Python string documentation by w3schools</a> or <a href="https://www.w3schools.com/python/python_ref_string.asp">Offical python documentation on string methods</a>. While there are many options for free on-line tutorials and helpful documentation, note that often in the interest of brevity they contain small inaccuracies. See the official documentation for the final accurate word on all details.</p>
+<h2 id="summary-of-a-few-string-methods"><a class="header" href="#summary-of-a-few-string-methods">Summary of a few string methods</a></h2>
+<p>Here is the list methods you'll learn:</p>
+<ul>
+<li>boolean informational methods: <code>islower()</code>, <code>isupper()</code>, and <code>endswith()</code></li>
+<li>methods for creating a modified copy: <code>lower()</code>, <code>upper()</code>, <code>replace()</code> and <code>rstrip()</code> (each return a new modified string, leaving the original string unchanged)</li>
+<li>informational methods for searching within strings: <code>index()</code>, <code>find()</code>, <code>count()</code>, and the <code>in</code> keyword</li>
+<li>break the string into parts: <code>split()</code></li>
+</ul>
+<p>Here is how to use these methods.</p>
+<ul>
+<li> 
+<p><code>islower()-&gt;bool</code> and <code>isupper()-&gt;bool</code></p>
+<p>The call  <code>your_string.islower()</code> returns <code>True</code> if the letters in <code>your_string</code> are only lower-case, <code>False</code> otherwise. Similarly, <code>your_string.isupper()</code> returns <code>True</code> if the letters in <code>your_string</code> are all upper case, <code>False</code> otherwise.</p>
+<pre><code class="language-python">quote = 'These are not the droids you are looking for.'
+if quote.islower():
+    print(&quot;The quote is all lower case&quot;)
+else:
+    print(&quot;The quote is not all lower case&quot;)  # this gets output
+movie_name = &quot;ET&quot;
+if movie_name.isupper():
+    print(&quot;The movie name is all upper case&quot;) # this gets output
+else:
+    print(&quot;The movie name is not all upper case&quot;)
+</code></pre>
+</li>
+<li> 
+<p><code>lower()-&gt;str</code> and <code>upper()-&gt;str</code></p>
+<p>The call <code>your_string.lower()</code> returns a new string in which all letters are converted to lower case. The original string is not modified. Similarly, <code>your_string.upper()</code> returns a new string in which all letters are converted to upper case, leaving the original string unchanged. Note that non-letters are unaffected (digits, spaces, punctuation, special characters are <em>uncased</em>, they do not have two versions, and are unchanged by these methods).</p>
+<pre><code class="language-python">names = &quot;R2D2 and C3PO&quot;
+print(names.upper()) # outputs &quot;R2D2 AND C3PO&quot;
+print(names.lower()) # outputs &quot;r2d2 and c3po&quot;
+print(names)         # outputs &quot;R2D2 and C3PO&quot;, the original unchanged string
+</code></pre>
+<p>If you want the value stored in the variable to be converted, then you  must re-assign it to the value returned by the method. For example</p>
+<pre><code class="language-python">names = &quot;R2D2 and C3PO&quot;
+names = names.upper()
+print(names) # outputs &quot;R2D2 AND C3PO&quot; because the value of names was changed by the reassignment
+</code></pre>
+</li>
+<li>
+<p><code>endswith()-&gt;bool</code></p>
+<p>A call to <code>your_string.endswith(pattern)</code> checks to see if the end of <code>your_string</code> matches the string <code>pattern</code>, returning <code>True</code> if so, and <code>False</code> otherwise.</p>
+<pre><code class="language-python">filename = input(&quot;Enter the filename of your program: &quot;)
+if not filename.endswith(&quot;.py&quot;):
+    print(f&quot;Error: {filename} is not a python program.&quot;)
+</code></pre>
+<p>Sample output:</p>
+<pre><code>Enter the filename of your program: pacman.java
+Error: pacman.java is not a python program.
+</code></pre>
+</li>
+<li>
+<p><code>index(sub: str)-&gt;int</code></p>
+<p>This method is analogous to the <code>index()</code> method for lists. The call <code>your_string.index(sub)</code> finds and returns the index of the first location where the string <code>sub</code> appears as a substring of <code>your_string</code>. If the string <code>sub</code> does not appear at all in the string, then the program crashes with a <code>ValueError</code></p>
+<pre><code class="language-python">poem = 'Roses are red, violets are blue'
+print(poem.index('red'))   # outputs 10, since 'red' appears at index 10
+print(poem.index('green')) # crashes with a ValueError: substring not found
+</code></pre>
+<p>The <code>index()</code> method also allows you to specify an optional <code>int</code> as a second parameter. This parameter represents the index in the string where you want to start the search:</p>
+<pre><code class="language-python">text = &quot;XXXXXHello, Xiomara!&quot;
+print(text.index('X'))     # output 0, first 'X' as at index 0
+print(text.index('X', 4))  # outputs 4, starting at index 4, first 'X' is at index 4
+print(text.index('X', 5))  # outputs 12, starting at index 5, first 'X' is at index 12
+</code></pre>
+<li>
+<p><code>find(sub: str)-&gt;int</code></p>
+<p>Similar to <code>index()</code>, <code>find()</code> finds and returns the index of the first location where the string <code>sub</code> is found in <code>your_string</code>. But for <code>find()</code>, if <code>sub</code> does not appear at all in the string then <code>-1</code> is returned, rather than throwing a <code>ValueError</code>. It also accepts an optional second parameter to use as the start index. For example:</p>
+<pre><code class="language-python">poem = 'Roses are red, violets are blue'
+print(poem.find('are'))     # outputs 6, since 'are' appears at index 6
+print(poem.find('are', 10)) # outputs 23, the first location of 'are' after index 10
+print(poem.find('green'))   # outputs -1, since 'green' does not appear in poem
+</code></pre>
+<p>The <code>find()</code> is method is specific to strings - there is no <code>find()</code> method for lists.</p>
+</li>
+<li> 
+<p>The membership operators <code>in</code> and <code>not in</code></p>
+<p>Like in lists, you can use the <code>in</code> and <code>not in</code> keywords to determine if a string appears as a substring in another string. For example:</p>
+<ul>
+<li>the boolean expression <code>'them' in 'Chrysanthemum'</code> evalutes to <code>True</code></li>
+<li>the boolean expression <code>'i' not in 'team'</code> evalutes to <code>True</code></li>
+</ul>
+<p>Note that <code>in</code> and <code>not in</code> are <em>not methods</em>, so you do not call them with the familiar <code>your_string.method()</code> syntax.</p>
+</li>
+<li>
+<p><code>string.count(sub: str)-&gt;int</code></p>
+<p>This method is analogous to the <code>count()</code> method for lists. The call <code>your_string.count(sub)</code> returns the number of times that the substring <code>sub</code> appears in <code>your_string</code>. An optional <code>int</code> parameter gives a start index to begin the search.</p>
+<pre><code class="language-python">poem = 'Roses are red, violets are blue'
+print(poem.count('night'))   # outputs 0, since 'night' does not appear in the string
+print(poem.count('are'))     # outputs 2, since 'are' appears twice in poem
+print(poem.count('are', 10)) # outputs 1, since starting at index 10, 'are' appears once
+</code></pre>
+</li>
+<li>
+<p><code>replace(old: str, new: str)-&gt;str</code></p>
+<p>The call <code>your_string.replace(old, new)</code> produces a new string with every occurence of the substring <code>old</code> replaced with <code>new</code>. The new string is returned, and <code>your_string</code> is unchanged. An optional 3rd <code>int</code> parameter gives the <em>number</em> of replacements to make.</p>
+<pre><code class="language-python">poem = 'Roses are red, violets are blue'
+print(poem.replace('are', 'shine'))  # outputs 'Roses shine red, violets shine blue'
+print(poem.replace('are', 'shine', 1)) # outputs 'Roses shine red, violets are blue'
+print(poem) # outputs 'Roses are red, violets are blue', since poem is unchanged
+</code></pre>
+</li>
+<li>
+<p><code>rstrip()-&gt;str</code></p>
+<p>The call <code>your_string.rstrip()</code> returns a new string with all whitespace at the end of the string removed. Think of it as <em>right strip</em>. (technical detail: whitespace in python includes spaces, tabs, newlines, vertical tabs, line feeds and carriage returns). Note that <code>your_string</code> is not modified. You can optionally pass a <code>str</code> parameter to <code>rstrip()</code> to specify a different list of characters to strip from the right end of <code>your_string</code>. Also, there are analogous methods <code>lstrip()</code> and <code>strip()</code>. See the documentation for additional details.</p>
+<p>This method will be very important when we read from files, since we will often want to remove newlines from the end of each line we read.</p>
+<pre><code class="language-python">movie_quote = &quot;What is the airspeed velocity of an unladen swallow?  \n&quot;
+print(len(movie_quote))   # outputs 55, the number of characters in the string
+# The next line makes a copy of the quote, with the '  \n' stripped off,
+# then reassigns movie_quote to refer to the new string
+movie_quote = movie_quote.rstrip() 
+# On the next line, you will be able to see that the newline is gone,
+# (though you won't be able to tell on the console that the spaces are missing)
+print(movie_quote)
+# The next line outputs 52, proving that the last three characters are gone
+print(len(movie_quote))
+</code></pre>
+</li>
+<li>
+<p><code>split()-&gt;list[str]</code></p>
+<p>The call <code>your_string.split()</code> returns a list of substrings. By default, the list is split at whitespace characters (and the whitespace is removed). So you can think of this method as a way to split a sentence into words. Note that the return value is not a string, but it is a list of strings!</p>
+<pre><code class="language-python">movie_quote = &quot;What is the airspeed velocity\nof an unladen swallow?&quot;
+words = movie_quote.split()
+print(words)
+print(len(words)) # Number of elements in returned list = number of words in original string
+</code></pre>
+<p>Output:</p>
+<pre><code>['What', 'is', 'the', 'airspeed', 'velocity', 'of', 'an', 'unladen', 'swallow?']
+9
+</code></pre>
+<p>You can optionally give a parameter to the <code>split()</code> method which is a string containing the character(s) you want to use as the delimeter instead of the default whitespace.</p>
+<pre><code class="language-python"># Split text into substrings, assuming they are separated by commas
+states = &quot;Alabama,Alaska,Arizona,Arkansas&quot;
+state_list = states.split(&quot;,&quot;) # Use a comma delimeter
+print(state_list) # outputs ['Alabama', 'Alaska', 'Arizona', 'Arkansas']
+
+# Split text into a list of lines
+text = 'Line 1\nLine2\nLine3'
+lines = text.split('\n') # Use a newline delimeter
+print(lines) # outputs ['Line 1', 'Line2', 'Line3']
+</code></pre>
+</li>
+</ul>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="strings.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="file_io.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="strings.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="file_io.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js"></script>
+        <script src="editor.js"></script>
+        <script src="mode-rust.js"></script>
+        <script src="theme-dawn.js"></script>
+        <script src="theme-tomorrow_night.js"></script>
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="js/disable_keyboard.js"></script>
+
+
+    </div>
+    </body>
+</html>
