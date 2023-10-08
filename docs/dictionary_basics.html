@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>How to use dictionaries - Introduction to Programming</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="css/pyscript.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="basics.html">Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation.html">Python, VSCode, and dudraw Installation</a></li><li class="chapter-item expanded "><a href="hello.html">First Program</a></li><li class="chapter-item expanded "><a href="dudraw_quickstart.html">dudraw Overview</a></li><li class="chapter-item expanded "><a href="functions.html">Introduction to functions</a></li></ol></li><li class="chapter-item expanded "><a href="variables.html">Variables</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="variables_assignment_types_arithmetic.html">Variables, Assignment, Types and Arithmetic</a></li><li class="chapter-item expanded "><a href="user_input_and_output.html">Output and input using print() and input()</a></li><li class="chapter-item expanded "><a href="random_numbers.html">Generating random numbers</a></li></ol></li><li class="chapter-item expanded "><a href="control_flow.html">Control flow - conditional statements</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="boolean_relational_logical.html">Boolean, relational and logical operators</a></li><li class="chapter-item expanded "><a href="conditional_statements.html">Conditional statements</a></li><li class="chapter-item expanded "><a href="nested_conditionals.html">Nested conditional statements</a></li></ol></li><li class="chapter-item expanded "><a href="control_flow_loops.html">Control flow - iterative statements</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="for_loop.html">for-loops</a></li><li class="chapter-item expanded "><a href="nesting_conditionals_and_loops.html">Combining conditionals with loops</a></li><li class="chapter-item expanded "><a href="while.html">while-loops</a></li><li class="chapter-item expanded "><a href="animation.html">Application - animation in dudraw</a></li><li class="chapter-item expanded "><a href="nested_for_loops.html">Nested for-loops</a></li></ol></li><li class="chapter-item expanded "><a href="functions_revisited.html">Functions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="functions.html">Re-read the introduction to functions</a></li><li class="chapter-item expanded "><a href="function_parameters.html">Functions that take parameters</a></li><li class="chapter-item expanded "><a href="shift_scale_drawings.html">Application - scaled and shifted drawings</a></li><li class="chapter-item expanded "><a href="function_return_values.html">Functions that return a value</a></li></ol></li><li class="chapter-item expanded "><a href="lists_and_tuples.html">Lists and tuples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="list_intro.html">Introduction to lists</a></li><li class="chapter-item expanded "><a href="list_methods.html">List methods</a></li><li class="chapter-item expanded "><a href="lists_and_functions.html">Lists and functions</a></li><li class="chapter-item expanded "><a href="list_mutability.html">List mutability</a></li><li class="chapter-item expanded "><a href="tuples.html">Tuples</a></li></ol></li><li class="chapter-item expanded "><a href="strings.html">Strings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="string_review.html">Review of strings</a></li><li class="chapter-item expanded "><a href="strings_continued.html">More on python strings</a></li><li class="chapter-item expanded "><a href="string_methods.html">String methods</a></li></ol></li><li class="chapter-item expanded "><a href="file_io.html">File I/O</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="file_open_read_close.html">Opening, closing and reading files</a></li><li class="chapter-item expanded "><a href="file_write.html">Writing to files</a></li><li class="chapter-item expanded "><a href="files_and_exceptions.html">Files and exceptions</a></li></ol></li><li class="chapter-item expanded "><a href="dictionaries.html">Dictionaries</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dictionary_intro.html">Why we use dictionaries</a></li><li class="chapter-item expanded "><a href="dictionary_basics.html" class="active">How to use dictionaries</a></li><li class="chapter-item expanded "><a href="dictionary_iteration.html">Iterating through dictionaries</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Extras</li><li class="chapter-item expanded "><a href="draft_pages/data_science.html">Data Science</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Introduction to Programming</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="creating-dictionaries-in-python"><a class="header" href="#creating-dictionaries-in-python">Creating dictionaries in python</a></h2>
+<p>A dictionary is a collection of key/value pairs. The keys must be unique, and must be of an <em>immutable</em> type (such as <code>int</code>, <code>str</code>, <code>float</code>, <code>tuple</code>, but <em>not</em> <code>list</code>). The dictionary itself <em>is</em> mutable.</p>
+<p>One way to define a dictionary in python is to use a <em>dictionary literal</em>. We list the items separated by commas, and surround the list with curly brackets <code>{}</code>. Each item is defined as <code>key:value</code>. For example, here's a dictionary that stores phone numbers associated with each unique name:</p>
+<pre><code class="language-python">phonebook = {'Jane': '213-665-1234', 
+             'Milagros': '720-933-5418', 
+             'Kebede': '847-439-4312',
+             'Desta': '847-439-4312' }
+</code></pre>
+<p>Each name is the key, and the phone numbers are the associated values. The key type is <code>str</code>, which is immutable as required. Here, the value is also a <code>str</code>, but note that the value <em>is allowed</em> to be mutable. For example, the value could be a list of associated phone numbers. Duplicate names are not allowed, but duplicate values are.</p>
+<p>Another way to create a dictionary is with the <code>dict()</code> function. Pass a list of tuples representing the key/value pairs. The <code>phonebook</code> above could equally have been created with this line:</p>
+<pre><code class="language-python">phonebook = dict([('Jane', '213-665-1234'), 
+             ('Milagros', '720-933-5418'), 
+             ('Kebede', '847-431-1729'),
+             ('Desta', '847-439-4312')])
+</code></pre>
+<p>Read the above definition of phonebook carefully: it has a pair of outermost parentesis <code>()</code> for the funtion call to <code>dict()</code>, it has a pair of square brackets <code>[]</code> for the beginning and end of the list of tuples, and each tuple in the list is defined with a pair of parentheses <code>()</code>, and consists of a key/value pair.</p>
+<p>You can create a new empty dictionary in either of these two ways:</p>
+<pre><code class="language-python">empty_dictionary1 = {}
+empty_dictionary2 = dict()
+</code></pre>
+<h2 id="accessing-modifying-and-adding-items-to-a-dictionary"><a class="header" href="#accessing-modifying-and-adding-items-to-a-dictionary">Accessing, modifying and adding items to a dictionary</a></h2>
+<p>We can access individual elements of a dictionary using the same square-bracket syntax we use for an index in lists and strings. Put the key in the square brackets. </p>
+<pre><code class="language-python">print(phonebook['Desta']) # outputs 847-439-4312
+milagros_number = phonebook['Milagros'] # look up and store Milagros number in a variable
+</code></pre>
+<p>Think of this as a <em>lookup</em>. The expression <code>phonebook['Desta']</code> looks up in the dictionary for an item with key <code>Desta</code>. The expression then gives the value associated with the key <code>Desta</code>.</p>
+<p>That same syntax can be used to add a new item to the dictionary or to modify an existing element</p>
+<pre><code class="language-python">phonebook['HuanHuan'] = '602-654-3210' # adds a new item to the dictionary with key 'HuanHuan'
+phonebook['Jane'] = '808-647-1234' # changes phone number for key 'Jane'
+</code></pre>
+<p>If you try to access a key that does not exist in the dictionary, a <code>KeyError</code> is produced.</p>
+<pre><code class="language-python"># The program crashes on this line with a KeyError
+# since there is  no item in phonebook with key &quot;Kai&quot;
+print(f&quot;Kai's number: {phonebook['Kai']}&quot;)
+</code></pre>
+<h2 id="deleting-items-from-a-dictionary"><a class="header" href="#deleting-items-from-a-dictionary">Deleting items from a dictionary</a></h2>
+<p>To remove an item from a dictionary, we can use the <code>del</code> operator:</p>
+<pre><code class="language-python">print(phonebook['Kebede']) # outputs '847-431-1729'
+del phonebook['Kebede']    # removes item with key `Kebede`
+print(phonebook['Kebede']) # crashes with a KeyError
+</code></pre>
+<h2 id="checking-for-membership-in-a-dictionary"><a class="header" href="#checking-for-membership-in-a-dictionary">Checking for membership in a dictionary</a></h2>
+<p>To check if a key exists in a dictionary, use the <code>in</code> operator.
+The expression
+<code>&lt;key&gt; in &lt;dictionary&gt;</code> is a boolean expression that evaluates to <code>True</code> if the <code>key</code> matches an item in the dictionary, <code>False</code> otherwise.</p>
+<p>This gives us a way to avoid accessing a non-existent element, thus avoiding a <code>KeyError</code></p>
+<pre><code class="language-python">if `Kebede` in phonebook:
+    print(f&quot;Kebede's number is {phonebook['Kebede']}&quot;)
+else:
+    print(&quot;No  known phone number for Kebede.&quot;)
+</code></pre>
+<p>Note: you could alternately handle key errors by accessing the dictionary within a <code>try</code> block and handling <code>KeyError</code>s with the <code>except</code> block.</p>
+<h2 id="practice-exercises"><a class="header" href="#practice-exercises">Practice exercises</a></h2>
+<pre><code class="language-python"># Exercise 1: create an empty phonebook and print it:
+phonebook = dict()
+print(f&quot;empty: {phonebook}&quot;)
+
+# Exercise 2: Reinitialize the phonebook with two number in 2 different ways
+#first way:
+phonebook = {&quot;Alice&quot;: &quot;123-145-2541&quot;, &quot;Bob&quot;: &quot;145-145-7514&quot;}
+print(f&quot;Phonebook with 2 items: {phonebook}&quot;)
+# second way:
+phonebook = dict([(&quot;Alice&quot;, &quot;123-145-2541&quot;), (&quot;Bob&quot;, &quot;145-145-7514&quot;)])
+print(f&quot;Same phonebook with 2 items: {phonebook}&quot;)
+
+# Exercise 3: Add two more names to phonebook and output it
+phonebook[&quot;Hong&quot;] = &quot;145-134-5614&quot;
+phonebook[&quot;Emily&quot;] = &quot;145-146-7316&quot;
+print(f&quot;Phonebook after adding two more items: {phonebook}&quot;)
+
+# Exercise 4: Print a phone number from the phonebook, then modify it, then print it again
+print(f&quot;Before: {phonebook['Alice']}&quot;)
+phonebook[&quot;Alice&quot;] = &quot;111-111-1111&quot;
+print(f&quot;After: {phonebook['Alice']}&quot;)
+
+# Exercise 5: Try printing a phone number for a key that doesn't exist (producing a KeyError)
+print(phonebook[&quot;Marcelo&quot;]) # crashes with Key Error
+
+# Exercise 6: Fix the code above to check for membership before accessing a nonexistent key
+if &quot;Marcelo&quot; in phonebook:
+    print(phonebook[&quot;Marcelo&quot;]) # output Marcelo's number if found
+else:
+    print(&quot;Marcelo is not in the phonebook&quot;)
+
+# Exercise 7: Delete and item and print the dictionary
+del phonebook[&quot;Alice&quot;]
+print(phonebook)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="dictionary_intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="dictionary_iteration.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="dictionary_intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="dictionary_iteration.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js"></script>
+        <script src="editor.js"></script>
+        <script src="mode-rust.js"></script>
+        <script src="theme-dawn.js"></script>
+        <script src="theme-tomorrow_night.js"></script>
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="js/disable_keyboard.js"></script>
+
+
+    </div>
+    </body>
+</html>
