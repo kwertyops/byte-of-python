@@ -52,6 +52,10 @@
     - [How to use dictionaries](dictionary_basics.md)
     - [Iterating through dictionaries](dictionary_iteration.md)
 
+- [2D lists](2Dlists.md)
+    - [2D list applications](2Dlist_applications.md)
+    - [Defining 2D lists](2Dlist_define.md)
+    
 ---
 # Extras
 - [Data Science](draft_pages/data_science.md)
