@@ -28,7 +28,7 @@ Parsing error, program doesn't run
 <td>
 
 ```python
-for in range(5)
+for in range(5):
 print("hello") # tab missing at start of line
 ```
 </td>
@@ -167,7 +167,7 @@ except FileNotFoundError:
 
 Catching errors during standard running of a progam is good programming practice, since unhandled exceptions cause the program to crash.
 
-You should be using `try-except` blocks to handle errors that legitimately occur during the running of programs, in particular to respond to invalid input entered by the user. However, do *not* use `try-except` blocks to mask errors in your own code. For example, if your program has a bug in which you traverse a list past its end and crash with an `IndexError`, never stop your program from crashing by wrapping the incorrect lines of code within a `try-except` block. Instead always fix the underlying bug.
+From now on, you should be using `try-except` blocks to handle errors that legitimately occur during the running of programs, in particular to respond to invalid input entered by the user. However, do *not* use `try-except` blocks to mask errors in your own code. For example, if your program has a bug in which you traverse a list past its end and crash with an `IndexError`, never stop your program from crashing by wrapping the incorrect lines of code within a `try-except` block. Instead always fix the underlying bug.
 
 
 

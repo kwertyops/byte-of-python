@@ -10,7 +10,7 @@ phonebook = {'Jane': '213-665-1234',
              'Kebede': '847-439-4312',
              'Desta': '847-439-4312' }
 ```
-Each name is the key, and the phone numbers are the associated values. The key type is `str`, which is immutable as required. Here, the value is also a `str`, but note that the value *is allowed* to be mutable. For example, the value could be a list of associated phone numbers. Duplicate names are not allowed, but duplicate values are.
+Each name is the key, and the phone numbers are the associated values. The key type is `str`, which is immutable as required. Here, the value is also a `str`, but note that the value *is allowed* to be mutable. For example, the value could be a list of associated phone numbers. Duplicate names are not allowed, but duplicate values are allowed (in this example, two people could share the same phone number).
 
 Another way to create a dictionary is with the `dict()` function. Pass a list of tuples representing the key/value pairs. The `phonebook` above could equally have been created with this line:
 
@@ -20,7 +20,7 @@ phonebook = dict([('Jane', '213-665-1234'),
              ('Kebede', '847-431-1729'),
              ('Desta', '847-439-4312')])
 ```
-Read the above definition of phonebook carefully: it has a pair of outermost parentesis `()` for the funtion call to `dict()`, it has a pair of square brackets `[]` for the beginning and end of the list of tuples, and each tuple in the list is defined with a pair of parentheses `()`, and consists of a key/value pair.
+Read the above definition of `phonebook` carefully: it has a pair of outermost parentesis `()` for the funtion call to `dict()`, it has a pair of square brackets `[]` for the beginning and end of the list of tuples, and each tuple in the list is defined with a pair of parentheses `()`, and consists of a key/value pair.
 
 You can create a new empty dictionary in either of these two ways:
 ```python
@@ -33,9 +33,9 @@ empty_dictionary2 = dict()
 We can access individual elements of a dictionary using the same square-bracket syntax we use for an index in lists and strings. Put the key in the square brackets. 
 ```python
 print(phonebook['Desta']) # outputs 847-439-4312
-milagros_number = phonebook['Milagros'] # look up and store Milagros number in a variable
+milagros_number = phonebook['Milagros'] # look up Milagro's number, then store in a variable
 ```
-Think of this as a *lookup*. The expression `phonebook['Desta']` looks up in the dictionary for an item with key `Desta`. The expression then gives the value associated with the key `Desta`.
+Think of this as a *lookup*. The expression `phonebook['Desta']` searches in the dictionary for an item with key `Desta`, producing the value associated with the key `Desta`.
 
 That same syntax can be used to add a new item to the dictionary or to modify an existing element
 
@@ -47,7 +47,7 @@ phonebook['Jane'] = '808-647-1234' # changes phone number for key 'Jane'
 If you try to access a key that does not exist in the dictionary, a `KeyError` is produced.
 ```python
 # The program crashes on this line with a KeyError
-# since there is  no item in phonebook with key "Kai"
+# since there is no item in phonebook with key "Kai"
 print(f"Kai's number: {phonebook['Kai']}")
 ```
 ## Deleting items from a dictionary
@@ -65,7 +65,7 @@ To check if a key exists in a dictionary, use the `in` operator.
 The expression
 `<key> in <dictionary>` is a boolean expression that evaluates to `True` if the `key` matches an item in the dictionary, `False` otherwise.
 
-This gives us a way to avoid accessing a non-existent element, thus avoiding a `KeyError`
+This gives us a way to avoid accessing a non-existent element, thus avoiding a `KeyError`.
 ```python
 if `Kebede` in phonebook:
     print(f"Kebede's number is {phonebook['Kebede']}")
@@ -101,7 +101,7 @@ phonebook["Alice"] = "111-111-1111"
 print(f"After: {phonebook['Alice']}")
 
 # Exercise 5: Try printing a phone number for a key that doesn't exist (producing a KeyError)
-print(phonebook["Marcelo"]) # crashes with Key Error
+print(phonebook["Marcelo"]) # crashes with a KeyError
 
 # Exercise 6: Fix the code above to check for membership before accessing a nonexistent key
 if "Marcelo" in phonebook:
@@ -109,7 +109,7 @@ if "Marcelo" in phonebook:
 else:
     print("Marcelo is not in the phonebook")
 
-# Exercise 7: Delete and item and print the dictionary
+# Exercise 7: Delete an item and print the dictionary
 del phonebook["Alice"]
 print(phonebook)
 ```

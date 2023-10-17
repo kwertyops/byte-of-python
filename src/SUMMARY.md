@@ -50,7 +50,7 @@
 - [Dictionaries](dictionaries.md)
     - [Why we use dictionaries](dictionary_intro.md)
     - [How to use dictionaries](dictionary_basics.md)
-    - [Iterating through dictionaries](dictionary_iteration.md)
+    - [Iterating over dictionaries](dictionary_iteration.md)
 
 - [2D lists](2Dlists.md)
     - [2D list applications](2Dlist_applications.md)

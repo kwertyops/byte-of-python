@@ -5,11 +5,12 @@ Before reading from a file (input) or writing to a file(output), the program mus
 The `open()` function returns a file object, which can then be used for reading, writing or appending to a file.
 
 ```python
-some_file = open('<path/file_name>'), mode  = <'string'>')
+some_file = open('<path/file_name>', mode  = <'string'>')
 ```
-If the file we're trying to open is in the same directory (folder) as the program we're running, then `file_name.extension` is sufficient. If the file is stored somewhere else in the file system, then we specify a full path to the file.
+If the file we're trying to open is in the same directory (folder) as the program we're running, then `file_name.extension` is sufficient. If the file is stored somewhere else in the file system, then we specify a full path to the file. If the file we are trying to open does not exist, the program will crash with a `FileNotFound` exception.
 
 Modes:
+
 | Mode      | Name | Details |
 | --------- | ---- |---------|
 | `'r'`      | Read | Fails if the file doesn't exist (`'r'` is the default if the mode is unspecified')|
@@ -26,7 +27,7 @@ There are multiple ways to read text data from a file. These examples assume tha
 - Read the entire contents of the file into one string:
 
     ```python 
-    giant_string = some_file.read()`
+    giant_string = some_file.read()
     ```
 
 - Read the file into a `list` of lines. The contents are broken at each `\n` in the file, and `lines_list` is a list of strings:
@@ -49,7 +50,7 @@ There are multiple ways to read text data from a file. These examples assume tha
 
     ```python
     with open(...) as some_file:
-        # All code involving the file `some_file` goes here
+        # All code involving the file 'some_file' goes here
     # No need to close file, it is closed automatically at end of indented block
     ```
 
@@ -61,12 +62,12 @@ some_file.close()
 ```
 If you don't make a practice of this, you are tying up memory resources. This problem typically doesn't show up until you write larger programs. If you leave too many files unclosed, then your program could slow down or even crash.
 
-Once you call `close()`, you can no longer read from that file.
+Once you call `some_file.close()`, you can no longer read from that file.
 
 ## Reading from files without context manager versus with context manager
 
 <table>
-<tr><td>No context manager:</td><td>With context manager:</td></tr>
+<tr><td>No context manager:</td><td>Using context manager:</td></tr>
 
 <tr>
 <td nowrap>
@@ -107,12 +108,12 @@ giant_string = a_file.read()
 print(giant_string)
 a_file.close()
 ```
-The output is 
+The output is the entire content of the file `names.txt`, which for the purpose of this example is:
 ```
 Janis Joplin,Aretha Franklin,Pat Benatar,Deborah Harry,Tina Turner,Joan Jett,Stevie Nicks,Melissa Etheridge,Grace Slick,Courtney Love
 ```
 
-In this code snippet, the contents of the file are split into a list of separate strings.
+In the following code snippet, the contents of the file are split into a list of separate strings.
 ```python
 a_file = open("data_files/names.txt")
 # Read the entire contents of the file into one string, then process that
@@ -150,7 +151,8 @@ The following code snippet shows how to use a context manager to open and read t
 ```python
 # Use a context manager to open and read the file
 with open("data_files/names.txt") as a_file:
-# Read the entire contents of the file into one string
+    # Read the entire contents of the file into one string,
+    # then strip white space and split at the commas:
     names_list = a_file.read().strip().split(",")
 
 # Use loop to output names:

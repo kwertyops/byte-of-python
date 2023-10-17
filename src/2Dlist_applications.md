@@ -14,7 +14,7 @@ So the image can be stored as a 2D grid of colors. In python this is a 2D list, 
 <img src="img/2Dlists/pixels.png" alt="Visual demonstrating how images are composed of pixels" class="center", width="500">
 </figure>
 
-Third, sometimes information is best organized in a grid. For example, here's a table that stores the temperature recorded by several different sensors at several times of day:
+Third, sometimes information is best organized in a grid. In these cases, the data would be stored in a 2D list. For example, here's a table that stores the temperature recorded by several different sensors at several times of day:
 <figure>
 <img src="img/2Dlists/temperatures.png" alt="Table of temperatures for several sensors at several times" class="center", width="500">
 </figure>

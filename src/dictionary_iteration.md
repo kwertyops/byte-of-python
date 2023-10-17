@@ -2,7 +2,7 @@
 
 Dictionaries are primarily used for their fast implementation of searching for an item, removing an item, adding an item and modifying an item. In python dictionaries, each of these actions are made to execute fast by performing them without having to traverse through the entire dictionary. You'll learn about how this is accomplished in the first Data Structures and Algorithms class.
 
-Occasionally, we are forced to traverse through all items in a dictionary. This operation runs slowly, so we avoid traversing dictionaries whenever possible. When it is unavoidable, there are three methods we use to iterate over dictionary tiems, keys, and values:
+Occasionally, we are forced to traverse through all items in a dictionary. This operation runs slowly, so we avoid traversing dictionaries whenever possible. When it is unavoidable, there are three methods we use to iterate over dictionary keys, dictionary values, and dictionary items:
 
 ```python
 your_dictionary.keys()   # returns a view object of all keys
@@ -11,7 +11,7 @@ your_dictionary.items()  # returns a view object of tuples with key/value pairs 
 ```
 
 ## Example 1
-The following examples demonstrates creating a dictionary, then traversing its keys, its values, and its items. The dictionary stores names and corresponding phone numbers.
+The following example demonstrates creating a dictionary, then traversing its keys, its values, and its items. The dictionary stores names and corresponding phone numbers. It is created by starting with a list of names, and assigning a random phone number to each name in the list. While this is not a realistic way to create a phonebook, it practices a few techniques we've learned in previous sections.
 
 ```python
 from random import randint
@@ -25,7 +25,7 @@ names_list = [
 
 # Create an empty dictionary to store a phonebook
 phonebook = {}
-# Add eaach name to the phonebook, giving them a randomly-generated phone number
+# Add each name to the phonebook, giving them a randomly-generated phone number
 for name in names_list:
     phonebook[name] = str(f"{randint(200, 999)}-{randint(100, 999)}-{randint(0, 9999)}")
 
@@ -70,10 +70,10 @@ largest_cities["American Samoa"] = ["Pago Pago", "Tafuna", "Leone", "Faleniu", "
 
 # Add a new item to the dictionary. Key is "Colorado", and its value is a list of cities
 largest_cities["Colorado"] = ["Denver", "Colorado Springs", "Aurora"]
-print(largest_cities["Colorado"])
+print(largest_cities["Colorado"]) # outputs ['Denver', 'Colorado Springs', 'Aurora']
 
 # Add a city to Colorado's list. Note that largest_cities["Colorado"] is a list.
 # We are appending a new city to that list
 largest_cities["Colorado"].append("Fort Collins")
-print(largest_cities["Colorado"])
+print(largest_cities["Colorado"]) # outputs ['Denver', 'Colorado Springs', 'Aurora', 'Fort Collins']
 ```
