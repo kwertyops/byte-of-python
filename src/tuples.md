@@ -102,8 +102,8 @@ main()
 </td>
 <td>
 
-<figure>
-<img src="img/tuples/boxes.png" alt="Two boxes with visibly different dimensions" class="center", width="250">
+<figure style="margin: 5px auto;">
+<img src="img/tuples/boxes.png" alt="Two boxes with visibly different dimensions" class="center", width="300">
 </figure>
 </td>
 </tr>
