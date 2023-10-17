@@ -1,6 +1,6 @@
 These topics are missing from the book:
 
-- traversing lists
+- traversing 2D lists
 - mouse press
 - the term docstring
 - shorthand ops
