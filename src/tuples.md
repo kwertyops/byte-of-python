@@ -136,7 +136,7 @@ card  = (“Ace”, “Spades”)
 
 ```python
 hand = [
-    (“Ace”, “Diamonds),
+    (“Ace”, “Diamonds"),
     (“4”, “Hearts”),
     (“6”, “Diamonds”),
     (“3”, “Spades”),
