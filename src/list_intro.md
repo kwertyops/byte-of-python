@@ -1,7 +1,7 @@
 ## Python lists
 Lists are a built-in data structure in python. Lists are used to store multiple values that are accessed with a single variable name. 
 
-Typically the values stored in a list are all of the same type, though python does allow for different types to be stored within the same list. This chapter contains details on creating lists, accessing individual elements in a list, and modifying lists with list methods.
+Typically the values stored in a list are all of the same type, though python does allow for different types to be stored within the same list. This chapter contains details on creating lists, accessing individual elements in a list, and modifying lists using list methods.
 
 ## Creating lists
 
@@ -31,7 +31,7 @@ scores.append(91)
 
 Here's a more realistic example that uses the `append()` method, taking the values from the user:
 ```python
-scores = [ ]
+scores = []
 for i in range(5):
     next_score = int(input('Enter score: '))
     scores.append(next_score)
@@ -69,7 +69,7 @@ will output all contents of the list to the console, separated by commas and sur
 
 The `len()` function returns the number of items currently stored in the list. For the above example, `len(scores)` returns `5`.
 
-Valid index values go from `0` to `len(your_list)-1`. The first value stored in a list is `list_name[0]` and the last value is `list_name[len(list_name)-1]`.
+Valid index values go from `0` to `len(your_list)-1`. The first value stored in a list is `your_list[0]` and the last value is `your_list[len(your_list)-1]`.
 
 ## Traversing lists using loops: index-based versus content-based loops
 
@@ -139,18 +139,18 @@ In the above code, the variable `names` is a list, whose contents might be `["Ro
 
  In the above example, note that `scores[-1]` evaluates to `91`, and `scores[-2]` evaluates to `81`.
  The expressions `scores[-1]` and `scores[len(scores)-1]` refer to the same location in memory. Similarly, `scores[-2]` and `scores[3]` also refer to the same location in memory.
-list_name[::-1]`
+
  ## Slicing lists
 
- Slicing gives a way to extract a sublist from a list. By putting a start index and a stop index separated by a colon in square brackets, we create a new list that includes the contents at those index values. A typical slice is of the form `list_name[start_index, stop_index]`. Note that the stop index itself is not included in the slice. For example, from the list shown above, the expression `scores[0:3]` result in the list `[92, 87, 93]`, built from the values stored at indices `0, 1, 2`. If the start index is omitted, the start index is assumed to be `0`. For example, `scores[:3]` is the same slice as `scores[0:3]`.
+ Slicing gives a way to extract a sublist from a list. By putting a start index and a stop index separated by a colon in square brackets, we create a new list that includes the contents between those index values. A typical slice is of the form `list_name[start_index, stop_index]`. Note that the stop index itself is **not** included in the slice. For example, from the list shown above, the expression `scores[0:3]` results in the list `[92, 87, 93]`, built from the values stored at indices `0, 1, 2`. If the start index is omitted, the start index is assumed to be `0`. For example, `scores[:3]` is the same slice as `scores[0:3]`.
 
  The slice `scores[1:5]` might look confusing at first, since the list is too short to have an index `5`. However, recall that the stop index of a slice is not itself included in the sublist, so the index values used are `1, 2, 3, 4`, to produce the sublist `[87, 93, 81, 91]`. If you omit the stop index, its default is `len(your_list)`, meaning that the slice goes to the end of the list, including its last element. Thus `scores[1:5]` in this example is equivalent to `scores[1:]`
 
  A slice can be used to extract a range from a list while skipping elements. More generally, `list_name[start_index, stop_index, step]` begins at `start_index`, ends before reaching `stop_index`, and uses `step` to increment the index count. For example, in the list shown above, the slice `scores[0:5:2]` starts at index `0`, increasing the index by `2` at each step, and ending before index `5`. So the index values `0, 2, 4` are used and the list generated is `[92, 93, 91]`.
 
- Negative values can be used for the `step`, allowing us to traverse backwards through the list. For example, in the list shown above, the slice `scores[4:0:-2]` uses the index values `4, 2` and produces the list `[91, 93]`. Note that the index `0` element is not included. To include it, use `scores[4::-2]` to produce the list `[93, 91, 92]`.
+ Negative values can be used for the `step`, allowing us to traverse backwards through the list. For example, in the list shown above, the slice `scores[4:0:-2]` uses the index values `4, 2` and produces the list `[91, 93]`. Note that the index `0` element is not included. To include it, use `scores[4::-2]` to produce the list `[91, 93, 92]`.
 
- A special case can be used to produce a list in reverse order, using `list_name[::-1]`.
+ A special case can be used to produce a complete list in reverse order, using `list_name[::-1]`.
 
 ## List membership
 
@@ -178,19 +178,13 @@ However, there is an easier way to generate a random element from a list. The `r
 ```python
 import random
 words = ["eenie", "meenie", "miney", "mo"]
-# produces a random integer from 0 to the last index, len(words)-1
+# produces a value, randomly selected from the list contents
 print(random.choice(words))
 ```
 
 ## Putting it all together
 
-Here's sample code showing defining a list, accessing a list, modifying a list element, list slices, and list membership.
-
-<table>
-<tr><td>Code</td><td>Output</td>
-</tr>
-<tr>
-<td nowrap style="display:inline-block; width:400px;">
+Here's sample code showing definition of a list, accessing a list, modifying a list element, list slices, and list membership.
 
 ```python
 month_names = ['January', 'February', 'March', 'April', 
@@ -200,10 +194,10 @@ month_names = ['January', 'February', 'March', 'April',
 print(month_names) # output the entire list
 print(len(month_names)) # should output 12
 # Index 0 is the first month, January
-print(month_names[0]) # index 0 is the first month
-print(month_names[4]) # index 4 is the 5th month
-print(month_names[11]) # index 11 is 12th month
-print(month_names[-1]) # index -1 means the last month
+print(month_names[0]) # index 0 is the first month, outputs January
+print(month_names[4]) # index 4 is the 5th month, outputs May
+print(month_names[11]) # index 11 is 12th month, outputs December
+print(month_names[-1]) # index -1 means the last month, outputs December
 # Create a new list with first 6 months (index 0, 1, 2, 3, 4, 5)
 first_half = month_names[0:6]
 print(first_half) # note that this is a list
@@ -219,9 +213,8 @@ print(month_names)
 print('December' in autumn) # should be False
 print('Triember' not in month_names) # should be True
 ```
-</td>
-<td>
 
+Output of program:
 ```
 ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 12
@@ -236,13 +229,10 @@ December
 False
 True
 ```
-</td>
-</tr>
-</table>
 
 ## Practicing creating and traversing lists (index-based and content-based loops)
 
-Here is a code snippet showing the creation of a list, and then a content-based traversal through the list, followed by an index-based traversal through the list:
+Here is a code snippet showing the creation of a list, and then a content-based traversal through the list, followed by an index-based traversal through the same list:
 
 ```python
 from random import random
@@ -255,25 +245,25 @@ for i in range(LIST_LENGTH):
 
 # content-based loop that iterates over all of the
 # previously-generated random numbers, and outputs them
-# to 5 decimale places.
+# to 5 decimal places.
 # The variable randos is the entire list itself.
 # The variable rando takes each value stored in the
 # list, one by one as the loop iterates over the list.
 for rando in randos:
-    print(f"{rando:0.5f}")
+    print(f"{rando:.5f}")
 
 # index-based loop that iterates over all of the valid
 # index values for the previously-generated list of
 # random numbers. The variable i takes the values
-# 0, 1, 2, ..., 5
+# 0, 1, 2, 3, 4, 5
 # It's better programming practice to use len(your_list)
 # rather than a hard-coded number. The variable i stores
 # which element we are on. We output i+1 so that the
-# # user sees the counting from 1-6 rather than 0-5.
+# user sees counting from 1-6 rather than 0-5.
 # The expression randos[i] gives the value
 # of the random number stored at that index in the list.
 for i in range(len(randos)):
-    print(f"random number {i+1}: {randos[i]:0.5f}")
+    print(f"random number {i+1}: {randos[i]:.5f}")
 ```
 
 A possible output is:

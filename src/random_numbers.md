@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
 ## Generating `float` values within an interval
 
-Use the `random.uniform()` function if you want a random `float`, but not necessarily from the interval `[0,1)`. For example,
+Use the `random.uniform()` function if you want a random `float` from the interval different than `[0,1)`. For example,
 
 ```python
 import random
@@ -61,7 +61,7 @@ outputs a random decimal number in the range `[2, 5)`, such as
 One way to generate random integer values is to use the `randint()` function from the `random` package. The parameters are the lower bound and the upper bound you want for the integers. Unlike other functions in python, the stop value **is** included in the possible outcomes. For example:
 
 ```python
-    print(random.randint(2, 5))
+print(random.randint(2, 5))
 ```
 will output one of `2`, `3`, `4`, or `5`.
 
@@ -69,24 +69,16 @@ will output one of `2`, `3`, `4`, or `5`.
 
 You can use `random.random()` to generate a random `float` in the range `[0,1)`, then multiply by a number to scale it. For example, the expression `10*random.random()` will generate a random `float` in the range `[0, 10)`. You can then shift the interval by adding a number. For example, the expression `2 + 10 * random.random()` generates a random `float` in the range `[2, 12)`. 
 
-More generally, the number that is added represents the left edge of the interval, while the scaling factor represents the length of the interval. The expression `a + (b - a) * random.random()` generates a random `float` in the range `[a, b)`.
+More generally, the number that is added represents the left edge of the interval, while the scaling factor represents the length of the interval. To generates a random `float` in the range `[a, b)`, you can use the expression `a + (b - a) * random.random()`.
 
-To generate a random `int` value in a specific range, we use the same multiplication and addition technique, followed by casting the result to an integer. For example, `int(5 * random.random())` generates a random integer `0`, `1`, `2`, `3` or `4`. Notice that before casting, `5 * random.random()` generates a number in the range `[0, 5)`. Since `5` is not included in the interval, when we cast to an `int`, it will not be one of the possible outcomes.  As another example, to generate a random `int` from the integers `6, 7, 8, 9`, Note that there are 4 possibilities, beginning with `5`. So we can generate random `int`s in that range with the expression `int(6 + 4 * random.random())`
+To generate a random `int` value in a specific range, we use the same multiplication and addition technique, followed by casting the result to an integer. For example, `int(5 * random.random())` generates a random integer `0`, `1`, `2`, `3` or `4`. Notice that before casting, `5 * random.random()` generates a number in the range `[0, 5)`. Since `5` is not included in the interval, when we cast to an `int`, it will not be one of the possible outcomes.  As another example, to generate a random `int` from the integers `6, 7, 8, 9`, Note that there are 4 possibilities, beginning with `6`. So we can generate random `int`s in that range with the expression `int(6 + 4 * random.random())`
 
 More generally, the expression `int(a + n * random.random())` will generate a random `int` in a range of `n` possible integer outputs, starting with `a`.
 
 
 ## Putting it all together
 
-The example below draws a circle at a random location on a `400x400` pixel `dudraw` canvas, with the default `[0, 1]x[0, 1]` scale, a radius from `0.05` to `0.1` and with a random color. A possible output image is shown.
-
-<table>
-<tr>
-<td>Code demonstrating use of random `float` and `int` numbers </td>
-<td>Image</td>
-</tr>
-<tr>
-<td nowrap>
+The example below creates a `400x400` pixel `dudraw` canvas, with the default `[0, 1]x[0, 1]` scale. It then draws a circle at a random location with a radius from `0.05` to `0.1` and with a random color. A possible output image is shown.
 
 ```python
 import random
@@ -119,18 +111,12 @@ if __name__ == '__main__':
     main()
 ```
 
-
-</td>
-<td>
+Possible output drawing:
 
 <figure>
 <img src="img/random_numbers/random_circle.jpg" alt="randomly sized circle, random location, random colors class="center", width="300">
 </figure>
 
-</td>
-</tr>
-
-</table>
 
 
 

@@ -5,4 +5,4 @@ Programs often need to take one action in certain cases, and different actions i
 
 *Iterative statements* (or *loops*) allow us to repeat lines of code either a specific number of times, or based on the value of a variable, or based on the contents of stored data. In python we will learn `for`-loop statements and `while`-loop statements.
 
-This chapter covers writing conditional statements to control the flow of your program.
+This chapter covers writing conditional statements (branches) to control the flow of your program. The following chapter covers writing iterative statements (loops).

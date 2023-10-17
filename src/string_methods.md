@@ -21,7 +21,7 @@ Here is how to use these methods.
 
 `islower()->bool` and `isupper()->bool`
 
-The call  `your_string.islower()` returns `True` if the letters in `your_string` are only lower-case, `False` otherwise. Similarly, `your_string.isupper()` returns `True` if the letters in `your_string` are all upper case, `False` otherwise.
+The call  `your_string.islower()` returns `True` if the letters in `your_string` are only lower-case, `False` otherwise. Similarly, `your_string.isupper()` returns `True` if the letters in `your_string` are only upper case, `False` otherwise.
 
 ```python
 quote = 'These are not the droids you are looking for.'
@@ -41,7 +41,7 @@ else:
 
 `lower()->str` and `upper()->str`
 
-The call `your_string.lower()` returns a new string in which all letters are converted to lower case. The original string is not modified. Similarly, `your_string.upper()` returns a new string in which all letters are converted to upper case, leaving the original string unchanged. Note that non-letters are unaffected (digits, spaces, punctuation, special characters are *uncased*, they do not have two versions, and are unchanged by these methods).
+The call `your_string.lower()` returns a new string in which all letters are converted to lower case. The original string is not modified. Similarly, `your_string.upper()` returns a new string in which all letters are converted to upper case, leaving the original string unchanged. Note that non-letters are unaffected (digits, spaces, punctuation, and special characters are *uncased*, they do not have two versions, and are unchanged by these methods).
 
 ```python
 names = "R2D2 and C3PO"
@@ -100,7 +100,7 @@ print(text.index('X', 5))  # outputs 12, starting at index 5, first 'X' is at in
 
 `find(sub: str)->int`
 
-Similar to `index()`, `find()` finds and returns the index of the first location where the string `sub` is found in `your_string`. But for `find()`, if `sub` does not appear at all in the string then `-1` is returned, rather than throwing a `ValueError`. It also accepts an optional second parameter to use as the start index. For example:
+Similar to `index()`, `your_string.find(sub)` finds and returns the index of the first location where the string `sub` is found in `your_string`. But for `find()`, if `sub` does not appear at all in the string then `-1` is returned, rather than throwing a `ValueError`. It also accepts an optional second parameter to use as the start index. For example:
 
 ```python
 poem = 'Roses are red, violets are blue'

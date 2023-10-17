@@ -3,7 +3,7 @@
 Recall the syntax for defining a function:
 
 ```python
-def functon_name(optional parameters)->return type:
+def function_name(optional parameters)->return type:
     # Indented code block
     # Optional return statement
 ```
@@ -38,9 +38,9 @@ def is_all_positive(some_list: list[float])->bool:
     Determines if every element in the given list is positive
 
     parameters:
-        some_list : a list of float values
+        some_list : a list of float values (type: list[float])
     return:
-        True if all values are positive and False otherwise
+        True if all values are positive and False otherwise (type: bool)
     """
     for element in some_list:
         # As soon as you find a nonpositive number, return False
@@ -55,7 +55,7 @@ def get_all_nonpositives(some_list: list[float])->list[float]:
     Build a new list containing all nonpositive values from some_list
 
     parameters:
-        some_list : a list of float values
+        some_list : a list of float values (type: list[float])
     return:
         A new list containing nonpositive float values (type: list[float])
     """

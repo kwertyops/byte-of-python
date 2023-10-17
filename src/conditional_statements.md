@@ -184,7 +184,7 @@ This time `"A"` **is** output, since `x<y` is `True`.<br>
 
 </table>
 
-Notice that in the above code, only one of `"A"` and `"B"` can be printed, since one lies in the `if` block and the other lies in the `else` block.
+Notice that in the above code, only one of `"A"` and `"B"` can be output, since one lies in the `if` block and the other lies in the `else` block. It is not possible for both to be output.
 
 ## `If-else` ladder statements
 
@@ -352,6 +352,7 @@ What to wear in Colorado based on temperature (integer degrees)
 Winter jacket if it is less than 25 degrees
 Light to medium coat if it is 25 to 44 degrees
 Fleece if it is 45 and above, and less than 65 degrees
+No jacket needed above 65 degrees
 """
 
 def main():

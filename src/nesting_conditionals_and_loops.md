@@ -137,8 +137,8 @@ Here's a complete program that uses an `if-else` statement nested within a `for`
 
 ```python
 """
-Produce a drawing of randomly-placed squares in two colors
-Mystery output: Trace the 
+Produce a drawing of randomly-placed circles in two colors
+Mystery output: Trace the code to find out. Run it to check.
 Author: COMP 1351 Instructor
 Date:
 File: two_colors.py
@@ -172,18 +172,6 @@ for i in range(10000):
     dudraw.set_pen_color(dudraw.BLACK)
     dudraw.circle(x, y, 0.01)
 
-# display the image until the window is closed
+# display the final image until the window is closed
 dudraw.show(float('inf'))
 ```
-
-
-
-
-
-
-
-
-
-
-
-

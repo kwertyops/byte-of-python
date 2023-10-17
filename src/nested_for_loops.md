@@ -32,7 +32,7 @@ Imagine that you want to produce the following output to the console:
 *****
 *****
 ```
-While the following simple solution works:
+Although the following simple solution works, it is disappointing becasue of its inflexibility.
 ```python
 print("*****")
 print("*****")
@@ -42,9 +42,9 @@ print("*****")
 print("*****")
 print("*****")
 ```
-it is disappointing because of its inflexibility. If we want to change the number of rows and columns depending on user input, the above strategy won't work.
+If we want to change the number of rows and columns depending on user input, the above strategy won't work.
 
-Our first attempt will be to write a flexible code block to output just one line of stars:
+Our first attempt will be to write a flexible code block to output just one row of stars:
 
 ```python
 # output one row of 5 stars
@@ -84,7 +84,7 @@ for row in range(num_rows):
 
 ## Tracing nested `for`-loops
 
-Tracing a nested `for`-loop requires care and patience. It should be done with a piece of paper, writing down updates to the values of every variable. In the previous example, we start by storing the user's values in the variables `num_rows` and `num_columns`. To give a concrete example, let's suppose that `num_rows` is `3` and `num_columns` is `4`. Moving to the outer `for`-loop, we prepare the list of possible values for the variable `row`: `0, 1, 2`. So the variable `row` starts with the value `0`. Now we proceed to the inner `for`-loop block. It is important to realize that this entire loops runs completely through while the value for `row` has the value `0`. The variable `column` will take values in the sequence `0, 1, 2, 3` (since `num_columns` is `4`), and for each of those values, a single `*` will be output. Then finally a newline from the `print()` statement it output, taking us to the next line. This completes the first line of output to the console. We return to the outer `for`-loop, and update the value of `row` to `1`. Then the inner block is repeated, with `column` taking the values `0`, `1`, `2`, then `3`. For each new value of `column`, a `*` is output, resulting in `****`. Again a newline from the `print()` statement takes us to the next line, followed by a return to the outer `for`-loop, where `row` is updated to its final value of `2`. The entire inner for loop is executed again, producing a third line `****` of output. We return to the outer `for`-loop one last time to discover that `row` has stepped through each of its possible values. So the segment of code is complete. Note that the following is the order of the values taken by the variables `row` and `column`:
+Tracing a nested `for`-loop requires care and patience. It should be done with a piece of paper, writing down updates to the values of every variable. In the previous example, we start by storing the user's values in the variables `num_rows` and `num_columns`. To give a concrete example, let's suppose the user enters `3` for  `num_rows` and `4` for `num_columns`. Moving to the outer `for`-loop, we prepare the list of possible values for the variable `row`: `0, 1, 2`. So the variable `row` starts with the value `0`. Now we proceed to the inner `for`-loop block. It is important to realize that this entire loops runs completely through while the value for `row` sticks with the value `0`. The variable `column` will take values in the sequence `0, 1, 2, 3` (since `num_columns` is `4`), and for each of those values, a single `*` will be output. Then finally a newline from the `print()` statement it output, taking us to the next line. This completes the first line of output to the console. We return to the outer `for`-loop, and update the value of `row` to `1`. Then the inner block is repeated, with `column` taking the values `0`, `1`, `2`, then `3`. For each new value of `column`, a `*` is output, resulting in `****`. Again a newline from the `print()` statement takes us to the next line, followed by a return to the outer `for`-loop, where `row` is updated to its final value of `2`. The entire inner for loop is executed again, producing a third line `****` of output. We return to the outer `for`-loop one last time to discover that `row` has stepped through each of its possible values. So the segment of code is complete. Note that the following is the order of the values taken by the variables `row` and `column`:
 ```
 row: 0, column: 0
 row: 0, column: 1
@@ -163,9 +163,9 @@ import dudraw
 dudraw.set_canvas_size(500,500)
 dudraw.clear(dudraw.LIGHT_GRAY)
 
-# Each circle takes 1/5 of the canvas, and the radius is 1/2 of that
+# Each circle takes 1/5 of canvas. The radius is 1/2 of that
 radius = (1/5)/2
-# The first circle has its center a distance of one radius from the edge
+# The first circle has its center one radius from the edge
 x_center = radius
 y_center = radius
 
@@ -180,7 +180,7 @@ for row in range(5):
     # We are done with drawing this row of circles
     # So reset the x position back to the left side
     x_center = radius
-    # and increment the y value so we draw the next row
+    # and increase y so we draw the next row higher up
     y_center += 2 * radius
 
 # display until user closes the window
@@ -193,9 +193,9 @@ dudraw.show(float('inf'))
 
 Trace the code carefully, either by hand or by running the debugger, and confirm that an entire row is drawn before moving to the next higher row. This order of drawing the circles is determined because the outer block updates the row number, while the inner block updates the column number. We take this into account in the code by updating the `x_center` within the inner `for`-loop. By restructuring the `for`-loops, the circles can actually be drawn in a different order. The code below draws an entire column (from bottom up) before traversing to the next column. Note that the renaming of the variable is **not** what effected this change. Instead, it was the updating of `y-center` in the middle of the inner `for`-loop. Then, inside the outer loop but outside of the inner loop, the value of `y-center` is reset to the lower edge and `x-center` is increased to move to the next column to the right.
 ```python
-# Each circle takes 1/5 of the canvas, and the radius is 1/2 of that
+# Each circle takes 1/5 of canvas. The radius is 1/2 of that
 radius = (1/5)/2
-# The first circle has its center a distance of one radius from the edge
+# The first circle has its center one radius from the edge
 x_center = radius
 y_center = radius
 
@@ -208,25 +208,25 @@ for column in range(5):
         dudraw.circle(x_center,  y_center, radius)
         y_center += 2 * radius
     # We are done with drawing this column of circles
-    # So reset the y position back to the bottom and
+    # So reset the y position back to the bottom
     y_center = radius
-    # increment the x value so we draw the next column
+    # increase x so we draw the next column further right
     x_center += 2 * radius
 ```
 
 ## Another strategy for determining the center points
 
 Instead of incrementing the `x-center` and `y-center` variables within the loops to compute the new position of each circle, this position can be determined with a mathematical formula based on the current row and column. Here the values for the center of the circle are computed each time through the loop, and so we do not need to increment them as we traverse the loop.
-This strategy has the advantage of a more compact implementation, though some people find the formula for computing the center more difficult.
+This strategy has the advantage of a more compact implementation, though some people find the formula for computing the center more difficult. Note that drawing circles to the canvas differs from drawing *'s to the console, because outputing to the console naturally goes from the top down, but when drawing graphics on an x-y plane, the y values increase from the bottom upwards.
 ```python
-# Each circle takes 1/5 of the canvas, and the radius is 1/2 of that
+# Each circle takes 1/5 of canvas. The radius is 1/2 of that
 diameter = 1/5
 radius = diameter/2
 
 # The outer for-loop steps through each of the *5 rows* 
 # of the grid of circles.
 for row in range(5):
-    # The inner loop steps through the columns, so the
+    # The inner loop steps through the columns
     for column in range(5):
         # The x_center and y_center are each computed
         # independently, based on which column and row
@@ -235,12 +235,12 @@ for row in range(5):
         # determined by the row
         x_center = radius + column*diameter
         y_center = radius + row*diameter
-        dudraw.circle(x_center,  y_center, radius)
+        dudraw.circle(x_center, y_center, radius)
 ```
 
 ## Using the outer loop variable within the inner loop
 
-The image we want to produce shown below on the right is a similar grid of circles, but this time the number of circles varies depending on which row we are on. Notice that the rows are created from bottom to top. The code to produce this image is very similar to the original 5x5 grid of circles. The only difference is that the end point of the inner loop (the `range()` used for the inner `for`-loop), depends on which row we are on. For row 0 we need 1 circle, for row 1 we need 2 circles, for row 2 we need 3 circles, and so on. Thus the number of circles for each row is given by the formula `row + 1`. So the only change to the code is to change the inner `for`-loop to repeat in `range(row + 1)`.
+The image shown below that we want to produce now is a similar grid of circles, but this time the number of circles varies depending on which row we are on. Notice that the rows are created from bottom to top. The code to produce this image is very similar to the original 5x5 grid of circles. The only difference is that the end point of the inner loop (the `range()` used for the inner `for`-loop), depends on which row we are on. For row 0 we need 1 circle, for row 1 we need 2 circles, for row 2 we need 3 circles, and so on. Thus the number of circles for each row is given by the formula `row + 1`. So the only change to the code is to change the inner `for`-loop to repeat in `range(row + 1)` rather than just 5 times.
 
 <div class="code-and-image">
 
@@ -266,7 +266,7 @@ for row in range(5):
     # row + 1, so the number of circles increases
     # at each higher row.
     for column in range(row+1):
-        dudraw.circle(x_center,  y_center, radius)
+        dudraw.circle(x_center, y_center, radius)
         x_center += 2 * radius
     # We are done with drawing this row of circles
     # So reset the x position back to the left side
@@ -282,8 +282,8 @@ dudraw.show(float('inf'))
 
 </div>
 
-## The order that the combination of variables are executed
-In the code above, the outer loop runs through all possibilities for rows. The name of the variable `row` helps us keep track of this, but notice that the value of that variable is not used within the loop. So you must check that how the values of `x_center` and `y_center` are incremented matches the fact that each iteration of the outer loop outputs an entire row. Tracing through the loop shows that the range values of the pair `row` and `column` occur in the following order:
+## The order of the combination of variables during execution
+In the code above, the outer loop runs through all possibilities for rows. The name of the variable `row` helps us keep track of this. The inner loop runs through all possibilities for columns, and the variable name `column` used in the inner loop reflects this. Since rows are incremented in the outside loop, an entire row is completed by looping through every possible column option for that row before moving on to the next row. Tracing through the loop shows that the range values of the pair `row` and `column` occur in the following order:
 ```
  row: 0, column: 0
  row: 1, column: 0

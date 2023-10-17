@@ -6,17 +6,17 @@ For example:
 ```python
 cats_1 = []
 cats_2 = []
-# append "Tabby" to the cats_1 list
+# append "Tabby" to the cats_1 list:
 cats_1.append("Tabby")
-# append "Mochi" to the cats_2 list
+# append "Mochi" to the cats_2 list:
 cats_2.append("Mochi")
 ```
 
 In this section we will see several additional methods that apply to lists. Execute each these methods with the syntax `your_list.method_name()`.  We will learn just a subset of the available list methods. The full list can be found at [Python list documentation by w3schools](https://www.w3schools.com/python/python_ref_list.asp) or [Offical python documentation on list methods](https://docs.python.org/3/tutorial/datastructures.html). Here are the list methods you'll learn:
-- `count()` and `index()` for counting and searching
-- `insert()` and `extend()` for adding elements
-- `pop()`, `remove()` and the `del` keyword for removing elements
-- `reverse()` and `sort()` and `sorted()` for rearranging elements
+- the `count()` and `index()` methods for counting and searching
+- the`insert()` and `extend()` methods for adding elements
+- the `pop()` and `remove()` methods and the `del` keyword for removing elements
+- the `reverse()` and `sort()` methods and the `sorted()` function for rearranging elements
 
 Here are the details on using these methods.
 
@@ -25,7 +25,7 @@ Here are the details on using these methods.
 
 `count(x)->int`
 
-The `count()` method for lists takes as a parameter the item to search for. It returns an `int` which gives the number of times that item appears in the list. Here are some example calls to `count()` with the corresponding return values:
+The call `your_list.count(x)` takes as a parameter the item to search for. It returns an `int` which gives the number of times that value appears in the list. Here are some example calls to `count()` with the corresponding return values:
 
 ```python
 values = [81, 59, 42, 65, 72, 42, 42, 81]
@@ -38,7 +38,7 @@ values.count(23) # returns 0, since 23 does not appear in the list
 
 `index(x)->int`
 
-The `index()` method for lists takes a value to search for as a parameter. It then returns an `int` which is the *index* of the first time that value appears in the list. One down side of the `index()` method is that `x` must be in the list - if it isn't then a `ValueError` results. Here are some calls to `index()` and the corresponding return values:
+The call `your_list.index(x)` searches for the value `x` in `your_list`. It then returns an `int` which is the *index* of the first time that value appears in the list. One down side of the `index()` method is that `x` must be in the list - if it isn't then a `ValueError` results. Here are some calls to `index()` and the corresponding return values:
 
 ```python
 values = [81, 59, 42, 65, 72, 42, 42, 81]
@@ -52,7 +52,7 @@ values.index(90) # results in a ValueError
 
 `insert(i: int, x)->None`
 
-The `insert()` method adds to the list by insertng `x` at index `i`. The index `i` should be a valid index, and the new value will be inserted before the item at that index.
+The call `your_list.insert(i, x)` adds to the list by insertng the value `x` at index `i`. The index `i` should be a valid index for the new value, and the new value will be inserted before the item at that index.
 See below how the contents of the list evolves after several calls to `insert()`:
 
 ```python
@@ -85,7 +85,7 @@ Notice that in the call `values.extend(values_2)`, the list `values` is changed,
 
 `pop()->List_type`
 
-The `pop()` method removes the *last* element of a list. It returns the value that was stored there. You can alternately pass an integer parameter (`pop(index)->List_type`), which will remove and return the value stored at the index. The program crashes with an `IndexError` if an invalid index is passed. The following example shows how to call `pop()` and looks at the values that are returned.
+The call `your_list.pop()` removes the *last* element of a list. It returns the value that was stored there. You can alternately pass an integer parameter (`pop(index)->List_type`), which will remove and return the value stored at the index. The program crashes with an `IndexError` if an invalid index is passed. The following example shows how to call `pop()` and looks at the values that are returned.
 
 ```python
 values = [81, 59, 42, 65, 72, 42, 42, 21]
@@ -96,7 +96,7 @@ print(removed) # outputs 21, the value that was popped
 # Removes the element at index 3 (65) and saves it:
 removed = values.pop(3)
 print(values)  # outputs [81, 59, 42, 72, 42, 42]
-print(removed) # outputs 65, the value that was popped
+print(removed) # outputs 65, the value that was just popped
 values.pop(59) # Program crashes with an IndexError, pop index out of range
 ```
 
@@ -108,7 +108,7 @@ Notice that `your_list.pop()` is identical to `your_list.pop(len(your_list)-1)`
 
 `remove(x)->None`
 
-The `remove()` method removes the first occurrence of the value `x` in the list. Notice that it differs from the `pop()` method because you pass the *value* of the item you want to remove, rather than passing the *index*. If the value `x` is not in the list, then the program crashes with a `ValueError`. So check for membership of `x` in the list prior to calling `remove()`.
+The call `your_list.remove(x)` removes the first occurrence of the value `x` from the list. Notice that it differs from the `pop()` method because you pass the *value* of the item you want to remove, rather than passing the *index*. If the value `x` is not in the list, then the program crashes with a `ValueError`. So check for membership of `x` in the list prior to calling `remove()`.
 
 ```python
 values = [81, 59, 42, 65, 72, 42, 42, 21]
@@ -140,7 +140,7 @@ del values[10]  # program crashes with an IndexError
 
 `reverse()->None`
 
-Calling the `reverse()` method modifies the list by reversing the order of the elements.
+The call `your_list.reverse()` modifies the list by reversing the order of the elements.
 
 ```python
 values = [3, 1, 4, 2, 8]
@@ -155,7 +155,7 @@ values = [3, 1, 4, 2, 8]
 print(values[::-1])  # outputs [8, 2, 4, 1, 3]
 print(values)   # outputs [3, 1, 4, 2, 8], values itself is unchanged
 ```
-Since the slice `values[::-1]` has its stop index and start index missing, we use the default values. The slice includes the entire list, but the step value of `-1` means traverse the list in reverse order. Notice that the slice just traverses the list in a different order - the contents of the list itself has not been altered.
+Since the slice `values[::-1]` has its stop index and start index missing, we use the default values. The slice includes the entire list, but the step value of `-1` means the list will be traversed in reverse order. Notice that the slice just traverses the list in a different order - the contents of the list itself have not been altered.
 
 </li>
 
@@ -163,7 +163,7 @@ Since the slice `values[::-1]` has its stop index and start index missing, we us
 
 `sort()->None`
 
-The `sort()` method *modifies* the list by *sorting the elements from smallest to largest*. If you pass an optional `reverse=True` as a parameter, then the list is sorted in descending order.
+The call `your_list.sort()` *modifies* the list by *sorting the elements from smallest to largest*. If you pass an optional `reverse=True` as a parameter, then the list is sorted in descending order.
 
 ```python
 values = [3, 1, 4, 2, 8]
@@ -174,7 +174,7 @@ print(values)  # outputs [1, 2, 3, 4, 8]
 # Next sort the list in decreasing order
 # The contents of the list itself are modified!
 values.sort(reverse=True)
-print(values)  # outputs [8, 4, 3 , 2, 1]
+print(values)  # outputs [8, 4, 3, 2, 1]
 ```
 </li>
 
@@ -192,7 +192,7 @@ sorted_ascending = sorted(values)
 print(sorted_ascending)  # outputs [1, 2, 3, 4, 8]
 print(values) # outputs [3, 1, 4, 2, 8], values has NOT been modified
 # produce a sorted copy of the list, descending order
-# The contents of the list itself are modified!
+# The contents of the list itself are NOT modified!
 sorted_descending = sorted(values, reverse=True)
 print(sorted_descending)  # outputs [8, 4, 3, 2, 1]
 print(values) # outputs [3, 1, 4, 2, 8], values has NOT been modified

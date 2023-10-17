@@ -1,7 +1,7 @@
 # Introduction to `dudraw`
 
 ## What can you do with `dudraw`?
-The Python package `dudraw` is a minimal graphics library developed for teaching a beginning Python programming class. Its starting point was `stddraw`, developed at Princeton University (see [Elements of Programming in Python](https://introcs.cs.princeton.edu/python/code/index.php#programs)). At the University of Denver we modified and enhanced that package to produce `dudraw`.
+The python package `dudraw` is a minimal graphics library developed for teaching a beginning python programming class. Its starting point was `stddraw`, developed at Princeton University (see [Elements of Programming in Python](https://introcs.cs.princeton.edu/python/code/index.php#programs)). At the University of Denver we modified and enhanced that package to produce `dudraw`.
 
 The `dudraw` package has graphics primitives for drawing points, lines, circles and ellipses, squares and rectangles, triangles, quadrilaterals, polygons, circular and elliptical sectors, annuli and text. You can set the color you want the objects to be, and the width of points, lines and outlines.
 
@@ -10,13 +10,13 @@ You can find out about key-clicks and mouse presses from the user, and respond t
 The `dudraw` package is a paint-style graphics package. In other words, you draw graphical objects, but they cannot be moved or deleted after being drawn.
 
 ## How do I get access to `dudraw`?
-First make sure that you have followed all the installation steps on the [Python, VSCode, and dudraw Installation](installation.md) page. If you've successfully completed these steps then by starting your Python program with the line
+First make sure that you have followed all the installation steps on the [Python, VSCode, and dudraw Installation](installation.md) page. If you've successfully completed these steps then start your python program with the line
 
 `import dudraw`
 
-you will be able to call any of the functions in `dudraw`.
+and you will be able to call any of the functions in `dudraw`.
 
-If you were unable to install `dudraw` with the normal installation instructions, please reach out to a teacher or TA for help and they will have you attempt to install `dudraw` using the command line for your operating system and some command like:
+If you were unable to install `dudraw` with the normal installation instructions, please reach out to a teacher or TA for help and they will have you attempt to install `dudraw` using the command line for your operating system and issuing a command like:
 
 `pip install dudraw`
 
@@ -57,7 +57,7 @@ dudraw.BOOK_LIGHT_BLUE
 dudraw.BOOK_RED
 ```
 
-To create colors of your own, first note that a color on a computer monitor can be defined by an intensity for red light, green light and blue light, each of which is an integer value from 0 to 255. Colors on a compter monitor are additive like light, rather than subtractive like paint. For example, to create yellow light, you add together green light and red light. So the brightest yellow is defined by red=255, green = 255, blue = 0. You can play around with choosing colors with many different programs. On many browsers, if you do an internet search on "color picker" one will show up. Or there are many free ones available on websites, for example here: [color picker website](https://htmlcolorcodes.com/color-picker/).
+To create colors of your own, first note that a color on a computer monitor can be defined by an intensity for red light, green light and blue light, each of which is an integer value from 0 to 255. Colors on a compter monitor are additive like light, rather than subtractive like paint. For example, to create yellow light, you add together green light and red light. So the brightest yellow is defined by red = 255, green = 255, blue = 0. You can use many different programs to experiment with choosing colors. On many browsers, if you do an internet search on "color picker" one will show up. Or there are many free ones available on websites, for example here: [color picker website](https://htmlcolorcodes.com/color-picker/).
 For example, here's a nice plum color, with values r = 140, g = 40, b = 160:
 
 <img src="img/dudraw_quickstart/plum_color.png" alt="a swatch with a plum color" width="75"/>
@@ -65,8 +65,8 @@ For example, here's a nice plum color, with values r = 140, g = 40, b = 160:
 Here's a way to make your background this color, or to set your pen color to this color:
 
 ```python
-dudraw.clear_rgb(140, 40, 160)
-dudraw.set_pen_color_rgb(140, 40,160)
+dudraw.clear_rgb(140, 40, 160)        # draw a plum-colored background
+dudraw.set_pen_color_rgb(140, 40,160) # set the color for future shapes
 ```
 
 ## May I see some other shapes?
@@ -89,7 +89,7 @@ There are also `dudraw` primitives that produce filled regions rather than outli
 
 ![filled basic shapes](img/dudraw_quickstart/filled_basic_shapes.png)
 
-These are not the only filled shapes. Other examples include `dudraw.filled_triangle()`, dudraw.`filled_circle()`, `dudraw.filled_polygon()`, and `dudraw.filled_annulus()`.
+These are not the only filled shapes. Other examples include `dudraw.filled_triangle()`, `dudraw.filled_circle()`, `dudraw.filled_polygon()`, and `dudraw.filled_annulus()`.
 
 ## How do I change the scale?
 By default, the scale in a dudraw canvas is [0, 1] x [0, 1], even if the size of the canvas itself is not square. For example, the code below produces the image shown. (The image is annotated to show the coordinates of a few points)
@@ -134,7 +134,7 @@ The size is in points. The default font family is Helvetica, and the default siz
 {{#include programs/dudraw_quickstart/save_image.py}}
 ```
 
-Notice that this program does not have a call to `dudraw.show()`. This means that, although the image is saved to both files, a window displaying the image is never opened, and the image is not displayed to the screen.
+Notice that this program does not have a call to `dudraw.show()`. This means that, although the image is saved to the file, a window displaying the image is never opened, and the image is not displayed to the screen.
 
 ## How do I get official details on all of the functions?
 

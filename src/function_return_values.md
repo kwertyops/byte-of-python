@@ -19,7 +19,7 @@ There are two main reasons that functions are useful in programming:
 
 - Abstraction
 
-    Once a function has been written and tested, we don't need to know how it works anymore. We only need to remember its **name, purpose, parameters, and return value**. For example, when you use the `dudraw.circle()` function, you can just use it without bothering your mind with the distraction of how that function creates the circle. This allows us to build functions from functions already written, and this allows us to much more easily produce very complicated software.
+    Once a function has been written and tested, we don't need to know how it works anymore. We only need to remember its **name, purpose, parameters, and return value**. For example, when you use the `dudraw.circle()` function, you can just use it without bothering your mind with the distraction of how that function creates the circle. This allows us to build functions from functions already written, and this allows us to produce very complicated software much more easily.
 
 - Code organization and readability
 
@@ -36,13 +36,13 @@ print("Hello!")
 ```
 takes a parameter (the input to the function is `"Hello"`), but it does not return a value.
 
-But the `input()` function does return a value. The return type is `str`.  When the function is *invoked*, you may do whatever is useful with that return value. In the example below the value returned by the `input()` function is stored in the variable `name`:
+But the `input()` function does return a value. The return type is `str`.  When the function is *invoked*, when it is done executing it returns a value. You may do whatever is useful with that return value. In the example below the value returned by the `input()` function is stored in the variable `name`:
 
 ```python
 name = input("Enter your name")
 ```
 
-Another example is the `random()` function, which returns a float. We may choose to store the value that is returned in a variable. Or we may choose to pass that return value as a parameter to another function:
+Another example is the `random()` function, which returns a `float`. We may choose to store the value that is returned in a variable. Or we may choose to pass that return value as a parameter to another function:
 
 ```python
 # Store the return value in a variable:
@@ -65,7 +65,7 @@ def function_name(optional parameters) -> return type:
 ```
 
 Example:
-Here's a function that takes a `float` parameter that represents a temperature in Fahrenheit (think of this as an input value to the function). The function then computes the conversion of the temperature to Celsius. The converted value of type `float` is returned (think of that as an output value).
+Here's a function that takes a `float` parameter named `temp_f` that represents a temperature in Fahrenheit (think of `temp_f` as an input value to the function). The function then computes the conversion of the temperature to Celsius. The converted value `temp_c` of type `float` is returned (think of `temp_c` as an output value from the function).
 
 ```python
 def celsius(temp_f: float) -> float:
@@ -100,6 +100,8 @@ print(f"{user_temp_f} degrees Fahrenheit is {celsius(user_temp_f):.1f} degrees C
 Note that a function may return a value of type `bool`. These are called *boolean functions*, and just as before, the return value can be used as an expression. For example:
 
 ```python
+# Return True if the first digit of the number is even,
+# otherwise return False
 def first_digit_even(number: int) -> bool:
     # Keep dividing by 10 until the number is less than 10
     while number >= 10:
@@ -131,9 +133,9 @@ def is_prime(number: int) -> bool:
     """
     A function that determines whether or not a number is prime
     parameters:
-        number: a positive integer greater than 1 (type int)
+        number: a positive integer greater than 1 (type: int)
     return:
-        True if number is prime, False otherwise (type bool)
+        True if number is prime, False otherwise (type: bool)
     """
 
     # tester is a possible factor. Start at 2 and we will increase it
@@ -141,8 +143,9 @@ def is_prime(number: int) -> bool:
 
     while tester < number:
         if number % tester == 0:
-            # We know the answer, so the function teriminates
-            # returning the result
+            # We now know that tester divides number, so
+            # we know the answer - number is not prime!
+            # The function teriminates, returning False
             return False
         else:
             tester += 1
@@ -166,12 +169,13 @@ if __name__ == '__main__':
 
 Key points:
 
-- The input for this function is an integer.
+- The input for this function is an integer bigger than 1 (our program would be improved if we checked for this condition).
 - The output is a boolean (`True` if `number` is prime, `False` otherwise).
 - It's helpful for boolean functions to have names that reflect that they return a `True/False` result. Here, `is_prime()` reads like a question that has a yes/no answer. When we call the function, the line
 `if is_prime(23):` makes sense when we read it.
 - A function should only perform one task. Here, the job is to determine whether or not the number is prime. The function does *not* output the result to the console. The function just returns the result to the line that invoked it. It's up to the caller to interact with the user. This philosophy makes for more flexible and reusable functions.
 - Within the loop of the `is_prime()` function, we can only return `False`, never `True`. Because only by completing the entire loop can we know that `number` has no factors (other than `1` and itself). The `return True` can thus only happen after the loop has completed.
+- The program could be made to run more efficiently by stopping the loop when `tester` reaches the square root of `number`.
 
 By placing the code to determine whether a number is prime into a separate function, we can now re-use it in  multiple ways. For example, here is a new `main()` function that outputs all primes less than `1000`:
 
@@ -187,7 +191,7 @@ def main():
 ```
 You should notice how simple it was to create this new program. The `is_prime()` function did not need to be rewritten or even thought about.
 
-Here is yet another example. This time we will build another layer on top of the `is_prime()` function by creating a function called `next_prime()` to give the next prime larger than a specific integer. Notice that `next_prime()` itself uses `is_prime()`, so its job is made straightforward and easy to understand. By the use of these two functions, the interface with the user in `main()` is also very straightforward. This organization and structure makes code easier to read and understand, easier to fix if it has an error, and easier to enhance or modify if we choose to later. Notice that I've taken out the contents of `is_prime()` since that function is identical to before. 
+Here is yet another example. This time we will build another layer on top of the `is_prime()` function by creating a function called `next_prime()` to give the next prime larger than a specific integer. Notice that `next_prime()` itself uses `is_prime()`, so its job is made straightforward and easy to understand. By the use of these two functions, the interface with the user in `main()` is also very straightforward. This organization and structure makes code easier to read and understand, easier to fix if it has an error, and easier to enhance or modify if we choose to later. Notice that the contents of `is_prime()` are not shown here, since that function is identical to before.
 
 ```python
 def is_prime(number: int) -> bool:

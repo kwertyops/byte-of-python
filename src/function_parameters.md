@@ -19,7 +19,7 @@ def function_name(parameter1_name: parameter1_type, parameter2_name: parameter2_
     # Code defining the function
 ```
 
-Example 1: In the program below, the simple function `greet_user()` outputs `"Hello, world!"` to the console multiple times. The parameter to the function determines how many times the line is output.
+Example 1: In the program below, the simple function `greet_user()` outputs `"Hello, world!"` to the console multiple times. The parameter to the function determines how many times the line is output. The parameter gives a way of passing information (the number of greetings to output) from the line that calls the function to the function itself.
 
 <table>
 <tr><td>Code</td><td>Output</td></tr>
@@ -87,7 +87,7 @@ Hello, Mahsa
 </tr>
 </table>
 
-In this course, we will have a standard for commenting functions. After the `def` line, put a block comment explaining the purpose of the function as well as any parameters and what their purpose is. For example:
+In this course, we will have a standard for commenting functions. After the `def` line, put a block comment (a docstring) explaining the purpose of the function as well as any parameters and what their purpose is. For example:
 
 ```python
 def greet_user(num_greetings: int, name: str) -> None:

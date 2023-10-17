@@ -51,9 +51,9 @@ The value of `b_x` will be `-6` and the value of `b_y` will be `9`.
 While you can examine an individual value in a `tuple` using square brackets, note that you *cannot modify individual elements of a `tuple`*, since `tuple`s are immutable.
 
 ```python
-vertex_b = (-6, 9)s
+vertex_b = (-6, 9)
 x = vertex_b[0] # valid line of code
-vertex_b[0] = -3  # not allowed, since tuples are immutable
+vertex_b[0] = -3  # not allowed, since tuples are immutable, crashes with a TypeError
 ```
 
 ## Example 2 - GPS coordinates
@@ -71,7 +71,11 @@ taj_mahal = (27.1751, 78.0421)
 machu_picchu = (-13.1631, 72.5450)
 denali_peak = (63.1148, -151.1926)
 
-print(f"The taj-mahal is located at latitude {taj_mahal[0]}, longitude {taj_mahal[1]}")
+print(f"The Taj Mahal is located at latitude {taj_mahal[0]}, longitude {taj_mahal[1]}")
+```
+Output:
+```
+The Taj Mahal is located at latitude 27.1751, longitude 78.0421
 ```
 
 ## Example 3 - dimensions of a 3D object
@@ -99,7 +103,7 @@ main()
 <td>
 
 <figure>
-<img src="img/tuples/boxes.png" alt="Two boxes with visibly different dimensions" class="center", width="250">
+<img src="img/tuples/boxes.png" alt="Two boxes with visibly different dimensions" class="center", width="300">
 </figure>
 </td>
 </tr>
@@ -159,10 +163,10 @@ The code below contains a function that creates a random playing card. A random 
 ```python
 import random
 
-# Here are the constant full list for all possible card suits
+# Here are the constant full lists for all possible card suits
 # and all possible card values
 SUITS = ["Spades", "Hearts", "Diamonds", "Clubs"]
-VALUES = ["Ace", "1", "2", "3", "4", "5", "6", "7", "8", "9", 
+VALUES = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", 
           "10", "Jack", "Queen", "King"]
 
 # Create a random card by randomly choosing from the list of all
@@ -193,13 +197,14 @@ In python, `tuple`s and `list`s have these things in common:
 But `tuple`s and `list`s differ in the following ways:
 - Define a `list` using `[]`, and define a `tuple` using `()`
 - `tuple`s are immutable, while `list`s are mutable.
+- You can change the value in a list with an assignment like `your_list[2]=4.7`. You can't change individual elements in a tuple, since tuples are immutable.
 
-Use a `list` and not a `tuple` in this situation:
+Use a `list` (and **not** a `tuple`) in this situation:
 - Use a `list` when you expect the contents of your data to change while running the program. Tuples are immutable, so once a `tuple` is created, you can neither change the values of the elements nor add/remove elements without creating a new `tuple`.
 
 Use a `tuple` when:
 - Use a `tuple` when you *need* your data to be immutable (e.g., we’ll see later that keys for dictionaries must be immutable).
-- When you want a function to return two values, you can put the two values into a `tuple` and return just the `tuple`.
+- Use a `tuple` when you want a function to return two values. You can put the two values into a `tuple` and return just the `tuple`.
 - If your data is sure not to change during running of the program, using a `tuple` can avoid a bug created by your program accidentally modifying the contents.
 - When it’s possible to use either a `list` or a `tuple`, it’s more common to use a `tuple` for heterogenous data types (the elements within the `tuple` are of varying types), and to use a `list` for homogeneous data types (all the elements of the `list` are of the same type).
 - It is more efficient (runs faster) to iterate through a `tuple` than a `list`. So if your program is running too slowly, switching to a `tuple` if possible could improve performance.

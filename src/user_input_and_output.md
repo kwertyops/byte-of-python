@@ -1,12 +1,12 @@
 ## Outputting information from the program to the user
 
-In Python, use the `print()` function to output information to the user.
+In python, use the `print()` function to output information to the user.
 
 Here is a run-of-the-mill print statement:
 ```python
 print("Hello, World!")
 ```
-When you run this line of code, the following is output this to the console:
+When you run this line of code, the following is output to the console:
 ```
 Hello, World!
 ```
@@ -32,7 +32,7 @@ The output shows that a space automatically is inserted between each parameter:
 Hello, Sam !
 ```
 
-Another way to build strings for output is to use the `+` operator for *concatenation* (Concatenation means putting two strings together by tacking the second one onto the end of the first one).
+Another way to build strings for output is to use the `+` operator for *concatenation*. Concatenation means putting two strings together by tacking the second one onto the end of the first one.
 ```python
 print("Hello," + username + "!")
 ```
@@ -41,7 +41,7 @@ The output below shows that when concatenating strings, a space does **not** aut
 HelloSam!
 ```
 
-Here are ways to put a space between two different strings
+Here are ways to put a space between two different strings:
 ```python
 print("Hello", username)
 print("Hello " + username)
@@ -56,7 +56,7 @@ Hello
 World
 ```
 
-The backslash symbol `\`  in `\n` is called an *escape character*. It tells Python that the letter following the backslash should be interpreted together with the `\` as a pair with special meaning. Other examples include 
+The backslash symbol `\`  in `\n` is called an *escape character*. It tells python that the letter following the backslash should be interpreted together with the `\` as a pair with special meaning. Other examples include 
 - `\t` for tab, 
 - `\"` and `\'` to put a double quote or single quote into a string literal, and
 - `\\` to insert a backslash.
@@ -71,7 +71,7 @@ Answer:
 print("\"\\n\" is a newline,\nwhile \"\\\'\" is a single quote.")
 ```
 
-A third way in Python to combine multiple strings together and to include variable values within a string is a *formatted string literal*, commonly called an *f-string*. Create an f-string by prefixing the string with an `f`, then include any variable values within a pair of curly braces `{}`. For example:
+A third way in python to combine multiple strings together and to include variable values within a string is a *formatted string literal*, commonly called an *f-string*. Create an f-string by prefixing the string with an `f`, then include any variable values within a pair of curly braces `{}`. For example:
 ```python
 print(f"Hello, {username}!")
 ```
@@ -79,7 +79,7 @@ outputs
 ```
 Hello, Sam!
 ```
-With f-strings, you can have rich and control over the formatting.
+With f-strings, you can have rich control over the formatting.
 For example
 ```python
 import math
@@ -93,7 +93,7 @@ pi to 5 decimal places is 3.14159, and e to 3 decimal places is 2.718.
 Here's an online tutorial if you want to investigate more capabilities of f-strings:
 [https://builtin.com/data-science/python-f-string](https://builtin.com/data-science/python-f-string)
 
-Finally, it sometimes causes us problems that a call to `print()` automatically includes a newline at the end of the output. Occasionally we want to suppress that. We do this by specifying in a second parameter to `print()` that the end should be an empty string `""` rather than the default `"\n"`. Here's an example showing how two calls to `print()` can both output on the same line of the console:
+Finally, it sometimes causes us problems that a call to `print()` automatically includes a newline at the end of the output. Occasionally we want to suppress that. We do this by specifying in a second parameter to `print()` that the end should be an empty string `""` rather than the default `"\n"`. Here's an example showing how two calls to `print()` can output on a single line of the console:
 
 ```python
 print("Hello, world! ", end="")

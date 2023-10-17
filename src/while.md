@@ -8,7 +8,7 @@ for i in range(N):
 repeat a block of code for a set number of iterations. But there are many cases when the number of repetitions is not known ahead of time.  For each of the following examples, you must use a `while`-loop, not a `for`-loop, because the number of repetitions is not known when the loop begins.
 - Prompt a user to enter a password, asking repeatedly until they get it correct. You don't know in advance how many times it will take.
 - Create an animation that continues until the user enters a `q` to quit. The animation must continue until they choose to quit, and until then the animation must continue an unknown number of frames.
-- Write a game for two players who take turns. You don't know how many turns it will take for someone to win.
+- Write a game for two players who take turns. You don't know in advance how many turns it will take for someone to win.
 
 ## Syntax of a `while` statement:
 ```python
@@ -21,7 +21,7 @@ The `<condition>` is a boolean expression. If it evalutes to `True`, then the in
 Here is the flowchart that shows visually the path of execution through a `while`-loop:
 
 <figure>
-<img src="img/while/while_flowchart.png" alt="4 houses, scaled and shifted variously" class="center", width="200">
+<img src="img/while/while_flowchart.png" alt="flowchart for a while loops" class="center", width="200">
 </figure>
 
 ## Example
@@ -48,7 +48,7 @@ Correct!
 
 ## Should I use a `for`-loop or a `while`-loop?
 
-It is possible to use a `while`-loop instead of a `for`-loop. The two code blocks shown below behave the same, each of them outputting the integers from `0` to `9`:
+Though it is not always a good idea, it is actually possible to use a `while`-loop instead of a `for`-loop. The two code blocks shown below behave the same, each of them outputting the integers from `0` to `9`:
 
 <table>
 <tr>
@@ -82,13 +82,13 @@ while i < 10:
 Although the above code snippets show that it is *possible* to replace a `for`-loop with a `while`-loop, this is not advised. Instead, use the following guidelines to determine which type of loop to use:
 
 - Use a `while`-loop when the number of iterations is **unknown** before the loop completes.
-- Use a `for`-loop when before the loop starts, you know how many iterations you need. 
-- It's still better to use a `for`-loop if the number of iterations is unknown while you are writing the program, but is determined during the program (in other words, `for i in range(variable)`), since in this case the value is known by the time the loop begins.
+- Use a `for`-loop when before you know how many iterations you need befor the loop starts executing. 
+- It's still better to use a `for`-loop if the number of iterations is unknown while you are writing the program, but is determined during the program before the loop is executed (in other words, `for i in range(variable)`), since in this case the value is known by the time the loop begins.
 
 ## Putting it all together
 
 ### Example 1
-Here's an example of a full program that uses a `while`-loop. It simulates rolling a die, to see how many rolls before we roll a 6. Note that a `for`-loop is not possible here, since we do not know how many rolls of the die it will take until we finally roll a 6.
+Here's an example of a full program that uses a `while`-loop. It simulates rolling a six-sided die, to see how many rolls it takes to roll a 6. Note that a `for`-loop is not possible here, since we do not know how many rolls of the die it will take until we finally roll a 6.
 
 <table>
 <tr><td>Code</td><td>Sample output</td></tr>
@@ -124,8 +124,8 @@ def main():
         dice_roll = int(random() * 6 + 1)
         roll_count += 1
 
-    # Output how many rolls it took before we rolled a 6.
-    print(f"We rolled a 6 and it took {roll_count} rolls.")
+    # Output how many rolls it took to roll a 6.
+    print(f"We rolled a 6. It took {roll_count} rolls.")
 
 # Run the program:
 if __name__ == '__main__':
@@ -140,7 +140,7 @@ We rolled a 1
 We rolled a 2
 We rolled a 2
 We rolled a 5
-We rolled a 6 and it took 5 rolls.
+We rolled a 6. It took 5 rolls.
 ```
 </td>
 </tr>

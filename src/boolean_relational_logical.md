@@ -1,5 +1,5 @@
 ## Boolean variables
-In order to control the flow of a program, we will need a new type of value and variable called a boolean. In python the name of the type is `bool`. Boolean variables can only have two possible values: `True` and `False`.
+In order to control the flow of a program, we will need a new type of value and variable called a boolean. In python the name of the type is `bool`. Boolean variables can only have two possible values: `True` or `False`.
 
 Boolean variables are used much like other variables in python. For example, when creating an animated (moving) drawing in `dudraw`, we may want a variable called `is_moving` to keep track of whether one of our objects is continuing to move. Here is some code that would create and access that variable:
 
@@ -100,7 +100,7 @@ Negate the value - meaning a `True` boolean expression becomes `False` and a `Fa
 
 `True` **only if both boolean expressions are true**, otherwise `False`.
 
-Such as "I completed homework **and** read a book", evaluates to `True` only if you have done **both**.
+"I completed homework **and** read a book", evaluates to `True` only if you have done **both**.
 </td>
 <td>
 
@@ -118,7 +118,7 @@ Such as "I completed homework **and** read a book", evaluates to `True` only if 
 
 `True` **if either boolean expression is true**, otherwise `False`.
 
-Such as "I completed homework **or** read a book" evaluates as `True` if you have done one or the other or both.
+"I completed homework **or** read a book" evaluates as `True` if you have done one or the other or both.
 </td>
 
 <td>
@@ -126,6 +126,8 @@ Such as "I completed homework **or** read a book" evaluates as `True` if you hav
 `x or y` &rarr; `True`
 
 `(not x) or y` &rarr; `False`
+
+`x or (not y)` &rarr; `True`
 </td>
 </tr>
 </table>
@@ -140,7 +142,7 @@ The order of precedence for logical operators is
 - `or`.
 
 Just like in arithmetic, the order of precedence can be overridden with parentheses.
-Sometimes people forget whether `and` or `or` has higher precedence. So you are urged to use parentheses in logical expressions even if they are not required, to avoid ambiguity and to improve the clarify of your code to others who read it.
+Sometimes people forget whether `and` or `or` has higher precedence. So you are urged to use parentheses in logical expressions even if they are not required, to avoid ambiguity and to improve the clarity of your code to others who read it.
 
 Examples:
 Suppose the following code has executed:
@@ -154,7 +156,7 @@ Evaluate the following boolean expressions:
 
 |Boolean expression...|...evaluates to:|
 |:-:|:-:|
-|`x * g == z or not ( x * x < y)` | `True`|
+|`x * g == z or not (x * x < y)` | `True`|
 |`(2 * y < z and z <= g) or x != 5` | `False`|
 |`not (x == 7)`|`True`|
 

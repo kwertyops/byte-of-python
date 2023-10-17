@@ -242,7 +242,7 @@ else:
 <td>
     
 <figure style="margin: 5px auto;">
-<img src="img/nested_conditionals/voting_flowchart.png" alt="Flowchart for the voting program" class="center" width="300">
+<img src="img/nested_conditionals/voting_flowchart.png" alt="Flowchart for the voting program" class="center" width="170">
 </figure>
 
 </td>
@@ -252,4 +252,4 @@ Key points:
 - Notice that this program has three levels of nesting.
 - Notice that if the user enters `N` to the first question, then no further questions are asked. Similarly, if they are too young, they are not asked the last question. This is accomplished using the structure of the `if-else` nesting.
 - The indentation is vital. Look at the code above and carefully notice how each `if` lines up directly above the `else` that pairs with it. 
-- Copy/paste the above program into VSCode and run it. To test completely, you have to try all possible combinations of inputs, so that every possible line of code in the program gets tested. This means running the program multiple times and entering multiple possibilities at each input line. What happens if the user enters `P` instead of `Y` or `N`? Why?
+- Copy/paste the above program into VSCode and run it. To test completely, you have to try all possible combinations of inputs, so that every possible line of code in the program gets tested. This means running the program multiple times and entering multiple possibilities at each input line. For example, what happens if the user enters `P` instead of `Y` or `N`? Why?

@@ -1,11 +1,11 @@
 ## Animations using `dudraw`
 
-Animation is usually created with a `while`-loop. The following template shows what usually goes in the body of the loop:
+Animations are usually created with `while`-loops. The following template shows what usually goes in the body of the loop:
 * clear the background
 * redraw the next frame of the animation
 * call `dudraw.show(wait_time)`
 
-When you pass a parameter to `dudraw.show()`, the program pauses for the given wait_time, which is a `float` value giving the time in milliseconds.
+When you pass a parameter to `dudraw.show()`, the program pauses for the given `wait_time``, which is a `float` value giving the time in milliseconds.
 
 Here is sample code that animates a circle appearing to move from the lower left corner of the canvas to the upper right corner:
 
@@ -17,6 +17,7 @@ Here is sample code that animates a circle appearing to move from the lower left
 ```python
 """ Demo showing a simple animation,
     A circle moves diagonally across the canvas
+    File Name: simple_animation.py
     Author: COMP 1351 instructor
     Date:
     Course: COMP 1351
@@ -31,7 +32,8 @@ def main():
     x_center = 0
     y_center = 0 
 
-    # animation loop (loop forever - we'll update this later):
+    # animation loop (loop forever - we'll improve this
+    # in a later example):
     while True:
         # clear the background (erase previous frame) to prepare
         # for the next frame
@@ -79,7 +81,7 @@ You can find out the position of the mouse (regardless of whether the mouse is p
 """ Demo showing how to detect mouse clicks
     This happens by calling dudraw.mouse_clicked()
     within an animation loop
-    File Name: simple_animation.py
+    File Name: mouse_click_processing.py
     Author: COMP 1351 instructor
     Date:
     Course: COMP 1351
@@ -122,10 +124,10 @@ if __name__ == '__main__':
 As with mouse clicks, polling for a key click typically happens within an animation loop. Use the function `dudraw.next_key()`, which will return a string containing the next most-recently entered key. If no key has been pressed, the function returns an empty string. As an example, the following code is a modification of the mouse interaction code, with the added feature of terminating (quitting) the program when the `'q'` key is typed:
 
 ```python
-""" Demo showing how to detect key clicks
-    This happens by, within an animation loop,
+""" Demo showing how to detect key presses
+    This happens within an animation loop,
     by calling dudraw.next_key()
-    File Name: simple_animation.py
+    File Name: detect_key_presses.py
     Author: COMP 1351 instructor
     Date:
     Course: COMP 1351
@@ -146,6 +148,7 @@ def main():
             dudraw.filled_circle(dudraw.mouse_x(), dudraw.mouse_y(), 0.02)
         # pause for one 20th of a second
         dudraw.show(50)
+        # detect key presses, look for 'q' to quit program
         if dudraw.next_key()=='q':
             done = True
 
@@ -182,7 +185,7 @@ Please note the following two common errors in using the `dudraw.next_key()` fun
             if dudraw.next_key() == 'q' or 'Q'
                 done = True
     ```
-- The error in the INCORRECT CODE below is a little subtle. Here the function `dudraw.next_key()` is mistakenly invoked twice. If a `Q` is entered, that key click is processed in the first call to `dudraw.next_key()`. You can think of it as being *used up*. So on the second call to `dudraw.next_key()`, the `Q` is gone, and there are no key presses left to check.
+- The error in the INCORRECT CODE below is a little subtle. Here the function `dudraw.next_key()` is mistakenly invoked twice. If a `Q` is entered, that key click is processed in the first call to `dudraw.next_key()`. You can think of it as being *used up*. So on the second call to `dudraw.next_key()`, the `Q` is gone, and there are no key presses left to check. The result is that a `q` will quit the program, but a `Q` will not.
     ```python
             # This code is incorrect!
             if dudraw.next_key() == 'q' or dudraw.next_key() == 'Q'

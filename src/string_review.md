@@ -9,7 +9,7 @@ You've already learned quite a bit about strings. Here's a summary review:
     print(type(name)))  # outputs <class `str'>
     ```
 - You can combine strings for output in multiple ways, such as
-    - Pass multiple expressions to `print()`, separated by commas. An space is automatically inserted between the strings.
+    - Pass multiple expressions to `print()`, separated by commas. In the output, a space is automatically inserted between the strings.
         ```python
         name = input('What is your name? ')
         print('Hello', name, ', I am glad to meet you!') 
@@ -19,7 +19,7 @@ You've already learned quite a bit about strings. Here's a summary review:
         What is your name? Buttercup
         Hello Buttercup , I am glad to meet you!
         ```
-        Notice the unfortunate extra space after the comma!
+        Notice the unfortunate extra space before the comma!
     - Concatenate using the `+` operator. This means joining together two strings, one following the other. It gives us complete control over the spaces - you must include any needed spaces.
 
         ```python
@@ -34,7 +34,7 @@ You've already learned quite a bit about strings. Here's a summary review:
 
         Notice that the code above uses double quotes rather than single quotes for each of the strings. This was an intentional choice. The text `"I'm glad to meet you"` has an apostrophe in it, which is the same character as a single quote. If we try to define that string using a single quote, then python assumes we are ending the string when we reach the single quote. The problem is solved by using double-quotes. 
 
-    -  Use an `f`-string (formatted string) to define a string that includes the value of expression(s).
+    -  Use an `f`-string (formatted string) to define a string that includes the value of expression(s). Put each expression with a pair of curly braces `{}`
         ```python
         name = input("What is your name? ")
         print(f"Hello {name}, I'm glad to meet you!")
@@ -44,7 +44,7 @@ You've already learned quite a bit about strings. Here's a summary review:
         What is your name? Vizzini
         Hello Vizzini, I'm glad to meet you!
         ```
-- A backslash (`\`) denotes a special characters. This is called *escaping*. Examples include `\n` (new line), `\t` (tab), `\\` (backslash), `\'` (for including single quote within a single quote), `\"` (for including a double quote within a double quote). This example uses `\\` and `\n`:
+- A backslash (`\`) denotes a special character. This is called *escaping*. Examples include `\n` (new line), `\t` (tab), `\\` (backslash), `\'` (for including single quote within a single-quoted string), `\"` (for including a double quote within a double-quoted string). This example uses `\\` and `\n`:
     ```python
     print('\\n - newline\n\\t - tab')
     ```

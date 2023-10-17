@@ -1,6 +1,6 @@
 ## Immutable versus mutable types
 
-The types `str`, `float`, `int`, `bool` are all immutable. The `list` type is the first one you have seen that is mutable.
+The types `str`, `float`, `int`, `bool` are all immutable. The `list` type is the first type you have seen that is mutable.
 
 The value of an *immutable* type cannot be changed. This may sound wrong to you, since you have been changing the values of variables since the first day of programming. However, in python when we assign a value to a variable, we are technically not changing the value. Instead we are actually assigning to the variable a new value with a new memory address. The old value in its old memory address is not changed - it just becomes irrelevant to this variable. Each snippet of code below is accompanied by a memory diagram that shows what is happening behind the scenes:
 
@@ -20,7 +20,7 @@ x = 5
 <td>
 
 <figure>
-<img src="img/list_mutability/memory_diagram1.png" alt="Memory diagram for storing an int" class="center", width="200">
+<img src="img/list_mutability/memory_diagram1.png" alt="Memory diagram for storing an int" class="center", width="300">
 </figure>
 
 </td>
@@ -34,7 +34,8 @@ x = 5
 x = 5
 y = x 
 
-# Note that the following has the identical memory diagram
+# Note that the following code has 
+# the identical memory diagram
 # x = 5
 # y = 5 
 ```
@@ -43,7 +44,7 @@ y = x
 <td>
 
 <figure>
-<img src="img/list_mutability/memory_diagram2.png" alt="Memory diagram for two variables refering to the same int value" class="center", width="200">
+<img src="img/list_mutability/memory_diagram2.png" alt="Memory diagram for two variables refering to the same int value" class="center", width="300">
 </figure>
 
 </td>
@@ -63,7 +64,7 @@ y += 3
 <td>
 
 <figure>
-<img src="img/list_mutability/memory_diagram3.png" alt="Memory diagram for two variables referring to different int values" class="center", width="200">
+<img src="img/list_mutability/memory_diagram3.png" alt="Memory diagram for two variables referring to different int values" class="center", width="300">
 </figure>
 
 </td>
@@ -72,9 +73,9 @@ y += 3
 
 </table>
 
-In the above example, if we output the contents of `x` and `y`, the values will be different. With immutable types, changing the value of one variable will not change the value that another variable refers to.
+In the last example above, if we output the contents of `x` and `y`, the values will be different. With immutable types, changing the value of one variable will not change the value that another variable refers to.
 
-On the other hand, mutable types like `list` can change. This means that if you have more than one variable assigned to the same list, any of those variables can modify the list. And any changes made are visible regardless of which variable accesses the list afterwards. For example:
+On the other hand, the contents of mutable types like `list` can change. This means that if you have more than one variable assigned to the same list, any of those variables can modify the list. And any changes made are visible regardless of which variable accesses the list afterwards. For example:
 
 <table>
 <tr><td>Code</td><td>Memory diagram</td>
@@ -186,4 +187,4 @@ Here's the memory diagram at the end of execution of the above code block:
 <img src="img/list_mutability/memory_diagram9.png" alt="Memory diagram of two variables pointing to two different lists" class="center", width="250">
 </figure>
 
-In this situation, changes to the contents of either list will not after the list that the other variable refers to.
+In this situation, changes to the contents of either list will not alter the list that the other variable refers to.

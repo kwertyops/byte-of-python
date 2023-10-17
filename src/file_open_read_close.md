@@ -2,7 +2,7 @@
 
 Before reading from a file (input) or writing to a file(output), the program must *open* the file.
 
-The `open()` function returns a file object, which can then be uesd for reading, writing or appending to a file.
+The `open()` function returns a file object, which can then be used for reading, writing or appending to a file.
 
 ```python
 some_file = open('<path/file_name>'), mode  = <'string'>')
