@@ -83,7 +83,7 @@ The Taj Mahal is located at latitude 27.1751, longitude 78.0421
 A rectangular box has a length, a width, and a height. These dimensions can be stored together in a `tuple`. The code below also demonstrates how to pass a `tuple` to a function, including how to define the type of the parameter. The function can access the individual values within the `tuple`. In `main()` below, two tuples are defined. Then the `volume()` function is called with each of them, and the value is output, rounded to two decimal places.
 <table>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:450px;">
 
 ```python
 def volume(dimensions: tuple[float, float, float])->float:
@@ -103,7 +103,7 @@ main()
 <td>
 
 <figure>
-<img src="img/tuples/boxes.png" alt="Two boxes with visibly different dimensions" class="center", width="300">
+<img src="img/tuples/boxes.png" alt="Two boxes with visibly different dimensions" class="center", width="250">
 </figure>
 </td>
 </tr>

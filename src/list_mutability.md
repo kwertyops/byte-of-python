@@ -20,7 +20,7 @@ x = 5
 <td>
 
 <figure>
-<img src="img/list_mutability/memory_diagram1.png" alt="Memory diagram for storing an int" class="center", width="300">
+<img src="img/list_mutability/memory_diagram1.png" alt="Memory diagram for storing an int" class="center", width="250">
 </figure>
 
 </td>
@@ -44,7 +44,7 @@ y = x
 <td>
 
 <figure>
-<img src="img/list_mutability/memory_diagram2.png" alt="Memory diagram for two variables refering to the same int value" class="center", width="300">
+<img src="img/list_mutability/memory_diagram2.png" alt="Memory diagram for two variables refering to the same int value" class="center", width="250">
 </figure>
 
 </td>
@@ -64,7 +64,7 @@ y += 3
 <td>
 
 <figure>
-<img src="img/list_mutability/memory_diagram3.png" alt="Memory diagram for two variables referring to different int values" class="center", width="300">
+<img src="img/list_mutability/memory_diagram3.png" alt="Memory diagram for two variables referring to different int values" class="center", width="250">
 </figure>
 
 </td>

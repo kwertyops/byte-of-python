@@ -9,7 +9,7 @@ The code below creates an image of a house that fills a
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap style="display:inline-block; width:450px;">
+<td nowrap style="display:inline-block; width:500px;">
 
 ```python
 """ Demo showing how to shift an image
@@ -78,7 +78,7 @@ Recall from algebra that to translate a point in the Cartesian plane to the righ
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap style="display:inline-block; width:450px;">
+<td nowrap style="display:inline-block; width:500px;">
 
 ```python
 """ Demo showing how to shift an image.
@@ -155,7 +155,7 @@ The above code would be much more flexible if we modified the `draw_house()` fun
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap style="display:inline-block; width:450px;">
+<td nowrap style="display:inline-block; width:500px;">
 
 ```python
 """ Demo showing how to shift an image.
@@ -240,7 +240,7 @@ This time we will modify the original code so that the image is scaled. If the s
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap style="display:inline-block; width:450px;">
+<td nowrap style="display:inline-block; width:500px;">
 
 ```python
 """ Demo showing how to scale an image.
@@ -317,7 +317,7 @@ It shouldn't surprise you that our next step will be to modify the `draw_house()
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap style="display:inline-block; width:450px;">
+<td nowrap style="display:inline-block; width:500px;">
 
 ```python
 """ Demo showing how to scale an image.
@@ -410,7 +410,7 @@ Notice that positions are scaled and shifted. Sizes, however, are just scaled an
 <td>Image</td>
 </tr>
 <tr>
-<td nowrap>
+<td nowrap style="display:inline-block; width:500px;">
 
 ```python
 """ Demo showing how to scale and shift an image.
