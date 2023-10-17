@@ -169,7 +169,7 @@
                     <main>
                         <h2 id="python-lists"><a class="header" href="#python-lists">Python lists</a></h2>
 <p>Lists are a built-in data structure in python. Lists are used to store multiple values that are accessed with a single variable name. </p>
-<p>Typically the values stored in a list are all of the same type, though python does allow for different types to be stored within the same list. This chapter contains details on creating lists, accessing individual elements in a list, and modifying lists with list methods.</p>
+<p>Typically the values stored in a list are all of the same type, though python does allow for different types to be stored within the same list. This chapter contains details on creating lists, accessing individual elements in a list, and modifying lists using list methods.</p>
 <h2 id="creating-lists"><a class="header" href="#creating-lists">Creating lists</a></h2>
 <p>One way to create a list is to use a <em>list literal</em>. For example, instead of creating five separate variables to store 5 quiz scores, we can assign them to a list variable by putting the comma-separated values within square brackets, like this:</p>
 <pre><code class="language-python">scores = [92, 87, 93, 81, 91]
@@ -187,7 +187,7 @@ scores.append(81)
 scores.append(91)
 </code></pre>
 <p>Here's a more realistic example that uses the <code>append()</code> method, taking the values from the user:</p>
-<pre><code class="language-python">scores = [ ]
+<pre><code class="language-python">scores = []
 for i in range(5):
     next_score = int(input('Enter score: '))
     scores.append(next_score)
@@ -212,7 +212,7 @@ for i in range(5):
 <pre><code>[92, 87, 93, 81, 91]
 </code></pre>
 <p>The <code>len()</code> function returns the number of items currently stored in the list. For the above example, <code>len(scores)</code> returns <code>5</code>.</p>
-<p>Valid index values go from <code>0</code> to <code>len(your_list)-1</code>. The first value stored in a list is <code>list_name[0]</code> and the last value is <code>list_name[len(list_name)-1]</code>.</p>
+<p>Valid index values go from <code>0</code> to <code>len(your_list)-1</code>. The first value stored in a list is <code>your_list[0]</code> and the last value is <code>your_list[len(your_list)-1]</code>.</p>
 <h2 id="traversing-lists-using-loops-index-based-versus-content-based-loops"><a class="header" href="#traversing-lists-using-loops-index-based-versus-content-based-loops">Traversing lists using loops: index-based versus content-based loops</a></h2>
 <p>First let's create a list. The code below demonstrates getting input from the user and storing it in a list:</p>
 <pre><code class="language-python"># Simple loop getting input from the user and storing it into a list
@@ -261,14 +261,13 @@ Joey
 <p>In python, you can use negative index values as a way of accessing list elements starting at the end. The last element of a list always has index <code>len(list_name)-1</code>. But in python, you can alternately refer to the last element as index <code>-1</code>. The second to last element can be referred to with index <code>-2</code>, and so on. This diagram shows an example of this:</p>
 <img src="img/lists/negative_indices.png" alt="Visual representation of a list with negative index values" width="450"/>
 <p>In the above example, note that <code>scores[-1]</code> evaluates to <code>91</code>, and <code>scores[-2]</code> evaluates to <code>81</code>.
-The expressions <code>scores[-1]</code> and <code>scores[len(scores)-1]</code> refer to the same location in memory. Similarly, <code>scores[-2]</code> and <code>scores[3]</code> also refer to the same location in memory.
-list_name[::-1]`</p>
+The expressions <code>scores[-1]</code> and <code>scores[len(scores)-1]</code> refer to the same location in memory. Similarly, <code>scores[-2]</code> and <code>scores[3]</code> also refer to the same location in memory.</p>
 <h2 id="slicing-lists"><a class="header" href="#slicing-lists">Slicing lists</a></h2>
-<p>Slicing gives a way to extract a sublist from a list. By putting a start index and a stop index separated by a colon in square brackets, we create a new list that includes the contents at those index values. A typical slice is of the form <code>list_name[start_index, stop_index]</code>. Note that the stop index itself is not included in the slice. For example, from the list shown above, the expression <code>scores[0:3]</code> result in the list <code>[92, 87, 93]</code>, built from the values stored at indices <code>0, 1, 2</code>. If the start index is omitted, the start index is assumed to be <code>0</code>. For example, <code>scores[:3]</code> is the same slice as <code>scores[0:3]</code>.</p>
+<p>Slicing gives a way to extract a sublist from a list. By putting a start index and a stop index separated by a colon in square brackets, we create a new list that includes the contents between those index values. A typical slice is of the form <code>list_name[start_index, stop_index]</code>. Note that the stop index itself is <strong>not</strong> included in the slice. For example, from the list shown above, the expression <code>scores[0:3]</code> results in the list <code>[92, 87, 93]</code>, built from the values stored at indices <code>0, 1, 2</code>. If the start index is omitted, the start index is assumed to be <code>0</code>. For example, <code>scores[:3]</code> is the same slice as <code>scores[0:3]</code>.</p>
 <p>The slice <code>scores[1:5]</code> might look confusing at first, since the list is too short to have an index <code>5</code>. However, recall that the stop index of a slice is not itself included in the sublist, so the index values used are <code>1, 2, 3, 4</code>, to produce the sublist <code>[87, 93, 81, 91]</code>. If you omit the stop index, its default is <code>len(your_list)</code>, meaning that the slice goes to the end of the list, including its last element. Thus <code>scores[1:5]</code> in this example is equivalent to <code>scores[1:]</code></p>
 <p>A slice can be used to extract a range from a list while skipping elements. More generally, <code>list_name[start_index, stop_index, step]</code> begins at <code>start_index</code>, ends before reaching <code>stop_index</code>, and uses <code>step</code> to increment the index count. For example, in the list shown above, the slice <code>scores[0:5:2]</code> starts at index <code>0</code>, increasing the index by <code>2</code> at each step, and ending before index <code>5</code>. So the index values <code>0, 2, 4</code> are used and the list generated is <code>[92, 93, 91]</code>.</p>
-<p>Negative values can be used for the <code>step</code>, allowing us to traverse backwards through the list. For example, in the list shown above, the slice <code>scores[4:0:-2]</code> uses the index values <code>4, 2</code> and produces the list <code>[91, 93]</code>. Note that the index <code>0</code> element is not included. To include it, use <code>scores[4::-2]</code> to produce the list <code>[93, 91, 92]</code>.</p>
-<p>A special case can be used to produce a list in reverse order, using <code>list_name[::-1]</code>.</p>
+<p>Negative values can be used for the <code>step</code>, allowing us to traverse backwards through the list. For example, in the list shown above, the slice <code>scores[4:0:-2]</code> uses the index values <code>4, 2</code> and produces the list <code>[91, 93]</code>. Note that the index <code>0</code> element is not included. To include it, use <code>scores[4::-2]</code> to produce the list <code>[91, 93, 92]</code>.</p>
+<p>A special case can be used to produce a complete list in reverse order, using <code>list_name[::-1]</code>.</p>
 <h2 id="list-membership"><a class="header" href="#list-membership">List membership</a></h2>
 <p>You can determine whether a value is in a list or not using the <code>in</code> and <code>not in</code> operators. For example </p>
 <ul>
@@ -289,16 +288,11 @@ print(words[index])
 <p>However, there is an easier way to generate a random element from a list. The <code>random</code> package has a function called <code>choice()</code> that can take a list as a parameter, and will return a randomly-chosen element from the list. You don't have to worry about index values - the <code>random.choice()</code> function does that for you. Here's an example of its use:</p>
 <pre><code class="language-python">import random
 words = [&quot;eenie&quot;, &quot;meenie&quot;, &quot;miney&quot;, &quot;mo&quot;]
-# produces a random integer from 0 to the last index, len(words)-1
+# produces a value, randomly selected from the list contents
 print(random.choice(words))
 </code></pre>
 <h2 id="putting-it-all-together"><a class="header" href="#putting-it-all-together">Putting it all together</a></h2>
-<p>Here's sample code showing defining a list, accessing a list, modifying a list element, list slices, and list membership.</p>
-<table>
-<tr><td>Code</td><td>Output</td>
-</tr>
-<tr>
-<td nowrap style="display:inline-block; width:400px;">
+<p>Here's sample code showing definition of a list, accessing a list, modifying a list element, list slices, and list membership.</p>
 <pre><code class="language-python">month_names = ['January', 'February', 'March', 'April', 
                'May', 'June', 'July', 'August', 
                'September', 'October',  'November', 'December']
@@ -306,10 +300,10 @@ print(random.choice(words))
 print(month_names) # output the entire list
 print(len(month_names)) # should output 12
 # Index 0 is the first month, January
-print(month_names[0]) # index 0 is the first month
-print(month_names[4]) # index 4 is the 5th month
-print(month_names[11]) # index 11 is 12th month
-print(month_names[-1]) # index -1 means the last month
+print(month_names[0]) # index 0 is the first month, outputs January
+print(month_names[4]) # index 4 is the 5th month, outputs May
+print(month_names[11]) # index 11 is 12th month, outputs December
+print(month_names[-1]) # index -1 means the last month, outputs December
 # Create a new list with first 6 months (index 0, 1, 2, 3, 4, 5)
 first_half = month_names[0:6]
 print(first_half) # note that this is a list
@@ -325,8 +319,7 @@ print(month_names)
 print('December' in autumn) # should be False
 print('Triember' not in month_names) # should be True
 </code></pre>
-</td>
-<td>
+<p>Output of program:</p>
 <pre><code>['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 12
 January
@@ -340,11 +333,8 @@ December
 False
 True
 </code></pre>
-</td>
-</tr>
-</table>
 <h2 id="practicing-creating-and-traversing-lists-index-based-and-content-based-loops"><a class="header" href="#practicing-creating-and-traversing-lists-index-based-and-content-based-loops">Practicing creating and traversing lists (index-based and content-based loops)</a></h2>
-<p>Here is a code snippet showing the creation of a list, and then a content-based traversal through the list, followed by an index-based traversal through the list:</p>
+<p>Here is a code snippet showing the creation of a list, and then a content-based traversal through the list, followed by an index-based traversal through the same list:</p>
 <pre><code class="language-python">from random import random
 # Defining a constant LIST_LENGTH makes for more flexible and clear code
 LIST_LENGTH = 6
@@ -355,25 +345,25 @@ for i in range(LIST_LENGTH):
 
 # content-based loop that iterates over all of the
 # previously-generated random numbers, and outputs them
-# to 5 decimale places.
+# to 5 decimal places.
 # The variable randos is the entire list itself.
 # The variable rando takes each value stored in the
 # list, one by one as the loop iterates over the list.
 for rando in randos:
-    print(f&quot;{rando:0.5f}&quot;)
+    print(f&quot;{rando:.5f}&quot;)
 
 # index-based loop that iterates over all of the valid
 # index values for the previously-generated list of
 # random numbers. The variable i takes the values
-# 0, 1, 2, ..., 5
+# 0, 1, 2, 3, 4, 5
 # It's better programming practice to use len(your_list)
 # rather than a hard-coded number. The variable i stores
 # which element we are on. We output i+1 so that the
-# # user sees the counting from 1-6 rather than 0-5.
+# user sees counting from 1-6 rather than 0-5.
 # The expression randos[i] gives the value
 # of the random number stored at that index in the list.
 for i in range(len(randos)):
-    print(f&quot;random number {i+1}: {randos[i]:0.5f}&quot;)
+    print(f&quot;random number {i+1}: {randos[i]:.5f}&quot;)
 </code></pre>
 <p>A possible output is:</p>
 <pre><code>0.05184

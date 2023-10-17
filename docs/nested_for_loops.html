@@ -199,7 +199,7 @@
 *****
 *****
 </code></pre>
-<p>While the following simple solution works:</p>
+<p>Although the following simple solution works, it is disappointing becasue of its inflexibility.</p>
 <pre><code class="language-python">print(&quot;*****&quot;)
 print(&quot;*****&quot;)
 print(&quot;*****&quot;)
@@ -208,8 +208,8 @@ print(&quot;*****&quot;)
 print(&quot;*****&quot;)
 print(&quot;*****&quot;)
 </code></pre>
-<p>it is disappointing because of its inflexibility. If we want to change the number of rows and columns depending on user input, the above strategy won't work.</p>
-<p>Our first attempt will be to write a flexible code block to output just one line of stars:</p>
+<p>If we want to change the number of rows and columns depending on user input, the above strategy won't work.</p>
+<p>Our first attempt will be to write a flexible code block to output just one row of stars:</p>
 <pre><code class="language-python"># output one row of 5 stars
 for j in range(5):
     print(&quot;*&quot;, end = &quot;&quot;)
@@ -239,7 +239,7 @@ for row in range(num_rows):
     print()
 </code></pre>
 <h2 id="tracing-nested-for-loops"><a class="header" href="#tracing-nested-for-loops">Tracing nested <code>for</code>-loops</a></h2>
-<p>Tracing a nested <code>for</code>-loop requires care and patience. It should be done with a piece of paper, writing down updates to the values of every variable. In the previous example, we start by storing the user's values in the variables <code>num_rows</code> and <code>num_columns</code>. To give a concrete example, let's suppose that <code>num_rows</code> is <code>3</code> and <code>num_columns</code> is <code>4</code>. Moving to the outer <code>for</code>-loop, we prepare the list of possible values for the variable <code>row</code>: <code>0, 1, 2</code>. So the variable <code>row</code> starts with the value <code>0</code>. Now we proceed to the inner <code>for</code>-loop block. It is important to realize that this entire loops runs completely through while the value for <code>row</code> has the value <code>0</code>. The variable <code>column</code> will take values in the sequence <code>0, 1, 2, 3</code> (since <code>num_columns</code> is <code>4</code>), and for each of those values, a single <code>*</code> will be output. Then finally a newline from the <code>print()</code> statement it output, taking us to the next line. This completes the first line of output to the console. We return to the outer <code>for</code>-loop, and update the value of <code>row</code> to <code>1</code>. Then the inner block is repeated, with <code>column</code> taking the values <code>0</code>, <code>1</code>, <code>2</code>, then <code>3</code>. For each new value of <code>column</code>, a <code>*</code> is output, resulting in <code>****</code>. Again a newline from the <code>print()</code> statement takes us to the next line, followed by a return to the outer <code>for</code>-loop, where <code>row</code> is updated to its final value of <code>2</code>. The entire inner for loop is executed again, producing a third line <code>****</code> of output. We return to the outer <code>for</code>-loop one last time to discover that <code>row</code> has stepped through each of its possible values. So the segment of code is complete. Note that the following is the order of the values taken by the variables <code>row</code> and <code>column</code>:</p>
+<p>Tracing a nested <code>for</code>-loop requires care and patience. It should be done with a piece of paper, writing down updates to the values of every variable. In the previous example, we start by storing the user's values in the variables <code>num_rows</code> and <code>num_columns</code>. To give a concrete example, let's suppose the user enters <code>3</code> for  <code>num_rows</code> and <code>4</code> for <code>num_columns</code>. Moving to the outer <code>for</code>-loop, we prepare the list of possible values for the variable <code>row</code>: <code>0, 1, 2</code>. So the variable <code>row</code> starts with the value <code>0</code>. Now we proceed to the inner <code>for</code>-loop block. It is important to realize that this entire loops runs completely through while the value for <code>row</code> sticks with the value <code>0</code>. The variable <code>column</code> will take values in the sequence <code>0, 1, 2, 3</code> (since <code>num_columns</code> is <code>4</code>), and for each of those values, a single <code>*</code> will be output. Then finally a newline from the <code>print()</code> statement it output, taking us to the next line. This completes the first line of output to the console. We return to the outer <code>for</code>-loop, and update the value of <code>row</code> to <code>1</code>. Then the inner block is repeated, with <code>column</code> taking the values <code>0</code>, <code>1</code>, <code>2</code>, then <code>3</code>. For each new value of <code>column</code>, a <code>*</code> is output, resulting in <code>****</code>. Again a newline from the <code>print()</code> statement takes us to the next line, followed by a return to the outer <code>for</code>-loop, where <code>row</code> is updated to its final value of <code>2</code>. The entire inner for loop is executed again, producing a third line <code>****</code> of output. We return to the outer <code>for</code>-loop one last time to discover that <code>row</code> has stepped through each of its possible values. So the segment of code is complete. Note that the following is the order of the values taken by the variables <code>row</code> and <code>column</code>:</p>
 <pre><code>row: 0, column: 0
 row: 0, column: 1
 row: 0, column: 2
@@ -299,9 +299,9 @@ for column in range(5):
 dudraw.set_canvas_size(500,500)
 dudraw.clear(dudraw.LIGHT_GRAY)
 
-# Each circle takes 1/5 of the canvas, and the radius is 1/2 of that
+# Each circle takes 1/5 of canvas. The radius is 1/2 of that
 radius = (1/5)/2
-# The first circle has its center a distance of one radius from the edge
+# The first circle has its center one radius from the edge
 x_center = radius
 y_center = radius
 
@@ -316,7 +316,7 @@ for row in range(5):
     # We are done with drawing this row of circles
     # So reset the x position back to the left side
     x_center = radius
-    # and increment the y value so we draw the next row
+    # and increase y so we draw the next row higher up
     y_center += 2 * radius
 
 # display until user closes the window
@@ -325,9 +325,9 @@ dudraw.show(float('inf'))
 <img src="img/nested_for/circle_grid.jpg" alt="five by five grid of circles" class="center" width="300">
 </div>
 <p>Trace the code carefully, either by hand or by running the debugger, and confirm that an entire row is drawn before moving to the next higher row. This order of drawing the circles is determined because the outer block updates the row number, while the inner block updates the column number. We take this into account in the code by updating the <code>x_center</code> within the inner <code>for</code>-loop. By restructuring the <code>for</code>-loops, the circles can actually be drawn in a different order. The code below draws an entire column (from bottom up) before traversing to the next column. Note that the renaming of the variable is <strong>not</strong> what effected this change. Instead, it was the updating of <code>y-center</code> in the middle of the inner <code>for</code>-loop. Then, inside the outer loop but outside of the inner loop, the value of <code>y-center</code> is reset to the lower edge and <code>x-center</code> is increased to move to the next column to the right.</p>
-<pre><code class="language-python"># Each circle takes 1/5 of the canvas, and the radius is 1/2 of that
+<pre><code class="language-python"># Each circle takes 1/5 of canvas. The radius is 1/2 of that
 radius = (1/5)/2
-# The first circle has its center a distance of one radius from the edge
+# The first circle has its center one radius from the edge
 x_center = radius
 y_center = radius
 
@@ -340,22 +340,22 @@ for column in range(5):
         dudraw.circle(x_center,  y_center, radius)
         y_center += 2 * radius
     # We are done with drawing this column of circles
-    # So reset the y position back to the bottom and
+    # So reset the y position back to the bottom
     y_center = radius
-    # increment the x value so we draw the next column
+    # increase x so we draw the next column further right
     x_center += 2 * radius
 </code></pre>
 <h2 id="another-strategy-for-determining-the-center-points"><a class="header" href="#another-strategy-for-determining-the-center-points">Another strategy for determining the center points</a></h2>
 <p>Instead of incrementing the <code>x-center</code> and <code>y-center</code> variables within the loops to compute the new position of each circle, this position can be determined with a mathematical formula based on the current row and column. Here the values for the center of the circle are computed each time through the loop, and so we do not need to increment them as we traverse the loop.
-This strategy has the advantage of a more compact implementation, though some people find the formula for computing the center more difficult.</p>
-<pre><code class="language-python"># Each circle takes 1/5 of the canvas, and the radius is 1/2 of that
+This strategy has the advantage of a more compact implementation, though some people find the formula for computing the center more difficult. Note that drawing circles to the canvas differs from drawing *'s to the console, because outputing to the console naturally goes from the top down, but when drawing graphics on an x-y plane, the y values increase from the bottom upwards.</p>
+<pre><code class="language-python"># Each circle takes 1/5 of canvas. The radius is 1/2 of that
 diameter = 1/5
 radius = diameter/2
 
 # The outer for-loop steps through each of the *5 rows* 
 # of the grid of circles.
 for row in range(5):
-    # The inner loop steps through the columns, so the
+    # The inner loop steps through the columns
     for column in range(5):
         # The x_center and y_center are each computed
         # independently, based on which column and row
@@ -364,10 +364,10 @@ for row in range(5):
         # determined by the row
         x_center = radius + column*diameter
         y_center = radius + row*diameter
-        dudraw.circle(x_center,  y_center, radius)
+        dudraw.circle(x_center, y_center, radius)
 </code></pre>
 <h2 id="using-the-outer-loop-variable-within-the-inner-loop-1"><a class="header" href="#using-the-outer-loop-variable-within-the-inner-loop-1">Using the outer loop variable within the inner loop</a></h2>
-<p>The image we want to produce shown below on the right is a similar grid of circles, but this time the number of circles varies depending on which row we are on. Notice that the rows are created from bottom to top. The code to produce this image is very similar to the original 5x5 grid of circles. The only difference is that the end point of the inner loop (the <code>range()</code> used for the inner <code>for</code>-loop), depends on which row we are on. For row 0 we need 1 circle, for row 1 we need 2 circles, for row 2 we need 3 circles, and so on. Thus the number of circles for each row is given by the formula <code>row + 1</code>. So the only change to the code is to change the inner <code>for</code>-loop to repeat in <code>range(row + 1)</code>.</p>
+<p>The image shown below that we want to produce now is a similar grid of circles, but this time the number of circles varies depending on which row we are on. Notice that the rows are created from bottom to top. The code to produce this image is very similar to the original 5x5 grid of circles. The only difference is that the end point of the inner loop (the <code>range()</code> used for the inner <code>for</code>-loop), depends on which row we are on. For row 0 we need 1 circle, for row 1 we need 2 circles, for row 2 we need 3 circles, and so on. Thus the number of circles for each row is given by the formula <code>row + 1</code>. So the only change to the code is to change the inner <code>for</code>-loop to repeat in <code>range(row + 1)</code> rather than just 5 times.</p>
 <div class="code-and-image">
 <pre><code class="language-python">import dudraw
 
@@ -390,7 +390,7 @@ for row in range(5):
     # row + 1, so the number of circles increases
     # at each higher row.
     for column in range(row+1):
-        dudraw.circle(x_center,  y_center, radius)
+        dudraw.circle(x_center, y_center, radius)
         x_center += 2 * radius
     # We are done with drawing this row of circles
     # So reset the x position back to the left side
@@ -403,8 +403,8 @@ dudraw.show(float('inf'))
 </code></pre>
 <img src="img/nested_for/circle_grid_upperleft.jpg" alt="upper left triangle of circles">
 </div>
-<h2 id="the-order-that-the-combination-of-variables-are-executed"><a class="header" href="#the-order-that-the-combination-of-variables-are-executed">The order that the combination of variables are executed</a></h2>
-<p>In the code above, the outer loop runs through all possibilities for rows. The name of the variable <code>row</code> helps us keep track of this, but notice that the value of that variable is not used within the loop. So you must check that how the values of <code>x_center</code> and <code>y_center</code> are incremented matches the fact that each iteration of the outer loop outputs an entire row. Tracing through the loop shows that the range values of the pair <code>row</code> and <code>column</code> occur in the following order:</p>
+<h2 id="the-order-of-the-combination-of-variables-during-execution"><a class="header" href="#the-order-of-the-combination-of-variables-during-execution">The order of the combination of variables during execution</a></h2>
+<p>In the code above, the outer loop runs through all possibilities for rows. The name of the variable <code>row</code> helps us keep track of this. The inner loop runs through all possibilities for columns, and the variable name <code>column</code> used in the inner loop reflects this. Since rows are incremented in the outside loop, an entire row is completed by looping through every possible column option for that row before moving on to the next row. Tracing through the loop shows that the range values of the pair <code>row</code> and <code>column</code> occur in the following order:</p>
 <pre><code> row: 0, column: 0
  row: 1, column: 0
  row: 1, column: 1

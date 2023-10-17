@@ -184,7 +184,7 @@ Execute a string method with the syntax <code>your_string.method_name()</code>. 
 <ul>
 <li> 
 <p><code>islower()-&gt;bool</code> and <code>isupper()-&gt;bool</code></p>
-<p>The call  <code>your_string.islower()</code> returns <code>True</code> if the letters in <code>your_string</code> are only lower-case, <code>False</code> otherwise. Similarly, <code>your_string.isupper()</code> returns <code>True</code> if the letters in <code>your_string</code> are all upper case, <code>False</code> otherwise.</p>
+<p>The call  <code>your_string.islower()</code> returns <code>True</code> if the letters in <code>your_string</code> are only lower-case, <code>False</code> otherwise. Similarly, <code>your_string.isupper()</code> returns <code>True</code> if the letters in <code>your_string</code> are only upper case, <code>False</code> otherwise.</p>
 <pre><code class="language-python">quote = 'These are not the droids you are looking for.'
 if quote.islower():
     print(&quot;The quote is all lower case&quot;)
@@ -199,7 +199,7 @@ else:
 </li>
 <li> 
 <p><code>lower()-&gt;str</code> and <code>upper()-&gt;str</code></p>
-<p>The call <code>your_string.lower()</code> returns a new string in which all letters are converted to lower case. The original string is not modified. Similarly, <code>your_string.upper()</code> returns a new string in which all letters are converted to upper case, leaving the original string unchanged. Note that non-letters are unaffected (digits, spaces, punctuation, special characters are <em>uncased</em>, they do not have two versions, and are unchanged by these methods).</p>
+<p>The call <code>your_string.lower()</code> returns a new string in which all letters are converted to lower case. The original string is not modified. Similarly, <code>your_string.upper()</code> returns a new string in which all letters are converted to upper case, leaving the original string unchanged. Note that non-letters are unaffected (digits, spaces, punctuation, and special characters are <em>uncased</em>, they do not have two versions, and are unchanged by these methods).</p>
 <pre><code class="language-python">names = &quot;R2D2 and C3PO&quot;
 print(names.upper()) # outputs &quot;R2D2 AND C3PO&quot;
 print(names.lower()) # outputs &quot;r2d2 and c3po&quot;
@@ -238,7 +238,7 @@ print(text.index('X', 5))  # outputs 12, starting at index 5, first 'X' is at in
 </code></pre>
 <li>
 <p><code>find(sub: str)-&gt;int</code></p>
-<p>Similar to <code>index()</code>, <code>find()</code> finds and returns the index of the first location where the string <code>sub</code> is found in <code>your_string</code>. But for <code>find()</code>, if <code>sub</code> does not appear at all in the string then <code>-1</code> is returned, rather than throwing a <code>ValueError</code>. It also accepts an optional second parameter to use as the start index. For example:</p>
+<p>Similar to <code>index()</code>, <code>your_string.find(sub)</code> finds and returns the index of the first location where the string <code>sub</code> is found in <code>your_string</code>. But for <code>find()</code>, if <code>sub</code> does not appear at all in the string then <code>-1</code> is returned, rather than throwing a <code>ValueError</code>. It also accepts an optional second parameter to use as the start index. For example:</p>
 <pre><code class="language-python">poem = 'Roses are red, violets are blue'
 print(poem.find('are'))     # outputs 6, since 'are' appears at index 6
 print(poem.find('are', 10)) # outputs 23, the first location of 'are' after index 10

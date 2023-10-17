@@ -168,11 +168,11 @@
                 <div id="content" class="content">
                     <main>
                         <h2 id="outputting-information-from-the-program-to-the-user"><a class="header" href="#outputting-information-from-the-program-to-the-user">Outputting information from the program to the user</a></h2>
-<p>In Python, use the <code>print()</code> function to output information to the user.</p>
+<p>In python, use the <code>print()</code> function to output information to the user.</p>
 <p>Here is a run-of-the-mill print statement:</p>
 <pre><code class="language-python">print(&quot;Hello, World!&quot;)
 </code></pre>
-<p>When you run this line of code, the following is output this to the console:</p>
+<p>When you run this line of code, the following is output to the console:</p>
 <pre><code>Hello, World!
 </code></pre>
 <p>The following two lines show that when you have two print statements, they get executed in order. </p>
@@ -190,13 +190,13 @@ print(&quot;Hello,&quot;, username, &quot;!&quot;)
 <p>The output shows that a space automatically is inserted between each parameter:</p>
 <pre><code>Hello, Sam !
 </code></pre>
-<p>Another way to build strings for output is to use the <code>+</code> operator for <em>concatenation</em> (Concatenation means putting two strings together by tacking the second one onto the end of the first one).</p>
+<p>Another way to build strings for output is to use the <code>+</code> operator for <em>concatenation</em>. Concatenation means putting two strings together by tacking the second one onto the end of the first one.</p>
 <pre><code class="language-python">print(&quot;Hello,&quot; + username + &quot;!&quot;)
 </code></pre>
 <p>The output below shows that when concatenating strings, a space does <strong>not</strong> automatically get inserted:</p>
 <pre><code>HelloSam!
 </code></pre>
-<p>Here are ways to put a space between two different strings</p>
+<p>Here are ways to put a space between two different strings:</p>
 <pre><code class="language-python">print(&quot;Hello&quot;, username)
 print(&quot;Hello &quot; + username)
 </code></pre>
@@ -207,7 +207,7 @@ print(&quot;Hello &quot; + username)
 <pre><code>Hello
 World
 </code></pre>
-<p>The backslash symbol <code>\</code>  in <code>\n</code> is called an <em>escape character</em>. It tells Python that the letter following the backslash should be interpreted together with the <code>\</code> as a pair with special meaning. Other examples include </p>
+<p>The backslash symbol <code>\</code>  in <code>\n</code> is called an <em>escape character</em>. It tells python that the letter following the backslash should be interpreted together with the <code>\</code> as a pair with special meaning. Other examples include </p>
 <ul>
 <li><code>\t</code> for tab, </li>
 <li><code>\&quot;</code> and <code>\'</code> to put a double quote or single quote into a string literal, and</li>
@@ -220,13 +220,13 @@ while &quot;\'&quot; is a single quote.
 <p>Answer:</p>
 <pre><code class="language-python">print(&quot;\&quot;\\n\&quot; is a newline,\nwhile \&quot;\\\'\&quot; is a single quote.&quot;)
 </code></pre>
-<p>A third way in Python to combine multiple strings together and to include variable values within a string is a <em>formatted string literal</em>, commonly called an <em>f-string</em>. Create an f-string by prefixing the string with an <code>f</code>, then include any variable values within a pair of curly braces <code>{}</code>. For example:</p>
+<p>A third way in python to combine multiple strings together and to include variable values within a string is a <em>formatted string literal</em>, commonly called an <em>f-string</em>. Create an f-string by prefixing the string with an <code>f</code>, then include any variable values within a pair of curly braces <code>{}</code>. For example:</p>
 <pre><code class="language-python">print(f&quot;Hello, {username}!&quot;)
 </code></pre>
 <p>outputs</p>
 <pre><code>Hello, Sam!
 </code></pre>
-<p>With f-strings, you can have rich and control over the formatting.
+<p>With f-strings, you can have rich control over the formatting.
 For example</p>
 <pre><code class="language-python">import math
 print(f&quot;pi to 5 decimal places is {math.pi:.5f}, and e to 3 decimal places is {math.e:.3f}.&quot;)
@@ -236,7 +236,7 @@ print(f&quot;pi to 5 decimal places is {math.pi:.5f}, and e to 3 decimal places 
 </code></pre>
 <p>Here's an online tutorial if you want to investigate more capabilities of f-strings:
 <a href="https://builtin.com/data-science/python-f-string">https://builtin.com/data-science/python-f-string</a></p>
-<p>Finally, it sometimes causes us problems that a call to <code>print()</code> automatically includes a newline at the end of the output. Occasionally we want to suppress that. We do this by specifying in a second parameter to <code>print()</code> that the end should be an empty string <code>&quot;&quot;</code> rather than the default <code>&quot;\n&quot;</code>. Here's an example showing how two calls to <code>print()</code> can both output on the same line of the console:</p>
+<p>Finally, it sometimes causes us problems that a call to <code>print()</code> automatically includes a newline at the end of the output. Occasionally we want to suppress that. We do this by specifying in a second parameter to <code>print()</code> that the end should be an empty string <code>&quot;&quot;</code> rather than the default <code>&quot;\n&quot;</code>. Here's an example showing how two calls to <code>print()</code> can output on a single line of the console:</p>
 <pre><code class="language-python">print(&quot;Hello, world! &quot;, end=&quot;&quot;)
 print(&quot;It's a beautiful day! &quot;)
 </code></pre>

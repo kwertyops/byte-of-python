@@ -180,7 +180,7 @@ print(type(name)))  # outputs &lt;class `str'&gt;
 <li>You can combine strings for output in multiple ways, such as
 <ul>
 <li>
-<p>Pass multiple expressions to <code>print()</code>, separated by commas. An space is automatically inserted between the strings.</p>
+<p>Pass multiple expressions to <code>print()</code>, separated by commas. In the output, a space is automatically inserted between the strings.</p>
 <pre><code class="language-python">name = input('What is your name? ')
 print('Hello', name, ', I am glad to meet you!') 
 </code></pre>
@@ -188,7 +188,7 @@ print('Hello', name, ', I am glad to meet you!')
 <pre><code>What is your name? Buttercup
 Hello Buttercup , I am glad to meet you!
 </code></pre>
-<p>Notice the unfortunate extra space after the comma!</p>
+<p>Notice the unfortunate extra space before the comma!</p>
 </li>
 <li>
 <p>Concatenate using the <code>+</code> operator. This means joining together two strings, one following the other. It gives us complete control over the spaces - you must include any needed spaces.</p>
@@ -202,7 +202,7 @@ Hello Fezzik, I'm glad to meet you!
 <p>Notice that the code above uses double quotes rather than single quotes for each of the strings. This was an intentional choice. The text <code>&quot;I'm glad to meet you&quot;</code> has an apostrophe in it, which is the same character as a single quote. If we try to define that string using a single quote, then python assumes we are ending the string when we reach the single quote. The problem is solved by using double-quotes. </p>
 </li>
 <li>
-<p>Use an <code>f</code>-string (formatted string) to define a string that includes the value of expression(s).</p>
+<p>Use an <code>f</code>-string (formatted string) to define a string that includes the value of expression(s). Put each expression with a pair of curly braces <code>{}</code></p>
 <pre><code class="language-python">name = input(&quot;What is your name? &quot;)
 print(f&quot;Hello {name}, I'm glad to meet you!&quot;)
 </code></pre>
@@ -213,7 +213,7 @@ Hello Vizzini, I'm glad to meet you!
 </li>
 </ul>
 </li>
-<li>A backslash (<code>\</code>) denotes a special characters. This is called <em>escaping</em>. Examples include <code>\n</code> (new line), <code>\t</code> (tab), <code>\\</code> (backslash), <code>\'</code> (for including single quote within a single quote), <code>\&quot;</code> (for including a double quote within a double quote). This example uses <code>\\</code> and <code>\n</code>:
+<li>A backslash (<code>\</code>) denotes a special character. This is called <em>escaping</em>. Examples include <code>\n</code> (new line), <code>\t</code> (tab), <code>\\</code> (backslash), <code>\'</code> (for including single quote within a single-quoted string), <code>\&quot;</code> (for including a double quote within a double-quoted string). This example uses <code>\\</code> and <code>\n</code>:
 <pre><code class="language-python">print('\\n - newline\n\\t - tab')
 </code></pre>
 outputs

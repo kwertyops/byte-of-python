@@ -168,7 +168,7 @@
                 <div id="content" class="content">
                     <main>
                         <h2 id="for-loops-in-python"><a class="header" href="#for-loops-in-python"><code>for</code>-loops in python</a></h2>
-<p>The <code>for</code> loop structure in python is an example of an <em>iterative</em> statement. Iterative structures allow you to repeat blocks of code multiple times rather than retyping the lines of code themselves multiple times.</p>
+<p>The <code>for</code>-loop structure in python is an example of an <em>iterative</em> statement. Iterative structures allow you to repeat blocks of code multiple times rather than retyping the lines of code themselves multiple times.</p>
 <h2 id="syntax-of-an-index-based-for-loop"><a class="header" href="#syntax-of-an-index-based-for-loop">Syntax of an index-based <code>for</code>-loop</a></h2>
 <p>To repeat a block of code a specific number of times, we can use the following syntax:</p>
 <pre><code class="language-python">for i in range(&lt;number&gt;):
@@ -202,8 +202,8 @@ print(&quot;Done with greetings.&quot;)
 <p>Key points:</p>
 <ul>
 <li>When programming, we always want to avoid repeating a line or block of code. Not duplicating saves us time when coding. But it also helps us later if we find there is an error or if we decide to make a change. Ideally, we want to make fixes and changes in only one place.</li>
-<li>The indentation is very important. Any lines indented after the <code>for</code> line get repeated. When the indentation reverts to the same level as the <code>for</code> line, those lines are not repeated, and execute only once.</li>
-<li>The <code>i</code> is just the name of a variable. In this kind of <code>for</code>-loop designed to simply repeat a block of code a specific number of times, the variable counts which iteration (repeat) we are on. In this situation, it is traditional to call the variable <code>i</code>, <code>j</code>, or <code>k</code>, though technically you may give it any legal variable name.</li>
+<li>The indentation is very important. Any lines indented after the <code>for</code> line get repeated. When the indentation reverts to the same level as the <code>for</code> line, those lines are not repeated, and are executed only once.</li>
+<li>The <code>i</code> is just the name of a variable. In this kind of <code>for</code>-loop designed to simply repeat a block of code a specific number of times, the variable counts which iteration (repeat) we are on. In this situation, it is traditional to call the variable <code>i</code>, <code>j</code>, or <code>k</code>, though you may give it any legal variable name that helps the user understand that it is the iteration variable.</li>
 </ul>
 <h2 id="the-parameter-passed-to-the-range-function-can-be-a-variable"><a class="header" href="#the-parameter-passed-to-the-range-function-can-be-a-variable">The parameter passed to the <code>range()</code> function can be a variable.</a></h2>
 <p>Example: Ask the user how many greetings they want, then output <code>&quot;Hello, world!&quot;</code> that many times, then output <code>&quot;Done with greetings.&quot;</code></p>
@@ -257,7 +257,8 @@ dudraw.show(float('inf'))
 <td nowrap>
 <pre><code class="language-python"># Interesting bug! The (x, y) position
 # is randomly chosen *before* the loop.
-# So the same values are used every
+# This is an error - it should be in the loop
+# So the same (x, y) values are used every
 # time through the loop. The 50 squares
 # are all drawn on top of each other
 # at the one random location.
@@ -267,7 +268,7 @@ x = random()
 y = random()
 for i in range(50):
     dudraw.filled_square(x, y, 0.01)
-# display until window is closed
+# display forever (until window is closed)
 dudraw.show(float('inf'))
 </code></pre>
 </td>
@@ -291,7 +292,8 @@ for i in range(50):
     # The x and y random values are created as
     # parameters within the call to filled_square
     dudraw.filled_square(random(), random(), 0.01)
-    # display until window is closed
+    # display until window is closed. The bug
+    # is cause by this line being indented
     dudraw.show(float('inf'))
 </code></pre>
 </td>
@@ -308,7 +310,7 @@ for i in range(50):
     # body of loop
 </code></pre>
 <p><code>range(N)</code> produces a sequence of integers from <code>0</code> through <code>N-1</code>, a total of <code>N</code> integers. The first time through the loop, he loop variable <code>i</code> takes the value <code>0</code>,then it takes the value <code>1</code> the second time, etc., until in the final iteration of the loop, <code>i</code> takes the value <code>N-1</code>. Often we make use of the value of <code>i</code> itself, since it is effectively counting which iteration of the loop we are currently executing. Note that you can use any legal variable name for the loop variable</p>
-<p>Here's a simplest example, with the corresponding output:</p>
+<p>Here's a simplest example, with the corresponding output. Notice that we <code>print(i+1)</code> instead of <code>print(i)</code> because we want to output <code>1 2 3 4 5</code>, and <code>i</code> takes the values <code>0 1 2 3 4</code>.</p>
 <table>
 <tr><td>Code</td><td>Output</td></tr>
 <tr>
@@ -331,9 +333,9 @@ for i in range(5):
 </table>
 <h2 id="variations-on-the-range-function"><a class="header" href="#variations-on-the-range-function">Variations on the <code>range()</code> function</a></h2>
 <p><code>range(N)</code> always starts the loop variable at <code>0</code> and ends at <code>N-1</code>. However, you can specify a different integer start value.</p>
-<p><code>range(start, stop)</code> produces a sequence of integers beginning with <code>start</code> and ending one less than <code>stop</code>. Note that the value for <code>stop</code> is never included in the sequence. You can double-check yourself by confirmng that <code>stop-start</code> gives the total number of integers in the sequence.</p>
-<p>Example: <code>range(1, 6)</code> produces the sequence <code>1, 2, 3, 4, 5</code></p>
-<p>The <code>range()</code> function also allows you to control the step size. This means you can change the sequence so it doesn't increase by <code>1</code> from one number to the next.</p>
+<p><code>range(start, stop)</code> produces a sequence of integers beginning with <code>start</code> and ending one less than <code>stop</code>. Note that the value for <code>stop</code> is never included in the sequence. When you are writing a <code>for</code>-loop, you can double-check yourself by confirmng that <code>stop-start</code> gives the total number of integers in the sequence.</p>
+<p>Example: <code>range(1, 6)</code> produces the sequence <code>1, 2, 3, 4, 5</code>.</p>
+<p>The <code>range()</code> function also allows you to control the step size. This means you can change the sequence so it increases by something other than <code>1</code> from one number to the next.</p>
 <p><code>range(start, stop, step)</code></p>
 <ul>
 <li>start: (optional) is the first value of the sequence</li>

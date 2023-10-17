@@ -168,7 +168,7 @@
                 <div id="content" class="content">
                     <main>
                         <h2 id="boolean-variables"><a class="header" href="#boolean-variables">Boolean variables</a></h2>
-<p>In order to control the flow of a program, we will need a new type of value and variable called a boolean. In python the name of the type is <code>bool</code>. Boolean variables can only have two possible values: <code>True</code> and <code>False</code>.</p>
+<p>In order to control the flow of a program, we will need a new type of value and variable called a boolean. In python the name of the type is <code>bool</code>. Boolean variables can only have two possible values: <code>True</code> or <code>False</code>.</p>
 <p>Boolean variables are used much like other variables in python. For example, when creating an animated (moving) drawing in <code>dudraw</code>, we may want a variable called <code>is_moving</code> to keep track of whether one of our objects is continuing to move. Here is some code that would create and access that variable:</p>
 <table>
 <tr>
@@ -244,7 +244,7 @@ The three logical operators we will use in python are <code>not</code>, <code>an
 </td>
 <td>
 <p><code>True</code> <strong>only if both boolean expressions are true</strong>, otherwise <code>False</code>.</p>
-<p>Such as &quot;I completed homework <strong>and</strong> read a book&quot;, evaluates to <code>True</code> only if you have done <strong>both</strong>.</p>
+<p>&quot;I completed homework <strong>and</strong> read a book&quot;, evaluates to <code>True</code> only if you have done <strong>both</strong>.</p>
 </td>
 <td>
 <p><code>x and y</code> → <code>False</code></p>
@@ -257,11 +257,12 @@ The three logical operators we will use in python are <code>not</code>, <code>an
 </td>
 <td>
 <p><code>True</code> <strong>if either boolean expression is true</strong>, otherwise <code>False</code>.</p>
-<p>Such as &quot;I completed homework <strong>or</strong> read a book&quot; evaluates as <code>True</code> if you have done one or the other or both.</p>
+<p>&quot;I completed homework <strong>or</strong> read a book&quot; evaluates as <code>True</code> if you have done one or the other or both.</p>
 </td>
 <td>
 <p><code>x or y</code> → <code>True</code></p>
 <p><code>(not x) or y</code> → <code>False</code></p>
+<p><code>x or (not y)</code> → <code>True</code></p>
 </td>
 </tr>
 </table>
@@ -274,7 +275,7 @@ The three logical operators we will use in python are <code>not</code>, <code>an
 <li><code>or</code>.</li>
 </ul>
 <p>Just like in arithmetic, the order of precedence can be overridden with parentheses.
-Sometimes people forget whether <code>and</code> or <code>or</code> has higher precedence. So you are urged to use parentheses in logical expressions even if they are not required, to avoid ambiguity and to improve the clarify of your code to others who read it.</p>
+Sometimes people forget whether <code>and</code> or <code>or</code> has higher precedence. So you are urged to use parentheses in logical expressions even if they are not required, to avoid ambiguity and to improve the clarity of your code to others who read it.</p>
 <p>Examples:
 Suppose the following code has executed:</p>
 <pre><code class="language-python">x = 5
@@ -284,7 +285,7 @@ g = 2
 </code></pre>
 <p>Evaluate the following boolean expressions:</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">Boolean expression...</th><th style="text-align: center">...evaluates to:</th></tr></thead><tbody>
-<tr><td style="text-align: center"><code>x * g == z or not ( x * x &lt; y)</code></td><td style="text-align: center"><code>True</code></td></tr>
+<tr><td style="text-align: center"><code>x * g == z or not (x * x &lt; y)</code></td><td style="text-align: center"><code>True</code></td></tr>
 <tr><td style="text-align: center"><code>(2 * y &lt; z and z &lt;= g) or x != 5</code></td><td style="text-align: center"><code>False</code></td></tr>
 <tr><td style="text-align: center"><code>not (x == 7)</code></td><td style="text-align: center"><code>True</code></td></tr>
 </tbody></table>

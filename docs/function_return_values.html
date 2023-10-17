@@ -182,7 +182,7 @@ One solution is to copy/paste the code to reuse it. One downside of that strateg
 </li>
 <li>
 <p>Abstraction</p>
-<p>Once a function has been written and tested, we don't need to know how it works anymore. We only need to remember its <strong>name, purpose, parameters, and return value</strong>. For example, when you use the <code>dudraw.circle()</code> function, you can just use it without bothering your mind with the distraction of how that function creates the circle. This allows us to build functions from functions already written, and this allows us to much more easily produce very complicated software.</p>
+<p>Once a function has been written and tested, we don't need to know how it works anymore. We only need to remember its <strong>name, purpose, parameters, and return value</strong>. For example, when you use the <code>dudraw.circle()</code> function, you can just use it without bothering your mind with the distraction of how that function creates the circle. This allows us to build functions from functions already written, and this allows us to produce very complicated software much more easily.</p>
 </li>
 <li>
 <p>Code organization and readability</p>
@@ -195,10 +195,10 @@ One solution is to copy/paste the code to reuse it. One downside of that strateg
 <pre><code class="language-python">print(&quot;Hello!&quot;)
 </code></pre>
 <p>takes a parameter (the input to the function is <code>&quot;Hello&quot;</code>), but it does not return a value.</p>
-<p>But the <code>input()</code> function does return a value. The return type is <code>str</code>.  When the function is <em>invoked</em>, you may do whatever is useful with that return value. In the example below the value returned by the <code>input()</code> function is stored in the variable <code>name</code>:</p>
+<p>But the <code>input()</code> function does return a value. The return type is <code>str</code>.  When the function is <em>invoked</em>, when it is done executing it returns a value. You may do whatever is useful with that return value. In the example below the value returned by the <code>input()</code> function is stored in the variable <code>name</code>:</p>
 <pre><code class="language-python">name = input(&quot;Enter your name&quot;)
 </code></pre>
-<p>Another example is the <code>random()</code> function, which returns a float. We may choose to store the value that is returned in a variable. Or we may choose to pass that return value as a parameter to another function:</p>
+<p>Another example is the <code>random()</code> function, which returns a <code>float</code>. We may choose to store the value that is returned in a variable. Or we may choose to pass that return value as a parameter to another function:</p>
 <pre><code class="language-python"># Store the return value in a variable:
 x_position = random()
 # Pass the return value to the print function:
@@ -213,7 +213,7 @@ print(random())
     # (Leave off the return statement if the function returns `None`)
 </code></pre>
 <p>Example:
-Here's a function that takes a <code>float</code> parameter that represents a temperature in Fahrenheit (think of this as an input value to the function). The function then computes the conversion of the temperature to Celsius. The converted value of type <code>float</code> is returned (think of that as an output value).</p>
+Here's a function that takes a <code>float</code> parameter named <code>temp_f</code> that represents a temperature in Fahrenheit (think of <code>temp_f</code> as an input value to the function). The function then computes the conversion of the temperature to Celsius. The converted value <code>temp_c</code> of type <code>float</code> is returned (think of <code>temp_c</code> as an output value from the function).</p>
 <pre><code class="language-python">def celsius(temp_f: float) -&gt; float:
     # compute the conversion from fahrenheit to celsius
     temp_c = (temp_f - 32) * 5 / 9
@@ -236,7 +236,9 @@ print(f&quot;{user_temp_f} degrees Fahrenheit is {celsius(user_temp_f):.1f} degr
 </code></pre>
 <h2 id="boolean-functions"><a class="header" href="#boolean-functions">Boolean functions</a></h2>
 <p>Note that a function may return a value of type <code>bool</code>. These are called <em>boolean functions</em>, and just as before, the return value can be used as an expression. For example:</p>
-<pre><code class="language-python">def first_digit_even(number: int) -&gt; bool:
+<pre><code class="language-python"># Return True if the first digit of the number is even,
+# otherwise return False
+def first_digit_even(number: int) -&gt; bool:
     # Keep dividing by 10 until the number is less than 10
     while number &gt;= 10:
         number = number // 10
@@ -259,9 +261,9 @@ A prime number is an integer bigger than <code>1</code> that is divisible only b
     &quot;&quot;&quot;
     A function that determines whether or not a number is prime
     parameters:
-        number: a positive integer greater than 1 (type int)
+        number: a positive integer greater than 1 (type: int)
     return:
-        True if number is prime, False otherwise (type bool)
+        True if number is prime, False otherwise (type: bool)
     &quot;&quot;&quot;
 
     # tester is a possible factor. Start at 2 and we will increase it
@@ -269,8 +271,9 @@ A prime number is an integer bigger than <code>1</code> that is divisible only b
 
     while tester &lt; number:
         if number % tester == 0:
-            # We know the answer, so the function teriminates
-            # returning the result
+            # We now know that tester divides number, so
+            # we know the answer - number is not prime!
+            # The function teriminates, returning False
             return False
         else:
             tester += 1
@@ -293,12 +296,13 @@ if __name__ == '__main__':
 </code></pre>
 <p>Key points:</p>
 <ul>
-<li>The input for this function is an integer.</li>
+<li>The input for this function is an integer bigger than 1 (our program would be improved if we checked for this condition).</li>
 <li>The output is a boolean (<code>True</code> if <code>number</code> is prime, <code>False</code> otherwise).</li>
 <li>It's helpful for boolean functions to have names that reflect that they return a <code>True/False</code> result. Here, <code>is_prime()</code> reads like a question that has a yes/no answer. When we call the function, the line
 <code>if is_prime(23):</code> makes sense when we read it.</li>
 <li>A function should only perform one task. Here, the job is to determine whether or not the number is prime. The function does <em>not</em> output the result to the console. The function just returns the result to the line that invoked it. It's up to the caller to interact with the user. This philosophy makes for more flexible and reusable functions.</li>
 <li>Within the loop of the <code>is_prime()</code> function, we can only return <code>False</code>, never <code>True</code>. Because only by completing the entire loop can we know that <code>number</code> has no factors (other than <code>1</code> and itself). The <code>return True</code> can thus only happen after the loop has completed.</li>
+<li>The program could be made to run more efficiently by stopping the loop when <code>tester</code> reaches the square root of <code>number</code>.</li>
 </ul>
 <p>By placing the code to determine whether a number is prime into a separate function, we can now re-use it in  multiple ways. For example, here is a new <code>main()</code> function that outputs all primes less than <code>1000</code>:</p>
 <pre><code class="language-python">def main():
@@ -311,7 +315,7 @@ if __name__ == '__main__':
     print()
 </code></pre>
 <p>You should notice how simple it was to create this new program. The <code>is_prime()</code> function did not need to be rewritten or even thought about.</p>
-<p>Here is yet another example. This time we will build another layer on top of the <code>is_prime()</code> function by creating a function called <code>next_prime()</code> to give the next prime larger than a specific integer. Notice that <code>next_prime()</code> itself uses <code>is_prime()</code>, so its job is made straightforward and easy to understand. By the use of these two functions, the interface with the user in <code>main()</code> is also very straightforward. This organization and structure makes code easier to read and understand, easier to fix if it has an error, and easier to enhance or modify if we choose to later. Notice that I've taken out the contents of <code>is_prime()</code> since that function is identical to before. </p>
+<p>Here is yet another example. This time we will build another layer on top of the <code>is_prime()</code> function by creating a function called <code>next_prime()</code> to give the next prime larger than a specific integer. Notice that <code>next_prime()</code> itself uses <code>is_prime()</code>, so its job is made straightforward and easy to understand. By the use of these two functions, the interface with the user in <code>main()</code> is also very straightforward. This organization and structure makes code easier to read and understand, easier to fix if it has an error, and easier to enhance or modify if we choose to later. Notice that the contents of <code>is_prime()</code> are not shown here, since that function is identical to before.</p>
 <pre><code class="language-python">def is_prime(number: int) -&gt; bool:
     # contents not shown - it's unchanged from before!
 

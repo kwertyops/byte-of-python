@@ -167,7 +167,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="variables-in-python"><a class="header" href="#variables-in-python">Variables in Python</a></h2>
+                        <h2 id="variables-in-python"><a class="header" href="#variables-in-python">Variables in python</a></h2>
 <ul>
 <li>The purpose of a <em>variable</em> is to store information within a program while it is running.</li>
 <li>A variable is a named storage location in computer memory. Use the name to access the value.</li>
@@ -178,39 +178,41 @@
 stores the value 16.75 in the variable called <code>hourly_wage</code></li>
 <li>You can change the value of a variable with another assignment statement, such as 
 <code>hourly_wage = 17.25</code></li>
-<li>Every value has a type (<code>int</code> for integers, <code>float</code> for decimals, <code>str</code> for text). In Python, when you store a value in a variable (with <code>=</code>), that variable then automatically has a type. For example, after the above assignment, <code>hourly_wage</code> is of type <code>float</code></li>
+<li>Every value has a type (<code>int</code> for integers, <code>float</code> for decimals, <code>str</code> for text). In python, when you store a value in a variable (with <code>=</code>), that variable then automatically has a type. For example, after the above assignment, <code>hourly_wage</code> is of type <code>float</code>.</li>
 </ul>
-<h2 id="rules-and-conventions-for-naming-variables-in-python"><a class="header" href="#rules-and-conventions-for-naming-variables-in-python">Rules and conventions for naming variables in Python</a></h2>
+<h2 id="rules-and-conventions-for-naming-variables-in-python"><a class="header" href="#rules-and-conventions-for-naming-variables-in-python">Rules and conventions for naming variables in python</a></h2>
 <ul>
 <li>The first character must be a letter or an underscore. For now, stick to letters for the first character.</li>
 <li>The remaining characters must be letters, numbers or underscores.</li>
 <li>No spaces are allowed in variable names.</li>
 <li>Legal examples: <code>_pressure</code>, <code>pull</code>, <code>x_y</code>, <code>r2d2</code></li>
 <li>Invalid examples, these are NOT legal variable names: <code>4th_dimension</code>, <code>%profit</code>, <code>x*y</code>, <code>four(4)</code>, <code>repo man</code></li>
-<li>In Python, it's a conventiion to use <em>snake case</em> to name variables. This means that we use all lower-case letters and we separate words in the variable name with underscores. Examples include <code>age</code>, <code>x_coordinate</code>, <code>hourly_wage</code>, <code>user_password</code></li>
+<li>In python, it's a conventiion to use <em>snake case</em> to name variables. This means that we use all lower-case letters and we separate words in the variable name with underscores. Examples include <code>age</code>, <code>x_coordinate</code>, <code>hourly_wage</code>, <code>user_password</code></li>
 <li>If the value stored in a variable is a true constant (in other words, its value will never change throughout the program), then we use all capital letters: <code>COURSE_ENROLLMENT_LIMIT</code>, <code>MAX_PASSWORD_ATTEMPTS</code>.</li>
-<li>For high quality code, it is crucial that you choose names for variables that are descriptive. The variable names must help the reader of your program to understand your intention.</li>
+<li>For high quality code, it is crucial that you give descriptive names for variables. The variable names must help the reader of your program understand your intention.</li>
 </ul>
 <h2 id="typical-way-we-visualize-variables"><a class="header" href="#typical-way-we-visualize-variables">Typical way we visualize variables</a></h2>
 <p>We usually draw variables by putting the value in a box, and labelling the box with the name of the variable:</p>
-<p><img src="img/variables_assignment_types_arithmetic/depiction_of_variable.png" alt="Visual representation of a variable" /></p>
+<figure style="margin: 5px auto;">
+<img src="img/variables_assignment_types_arithmetic/depiction_of_variable.png" alt="Visual representation of a variable" class="center" width="200">
+</figure>
 <h2 id="types-of-variables"><a class="header" href="#types-of-variables">Types of variables</a></h2>
 <p>Each variable has a name, a value, and a type. Types are necessary because different kinds of data are stored differently within the computer's memory. For now, we will learn three different types, for storing signed (positive or negative) whole numbers, signed decimals, and text.</p>
 <div class="table-wrapper"><table><thead><tr><th></th><th>Type</th><th>Description</th><th>Examples</th></tr></thead><tbody>
 <tr><td>Numerical type</td><td><code>int</code></td><td>Signed integer that stores whole numbers (no decimal)</td><td>0, 7, -5</td></tr>
 <tr><td>Numerical type</td><td><code>float</code></td><td>Signed decimal value</td><td>0.5, 20.0, -18.2, 2.5e3 = 2.5x10^3</td></tr>
-<tr><td>String type (Text)</td><td><code>str</code></td><td>Any number of characters surrounded by &quot;&quot; or ''</td><td>&quot;Hello&quot;, 'world', '9'</td></tr>
+<tr><td>String type (Text)</td><td><code>str</code></td><td>Any number of characters surrounded by <code>&quot;&quot;</code> or <code>''</code></td><td>&quot;Hello&quot;, 'world', '9'</td></tr>
 </tbody></table>
 </div>
 <h2 id="creating-a-variable-with-an-assignment-operator"><a class="header" href="#creating-a-variable-with-an-assignment-operator">Creating a variable with an assignment operator</a></h2>
-<p>A variable is created or declared when we assign a value to it using the assignment operator <code>=</code>. In Python, the code looks like this:
+<p>A variable is created or declared when we assign a value to it using the assignment operator <code>=</code>. In python, the code looks like this:
 <code>variable_name = &lt;value&gt;</code>.</p>
 <p>Examples:</p>
 <pre><code class="language-python"># The next line stores an int value of 200 in the variable named age
 age = 200
 # The next line stores a float value of 7.5 in the variable named height
 height = 7.5
-# The next line stores a string (text) value of 'Chewbacca' in the variable named age
+# The next line stores a string (text) value of 'Chewbacca' in the variable named name
 name = 'Chewbacca'
 </code></pre>
 <p>Notice that the left hand side of an assignment must be a variable name. Non-example:</p>
@@ -221,7 +223,7 @@ name = 'Chewbacca'
 <pre><code class="language-python">age = 201
 </code></pre>
 <h2 id="finding-out-the-type-of-a-variable-or-value"><a class="header" href="#finding-out-the-type-of-a-variable-or-value">Finding out the type of a variable or value</a></h2>
-<p>The <code>type()</code> function in Python will return the type of either a variable or a value. Here's an example that shows how to use it:</p>
+<p>The <code>type()</code> function in python will return the type of either a variable or a value. Here are examples that show how to use it:</p>
 <pre><code class="language-python">x = 5
 print(type(x))
 print(type(&quot;Wow!&quot;))
@@ -237,14 +239,14 @@ print(type(3.14159))
 <ul>
 <li><code>int(23.7)</code> (truncates the float value 23.7 to the int value 23. This is different from rounding - the decimal part is discarded, regardless of whether it is larger or smaller than 0.5.</li>
 <li><code>float(23)</code> (outputting the result will give 23.0 rather than 23)</li>
-<li><code>str(23)</code> (converts the integer 23 to the text &quot;23&quot;)</li>
-<li><code>int(&quot;23&quot;)</code> (converts the string &quot;23&quot; into a numerical integer value 23)</li>
-<li><code>float(&quot;23&quot;)</code> (converts the string &quot;23&quot; into a numerical decimal value 23.0)</li>
+<li><code>str(23)</code> (converts the integer <code>23</code> to the text <code>&quot;23&quot;</code>)</li>
+<li><code>int(&quot;23&quot;)</code> (converts the string <code>&quot;23&quot;</code> into a numerical integer value <code>23</code>)</li>
+<li><code>float(&quot;23&quot;)</code> (converts the string <code>&quot;23&quot;</code> into a numerical decimal value <code>23.0</code>)</li>
 <li><code>int(&quot;23.5&quot;)</code> results in an error</li>
 <li><code>float(&quot;hello&quot;)</code> results in an error</li>
 </ul>
-<h2 id="doing-arithmetic-in-python"><a class="header" href="#doing-arithmetic-in-python">Doing arithmetic in Python</a></h2>
-<p>Here are the basic arithmetic operators in Python. In these examples, assume</p>
+<h2 id="doing-arithmetic-in-python"><a class="header" href="#doing-arithmetic-in-python">Doing arithmetic in python</a></h2>
+<p>Here are the basic arithmetic operators in python. In these examples, assume</p>
 <pre><code class="language-python">x = 11
 y = 4
 </code></pre>
@@ -258,11 +260,11 @@ y = 4
 <tr><td><code>**</code></td><td>Exponentiation (raises the first  to the power of the second )</td><td><code>x**y</code></td><td><code>14641</code></td></tr>
 </tbody></table>
 </div>
-<p>An example of a use of the modulus operator is to determine if an integer is even or odd. Note that if <code>x</code> is an integer, then <code>x%2</code> takes the value <code>0</code> or <code>1</code>. So <code>x % 2 == 0</code> is <code>True</code> when <code>x</code> is even and false when <code>x</code> is odd.</p>
+<p>An example of a use of the modulus operator is to determine if an integer is even or odd. Note that if <code>x</code> is an integer, then <code>x%2</code> takes the value <code>0</code> or <code>1</code>. So <code>x % 2 == 0</code> is <code>True</code> when <code>x</code> is even and <code>False</code> when <code>x</code> is odd.</p>
 <p>Another example of integer division and modulus: When we divide 3 by 4, we get a quotient of 0 and a remainder of 3. So <code>3//4</code> results in 0 and <code>3%4</code> results in 3.</p>
-<p>Warning note: In Python, <code>^</code> is <strong>not</strong> an exponent!</p>
+<p>Warning note: In python, <code>^</code> is <strong>not</strong> an exponent!</p>
 <h2 id="order-of-operations"><a class="header" href="#order-of-operations">Order of operations</a></h2>
-<p>The order of operations in Python is similar to the order you are familiar with in math:
+<p>The order of operations in python is similar to the order you are familiar with in math:
 parentheses, then exponentiation, then multiplication/division/modulus in order from left to right, then addition/subtraction in order from left to right.</p>
 
                     </main>

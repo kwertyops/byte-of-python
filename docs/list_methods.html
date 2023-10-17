@@ -172,23 +172,23 @@
 <p>For example:</p>
 <pre><code class="language-python">cats_1 = []
 cats_2 = []
-# append &quot;Tabby&quot; to the cats_1 list
+# append &quot;Tabby&quot; to the cats_1 list:
 cats_1.append(&quot;Tabby&quot;)
-# append &quot;Mochi&quot; to the cats_2 list
+# append &quot;Mochi&quot; to the cats_2 list:
 cats_2.append(&quot;Mochi&quot;)
 </code></pre>
 <p>In this section we will see several additional methods that apply to lists. Execute each these methods with the syntax <code>your_list.method_name()</code>.  We will learn just a subset of the available list methods. The full list can be found at <a href="https://www.w3schools.com/python/python_ref_list.asp">Python list documentation by w3schools</a> or <a href="https://docs.python.org/3/tutorial/datastructures.html">Offical python documentation on list methods</a>. Here are the list methods you'll learn:</p>
 <ul>
-<li><code>count()</code> and <code>index()</code> for counting and searching</li>
-<li><code>insert()</code> and <code>extend()</code> for adding elements</li>
-<li><code>pop()</code>, <code>remove()</code> and the <code>del</code> keyword for removing elements</li>
-<li><code>reverse()</code> and <code>sort()</code> and <code>sorted()</code> for rearranging elements</li>
+<li>the <code>count()</code> and <code>index()</code> methods for counting and searching</li>
+<li>the<code>insert()</code> and <code>extend()</code> methods for adding elements</li>
+<li>the <code>pop()</code> and <code>remove()</code> methods and the <code>del</code> keyword for removing elements</li>
+<li>the <code>reverse()</code> and <code>sort()</code> methods and the <code>sorted()</code> function for rearranging elements</li>
 </ul>
 <p>Here are the details on using these methods.</p>
 <ul>
 <li> 
 <p><code>count(x)-&gt;int</code></p>
-<p>The <code>count()</code> method for lists takes as a parameter the item to search for. It returns an <code>int</code> which gives the number of times that item appears in the list. Here are some example calls to <code>count()</code> with the corresponding return values:</p>
+<p>The call <code>your_list.count(x)</code> takes as a parameter the item to search for. It returns an <code>int</code> which gives the number of times that value appears in the list. Here are some example calls to <code>count()</code> with the corresponding return values:</p>
 <pre><code class="language-python">values = [81, 59, 42, 65, 72, 42, 42, 81]
 values.count(42) # returns 3, since 42 appears 3 times in the list
 values.count(23) # returns 0, since 23 does not appear in the list
@@ -196,7 +196,7 @@ values.count(23) # returns 0, since 23 does not appear in the list
 </li>
 <li> 
 <p><code>index(x)-&gt;int</code></p>
-<p>The <code>index()</code> method for lists takes a value to search for as a parameter. It then returns an <code>int</code> which is the <em>index</em> of the first time that value appears in the list. One down side of the <code>index()</code> method is that <code>x</code> must be in the list - if it isn't then a <code>ValueError</code> results. Here are some calls to <code>index()</code> and the corresponding return values:</p>
+<p>The call <code>your_list.index(x)</code> searches for the value <code>x</code> in <code>your_list</code>. It then returns an <code>int</code> which is the <em>index</em> of the first time that value appears in the list. One down side of the <code>index()</code> method is that <code>x</code> must be in the list - if it isn't then a <code>ValueError</code> results. Here are some calls to <code>index()</code> and the corresponding return values:</p>
 <pre><code class="language-python">values = [81, 59, 42, 65, 72, 42, 42, 81]
 values.index(72) # returns 4, since 72 appears at index 4
 values.index(42) # returns 2, since 42 first appears at index 2
@@ -205,7 +205,7 @@ values.index(90) # results in a ValueError
 </li>
 <li>
 <p><code>insert(i: int, x)-&gt;None</code></p>
-<p>The <code>insert()</code> method adds to the list by insertng <code>x</code> at index <code>i</code>. The index <code>i</code> should be a valid index, and the new value will be inserted before the item at that index.
+<p>The call <code>your_list.insert(i, x)</code> adds to the list by insertng the value <code>x</code> at index <code>i</code>. The index <code>i</code> should be a valid index for the new value, and the new value will be inserted before the item at that index.
 See below how the contents of the list evolves after several calls to <code>insert()</code>:</p>
 <pre><code class="language-python">values = [59, 42, 72, 42, 42]
 values.insert(0, 81) # list is now [81, 59, 42, 72, 42, 42]
@@ -228,7 +228,7 @@ print(values_2) # outputs [42, 42, 21], note values_2 is unchanged
 </li>
 <li>
 <p><code>pop()-&gt;List_type</code></p>
-<p>The <code>pop()</code> method removes the <em>last</em> element of a list. It returns the value that was stored there. You can alternately pass an integer parameter (<code>pop(index)-&gt;List_type</code>), which will remove and return the value stored at the index. The program crashes with an <code>IndexError</code> if an invalid index is passed. The following example shows how to call <code>pop()</code> and looks at the values that are returned.</p>
+<p>The call <code>your_list.pop()</code> removes the <em>last</em> element of a list. It returns the value that was stored there. You can alternately pass an integer parameter (<code>pop(index)-&gt;List_type</code>), which will remove and return the value stored at the index. The program crashes with an <code>IndexError</code> if an invalid index is passed. The following example shows how to call <code>pop()</code> and looks at the values that are returned.</p>
 <pre><code class="language-python">values = [81, 59, 42, 65, 72, 42, 42, 21]
 # Last element 21 is removed from list, saved in variable 'removed':
 removed = values.pop()
@@ -237,14 +237,14 @@ print(removed) # outputs 21, the value that was popped
 # Removes the element at index 3 (65) and saves it:
 removed = values.pop(3)
 print(values)  # outputs [81, 59, 42, 72, 42, 42]
-print(removed) # outputs 65, the value that was popped
+print(removed) # outputs 65, the value that was just popped
 values.pop(59) # Program crashes with an IndexError, pop index out of range
 </code></pre>
 <p>Notice that <code>your_list.pop()</code> is identical to <code>your_list.pop(len(your_list)-1)</code></p>
 </li>
 <li>
 <p><code>remove(x)-&gt;None</code></p>
-<p>The <code>remove()</code> method removes the first occurrence of the value <code>x</code> in the list. Notice that it differs from the <code>pop()</code> method because you pass the <em>value</em> of the item you want to remove, rather than passing the <em>index</em>. If the value <code>x</code> is not in the list, then the program crashes with a <code>ValueError</code>. So check for membership of <code>x</code> in the list prior to calling <code>remove()</code>.</p>
+<p>The call <code>your_list.remove(x)</code> removes the first occurrence of the value <code>x</code> from the list. Notice that it differs from the <code>pop()</code> method because you pass the <em>value</em> of the item you want to remove, rather than passing the <em>index</em>. If the value <code>x</code> is not in the list, then the program crashes with a <code>ValueError</code>. So check for membership of <code>x</code> in the list prior to calling <code>remove()</code>.</p>
 <pre><code class="language-python">values = [81, 59, 42, 65, 72, 42, 42, 21]
 values.remove(42)   # removes the FIRST occurrence of 42 from the list
 print(values)       # outputs [81, 59, 65, 72, 42, 42, 21]
@@ -266,7 +266,7 @@ del values[10]  # program crashes with an IndexError
 </li>
 <li>
 <p><code>reverse()-&gt;None</code></p>
-<p>Calling the <code>reverse()</code> method modifies the list by reversing the order of the elements.</p>
+<p>The call <code>your_list.reverse()</code> modifies the list by reversing the order of the elements.</p>
 <pre><code class="language-python">values = [3, 1, 4, 2, 8]
 values.reverse()
 print(values) # outputs [8, 2, 4, 1, 3]
@@ -276,11 +276,11 @@ print(values) # outputs [8, 2, 4, 1, 3]
 print(values[::-1])  # outputs [8, 2, 4, 1, 3]
 print(values)   # outputs [3, 1, 4, 2, 8], values itself is unchanged
 </code></pre>
-<p>Since the slice <code>values[::-1]</code> has its stop index and start index missing, we use the default values. The slice includes the entire list, but the step value of <code>-1</code> means traverse the list in reverse order. Notice that the slice just traverses the list in a different order - the contents of the list itself has not been altered.</p>
+<p>Since the slice <code>values[::-1]</code> has its stop index and start index missing, we use the default values. The slice includes the entire list, but the step value of <code>-1</code> means the list will be traversed in reverse order. Notice that the slice just traverses the list in a different order - the contents of the list itself have not been altered.</p>
 </li>
 <li>
 <p><code>sort()-&gt;None</code></p>
-<p>The <code>sort()</code> method <em>modifies</em> the list by <em>sorting the elements from smallest to largest</em>. If you pass an optional <code>reverse=True</code> as a parameter, then the list is sorted in descending order.</p>
+<p>The call <code>your_list.sort()</code> <em>modifies</em> the list by <em>sorting the elements from smallest to largest</em>. If you pass an optional <code>reverse=True</code> as a parameter, then the list is sorted in descending order.</p>
 <pre><code class="language-python">values = [3, 1, 4, 2, 8]
 # sort the list in increasing order
 # The contents of the list itself are modified!
@@ -289,7 +289,7 @@ print(values)  # outputs [1, 2, 3, 4, 8]
 # Next sort the list in decreasing order
 # The contents of the list itself are modified!
 values.sort(reverse=True)
-print(values)  # outputs [8, 4, 3 , 2, 1]
+print(values)  # outputs [8, 4, 3, 2, 1]
 </code></pre>
 </li>
 <li>
@@ -302,7 +302,7 @@ sorted_ascending = sorted(values)
 print(sorted_ascending)  # outputs [1, 2, 3, 4, 8]
 print(values) # outputs [3, 1, 4, 2, 8], values has NOT been modified
 # produce a sorted copy of the list, descending order
-# The contents of the list itself are modified!
+# The contents of the list itself are NOT modified!
 sorted_descending = sorted(values, reverse=True)
 print(sorted_descending)  # outputs [8, 4, 3, 2, 1]
 print(values) # outputs [3, 1, 4, 2, 8], values has NOT been modified

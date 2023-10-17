@@ -202,9 +202,9 @@ vertex_c = origin
 </code></pre>
 <p>The value of <code>b_x</code> will be <code>-6</code> and the value of <code>b_y</code> will be <code>9</code>.</p>
 <p>While you can examine an individual value in a <code>tuple</code> using square brackets, note that you <em>cannot modify individual elements of a <code>tuple</code></em>, since <code>tuple</code>s are immutable.</p>
-<pre><code class="language-python">vertex_b = (-6, 9)s
+<pre><code class="language-python">vertex_b = (-6, 9)
 x = vertex_b[0] # valid line of code
-vertex_b[0] = -3  # not allowed, since tuples are immutable
+vertex_b[0] = -3  # not allowed, since tuples are immutable, crashes with a TypeError
 </code></pre>
 <h2 id="example-2---gps-coordinates"><a class="header" href="#example-2---gps-coordinates">Example 2 - GPS coordinates</a></h2>
 <p>GPS locations specify a position on earth. They have two values that represent latitude and longitude. The pair of latitude/longitude values can conveniently be stored in a <code>tuple</code>.</p>
@@ -218,7 +218,10 @@ taj_mahal = (27.1751, 78.0421)
 machu_picchu = (-13.1631, 72.5450)
 denali_peak = (63.1148, -151.1926)
 
-print(f&quot;The taj-mahal is located at latitude {taj_mahal[0]}, longitude {taj_mahal[1]}&quot;)
+print(f&quot;The Taj Mahal is located at latitude {taj_mahal[0]}, longitude {taj_mahal[1]}&quot;)
+</code></pre>
+<p>Output:</p>
+<pre><code>The Taj Mahal is located at latitude 27.1751, longitude 78.0421
 </code></pre>
 <h2 id="example-3---dimensions-of-a-3d-object"><a class="header" href="#example-3---dimensions-of-a-3d-object">Example 3 - dimensions of a 3D object</a></h2>
 <p>A rectangular box has a length, a width, and a height. These dimensions can be stored together in a <code>tuple</code>. The code below also demonstrates how to pass a <code>tuple</code> to a function, including how to define the type of the parameter. The function can access the individual values within the <code>tuple</code>. In <code>main()</code> below, two tuples are defined. Then the <code>volume()</code> function is called with each of them, and the value is output, rounded to two decimal places.</p>
@@ -241,7 +244,7 @@ main()
 </td>
 <td>
 <figure>
-<img src="img/tuples/boxes.png" alt="Two boxes with visibly different dimensions" class="center", width="250">
+<img src="img/tuples/boxes.png" alt="Two boxes with visibly different dimensions" class="center", width="300">
 </figure>
 </td>
 </tr>
@@ -283,10 +286,10 @@ main()
 <p>The code below contains a function that creates a random playing card. A random element from the list of all possible card suits is chosen, as well as a random element from the list of all possible card values. These are each randomly chosen using the <code>random.choice()</code> function. The two are put together into a <code>tuple</code>, which is returned to the caller. While it may feel that the function is returning <em>two</em> values, in fact it is only returning one: a <code>tuple</code> with two elements.</p>
 <pre><code class="language-python">import random
 
-# Here are the constant full list for all possible card suits
+# Here are the constant full lists for all possible card suits
 # and all possible card values
 SUITS = [&quot;Spades&quot;, &quot;Hearts&quot;, &quot;Diamonds&quot;, &quot;Clubs&quot;]
-VALUES = [&quot;Ace&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;, 
+VALUES = [&quot;Ace&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;, 
           &quot;10&quot;, &quot;Jack&quot;, &quot;Queen&quot;, &quot;King&quot;]
 
 # Create a random card by randomly choosing from the list of all
@@ -317,15 +320,16 @@ main()
 <ul>
 <li>Define a <code>list</code> using <code>[]</code>, and define a <code>tuple</code> using <code>()</code></li>
 <li><code>tuple</code>s are immutable, while <code>list</code>s are mutable.</li>
+<li>You can change the value in a list with an assignment like <code>your_list[2]=4.7</code>. You can't change individual elements in a tuple, since tuples are immutable.</li>
 </ul>
-<p>Use a <code>list</code> and not a <code>tuple</code> in this situation:</p>
+<p>Use a <code>list</code> (and <strong>not</strong> a <code>tuple</code>) in this situation:</p>
 <ul>
 <li>Use a <code>list</code> when you expect the contents of your data to change while running the program. Tuples are immutable, so once a <code>tuple</code> is created, you can neither change the values of the elements nor add/remove elements without creating a new <code>tuple</code>.</li>
 </ul>
 <p>Use a <code>tuple</code> when:</p>
 <ul>
 <li>Use a <code>tuple</code> when you <em>need</em> your data to be immutable (e.g., we’ll see later that keys for dictionaries must be immutable).</li>
-<li>When you want a function to return two values, you can put the two values into a <code>tuple</code> and return just the <code>tuple</code>.</li>
+<li>Use a <code>tuple</code> when you want a function to return two values. You can put the two values into a <code>tuple</code> and return just the <code>tuple</code>.</li>
 <li>If your data is sure not to change during running of the program, using a <code>tuple</code> can avoid a bug created by your program accidentally modifying the contents.</li>
 <li>When it’s possible to use either a <code>list</code> or a <code>tuple</code>, it’s more common to use a <code>tuple</code> for heterogenous data types (the elements within the <code>tuple</code> are of varying types), and to use a <code>list</code> for homogeneous data types (all the elements of the <code>list</code> are of the same type).</li>
 <li>It is more efficient (runs faster) to iterate through a <code>tuple</code> than a <code>list</code>. So if your program is running too slowly, switching to a <code>tuple</code> if possible could improve performance.</li>

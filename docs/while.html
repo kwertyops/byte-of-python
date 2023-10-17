@@ -176,7 +176,7 @@
 <ul>
 <li>Prompt a user to enter a password, asking repeatedly until they get it correct. You don't know in advance how many times it will take.</li>
 <li>Create an animation that continues until the user enters a <code>q</code> to quit. The animation must continue until they choose to quit, and until then the animation must continue an unknown number of frames.</li>
-<li>Write a game for two players who take turns. You don't know how many turns it will take for someone to win.</li>
+<li>Write a game for two players who take turns. You don't know in advance how many turns it will take for someone to win.</li>
 </ul>
 <h2 id="syntax-of-a-while-statement"><a class="header" href="#syntax-of-a-while-statement">Syntax of a <code>while</code> statement:</a></h2>
 <pre><code class="language-python">while &lt;condition&gt;:
@@ -186,7 +186,7 @@
 <p>The <code>&lt;condition&gt;</code> is a boolean expression. If it evalutes to <code>True</code>, then the indented block of code is executed, and the program returns to the <code>while</code> statement to check the condition again. This repeats until the condition evaluates to <code>False</code>, when the loop stops executing, and the program continues on the next line.</p>
 <p>Here is the flowchart that shows visually the path of execution through a <code>while</code>-loop:</p>
 <figure>
-<img src="img/while/while_flowchart.png" alt="4 houses, scaled and shifted variously" class="center", width="200">
+<img src="img/while/while_flowchart.png" alt="flowchart for a while loops" class="center", width="200">
 </figure>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
 <p>The following program repeatedly asks the user <code>&quot;What is the answer to life, the universe and everything?&quot;</code>, until the user correctly answers <code>&quot;42&quot;</code>.</p>
@@ -205,7 +205,7 @@ What is the answer to life, the universe and everything? 42
 Correct!
 </code></pre>
 <h2 id="should-i-use-a-for-loop-or-a-while-loop"><a class="header" href="#should-i-use-a-for-loop-or-a-while-loop">Should I use a <code>for</code>-loop or a <code>while</code>-loop?</a></h2>
-<p>It is possible to use a <code>while</code>-loop instead of a <code>for</code>-loop. The two code blocks shown below behave the same, each of them outputting the integers from <code>0</code> to <code>9</code>:</p>
+<p>Though it is not always a good idea, it is actually possible to use a <code>while</code>-loop instead of a <code>for</code>-loop. The two code blocks shown below behave the same, each of them outputting the integers from <code>0</code> to <code>9</code>:</p>
 <table>
 <tr>
 <td>
@@ -229,12 +229,12 @@ while i &lt; 10:
 <p>Although the above code snippets show that it is <em>possible</em> to replace a <code>for</code>-loop with a <code>while</code>-loop, this is not advised. Instead, use the following guidelines to determine which type of loop to use:</p>
 <ul>
 <li>Use a <code>while</code>-loop when the number of iterations is <strong>unknown</strong> before the loop completes.</li>
-<li>Use a <code>for</code>-loop when before the loop starts, you know how many iterations you need. </li>
-<li>It's still better to use a <code>for</code>-loop if the number of iterations is unknown while you are writing the program, but is determined during the program (in other words, <code>for i in range(variable)</code>), since in this case the value is known by the time the loop begins.</li>
+<li>Use a <code>for</code>-loop when before you know how many iterations you need befor the loop starts executing. </li>
+<li>It's still better to use a <code>for</code>-loop if the number of iterations is unknown while you are writing the program, but is determined during the program before the loop is executed (in other words, <code>for i in range(variable)</code>), since in this case the value is known by the time the loop begins.</li>
 </ul>
 <h2 id="putting-it-all-together"><a class="header" href="#putting-it-all-together">Putting it all together</a></h2>
 <h3 id="example-1"><a class="header" href="#example-1">Example 1</a></h3>
-<p>Here's an example of a full program that uses a <code>while</code>-loop. It simulates rolling a die, to see how many rolls before we roll a 6. Note that a <code>for</code>-loop is not possible here, since we do not know how many rolls of the die it will take until we finally roll a 6.</p>
+<p>Here's an example of a full program that uses a <code>while</code>-loop. It simulates rolling a six-sided die, to see how many rolls it takes to roll a 6. Note that a <code>for</code>-loop is not possible here, since we do not know how many rolls of the die it will take until we finally roll a 6.</p>
 <table>
 <tr><td>Code</td><td>Sample output</td></tr>
 <tr>
@@ -267,8 +267,8 @@ def main():
         dice_roll = int(random() * 6 + 1)
         roll_count += 1
 
-    # Output how many rolls it took before we rolled a 6.
-    print(f&quot;We rolled a 6 and it took {roll_count} rolls.&quot;)
+    # Output how many rolls it took to roll a 6.
+    print(f&quot;We rolled a 6. It took {roll_count} rolls.&quot;)
 
 # Run the program:
 if __name__ == '__main__':
@@ -280,7 +280,7 @@ if __name__ == '__main__':
 We rolled a 2
 We rolled a 2
 We rolled a 5
-We rolled a 6 and it took 5 rolls.
+We rolled a 6. It took 5 rolls.
 </code></pre>
 </td>
 </tr>
