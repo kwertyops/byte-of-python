@@ -65,9 +65,9 @@ def greet_user(num_greetings: int, name: str) -> None:
         print(f"Hello, {name}")
 
 def main():
-    name = input("What is your name? ")
+    username = input("What is your name? ")
     num = int(input("How many greetings do you want? "))
-    greet_user(num, name)
+    greet_user(num, username)
 
 # Run the program:
 if __name__ == '__main__':
