@@ -1,5 +1,6 @@
 # Summary
 
+- [Introduction](intro.md)
 - [Getting started](basics.md)
     - [Python, VSCode, and `dudraw` Installation](installation.md)
     - [First Program](hello.md)
